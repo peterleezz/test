@@ -55,6 +55,22 @@
   </style>
 
   
+  <style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+ 
+
 </head>
 
 <body >
@@ -318,13 +334,12 @@
       <div class="breadcrumbs" id="breadcrumbs">
         <script type="text/javascript">try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}</script>
         
-    <ul class="breadcrumb">
-        <li> <i class="icon-home home-icon"></i>
-            <a href="<?php echo U('Home/Main/main');?>">前台</a>
-        </li>
-        <li class="active">会员卡管理</li>
-
-    </ul>
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="<?php echo U('Home/Main/main');?>">收银</a>
+    </li>
+    <li class="active">会籍合同管理</li>
+  </ul>
 
         <!-- .breadcrumb -->
 
@@ -343,105 +358,59 @@
       <!-- <div class="page-header" ></div>
     -->
     
-    <div class="row">
-        <div class="col-xs-12" id="fcontainer">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
 
-            <form class="form-inline" role="form" action="<?php echo U('Reception/Cardmanage/queryNew');?>" method="post" id="reception_card_manage_form" style="margin-bottom:10px">
+      <form class="form-inline" role="form" action="<?php echo U('Brand/Review/queryNew');?>" method="post" id="cashier_contract_form" style="margin-bottom:10px">
 
-                <div class="form-group">
-                    <label  for="card_id">会员卡号:</label>
-                    <input type="text" class="form-control" name="card_id"  id="card_id" oper="eq"></div>
-                <div class="form-group">
-                    <label  for="name">会员姓名:</label>
-                    <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
-                <div class="form-group">
-                    <label  for="phone">手机号码:</label>
-                    <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+        <!--  <div class="form-group">
+        <label class="sr-only" for="card_type_id">卡种分类</label>
+        <select name="card_type_id" id="card_type_id" class="form-control" oper="eq">
+          <option value="0">请选择卡种分类</option>
+          <?php if(is_array($cardtypes)): $i = 0; $__LIST__ = $cardtypes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cardtype): $mod = ($i % 2 );++$i;?><option value="<?php echo ($cardtype["id"]); ?>"><?php echo ($cardtype["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+        </select>
+      </div>
+      -->
+      <div class="form-group ">
+        <label  for="contract_number">合同号:</label>
+        <input type="text" class="form-control" name="contract_number"  id="contract_number" oper="eq"></div>
 
-                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
-                    查询
-                </button>
+      <div class="form-group">
+        <label  for="card_number">卡号:</label>
+        <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
+      <div class="form-group">
+        <label  for="name">会员姓名:</label>
+        <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+      <div class="form-group">
+        <label  for="phone">手机号码:</label>
+        <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
 
-            </form>
+      <button type="submit" class="btn  btn-info btn-sm" onclick="clean()"> <i class="icon-search"></i>
+        查询
+      </button>
+    </form>
 
-            <table id="reception_card_grid"></table>
-            <div id="reception_card_pager"></div>
-            <div align="center">
-              <button class="btn  btn-danger btn-sm" onclick="yueke()"> <i class="icon-lock">约课</i></button>
-
-                <button class="btn  btn-default btn-sm" onclick="guashi()"> <i class="icon-lock">挂失</i></button>
-                 <button class="btn  btn-primary btn-sm" onclick="quxiaoguashi()"> <i class="icon-unlock">取消挂失</i></button>
-                  <button class="btn  btn-success btn-sm" onclick="buka()"> <i class="icon-cog">补卡</i></button>
-                   <button class="btn  btn-info btn-sm" onclick="qingjia()"> <i class="icon-umbrella">请假</i></button>
-                    <button class="btn  btn-warning btn-sm" onclick="xiaojia()"> <i class="icon-off">销假</i></button>
-                     <button class="btn  btn-danger btn-sm" onclick="tuihui()"> <i class="icon-remove-circle">退会</i></button>
-                      <button class="btn  btn-primary btn-sm" onclick="xiaoka()"> <i class="icon-remove-circle">消卡</i></button>
-            </div>
-        </div>
+    <table id="cashier_contract_grid"></table>
+    <div id="cashier_contract_pager"></div>
+    <div align="left" id="show_detail">
+       
     </div>
-
-    <div class="modal fade " id="restModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">选择请假时间</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" role="form" id="addplanform" action="<?php echo U('Channelmanager/Plan/edit');?>">
-                        <div class="form-group">
-                            <label for="rest_start_time" class="col-sm-4 control-label">选择起始时间</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="date_ymd form-control" name="rest_start_time" id="rest_start_time" ></div>
+  
+  <div class="clearfix form-actions operation">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" onclick="pass()"> <i class="icon-ok bigger-110"></i>
+                                审核通过
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" >
+                                <i class="icon-remove bigger-110"></i>
+                                不通过
+                            </button>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="rest_end_time" class="col-sm-4 control-label">选择结束时间</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="date_ymd form-control" name="rest_end_time" id="rest_end_time" ></div>
-                        </div>
-
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" onclick="rest()">保存</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade " id="newCardModal" tabindex="-1" role="dialog" aria-labelledby="newcardmodallabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="newcardmodallabel">请输入新的卡号,否则系统会自动生成新的卡号!</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" role="form" id="newcardform">
-                        <div class="form-group">
-                            <label for="new_card_number" class="col-sm-2 control-label">卡号:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="new_card_number" id="new_card_number" ></div>
-                        </div>
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" onclick="getnew()">保存</button>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+</div>
 
 
 
@@ -609,231 +578,170 @@
 <!-- inline scripts related to this page -->
 
 
-    <script>
-       
-  var grid_selector = "#reception_card_grid";
-            var pager_selector = "#reception_card_pager";    
-    function guashi()
-    {
-          var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                    lost(id);
-                } else { alert("请先选中！");}
-                     
-                
-    }
+<script> 
+            var grid_selector = "#cashier_contract_grid";
+            var pager_selector = "#cashier_contract_pager";     
+            function clean()
+            {
+                  $("#show_detail").text("");
+            }
 
-    function yueke()
-    {
-          var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) { 
-                     var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
-                            var member_id = (rowData.memberid);
-                     window.open("/Reception/Appoint/index/id/"+member_id);
+function pass()
+{
+  if(lasdetailtid==null)
+  {
+    bootbox.alert("请先选中相应合同!");
+  }
+   $.post("/Brand/Review/passnew", {id:lasdetailtid}, function(data,textStatus){
+        if(data.status){
+              $("#cashier_contract_grid").jqGrid('setRowData',lasdetailtid,{is_review:"1"});
+                    bootbox.alert(data.info,null); 
+                } else {
+                     bootbox.alert(data.info,null);                   
+                }                    
+    }, "json");
+}
+function showdetail(id)
+{
+  if(lasdetailtid==id && $("#show_detail").text()!='')return;
+  lasdetailtid=id;
+    $.post("/Brand/Review/show", {id:id}, function(data,textStatus){
+                                $("#show_detail").text("");
+                                $("#show_detail").append(data);
+    }, "json");
+ 
+}
+  
+    $(function(){ 
+$("#menu_1").addClass("active open");
+     $("#menu_18").addClass("active open");
+    $("#menu_25").addClass("active");
 
-                } else { alert("请先选中！");}
-                     
-                
-    }
-    function quxiaoguashi()
-    {
-          var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                    unlost(id);
-                } else { alert("请先选中！");}
-    }
-    function buka()
-    {
-       var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                   $('#newCardModal').modal('show');              
-                } else { alert("请先选中！");} 
-    }
-    function qingjia()
-    {
-           var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                    $('#restModel').modal('show');                   
-                } else { alert("请先选中！");}
-    }
-    function xiaojia()
-    {
-         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                   unrest(id);
-                } else { alert("请先选中！");}
-    }
-    function tuihui()
-    {
-          var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                   destroy(id);
-                } else { alert("请先选中！");}
-    }
-    function xiaoka()
-    {
-         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-                if (id) {
-                   destroy_card(id);
-                } else { alert("请先选中！");}
-    }
-
-
-
-    $(function(){
-    $("#menu_4").addClass("active open");
-    $("#menu_44").addClass("active");
-
-                       
+            var grid_selector = "#cashier_contract_grid";
+            var pager_selector = "#cashier_contract_pager";                 
                 jQuery(grid_selector).jqGrid({
-                    url:"<?php echo U('Reception/Cardmanage/queryNew');?>",                 
-                    datatype: "json",
+                    url:"<?php echo U('Brand/Review/queryNew');?>",                 
+                    datatype: "local",
                     height: "100%",    
-                    width:($('#fcontainer').width()-10),
+                    width:($('#fcontainer').width()-20),
                     mtype:"POST",
-                    colNames:['ID','member_id','会员姓名', '卡号','办理会所','卡种名称','卡状态','签订日期', '手机号码','有效期起','有效期止','免费请假次数', '操作'],
+                    colNames:['ID','状态', 'contract_id','合同编号','合同类型','对应卡号','合同状态','普通/团卡','姓名','性别', '手机号码','卡种','次数','赠送时间(天)','赠送次数(次)','应收价格','卡种价格','已付','欠款','生效时间','结束时间','开卡方式','MC姓名', '录入人','签约日期',"备注"],
                     colModel:[   
-                       {name:'id',index:'id',width:1,align:'center',hidden:true},
-                         {name:'memberid',index:'memberid',width:1,align:'center',hidden:true},
-                           {name:'member_name',index:'member_name',width:150,align:'center',formatter : function(value, options, rData){  
-                           var html='<a  target="blank" href="/Reception/Visit/index/id/'+rData.memberid+'" >'+value+'</a>'; 
-                           return html;
-                        }},
-                       {name:'card_number',index:'card_number',width:150,align:'center'},
-                        {name:'club_name',index:'club_name',width:150,align:'center'},
-                        {name:'card_type_name',index:'card_type_name',width:200,align:'center',formatter : function(value, options, rData){  
-                                return rData.card_type_extension.name;
-                         }},
-                         {name:'status',index:'status',width:150,align:'center',formatter : function(value, options, rData){  
-                                 var a=new Array("正常","已挂失","已被补卡","请假中","申请退会","消卡收回");
-                                return getValue(a,value); 
-                         }},
-                        {name:'create_time',index:'create_time',width:150,align:'center',formatter : function(value, options, rData){  
-                               return value.substring(0,10);
-                         }},
-                      
-                          {name:'phone',index:'phone',hidden:true,hidden:true,width:150,align:'center'},
-                        {name:'start_time',index:'start_time',width:150,align:'center'},
-                        {name:'end_time',index:'end_time',width:150,align:'center'},
-                         {name:'cfree_rest',index:'cfree_rest',width:150,align:'center',formatter : function(value, options, rData){  
-                          return rData.crest_count+"/"+rData.cfree_rest;
-                        }},
-                       {name:'op',index:'op',hidden:true,width:450,align:'center',formatter : function(value, options, rData){  
-                            var id=rData.id; 
-                           var html='<a class="btn  btn-default btn-xs"  href="javascript:void(0)" onclick="lost('+id+')"><i class="icon-lock bigger-130"></i>挂失</a>&nbsp&nbsp&nbsp';
-                            html+='<a class="btn  btn-primary btn-xs " href="javascript:void(0)" onclick="unlost('+id+')"><i class="icon-unlock bigger-130"></i>取消挂失</a>&nbsp&nbsp&nbsp';
-                            html+='<a class="btn  btn-success btn-xs" href="javascript:void(0)" data-toggle="modal" data-target="#newCardModal"></i>补卡</a>&nbsp&nbsp&nbsp';
-                             html+='<a class="btn  btn-info btn-xs" href="javascript:void(0)"  data-toggle="modal" data-target="#restModel" ><i class="icon-umbrella bigger-130"></i>请假</a>&nbsp&nbsp&nbsp';
-                              html+='<a class="btn  btn-warning btn-xs" href="javascript:void(0)"onclick="unrest('+id+')"><i class="icon-off bigger-130"></i>销假</a>&nbsp&nbsp&nbsp';
-                              html+='<a class="btn  btn-danger btn-xs" href="javascript:void(0)" onclick="destroy('+id+')"><i class="icon-remove-circle bigger-130"></i>退会消卡</a>';
-                              return html;
-                         }},
-                    ],   
-                    // pagerpos:"right",   
+                         {name:'id',index:'id',width:150,hidden:true},
+                            {name:'is_review',index:'is_review',width:100,formatter : function(value, options, rData){
+                           var a=new Array("未审核","已审核");
+                           return getValue(a,value); 
+                   }}, 
+                          {name:'contract_id',index:'contract_id',hidden:true},
+                        {name:'contract_number',index:'contract_number',width:150,},      
+
+                      {name:'type',index:'type',width:100,formatter : function(value, options, rData){
+                           var a=new Array("新增合同","","","转让","续费","升级");
+                           return getValue(a,value); 
+                   }}, 
+                        {name:'card_number',index:'card_number',width:150,editable: true,},
+
+                        {name:'invalid',index:'invalid',width:70,formatter : function(value, options, rData){
+                                             var a=new Array("无效","有效");
+                                               return getValue(a,value); 
+                                }},
+                        {name:'btype',index:'btype',width:70,formatter : function(value, options, rData){
+                                           var a=new Array("普通合同","团卡合同");
+                                           return getValue(a,value); 
+                                   },editable: true,edittype: 'select',editoptions:{sopt:['eq'],value:"0:普通合同;1:团卡合同"}},
+                         {name:'name',index:'name',width:100},
+                                                {name:'sex',index:'sex',width:50,formatter : function(value, options, rData){
+                                                  return value=='male'|| value=='男'?"男":"女";
+                                           }},
+                        {name:'phone',index:'phone',hidden:true,width:150,},
+                        {name:'card_type_id',index:'card_type_id',width:150,editable: true,edittype: 'select',editoptions:{sopt:['eq'],value:getCardTyps()},formatter : function(value, options, rData){
+                                          return rData.card_name;
+                                           }},  
+                        {name:'times',index:'times',width:100,formatter : function(value, options, rData){
+                                                    if(rData.card_type==1) return "时间卡"
+                                                          return rData.used_num+"/"+rData.total_num;
+                                           }},  
+                        {name:'present_day',index:'present_day',width:100,editable: true},      
+                         {name:'present_num',index:'present_num',width:100,editable: true},      
+                                                              
+                      {name:'price',index:'price',width:80,editable: true},
+                      {name:'card_type_price',index:'card_type_price',width:80},
+                        {name:'paid',index:'paid',width:80,editable: false},
+                        {name:'',index:'',width:80,formatter : function(value, options, rData){                            
+                           return rData.price-rData.paid; 
+                   }},
+                    {name:'start_time',index:'start_time',width:150,editable: true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd',      minView:'2',          language:'zh-CN',      autoclose:true,})}}} ,
+                    {name:'end_time',index:'end_time',width:150,editable: true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd',      minView:'2',          language:'zh-CN',      autoclose:true,})}}} ,
+
+                         {name:'active_type',index:'active_type',width:100,formatter : function(value, options, rData){
+                           var a=new Array("买卡当天开卡","指定日期开卡","第一次到开卡");
+                           return getValue(a,value); 
+                   },editable: true,edittype: 'select',editoptions:{sopt:['eq'],value:"0:买卡当天开卡;1:指定日期开卡;2:第一次到开卡"}},     
+                       {name:'mc_name',index:'mc_name',width:80}, 
+                        {name:'recorder_name',index:'recorder_name',width:80},                          
+                        {name:'create_time',index:'create_time',width:150},   
+                          {name:'desc',index:'desc',width:150},                                          
+                    ],      
                     pager : pager_selector,
                     altRows: true,                   
                     multiselect: true,
                     multiboxonly: true,
                     pgbuttons:true,
                     pginput : false,
-                    cmTemplate: {sortable:false,editable: true,search:false},
+                    cmTemplate: {sortable:false,editable: false,search:false,align:"left"},
                     sortorder: "desc",
-                    editurl: "/Brand/Cardtype/setCardType",          
-                    autowidth: true,
-                    shrinkToFit:true,  
+                    editurl: "<?php echo U('Brand/Review/editcontract');?>",         
+                    autowidth: false,
+                    shrinkToFit:false,  
                     autoScroll: true,
                     caption: "会员卡信息" ,
                     // loadonce: true,
                      rowNum: 10,
                     rowList: [10, 20, 30],
                     viewrecords: true,
-                    gridview: true,
-
-                     subGrid : true,
-                   subGridRowExpanded: function(subgrid_id, row_id) {
-                        var subgrid_table_id, pager_id; subgrid_table_id = subgrid_id+"_t";
-                        pager_id = "p_"+subgrid_table_id;
-                        $("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div>");
-                        $("#"+subgrid_table_id).jqGrid({
-                            datatype: "json",
-                            url:"/Reception/Cardmanage/querycardophistory?id="+row_id,
-                            colNames: ['ID', '时间','操作','操作人','细节'],
-                            colModel: [
-                            {
-                                    name:"id",index:"id",width:100,align:"left"}, 
-                                  {name:"create_time",index:"create_time",width:200,align:"left"},  
-                                        {name:"card_status",index:"card_status",width:100,align:"left",formatter : function(value, options, rData){
-                                              if(value!=0)
-                                            {
-                                                 var a=new Array("正常","挂失","补卡","请假","申请退会","消卡收回");
-                                                return getValue(a,value); 
-                                            }
-                                            else
-                                            {
-                                                 var a=new Array("正常","取消挂失","补卡","取消请假","取消申请退会","取消消卡收回");
-                                                 return getValue(a,rData.status_before); 
-                                            }
-                                          }}, 
-                                        {name:"recorder",index:"recorder",width:100,align:"left",formatter : function(value, options, rData){
-                                            if(value!=null)
-                                            return value.name_cn;
-                                            return "系统";
-                                          }}, 
-                                           {name:"extension",index:"extension",width:200,align:"left",formatter : function(value, options, rData){
-                                                if(value!=null && value!="")
-                                                {
-                                                    var json=JSON.parse(value);
-                                                    return "从"+json.start_time+" 到"+json.end_time;
-                                                }
-                                                if(rData.recorder==null)
-                                                return "请假时间到，自动销假!";
-                                                else
-                                                return "到馆销假!"
-                                          }}, 
-
-                                        ], 
-                            rowNum:100,
-                            // pager: pager_id,
-                            sortname: 'id',
-                            loadonce:true,
-                            autowidth: false,
-                            shrinkToFit:false,  
-                            autoScroll: true,
-                            sortorder: "desc", height: '100%' });
-                    },
+                    onSelectRow: function (rowid, status) {
+                      var ret = jQuery(grid_selector).jqGrid('getRowData',rowid); 
+                      if(ret.is_review=='已审核')
+                      {
+                        $(".operation").hide();
+                      }
+                      else
+                      {
+                        $(".operation").show();
+                      }
+                             showdetail(rowid);
+                             return;
+                        
+                     }, 
+                     beforeSelectRow: function(rowid, e)
+                      {
+                          jQuery(grid_selector).jqGrid('resetSelection');
+                          return(true);
+                      },
 
 
-                    subGridOptions: {
-                        "plusicon": "icon-plus",
-                        "minusicon": "icon-minus",
-                        "openicon": "icon-list",
-                        "reloadOnExpand": false,
-                        "selectOnExpand": true
-                    },
-
-
-
-
-
+                    gridview: true, 
 
                     jsonReader:{userdata:"userdata"},                   
-                    loadComplete : function() {
-                     
+                    loadComplete : function() {  
+                      // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
                         var table = this;
+                        // $("#show_detail").addClass("hide");
+                        userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
                         setTimeout(function(){ 
                             updatePagerIcons(table);
                             enableTooltips(table);
                         }, 0); 
                     },
-                    
-            
-                });  
+ 
+   
+                }); 
 
-                //navButtons
                 jQuery(grid_selector).jqGrid('navGrid',pager_selector,
                     {   //navbar options
-                        edit: false,
+                        edit: true,
                         editicon : 'icon-pencil blue',
+                        edittext:"编辑",
                         add: false,
                         addicon : 'icon-plus-sign purple',
                         del: false,
@@ -858,7 +766,7 @@
                          afterSubmit : function(response, postdata)
                         {
                          var res = $.parseJSON(response.responseText);
-                            return [res.success,res.message,res.new_id];
+                            return [res.status==1,res.info,res.new_id];
                         }
                     },
                     {
@@ -875,7 +783,7 @@
                         {
                            var res = $.parseJSON(response.responseText);
                              // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
-                            return [res.success,res.message,res.new_id];
+                             return [res.status==1,res.info,res.new_id];
                         }
                     },
                     {
@@ -920,85 +828,12 @@
                             form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
                         }
                     }
-                ); 
-
-
-  
-            // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-remove-circle red',caption:"消卡",title:"消卡",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //        destroy_card(id);
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-
-
-            
-            // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-remove-circle red',caption:"退会",title:"退会",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //        destroy(id);
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-
-            // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-off yellow',caption:"销假",title:"销假",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //        unrest(id);
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-            // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-umbrella blue',caption:"请假",title:"请假",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //         $('#restModel').modal('show');                   
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-            // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-cog green',caption:"补卡",title:"补卡",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //        $('#newCardModal').modal('show');              
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-            //  jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-unlock blue',caption:"取消挂失",title:"取消挂失",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //         unlost(id);
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-
-
-            //   // jQuery(grid_selector).jqGrid('navSeparatorAdd',pager_selector,{sepclass:"ui-separator",sepcontent:''});
-
-            //  jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-lock grey',caption:"挂失",title:"挂失",
-            //     onClickButton:function(){ 
-            //         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-            //     if (id) {
-            //         lost(id);
-            //     } else { alert("请先选中！");}
-                     
-            //     } 
-            // });
-
-
+                    );
+ 
+ 
+          
 })
-</script>
+    </script>
 
 </body>
 </html>

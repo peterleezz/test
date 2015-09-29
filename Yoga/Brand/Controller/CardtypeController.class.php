@@ -1,4 +1,4 @@
-\<?php
+<?php
 namespace Brand\Controller;
 use Common\Controller\BaseController;
 class CardtypeController extends BaseController {

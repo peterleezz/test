@@ -318,13 +318,12 @@
       <div class="breadcrumbs" id="breadcrumbs">
         <script type="text/javascript">try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}</script>
         
-	<ul class="breadcrumb">
-		<li> <i class="icon-home home-icon"></i>
-			<a href="<?php echo U('Home/Main/main');?>">收银</a>
-		</li>
-		<li class="active">用户入会</li>
-
-	</ul>
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="<?php echo U('Home/Main/main');?>">水吧</a>
+    </li>
+    <li class="active"> 商品销售</li>
+  </ul>
 
         <!-- .breadcrumb -->
 
@@ -343,269 +342,131 @@
       <!-- <div class="page-header" ></div>
     -->
     
-	<div class="row-fluid">
-		<div class="span12">
-			<div class="widget-box">
-				<div class="widget-header widget-header-blue widget-header-flat">
-					<h4 class="lighter">用户入会</h4>
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
 
-				</div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">选择会员</h3>
+        </div>
+        <div class="panel-body">
+          <form id="goods_form_query" action="<?php echo U('Bar/Goods/queryMember');?>">
+            <span class="input-icon" style="float:left">
+              <input type="text" placeholder="姓名"  name="name"/> <i class="icon-search nav-search-icon"></i>
+            </span>
+            <button type="submit" class="btn  btn-info btn-sm">
+              <i class="icon-search"></i>
+              查询
+            </button>
+          </form>
+          <table class="table " id="member_info_goods">
+            <thead>
+              <tr>
+                <th>选择</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>性别</th>
+                <th>类型</th>
+                <th>储值卡余额</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
 
-				<div class="widget-body">
-					<div class="widget-main">
-						<div id="fuelux-wizard" class="row-fluid" data-target="#step-container">
-							<ul class="wizard-steps">
-								<li data-target="#step1"  class="active">
-									<span class="step">1</span>
-									<span class="title">潜在用户查询</span>
-								</li>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">选择商品</h3>
+        </div>
+        <div class="panel-body"> 
+          <select name="goodstype" id="goodstype">
+            <option value='0'>选择商品类型</option>
+            <?php if(is_array($goodstypes)): $i = 0; $__LIST__ = $goodstypes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$goodstype): $mod = ($i % 2 );++$i;?><option value="<?php echo ($goodstype["id"]); ?>"><?php echo ($goodstype["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+          </select> 
+          <select name="goods" id="goods">
+            <option value='0'>选择商品</option>
+          </select>
+          <lable class="red" > <span id="unitpricetip"></span>元/个 </lable>
+          <label>折后单价：</label>
+          <input type="text" id="unitprice" name="unitprice">
+          &nbsp;&nbsp;&nbsp;&nbsp;X
+          <input type="text" name="goods_num" id="goods_num" value="1"/>
+          <button type="button" class="btn  btn-success btn-sm" onclick="addgoods()">
+            <i class="icon-shopping-cart"></i>
+            加入购物车
+          </button>
+        </div>
+      </div>
 
-								<li data-target="#step2" >
-									<span class="step">2</span>
-									<span class="title">合同信息录入</span>
-								</li>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">购物清单</h3>
+        </div>
+        <div class="panel-body">
+          <div>
+            <table class="table table-striped table-bordered list">
+              <thead>
+                <tr>
+                  <th class="center">#</th>
+                  <th>商品ID</th>
+                  <th>商品</th>
+                  <th class="hidden-xs">描述</th>
+                  <th class="hidden-480">数量</th>
+                  <th class="hidden-480">原单价</th>
+                  <th class="hidden-480">卖价</th>
+                  <th>总价</th>
+                  <th></th>
+                </tr>
+              </thead>
 
-								<li data-target="#step3">
-									<span class="step">3</span>
-									<span class="title">收款</span>
-								</li>
+              <tbody></tbody>
+            </table>
+          </div>
 
-								<li data-target="#step4">
-									<span class="step">4</span>
-									<span class="title">完成</span>
-								</li>
-							</ul>
-						</div>
+          <div class="hr hr8 hr-double hr-dotted"></div>
 
-						<hr />
-						<div class="step-content row-fluid position-relative" id="step-container">
-							<div class="step-pane active" id="step1">
+          <div class="row">
+            <div class="col-sm-5 pull-right">
+              <h4 class="pull-right">
+                总计 :
+                <span class="red" id="total">￥0</span>
+              </h4>
+            </div>
+            <div class="col-sm-7 pull-left">
+             <form class="form-horizontal" action="<?php echo U('Cashier/Pt/buy');?>" id="buy_pt_form">
+            <div class="form-group" id="paidgroup">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="paid" >使用储值卡:</label>
+              <div class="col-xs-12 col-sm-9">
+                <label>
+                  <input type="checkbox" id="use_recharge" name="use_recharge" onchange="tip()" value="1">
+                    <span class="red" id="recharge">余额(￥0)</span> <span class="orange" id="tip"></span>
+                </label>
+              </div>
+            </div>
 
-								<form id="join_form_query" action="<?php echo U('Cashier/Member/query');?>">
-									<span class="input-icon" style="float:left">
-										<input type="text" placeholder="姓名或手机号码或身份证"  name="name"/> <i class="icon-search nav-search-icon"></i>
-									</span>
-									<!-- <input type="hidden" value="0" name="is_member"> -->
-									<button type="submit" class="btn  btn-info btn-sm">
-										<i class="icon-search"></i>
-										查询
-									</button> <strong class="red" style="float:right"><i class="icon-hand-right icon-animated-hand-pointer blue"></i>
-										如果用户信息尚未录入访客信息库，请先到前台进行录入！</strong> 
-								</form>
-								<table class="table " id="member_info">
-									<thead>
-										<tr>
-											<th>选择</th>
-											<th>姓名</th>
-											<th>电话</th>
-											<th>性别</th>
-											<th>会员类型</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody></tbody>
-								</table>
-								<div id="show_detail"></div>
-							</div>
+            <div class="form-group">
+              <label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="cash" id="cash" value="0"></div>
+            </div>
+            <div class="form-group">
+              <label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="pos" id="pos"></div>
+            </div>
+            <div class="form-group">
+              <label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="check" id="check"></div>
+            </div>
+            <div class="form-group">
+              <label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
+            </div>
 
-							<div class="step-pane" id="step2">
-
-								<div class="row-fluid">
-									<div class="col-xs-12">
-										<form class="form-horizontal" id="validation-form" method="post">
-
-
-										<div class="form-group">
-		                                <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="join_mc_id">会籍顾问:</label>
-		                                <div class="col-xs-12 col-sm-9">
-		                                 <select name="join_mc_id" id="join_mc_id" class="col-xs-12 col-sm-6">
-		                                  <option value="0" >无MC</option>
-		                                        <?php if(is_array($mcs)): $i = 0; $__LIST__ = $mcs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$mc): $mod = ($i % 2 );++$i;?><option value="<?php echo ($mc["id"]); ?>" ><?php echo ($mc["name_cn"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-		                                    </select> 
-		                                </div>
-		                            	</div> 
-
-											<div class="form-group">
-												<label class="control-label col-xs-12 col-sm-3 no-padding-right">合同类型</label>
-
-												<div class="col-xs-12 col-sm-9">
-													<label class="radio-inline">
-														<input type="radio" name="type" value="0" checked="checked">普通合同</label>
-													<label class="radio-inline">
-														<input type="radio" name="type" value="1">团卡合同</label>
-
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="card_type_id">选择卡种:</label>
-
-												<div class="col-xs-12 col-sm-9">
-													<div class="clearfix">
-														<select name="card_type_id" id="card_type_id" class="col-xs-12 col-sm-6">
-															<option value="0">请选择卡种</option>
-															<?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$type): $mod = ($i % 2 );++$i;?><option value="<?php echo ($type["id"]); ?>"><?php echo ($type["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-														</select>
-
-													</div>
-												</div>
-											</div>
-
-											<div class="form-group hide" id="detail">
-
-												<label class="control-label col-xs-6 col-sm-3 no-padding-right" for="cardtype"></label>
-												<label >卡种类型:</label>
-												<label  id="cardtype" ></label>
-
-												<label >&nbsp;&nbsp;&nbsp;有效时间:</label>
-												<label  id="valid_time" ></label>
-
-												<label >&nbsp;&nbsp;&nbsp;有效次数:</label>
-												<label  id="valid_number"></label>
-												<label >&nbsp;&nbsp;&nbsp;报价:</label>
-												<label  id="i_price"></label>
-
-												<label >&nbsp;&nbsp;&nbsp;最低价:</label>
-												<label  id="i_min_price"></label>
-											</div>
-
-											<div class="form-group">
-												<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="active_type">开卡方式:</label>
-
-												<div class="col-xs-12 col-sm-9">
-													<div class="clearfix">
-														<select name="active_type" id="active_type" class="col-xs-12 col-sm-6">
-															<option value="0">买卡当天开卡</option>
-															<option value="1">指定日期开卡</option>
-															<option value="2">第一次到开卡</option>
-															<!-- <option value="3">指定天数内开卡</option>
-														-->
-													</select>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="present_day">新办赠送天数:</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<div class="clearfix">
-													<input type="text" class="col-xs-12 col-sm-6" name="present_day" id="present_day" value="0">
-													<label   class="col-xs-12 col-sm-2" name="day_tip" id="day_tip" ></label>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="form-group">
-											<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="present_num">新办赠送次数:</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<div class="clearfix">
-													<input type="text" class="col-xs-12 col-sm-6" name="present_num" id="present_num" value="0">
-													<label   class="col-xs-12 col-sm-2" id="num_tip" ></label>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="form-group">
-											<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="start_time">合同开始日期:</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<input type="text" class="col-xs-12 col-sm-6" name="start_time" id="start_time" disabled></div>
-
-										</div>
-
-										<div class="form-group">
-											<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="end_time" >合同结束日期:</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<input type="text" class="date_ymd col-xs-12 col-sm-6 " name="end_time" id="end_time" disabled></div>
-
-										</div>
-	 
-
-										<div class="form-group">
-										<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="free_trans">免费转会籍一次:</label>
-
-										<div class="col-sm-9"> 
-											<span class="help-inline col-xs-12 col-sm-7">
-												<label class="middle">
-													<input class="ace" type="checkbox" name="free_trans" id="free_trans" /> 
-														<span class="lbl"> &nbsp</span>
-												</label>
-											</span>
-										</div>
-										</div>
-
-
-
-										<div class="form-group">
-											<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="free_rest" >免费停卡次数:</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<input type="text" class="col-xs-12 col-sm-6 " name="free_rest" id="free_rest" value="0"></div>
-
-										</div> 
-  
-
-										<div class="form-group">
-											<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="card_number" >人工输入卡号:</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<input type="text" class="col-xs-12 col-sm-6 " name="card_number" id="card_number"></div>
-
-										</div>
-
-									</div>
-								</form>
-
-							</div>
-						</div>
-
-						<div class="step-pane" id="step3">
-							<div class="row-fluid">
-								<div class="col-xs-12">
-									<form class="form-horizontal" id="validation-form" method="post">
-
-										<div class="form-group">
-											<label for="should_pay" class="control-label col-xs-12 col-sm-3 no-padding-right">应收金额</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<input class="col-xs-12 col-sm-6" type="text" name="should_pay" id="should_pay"></div>
-										</div>
-
-										<div class="form-group">
-											<label for="should_pay" class="control-label col-xs-12 col-sm-3 no-padding-right">已交定金</label>
-
-											<div class="col-xs-12 col-sm-9">
-												<input class="col-xs-12 col-sm-6" type="text" name="book_price" id="book_price" value="0" disabled></div>
-										</div>
-
-
-										<div class="form-group">
-											<label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
-											<div class="col-xs-12 col-sm-9">
-												<input class="col-xs-12 col-sm-6" type="text" name="cash" id="cash" value="0"></div>
-										</div>
-										<div class="form-group">
-											<label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
-											<div class="col-xs-12 col-sm-9">
-												<input value="0" class="col-xs-12 col-sm-6" type="text" name="pos" id="pos"></div>
-										</div>
-										<div class="form-group">
-											<label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
-											<div class="col-xs-12 col-sm-9">
-												<input value="0" class="col-xs-12 col-sm-6" type="text" name="check" id="check"></div>
-										</div>
-										<div class="form-group">
-											<label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
-											<div class="col-xs-12 col-sm-9">
-												<input class="col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
-										</div>
-
-	 <div class="form-group">
+  <div class="form-group">
               <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
               <div class="col-xs-12 col-sm-9">
                 <input value="0" class="col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
@@ -616,47 +477,44 @@
                 <input value="0" class="col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
             </div>
 
-										<div class="form-group">
-											<label for="description" class="control-label col-xs-12 col-sm-3 no-padding-right">备注</label>
-											<div class="col-xs-12 col-sm-9">
-												<textarea class="col-xs-12 col-sm-6"  name="description" id="description" rows="3"></textarea>
-											</div>
-										</div>
 
-									</div>
-								</div>
-							</form>
-						</div>
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="description" >备注:</label>
+              <div class="col-xs-12 col-sm-9">
+                <textarea type="text" class="col-xs-12 col-sm-6 " name="description" id="description"></textarea>
+              </div>
+            </div>
+          </form>
 
-						<div class="step-pane" id="step4">
-							<div class="center">
-								<h3 class="green">恭喜您合同签订成功!</h3>
-								<div >
-									<h4 id="info" class="red">恭喜您合同签订成功!</h4>
-								</div>
-							</div>
-						</div>
-					</div>
+                <!-- <label class="radio-inline">
+                <input type="radio" name="pay_way" id="pay_way1" value="0" checked="checked"> 现金
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="pay_way" id="pay_way2" value="1"> 刷卡
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="pay_way" id="pay_way2" value="2"> 储值卡
+              </label>
+              <span class="red" id="recharge">(￥0)</span> -->
+          <!--    <label class="radio-inline">
+              <input type="radio" name="pay_way" id="pay_way3" value="2"> 储值卡
+            </label> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix form-actions">
+        <div class="col-md-offset-5 col-md-12">
+          <button class="btn" type="button" onclick="pay()">
+            <i class="icon-share bigger-110"></i>
+            结账
+          </button>
+        </div>
+      </div>
 
-					<hr />
-					<div class="row-fluid wizard-actions">
-						<button class="btn btn-prev">
-							<i class="icon-arrow-left"></i>
-							上一步
-						</button>
+    </div>
+  </div>
 
-						<button class="btn btn-success btn-next" data-last="Finish ">
-							下一步
-							<i class="icon-arrow-right icon-on-right"></i>
-						</button>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
 
 
   </div>
@@ -823,232 +681,205 @@
 <!-- inline scripts related to this page -->
 
 
+  <script> 
+  var goodstypesarr = eval("(" + '<?php echo ($goodstypesarr); ?>' + ")");
 
-<script>
- $("#menu_6").addClass("active open");
-    $("#menu_37").addClass("active");
+function tip()
+{
+    var use_recharge=$("#use_recharge").prop("checked");
+    var left = calcTotal();
+    if(use_recharge)
+    {
+         left =left-recharge_value; 
+    } 
+    left = left > 0?left:0;
+    $("#tip").text("还需支付"+left);
+}
 
-	var id;
-	var success=false;
-	var saletypes = eval("(" + '<?php echo ($typesarr); ?>' + ")");
-	$(function(){ 
+  function pay()
+  {
 
-		$("#start_time").datetimepicker({
-      format: 'yyyy-mm-dd',
-      minView:'2',
-      startView:'2',
-      language:'zh-CN',
-      autoclose:true,
-    }).on('changeDate', function(ev){
-      calEndTime();
-	});
-
-	function   DateAdd(interval,number,date)  
-{  
-/* 
-  *   功能:实现VBScript的DateAdd功能. 
-  *   参数:interval,字符串表达式，表示要添加的时间间隔. 
-  *   参数:number,数值表达式，表示要添加的时间间隔的个数. 
-  *   参数:date,时间对象. 
-  *   返回:新的时间对象. 
-  *   var   now   =   new   Date(); 
-  *   var   newDate   =   DateAdd( "d ",5,now); 
-  *---------------   DateAdd(interval,number,date)   ----------------- 
-  */  
-        switch(interval)  
-        {  
-                case   "y"   :   {  
-                        date.setFullYear(date.getFullYear()+number);  
-                        return   date;  
-                        break;  
-                }  
-                case   "q"   :   {  
-                        date.setMonth(date.getMonth()+number*3);  
-                        return   date;  
-                        break;  
-                }  
-                case   "m"   :   {  
-                        date.setMonth(date.getMonth()+number);  
-                        return   date;  
-                        break;  
-                }  
-                case   "w"   :   {  
-                        date.setDate(date.getDate()+number*7);  
-                        return   date;  
-                        break;  
-                }  
-                case   "d"   :   {  
-                        date.setDate(date.getDate()+number);  
-                        return   date;  
-                        break;  
-                }  
-                case   "h"   :   {  
-                        date.setHours(date.getHours()+number);  
-                        return   date;  
-                        break;  
-                }  
-                case   "m"   :   {  
-                        date.setMinutes(date.getMinutes()+number);  
-                        return   date;  
-                        break;  
-                }  
-                case   "s"   :   {  
-                        date.setSeconds(date.getSeconds()+number);  
-                        return   date;  
-                        break;  
-                }  
-                default   :   {  
-                        date.setDate(d.getDate()+number);  
-                        return   date;  
-                        break;  
-                }  
-        }  
-}  
+  var ele=$("#member_info_goods tbody :radio:checked");           
+  if(ele.length==0) 
+   {
+      bootbox.alert("请先选中会员!",null);
+      return;
+   }  
+   var member_id= ele.val();
+   var price= $("#total").text().substring(1);
+   var cash=$("#cash").val();  
+   var netbank=$("#netbank").val();  
+   var network=$("#network").val();  
+     var pos=$("#pos").val();  
+             var check=$("#check").val();  
+             var check_num=$("#check_num").val();  
+             var description=$("#description").val();  
+             var use_recharge=$("#use_recharge").prop("checked");
+       use_recharge=use_recharge?1:0;      
+      var paid=$("#total").text();
+       var trs=$(".list tbody tr");
+       var arr = new Array();
+      for(var i=0;i<trs.length;i++)
+      {
+        var id = $(".list tbody tr:eq("+i+") td:eq(1)").text();
+        var num = $(".list tbody tr:eq("+i+") td:eq(4)").text(); 
+        var obj= new Object();
+        obj.id=id;
+        obj.num=num;
+         obj.unitprice= $(".list tbody tr:eq("+i+") td:eq(6)").text(); 
+        arr.push(obj);
+      }
+      var goods=$.toJSON( arr );
+      $.post('/Bar/Goods/buy',{use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
+             if(data.status){ 
+                    bootbox.alert(data.info,null); 
+                    window.location.href = data.url;
+                } else {
+                    bootbox.alert(data.info);                   
+                }
+    }, "json");
+  }
 
 
+  function del(obj)
+  {
+    $(obj).parents("tr").remove();
+    var trs=$(".list tbody tr");
+    for(var i=0;i<trs.length;i++)
+    {
+      $(".list tbody tr:eq("+i+") td:eq(0)").text(i+1);
+    }
+    calcTotal();
+    tip();
+  }
+  function calcTotal()
+  { 
+    var total=0;
+      $(".list tbody tr").each(function(i){
+             total+=parseInt($(this).find("td").eq(7).text());
+         }); 
+      $("#total").text("￥"+total);
+      return total;
+  }
+  function addgoods()
+  {
+      var choose_type=$("#goodstype").val();
+      var choose_goods=$("#goods").val();
+      var num=$("#goods_num").val();
+         var unitprice = $("#unitprice").val();
+                      if(unitprice=="") {bootbox.alert("请填写正确单价");return;}
+                      unitprice = parseInt(unitprice);
+                      if(!unitprice>0){bootbox.alert("请填写正确单价");return;}
+      if(type!=0 && goods !=0 && parseInt(num)>0)
+      {
+        for(var i=0;i<goodstypesarr.length;i++)
+        {
+          var type=goodstypesarr[i];
+          if(type.id==choose_type)
+          {
+              if(type.goods==null)return;
+              for(var j=0;j<type.goods.length;j++)
+              { 
+                 var goods=type.goods[j];
+                 if(goods.id==choose_goods)
+                 {
 
-		function calEndTime()
-		{
-			if($("#active_type").val()=="2") return;
-			if(current_card_type==null) return;
-			var start_time=$("#start_time").val();
-			 s_start_time = start_time.replace(/-/g,"/");
-  			var start = new Date(s_start_time );
-  			var end = start; 
- 			end = DateAdd("m",parseInt(current_card_type.valid_time),end);	
- 			end = DateAdd("d",parseInt($("#present_day").val()),end);	 
-			$("#end_time").val(end.format("yyyy-MM-dd"));
-		};
-		// $("#present_day").blur(function(){
-		// 	calEndTime();
-		// });
-		$("#present_day").on('input',function(e){  
-   				calEndTime();
-		});  
+                     var trs=$(".list tbody tr");
+                    for(var k=0;k<trs.length;k++)
+                    {
+                      var id = $(".list tbody tr:eq("+k+") td:eq(1)").text();
+                      if(id==goods.id)
+                      {
+                          var n=$(".list tbody tr:eq("+k+") td:eq(4)").text();
+                          n=parseInt(n)+parseInt(num);
+                          $(".list tbody tr:eq("+k+") td:eq(4)").text(n);
+                           $(".list tbody tr:eq("+k+") td:eq(6)").text(unitprice);
+                          $(".list tbody tr:eq("+k+") td:eq(7)").text(n*parseInt($(".list tbody tr:eq("+k+") td:eq(6)").text()));
+                           calcTotal();
+                           break;
+                      }
+                    }
+                    if(k==trs.length)
+                    {
+                       var price = goods.price;
+                   
+                      var html='<tr>';
+                      html+="<td>"+($(".list tbody tr").length+1)+"</td>";
+                      html+="<td>"+goods.id+"</td>";
+                      html+="<td>"+goods.name+"</td>";
+                      html+="<td>"+goods.description+"</td>";
+                      html+="<td>"+num+"</td>";
+                      html+="<td>"+price+"</td>";
+                        html+="<td>"+unitprice+"</td>";
 
-		$("#active_type").change(function(){
-			var value = $(this).val();
-			var now = new Date();			 
-			$("#start_time").val(now.format("yyyy-MM-dd"));  
-			switch(value)
-			{
-				case "0":
-					$("#start_time").attr("disabled",true);	 
-					calEndTime();
-				break;
-				case "1": 
-					$("#start_time").attr("disabled",false);	
-					calEndTime();				
-				break;
-				case "2":
-					$("#start_time").attr("disabled",true);	 
-					$("#start_time").val("");
-					$("#end_time").val("");
-				break;				 
-				default:
-				break;
-			}
-		});
-			var current_card_type=null;
+                      html+="<td>"+unitprice*num+"</td>";
+                      html+="<td><a href='javascript:void(0)' class='btn btn-danger btn-xs' onclick='del(this)'>删除</a></td></tr>";
+                      $(".list tbody").append(html); 
+                      calcTotal();
+                    }
 
-			$("#card_type_id").change(function(){
-				$("#start_time").val("");
-				$("#end_time").val("");
-				var card_type_id = $(this).val();
-				if(card_type_id==0)
-				{
-					$("#detail").addClass("hide");
-				}
-				current_card_type=null;
-				for(var i=0;i<saletypes.length;i++)
-				{
-					if(saletypes[i].id==card_type_id)
-					{
-						var ct=saletypes[i].type==1?"时间卡":"次数卡"
-						$("#cardtype").text(ct);
-						var vt=saletypes[i].valid_time+" 月";						
-						$("#valid_time").text(vt);
-						var vn=saletypes[i].type==1?"不限次数":saletypes[i].valid_number+" 次"					
-						$("#valid_number").text(vn);
-						$("#i_price").text(saletypes[i].price);
-						$("#i_min_price").text(saletypes[i].min_price);
+                    
+                     break;
+                 }
+                
+              }
+              break;
+          }
+        }
+        tip();
+      } 
+  }
 
-						$("#detail").removeClass("hide");
-						  $("#day_tip").text("<"+saletypes[i].max_present_day);
-                        $("#num_tip").text("<"+saletypes[i].max_present_num);
-						$("#present_value").val(saletypes[i].max_present_value);
-						var now = new Date();
-						var year = now.getFullYear();
-						var month = now.getMonth()+1;
-						var day = now.getDate();
-						$("#start_time").val(year+"-"+padLeft(month,2)+"-"+padLeft(day,2)); 
-						
-						$("#should_pay").val(saletypes[i].price);
-						current_card_type=saletypes[i];
-						 calEndTime();
-						return;
-					}
-					$("#detail").addClass("hide");
-				}
-			}); 
-				$('#fuelux-wizard').ace_wizard().on('change' , function(e, info){ 
-					if(info.step == 1) {
-						 var ele=$("#member_info tbody :radio:checked");						
-						 if(ele.length==0) return false; 
-						  //  if($("#member_info tbody :radio:checked").parent().parent().find(".can_modify").length==0)
-						  // {
-						  // 	bootbox.alert("正式会员，请直接到会籍合同管理中进行续会升级！");
-						  // 	return false;
-						  // }
-						 id = (ele.val());						 
-					}
-					else if(info.step == 2 && info.direction=='next') {
-						if($("#card_type_id").val()==0)
-						{
-							bootbox.alert("请选择卡种",null);
-							return false;
-						}
-						if($("#start_time").val()=='' && $("#active_type").val()!="2")
-						{
-							bootbox.alert("请选择开始日期",null);
-							return false;
-						}
-						if($("#end_time").val()=='' && $("#active_type").val()!="2")
-						{
-							bootbox.alert("请选择结束日期",null);
-							return false;
-						}
-					}
-					else if(info.step == 3 && info.direction=='next') {
-						if(success) return;
-						var ret = false;
-						$.ajax({
-						    type:"post",
-						    async:false,
-						    url:"/Cashier/Member/join",
-						    data:{member_id:id,type:$("[name=type]:checked").val(),card_type_id:$("#card_type_id").val(),active_type:$("#active_type").val(),present_day:$("#present_day").val(),present_num:$("#present_num").val(),start_time:$("#start_time").val(),end_time:$("#end_time").val(),price:$("#should_pay").val(),cash:$("#cash").val(),card_number:$("#card_number").val(),pos:$("#pos").val(),free_trans:$("#free_trans").prop("checked"), check:$("#check").val(),check_num:$("#check_num").val(),description:$("#description").val(),free_rest:$("#free_rest").val(),network:$("#network").val(),netbank:$("#netbank").val(),join_mc_id:$("#join_mc_id").val()},
-						    success:function(data,textStatus){   
-						                if(data.status){          
-						                $("#info").text("您的卡号为："+data.card_id);  
-						                ret=success=true; 
-	                            } else {
-	                                bootbox.alert(data.info);    
-	                               ret= false;            
-	                            }       
-						    }
+    $(function(){ 
+    $("#menu_5").addClass("active open");
+    $("#menu_46").addClass("active"); 
+    $("#goodstype").change(function(){
+        document.getElementById("goods").options.length=1;
+        for(var i=0;i<goodstypesarr.length;i++)
+        {
+          var type=goodstypesarr[i];
+          if(type.id==$(this).val())
+          {
+              if(type.goods==null)return;
+              for(var j=0;j<type.goods.length;j++)
+              {
+                var obj=document.getElementById("goods");
+                obj.options[obj.length]=new Option(type.goods[j].name,type.goods[j].id);
+              }
+              break;
+          }
+        }
+    });
 
-						  });
- 						return ret;		 
- 
-					}
+     $("#goods").change(function(){
+              var choose_type=$("#goodstype").val();
+              var choose_goods=$("#goods").val(); 
+              if(type!=0 && goods !=0 )
+              {
+                for(var i=0;i<goodstypesarr.length;i++)
+                {
+                  var type=goodstypesarr[i];
+                  if(type.id==choose_type)
+                  {
+                      if(type.goods==null)return;
+                      for(var j=0;j<type.goods.length;j++)
+                      { 
+                         var goods=type.goods[j];
+                         if(goods.id==choose_goods)
+                         {
+                            $("#unitprice").val(goods.price);
+                            $("#unitpricetip").text(goods.price);
+                          }
+                      }
+                    }
+                }
+              }
 
-				}).on('finished', function(e) {
-					 window.location.href = "/Cashier/Member/index";
-				}).on('stepclick', function(e){
 
-				});
-			  
-	})
-	</script>
+    });
+
+          
+})
+    </script>
 </body>
 </html>

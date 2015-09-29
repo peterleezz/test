@@ -98,7 +98,7 @@ $this->club_name=$club['club_name'];
         $this->class=$class;
         $this->display();
 	}
-x
+ 
 	public function doappointAction()
 	{
 		R('Weixin/Index/doAppoint',array(I("pos"),I("schedule_id"),I("member_id"),"1111111111"));

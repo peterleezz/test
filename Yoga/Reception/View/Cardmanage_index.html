@@ -195,24 +195,27 @@
                     height: "100%",    
                     width:($('#fcontainer').width()-10),
                     mtype:"POST",
-                    colNames:['ID','member_id', '卡号','办理会所','卡种名称','卡状态','签订日期', '会员姓名','手机号码','有效期起','有效期止','免费请假次数', '操作'],
+                    colNames:['ID','member_id','会员姓名', '卡号','办理会所','卡种名称','卡状态','签订日期', '手机号码','有效期起','有效期止','免费请假次数', '操作'],
                     colModel:[   
                        {name:'id',index:'id',width:1,align:'center',hidden:true},
                          {name:'memberid',index:'memberid',width:1,align:'center',hidden:true},
+                           {name:'member_name',index:'member_name',width:150,align:'center',formatter : function(value, options, rData){  
+                           var html='<a  target="blank" href="/Reception/Visit/index/id/'+rData.memberid+'" >'+value+'</a>'; 
+                           return html;
+                        }},
                        {name:'card_number',index:'card_number',width:150,align:'center'},
                         {name:'club_name',index:'club_name',width:150,align:'center'},
-                        {name:'card_type_name',index:'card_type_name',width:450,align:'center',formatter : function(value, options, rData){  
+                        {name:'card_type_name',index:'card_type_name',width:200,align:'center',formatter : function(value, options, rData){  
                                 return rData.card_type_extension.name;
                          }},
                          {name:'status',index:'status',width:150,align:'center',formatter : function(value, options, rData){  
                                  var a=new Array("正常","已挂失","已被补卡","请假中","申请退会","消卡收回");
                                 return getValue(a,value); 
                          }},
-                        {name:'create_time',index:'create_time',width:150,align:'center'},
-                        {name:'member_name',index:'member_name',width:150,align:'center',formatter : function(value, options, rData){  
-                           var html='<a  target="blank" href="/Reception/Visit/index/id/'+rData.memberid+'" >'+value+'</a>'; 
-                           return html;
-                        }},
+                        {name:'create_time',index:'create_time',width:150,align:'center',formatter : function(value, options, rData){  
+                               return value.substring(0,10);
+                         }},
+                      
                           {name:'phone',index:'phone',hidden:true,hidden:true,width:150,align:'center'},
                         {name:'start_time',index:'start_time',width:150,align:'center'},
                         {name:'end_time',index:'end_time',width:150,align:'center'},
@@ -240,8 +243,8 @@
                     cmTemplate: {sortable:false,editable: true,search:false},
                     sortorder: "desc",
                     editurl: "/Brand/Cardtype/setCardType",          
-                    // autowidth: true,
-                    shrinkToFit:false,  
+                    autowidth: true,
+                    shrinkToFit:true,  
                     autoScroll: true,
                     caption: "会员卡信息" ,
                     // loadonce: true,

@@ -318,9 +318,9 @@ public function ptcheckout()
 
         $model = M("Lock");
            $model->where(array("club_id"=>$club_id,"last_use_card"=>$card_number))->setField(array("is_use"=>0));
-        $lock = $model->where(array("club_id"=>$club_id,"last_use_card"=>$card_number,"gender"=>$gender))->find();
+         $lock = $model->where(array("club_id"=>$club_id,"last_use_card"=>$card_number,"gender"=>$gender,"is_use"=>1))->find(); 
         if(empty($lock))
-        $lock = $model->where(array("club_id"=>$club_id,"gender"=>$gender,"is_use"=>0))->find();
+        $lock = $model->where(array("club_id"=>$club_id,"gender"=>$gender,"is_use"=>0))->order("rand()")-> find(); 
         if(!empty($lock))
         {
             $card = D("Card")->getCard($card_number,$brand_id);

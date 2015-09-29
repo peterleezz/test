@@ -25449,3 +25449,3122 @@
   's' => '/Mcmanager/Mcsale/queryservicelist',
 )
 2015-09-28 05:24:51 [request] - LV1 - /index.php/Mc/Group/index.html
+2015-09-29 01:40:00 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-29 01:40:02 [request] - LV1 - /Home/Mc/query
+2015-09-29 01:40:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505202819',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-29 01:40:02 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-29 01:40:07 [request] - LV1 - /index.php/Teamleader/Mcsale/followuplist.html
+2015-09-29 01:40:08 [request] - LV1 - /Mcmanager/Mcsale/queryfollowup
+2015-09-29 01:40:08 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505208106',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:08 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcsale/queryfollowup',
+)
+2015-09-29 01:40:15 [request] - LV1 - /index.php/Shopkeeper/Employee/index.html
+2015-09-29 01:40:15 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-09-29 01:40:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505215412',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+)
+2015-09-29 01:40:15 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-09-29 01:40:17 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-09-29 01:40:17 [request] - LV1 - /Shopkeeper/Class/query
+2015-09-29 01:40:17 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505217672',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:17 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-09-29 01:40:17 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443456000&end=1443542400&_=1443505217512
+2015-09-29 01:40:17 [request] - LV1 - array (
+  'start' => '1443456000',
+  'end' => '1443542400',
+  '_' => '1443505217512',
+)
+2015-09-29 01:40:24 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-09-29 01:40:24 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-09-29 01:40:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505224679',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:24 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-09-29 01:40:33 [request] - LV1 - /Shopkeeper/Tclass/showEdit/id/158
+2015-09-29 01:40:33 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/showEdit/id/158',
+)
+2015-09-29 01:40:41 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-09-29 01:40:41 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505241242',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:41 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-09-29 01:40:43 [request] - LV1 - /index.php/Shopkeeper/Room/index.html
+2015-09-29 01:40:44 [request] - LV1 - /Shopkeeper/Room/query
+2015-09-29 01:40:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505244069',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:44 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-09-29 01:40:45 [request] - LV1 - /Shopkeeper/Room/showAdd
+2015-09-29 01:40:45 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/showAdd',
+)
+2015-09-29 01:40:48 [request] - LV1 - /Shopkeeper/Room/query
+2015-09-29 01:40:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505248367',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:48 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-09-29 01:40:50 [request] - LV1 - /Shopkeeper/Room/showEdit/id/19
+2015-09-29 01:40:50 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/showEdit/id/19',
+)
+2015-09-29 01:40:52 [request] - LV1 - /Shopkeeper/Room/query
+2015-09-29 01:40:52 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505252498',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:52 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-09-29 01:40:53 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-09-29 01:40:53 [request] - LV1 - /Shopkeeper/Class/query
+2015-09-29 01:40:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505253603',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:40:53 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-09-29 01:40:53 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443456000&end=1443542400&_=1443505253424
+2015-09-29 01:40:53 [request] - LV1 - array (
+  'start' => '1443456000',
+  'end' => '1443542400',
+  '_' => '1443505253424',
+)
+2015-09-29 01:40:55 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505253425
+2015-09-29 01:40:55 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505253425',
+)
+2015-09-29 01:40:58 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-09-29 01:40:58 [request] - LV1 - array (
+  'room_id' => '19',
+  'class_id' => '158',
+  'start' => '2015-09-30 13:00:00',
+  'end' => '2015-09-30 15:00:00',
+  'pt_id' => '2372',
+)
+2015-09-29 01:40:58 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505253426
+2015-09-29 01:40:58 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505253426',
+)
+2015-09-29 01:41:01 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-09-29 01:41:01 [request] - LV1 - array (
+  'room_id' => '19',
+  'class_id' => '158',
+  'start' => '2015-09-30 17:00:00',
+  'end' => '2015-09-30 19:00:00',
+  'pt_id' => '2372',
+)
+2015-09-29 01:41:01 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505253427
+2015-09-29 01:41:01 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505253427',
+)
+2015-09-29 01:41:05 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:41:05 [request] - LV1 - array (
+  'id' => '2398',
+)
+2015-09-29 01:41:05 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:41:05 [request] - LV1 - array (
+  'id' => '2398',
+)
+2015-09-29 01:41:05 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505253429
+2015-09-29 01:41:05 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505253428
+2015-09-29 01:41:05 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505253428',
+)
+2015-09-29 01:41:05 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505253429',
+)
+2015-09-29 01:41:06 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505253430
+2015-09-29 01:41:06 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505253430',
+)
+2015-09-29 01:41:17 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-09-29 01:41:17 [request] - LV1 - /Shopkeeper/Class/query
+2015-09-29 01:41:17 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443505277459',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 01:41:17 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-09-29 01:41:17 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443456000&end=1443542400&_=1443505277218
+2015-09-29 01:41:17 [request] - LV1 - array (
+  'start' => '1443456000',
+  'end' => '1443542400',
+  '_' => '1443505277218',
+)
+2015-09-29 01:41:19 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277219
+2015-09-29 01:41:19 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277219',
+)
+2015-09-29 01:41:23 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:41:23 [request] - LV1 - array (
+  'id' => '2396',
+)
+2015-09-29 01:41:23 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:41:23 [request] - LV1 - array (
+  'id' => '2396',
+)
+2015-09-29 01:41:23 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277220
+2015-09-29 01:41:23 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277220',
+)
+2015-09-29 01:41:23 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277221
+2015-09-29 01:41:23 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277221',
+)
+2015-09-29 01:41:38 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1437926400&end=1441555200&_=1443505277222
+2015-09-29 01:41:38 [request] - LV1 - array (
+  'start' => '1437926400',
+  'end' => '1441555200',
+  '_' => '1443505277222',
+)
+2015-09-29 01:41:41 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277223
+2015-09-29 01:41:41 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277223',
+)
+2015-09-29 01:41:50 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:41:50 [request] - LV1 - array (
+  'id' => '2397',
+)
+2015-09-29 01:41:50 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:41:50 [request] - LV1 - array (
+  'id' => '2397',
+)
+2015-09-29 01:41:50 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277224
+2015-09-29 01:41:50 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277224',
+)
+2015-09-29 01:41:50 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277225
+2015-09-29 01:41:50 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277225',
+)
+2015-09-29 01:41:57 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-09-29 01:41:57 [request] - LV1 - array (
+  'room_id' => '19',
+  'class_id' => '158',
+  'start' => '2015-09-30 11:00:00',
+  'end' => 'NaN-aN-aN aN:aN:aN',
+  'pt_id' => '2372',
+)
+2015-09-29 01:41:57 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505277226
+2015-09-29 01:41:57 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505277226',
+)
+2015-09-29 01:42:00 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-09-29 01:42:00 [request] - LV1 - array (
+  'room_id' => '19',
+  'class_id' => '158',
+  'start' => '2015-09-30 14:30:00',
+  'end' => '2015-09-30 16:30:00',
+  'pt_id' => '2372',
+)
+2015-09-29 01:42:01 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505277227
+2015-09-29 01:42:01 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505277227',
+)
+2015-09-29 01:42:03 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277228
+2015-09-29 01:42:03 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277228',
+)
+2015-09-29 01:42:11 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:42:11 [request] - LV1 - /index.php/Shopkeeper/Class/del.html
+2015-09-29 01:42:11 [request] - LV1 - array (
+  'id' => '2399',
+)
+2015-09-29 01:42:11 [request] - LV1 - array (
+  'id' => '2399',
+)
+2015-09-29 01:42:11 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505277229
+2015-09-29 01:42:11 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505277229',
+)
+2015-09-29 01:42:11 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443505277230
+2015-09-29 01:42:11 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443505277230',
+)
+2015-09-29 01:42:12 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443456000&end=1443542400&_=1443505277231
+2015-09-29 01:42:12 [request] - LV1 - array (
+  'start' => '1443456000',
+  'end' => '1443542400',
+  '_' => '1443505277231',
+)
+2015-09-29 01:42:13 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1440950400&end=1443974400&_=1443505277232
+2015-09-29 01:42:13 [request] - LV1 - array (
+  'start' => '1440950400',
+  'end' => '1443974400',
+  '_' => '1443505277232',
+)
+2015-09-29 01:42:18 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-09-29 01:44:16 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-09-29 01:45:52 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-09-29 02:05:04 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:05:06 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:05:06 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443506706118',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:05:08 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:05:08 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443506708197',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:05:12 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-09-29 02:05:17 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:05:17 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:05:17 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443506717533',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:05:21 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:05:24 [request] - LV1 - /index.php/Cashier/Member/query.html
+2015-09-29 02:05:24 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 02:05:34 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 02:05:34 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 02:05:38 [request] - LV1 - /Reception/Visit/edit
+2015-09-29 02:05:38 [request] - LV1 - array (
+  'id' => '99946691',
+  'channel_id' => '150',
+  'mc_id' => '2373',
+  'name' => '李波',
+  'phone' => '18321383231',
+  'recommend_phone' => '1111',
+  'recommend_name' => '张利峰 蔡明慧',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1039',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '11111',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-09-29 02:05:38 [request] - LV1 - array (
+  's' => '/Reception/Visit/edit',
+)
+2015-09-29 02:05:40 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-09-29 02:06:01 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:06:01 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443506761422',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:12:12 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:12:16 [request] - LV1 - /index.php/Cashier/Member/query.html
+2015-09-29 02:12:16 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 02:12:17 [request] - LV1 - /Cashier/Member/show
+2015-09-29 02:12:17 [request] - LV1 - array (
+  'id' => '99946691',
+)
+2015-09-29 02:12:17 [request] - LV1 - array (
+  's' => '/Cashier/Member/show',
+)
+2015-09-29 02:12:19 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 02:12:19 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 02:13:46 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 02:13:46 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 02:13:52 [request] - LV1 - /Reception/Visit/queryRecommend
+2015-09-29 02:13:52 [request] - LV1 - array (
+  'phone' => '2222',
+)
+2015-09-29 02:13:52 [request] - LV1 - array (
+  's' => '/Reception/Visit/queryRecommend',
+)
+2015-09-29 02:13:52 [request] - LV1 - /Reception/Visit/edit
+2015-09-29 02:13:52 [request] - LV1 - array (
+  'id' => '99946691',
+  'channel_id' => '150',
+  'mc_id' => '2373',
+  'name' => '李波',
+  'phone' => '18321383231',
+  'recommend_phone' => '2222',
+  'recommend_name' => '张利峰 蔡明慧',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1039',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '11111',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-09-29 02:13:52 [request] - LV1 - array (
+  's' => '/Reception/Visit/edit',
+)
+2015-09-29 02:13:54 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:14:20 [request] - LV1 - /index.php/Mc/Visit/mynotmemberlist.html
+2015-09-29 02:14:20 [request] - LV1 - /Mc/Visit/getMembers
+2015-09-29 02:14:20 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'false',
+  'nd' => '1443507260537',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:14:20 [request] - LV1 - array (
+  's' => '/Mc/Visit/getMembers',
+)
+2015-09-29 02:14:22 [request] - LV1 - /Mc/Visit/getMembers
+2015-09-29 02:14:22 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'true',
+  'nd' => '1443507262201',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"is_member","op":"eq","data":"0"},{"field":"type","op":"eq","data":"0"}]}',
+)
+2015-09-29 02:14:22 [request] - LV1 - array (
+  's' => '/Mc/Visit/getMembers',
+)
+2015-09-29 02:14:25 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-09-29 02:14:26 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:14:26 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507266049',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:14:26 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:14:34 [request] - LV1 - /Mc/Visit/index/id/99946692
+2015-09-29 02:14:34 [request] - LV1 - array (
+  's' => '/Mc/Visit/index/id/99946692',
+)
+2015-09-29 02:14:42 [request] - LV1 - /Mc/Visit/index/id/99946692
+2015-09-29 02:14:42 [request] - LV1 - array (
+  's' => '/Mc/Visit/index/id/99946692',
+)
+2015-09-29 02:14:54 [request] - LV1 - /index.php/Mcmanager/Member/ismember.html
+2015-09-29 02:14:55 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:14:55 [request] - LV1 - array (
+  'is_member' => '1',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507295000',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:14:55 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:14:56 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:14:56 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507296317',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:14:56 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:15:02 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:15:02 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'true',
+  'nd' => '1443507302209',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"is_member","op":"eq","data":"0"},{"field":"mc_id","op":"eq","data":"2374"},{"field":"create_time","op":"eq","data":"0"},{"field":"follow_time","op":"eq","data":"0"},{"field":"type","op":"eq","data":"0"}]}',
+)
+2015-09-29 02:15:02 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:15:03 [request] - LV1 - /index.php/Mcmanager/Member/ismember.html
+2015-09-29 02:15:03 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:15:03 [request] - LV1 - array (
+  'is_member' => '1',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507303928',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:15:03 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:15:05 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:15:05 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507305440',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:15:05 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:15:07 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:15:07 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'true',
+  'nd' => '1443507307894',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"is_member","op":"eq","data":"0"},{"field":"mc_id","op":"eq","data":"2374"},{"field":"create_time","op":"eq","data":"0"},{"field":"follow_time","op":"eq","data":"0"},{"field":"type","op":"eq","data":"0"}]}',
+)
+2015-09-29 02:15:07 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:17:46 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-09-29 02:17:46 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:17:46 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507466568',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:17:46 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:18:05 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-09-29 02:18:11 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-09-29 02:18:11 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 02:18:11 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443507491684',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:18:11 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 02:18:37 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:18:40 [request] - LV1 - /index.php/Cashier/Member/query.html
+2015-09-29 02:18:40 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 02:18:42 [request] - LV1 - /Cashier/Member/show
+2015-09-29 02:18:42 [request] - LV1 - array (
+  'id' => '99946691',
+)
+2015-09-29 02:18:42 [request] - LV1 - array (
+  's' => '/Cashier/Member/show',
+)
+2015-09-29 02:18:43 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 02:18:43 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 02:18:48 [request] - LV1 - /Reception/Visit/edit
+2015-09-29 02:18:48 [request] - LV1 - array (
+  'id' => '99946691',
+  'channel_id' => '150',
+  'mc_id' => '2373',
+  'name' => '李波',
+  'phone' => '18321383231',
+  'recommend_phone' => '2222',
+  'recommend_name' => '张利峰 蔡明慧',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1039',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '11111',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-09-29 02:18:48 [request] - LV1 - array (
+  's' => '/Reception/Visit/edit',
+)
+2015-09-29 02:18:49 [request] - LV1 - /Reception/Visit/edit
+2015-09-29 02:18:49 [request] - LV1 - array (
+  's' => '/Reception/Visit/edit',
+)
+2015-09-29 02:19:12 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:19:14 [request] - LV1 - /index.php/Cashier/Member/query.html
+2015-09-29 02:19:14 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 02:19:17 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 02:19:17 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 02:19:21 [request] - LV1 - /index.php/Cashier/Member/query.html
+2015-09-29 02:19:21 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 02:19:22 [request] - LV1 - /Cashier/Member/show
+2015-09-29 02:19:22 [request] - LV1 - array (
+  'id' => '99946691',
+)
+2015-09-29 02:19:22 [request] - LV1 - array (
+  's' => '/Cashier/Member/show',
+)
+2015-09-29 02:20:38 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:20:49 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 02:21:10 [request] - LV1 - /index.php/Cashier/Member/query.html
+2015-09-29 02:21:10 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 02:21:13 [request] - LV1 - /Cashier/Member/show
+2015-09-29 02:21:13 [request] - LV1 - array (
+  'id' => '99946691',
+)
+2015-09-29 02:21:13 [request] - LV1 - array (
+  's' => '/Cashier/Member/show',
+)
+2015-09-29 02:22:22 [request] - LV1 - /Cashier/Member/join
+2015-09-29 02:22:22 [request] - LV1 - array (
+  'member_id' => '99946691',
+  'type' => '0',
+  'card_type_id' => '1192',
+  'active_type' => '0',
+  'present_day' => '0',
+  'present_num' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '2016-09-29',
+  'price' => '999',
+  'cash' => '123',
+  'card_number' => '',
+  'pos' => '123',
+  'free_trans' => 'true',
+  'check' => '0',
+  'check_num' => '',
+  'description' => 'test备注',
+  'free_rest' => '10',
+  'network' => '0',
+  'netbank' => '0',
+  'join_mc_id' => '2372',
+)
+2015-09-29 02:22:22 [request] - LV1 - array (
+  's' => '/Cashier/Member/join',
+)
+2015-09-29 02:22:34 [request] - LV1 - /Cashier/Member/index
+2015-09-29 02:22:34 [request] - LV1 - array (
+  's' => '/Cashier/Member/index',
+)
+2015-09-29 02:22:43 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:22:43 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:22:43 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:22:43 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:22:43 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:22:43 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:22:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507763581',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:22:52 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:22:53 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:22:53 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:22:53 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:22:53 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:22:53 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:22:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507773207',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:22:53 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:22:53 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443507773954',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:23:25 [request] - LV1 - /Cashier/Contract/querypayhistory?id=46545&_search=false&nd=1443507805957&rows=100&page=1&sidx=id&sord=desc
+2015-09-29 02:23:25 [request] - LV1 - array (
+  's' => '/Cashier/Contract/querypayhistory',
+  'id' => '46545',
+  '_search' => 'false',
+  'nd' => '1443507805957',
+  'rows' => '100',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 02:23:52 [request] - LV1 - /Cashier/Contract/printreceipts/id/8870
+2015-09-29 02:23:52 [request] - LV1 - array (
+  's' => '/Cashier/Contract/printreceipts/id/8870',
+)
+2015-09-29 02:24:45 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:24:45 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:24:45 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:24:45 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:24:45 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:24:45 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:24:45 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507885850',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:25:01 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:25:02 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:25:02 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:25:02 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:25:02 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:25:02 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:25:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507902115',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:25:18 [request] - LV1 - /Cashier/Contract/querypayhistory?id=46545&_search=false&nd=1443507918754&rows=100&page=1&sidx=id&sord=desc
+2015-09-29 02:25:18 [request] - LV1 - array (
+  's' => '/Cashier/Contract/querypayhistory',
+  'id' => '46545',
+  '_search' => 'false',
+  'nd' => '1443507918754',
+  'rows' => '100',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 02:25:22 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:25:22 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:25:22 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:25:22 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:25:22 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:25:22 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:25:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507922467',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:25:34 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:25:34 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:25:34 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:25:34 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:25:34 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:25:34 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:25:34 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507934902',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:25:38 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:25:38 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:25:38 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:25:38 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:25:38 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:25:38 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:25:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507938606',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:26:20 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:26:20 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:26:20 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:26:20 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:26:20 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:26:21 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:26:21 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507981012',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:26:32 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:26:33 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:26:33 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:26:33 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:26:33 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:26:33 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:26:33 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443507993315',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:26:40 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:26:40 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:26:40 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:26:40 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:26:40 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:26:41 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:26:41 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508001051',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:26:46 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:26:46 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:26:46 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:26:46 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:26:46 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:26:46 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:26:46 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508006922',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:26:49 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:26:50 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:26:50 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:26:50 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:26:50 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:26:50 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:26:50 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508010302',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:26:57 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:26:58 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:26:58 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:26:58 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:26:58 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:26:58 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:26:58 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508018181',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:27:14 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:27:14 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:27:14 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:27:14 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:27:14 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:27:14 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:27:14 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508034757',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:27:20 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:27:20 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:27:20 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:27:20 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:27:20 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:27:20 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:27:20 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508040397',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:27:53 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:27:54 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:27:54 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:27:54 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:27:54 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:27:54 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:27:54 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508074248',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:27:58 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:27:59 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:27:59 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:27:59 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:27:59 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:27:59 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:27:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508079321',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:28:12 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:28:13 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:28:13 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:28:13 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:28:13 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:28:13 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:28:13 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508093160',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:28:39 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:28:39 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:28:39 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:28:39 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:28:39 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:28:39 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:28:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508119968',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:28:45 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:28:45 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:28:45 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:28:45 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:28:45 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:28:45 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:28:45 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508125419',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:29:24 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:29:25 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:29:25 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:29:25 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:29:25 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:29:25 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:29:25 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508165194',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:29:34 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:29:35 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:29:35 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:29:35 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:29:35 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:29:35 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:29:35 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508175354',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:29:49 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:29:49 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:29:49 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:29:49 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:29:49 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:29:49 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:29:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508189373',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:30:34 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:30:35 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:30:35 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:30:35 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:30:35 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:30:35 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:30:35 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508235142',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:30:45 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:30:45 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:30:45 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:30:45 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:30:45 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:30:45 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:30:45 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508245459',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:31:28 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:31:28 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:31:28 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:31:28 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:31:28 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:31:28 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:31:28 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508288649',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:31:58 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:31:59 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:31:59 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:31:59 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:31:59 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:31:59 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:31:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508319142',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:32:05 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:32:05 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:32:05 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:32:05 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:32:05 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:32:05 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:32:05 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508325799',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:32:16 [request] - LV1 - /Cashier/Contract/querypayhistory?id=46545&_search=false&nd=1443508336910&rows=100&page=1&sidx=id&sord=desc
+2015-09-29 02:32:16 [request] - LV1 - array (
+  's' => '/Cashier/Contract/querypayhistory',
+  'id' => '46545',
+  '_search' => 'false',
+  'nd' => '1443508336910',
+  'rows' => '100',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 02:32:18 [request] - LV1 - /Cashier/Contract/printreceipts/id/8870
+2015-09-29 02:32:18 [request] - LV1 - array (
+  's' => '/Cashier/Contract/printreceipts/id/8870',
+)
+2015-09-29 02:41:19 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 02:41:19 [request] - LV1 - /Api/index/getCardType
+2015-09-29 02:41:19 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 02:41:19 [request] - LV1 - /Api/index/getMcs
+2015-09-29 02:41:19 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 02:41:19 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 02:41:19 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508879525',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:41:26 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:41:26 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:41:26 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508886981',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:41:28 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:41:28 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443508888247',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:41:38 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:41:38 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:41:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508898465',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:41:44 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:41:44 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:41:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508904614',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:41:56 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:41:56 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:41:56 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508916732',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:42:30 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:42:31 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:42:31 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508951065',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:42:33 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:42:33 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:42:33 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508953908',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:42:40 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:42:41 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:42:41 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443508961184',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:42:47 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:42:47 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443508967669',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:43:26 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:43:26 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:43:26 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509006985',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:43:28 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:43:28 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509008975',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:43:42 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:43:42 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:43:42 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509022740',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:43:44 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:43:44 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509024761',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:43:48 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:43:48 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:43:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509028803',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:43:50 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:43:50 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509030594',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:43:53 [request] - LV1 - /Reception/Cardmanage/querycardophistory?id=50999&_search=false&nd=1443509033257&rows=100&page=1&sidx=id&sord=desc
+2015-09-29 02:43:53 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/querycardophistory',
+  'id' => '50999',
+  '_search' => 'false',
+  'nd' => '1443509033257',
+  'rows' => '100',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 02:44:23 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:44:24 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:44:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509064001',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:44:25 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:44:25 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509065303',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:44:48 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:44:49 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:44:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509089320',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:44:50 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:44:50 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509090606',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:44:58 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:44:59 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:44:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509099223',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:45:00 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:45:00 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509100451',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:45:51 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:46:49 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:47:17 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:47:18 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:47:18 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509238388',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:47:20 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:47:20 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509240011',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:47:38 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 02:47:38 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 02:47:58 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:47:59 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:48:12 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:48:12 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:48:24 [request] - LV1 - /index.php/Reception/Appoint/choosepos/member_id/99946691/schedule_id/2400
+2015-09-29 02:48:34 [request] - LV1 - /index.php/Reception/Appoint/doappoint.html
+2015-09-29 02:48:34 [request] - LV1 - array (
+  'pos' => '32',
+  'schedule_id' => '2400',
+  'member_id' => '99946691',
+  'open_id' => '',
+)
+2015-09-29 02:48:37 [request] - LV1 - /index.php/Reception/Appoint/choosepos/member_id/99946691/schedule_id/2400
+2015-09-29 02:48:40 [request] - LV1 - /index.php/Reception/Appoint/choosepos/member_id/99946691/schedule_id/2400
+2015-09-29 02:48:45 [request] - LV1 - /index.php/Reception/Appoint/choosepos/member_id/99946691/schedule_id/2400
+2015-09-29 02:48:46 [request] - LV1 - /index.php/Reception/Appoint/cancelappoint.html
+2015-09-29 02:48:46 [request] - LV1 - array (
+  'schedule_id' => '2400',
+  'member_id' => '99946691',
+  'open_id' => '',
+)
+2015-09-29 02:48:51 [request] - LV1 - /index.php/Reception/Appoint/choosepos/member_id/99946691/schedule_id/2400
+2015-09-29 02:48:56 [request] - LV1 - /index.php/Reception/Appoint/doappoint.html
+2015-09-29 02:48:56 [request] - LV1 - array (
+  'pos' => '25',
+  'schedule_id' => '2400',
+  'member_id' => '99946691',
+  'open_id' => '',
+)
+2015-09-29 02:49:00 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:00 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:01 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:01 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:02 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:02 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:02 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:02 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:02 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:02 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:03 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:03 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:03 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:03 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:03 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:03 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:03 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:03 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:04 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 02:49:04 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 02:49:15 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:49:15 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:49:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509355472',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:49:16 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:49:16 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509356955',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:49:19 [request] - LV1 - /Reception/Cardmanage/lost
+2015-09-29 02:49:19 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-29 02:49:19 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/lost',
+)
+2015-09-29 02:49:21 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 02:49:22 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:49:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509362227',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 02:49:23 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 02:49:23 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443509363434',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 02:50:18 [request] - LV1 - /index.php/Cashier/Ptcontract/index.html
+2015-09-29 02:50:18 [request] - LV1 - /index.php/Cashier/Ptcontract/query.html
+2015-09-29 02:50:18 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443509418596',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 02:54:07 [request] - LV1 - /Public/favicon.ico
+2015-09-29 02:54:07 [request] - LV1 - array (
+  's' => '/Public/favicon.ico',
+)
+2015-09-29 03:08:29 [request] - LV1 - /index.php/Pt/Visit/index.html
+2015-09-29 03:08:54 [request] - LV1 - /index.php/Cashier/Pt/sale.html
+2015-09-29 03:10:05 [request] - LV1 - /index.php/Cashier/Pt/queryMember.html
+2015-09-29 03:10:05 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 03:10:07 [request] - LV1 - /Cashier/Member/show
+2015-09-29 03:10:07 [request] - LV1 - array (
+  'id' => '99946691',
+)
+2015-09-29 03:10:07 [request] - LV1 - array (
+  's' => '/Cashier/Member/show',
+)
+2015-09-29 03:10:59 [request] - LV1 - /index.php/Cashier/Pt/buy.html
+2015-09-29 03:10:59 [request] - LV1 - array (
+  'member_id' => '99946691',
+  'class_id' => '57',
+  'pt_id' => '2373',
+  'sale_type' => '1',
+  'total_num' => '10',
+  'start_time' => '2015-09-28',
+  'end_time' => '2019-11-14',
+  'standard_price' => '9990',
+  'should_pay' => '9990',
+  'cash' => '0',
+  'pos' => '0',
+  'check' => '0',
+  'check_num' => '',
+  'network' => '0',
+  'netbank' => '0',
+  'description' => '',
+)
+2015-09-29 03:11:01 [request] - LV1 - /index.php/Cashier/Ptcontract/index.html
+2015-09-29 03:11:01 [request] - LV1 - /index.php/Cashier/Ptcontract/query.html
+2015-09-29 03:11:01 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443510661929',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 03:12:04 [request] - LV1 - /index.php/Finance/Report/index.html
+2015-09-29 03:12:10 [request] - LV1 - /index.php/Finance/Report/queryReport.html
+2015-09-29 03:12:10 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+    1 => '1040',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+)
+2015-09-29 03:21:23 [request] - LV1 - /Finance/Report/detail?clubs=1039,1040&type=7&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+2015-09-29 03:21:23 [request] - LV1 - array (
+  's' => '/Finance/Report/detail',
+  'clubs' => '1039,1040',
+  'type' => '7',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+)
+2015-09-29 03:21:23 [request] - LV1 - /Finance/Report/getdetail
+2015-09-29 03:21:23 [request] - LV1 - array (
+  'clubs' => '1039,1040',
+  'type' => '7',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+  '_search' => 'false',
+  'nd' => '1443511283428',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 03:21:23 [request] - LV1 - array (
+  's' => '/Finance/Report/getdetail',
+)
+2015-09-29 03:21:27 [request] - LV1 - /Finance/Report/detail?clubs=1039,1040&type=1&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+2015-09-29 03:21:27 [request] - LV1 - array (
+  's' => '/Finance/Report/detail',
+  'clubs' => '1039,1040',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+)
+2015-09-29 03:21:28 [request] - LV1 - /Finance/Report/getdetail
+2015-09-29 03:21:28 [request] - LV1 - array (
+  'clubs' => '1039,1040',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+  '_search' => 'false',
+  'nd' => '1443511288044',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 03:21:28 [request] - LV1 - array (
+  's' => '/Finance/Report/getdetail',
+)
+2015-09-29 03:21:58 [request] - LV1 - /index.php/Cashier/Report/index.html
+2015-09-29 03:22:01 [request] - LV1 - /index.php/Cashier/Report/queryReport.html
+2015-09-29 03:22:01 [request] - LV1 - array (
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+)
+2015-09-29 03:47:05 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 03:47:05 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 03:47:05 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443512825873',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 03:47:07 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 03:47:07 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443512827513',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 03:56:03 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 03:56:03 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 03:56:11 [request] - LV1 - /Reception/Visit/index/id/99946691
+2015-09-29 03:56:11 [request] - LV1 - array (
+  's' => '/Reception/Visit/index/id/99946691',
+)
+2015-09-29 03:56:29 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 04:03:11 [request] - LV1 - /
+2015-09-29 04:03:11 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-09-29 04:03:18 [request] - LV1 - /index.php/Home/Index/login.html
+2015-09-29 04:03:18 [request] - LV1 - array (
+  'username' => 'peterx',
+  'password' => '111111',
+)
+2015-09-29 04:03:18 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-29 04:03:18 [request] - LV1 - /Home/Mc/query
+2015-09-29 04:03:18 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513798898',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-29 04:03:18 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-29 04:03:24 [request] - LV1 - /index.php/Brand/Review/quit.html
+2015-09-29 04:03:24 [request] - LV1 - /Api/index/getClubs
+2015-09-29 04:03:24 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-09-29 04:03:24 [request] - LV1 - /index.php/Brand/Review/quitQuery.html
+2015-09-29 04:03:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513804601',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 04:03:47 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 04:03:47 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 04:03:47 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513827953',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:03:48 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 04:03:48 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443513828661',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 04:03:51 [request] - LV1 - /Reception/Cardmanage/destroy
+2015-09-29 04:03:51 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-29 04:03:51 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/destroy',
+)
+2015-09-29 04:03:54 [request] - LV1 - /Reception/Cardmanage/unlost
+2015-09-29 04:03:54 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-29 04:03:54 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/unlost',
+)
+2015-09-29 04:04:02 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 04:04:02 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 04:04:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513842869',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:04:04 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 04:04:04 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443513844021',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 04:04:06 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-29 04:04:06 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-29 04:04:29 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-09-29 04:04:30 [request] - LV1 - /Shopkeeper/Class/query
+2015-09-29 04:04:30 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513870353',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:04:30 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-09-29 04:04:30 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443456000&end=1443542400&_=1443513870169
+2015-09-29 04:04:30 [request] - LV1 - array (
+  'start' => '1443456000',
+  'end' => '1443542400',
+  '_' => '1443513870169',
+)
+2015-09-29 04:04:31 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443542400&end=1443628800&_=1443513870170
+2015-09-29 04:04:31 [request] - LV1 - array (
+  'start' => '1443542400',
+  'end' => '1443628800',
+  '_' => '1443513870170',
+)
+2015-09-29 04:04:40 [request] - LV1 - /index.php/Shopkeeper/Employee/index.html
+2015-09-29 04:04:40 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-09-29 04:04:40 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513880664',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+)
+2015-09-29 04:04:40 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-09-29 04:04:43 [request] - LV1 - /Shopkeeper/Employee/showEdit/id/2372
+2015-09-29 04:04:43 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/showEdit/id/2372',
+)
+2015-09-29 04:04:45 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-09-29 04:04:45 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443513885962',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+)
+2015-09-29 04:04:45 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-09-29 04:15:54 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 04:15:54 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 04:15:54 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443514554905',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:15:56 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 04:15:56 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443514556975',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 04:23:53 [request] - LV1 - /index.php/Reception/Appoint/appointblacklist.html
+2015-09-29 04:23:53 [request] - LV1 - /Reception/Appoint/query
+2015-09-29 04:23:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443515033340',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:23:53 [request] - LV1 - array (
+  's' => '/Reception/Appoint/query',
+)
+2015-09-29 04:25:09 [request] - LV1 - /index.php/Bar/Goods/index.html
+2015-09-29 04:25:15 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-29 04:25:15 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-29 04:25:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443515115840',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:25:15 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-29 04:25:15 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-29 04:25:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443515115876',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-29 04:25:15 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-29 04:30:45 [request] - LV1 - /index.php/Bar/Goods/queryMember.html
+2015-09-29 04:30:45 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-29 04:31:27 [request] - LV1 - /index.php/Brand/Cardtype/index.html
+2015-09-29 04:31:44 [request] - LV1 - /index.php/Brand/Cardtype/index.html
+2015-09-29 04:31:44 [request] - LV1 - /Api/index/getPeaktime
+2015-09-29 04:31:44 [request] - LV1 - array (
+  's' => '/Api/index/getPeaktime',
+)
+2015-09-29 04:31:44 [request] - LV1 - /Api/index/getClubs
+2015-09-29 04:31:44 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-09-29 04:31:44 [request] - LV1 - /Brand/Cardtype/getCardtype
+2015-09-29 04:31:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443515504532',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:31:44 [request] - LV1 - array (
+  's' => '/Brand/Cardtype/getCardtype',
+)
+2015-09-29 04:32:53 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-29 04:32:53 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-29 04:32:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443515573884',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:32:53 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-29 04:32:53 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-29 04:32:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443515573930',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-29 04:32:53 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-29 04:40:37 [request] - LV1 - /index.php/Channelmanager/Channel/index.html
+2015-09-29 04:40:38 [request] - LV1 - /Api/index/getChannelUsers
+2015-09-29 04:40:38 [request] - LV1 - array (
+  's' => '/Api/index/getChannelUsers',
+)
+2015-09-29 04:40:38 [request] - LV1 - /Channelmanager/Channel/query
+2015-09-29 04:40:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443516038137',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:40:38 [request] - LV1 - array (
+  's' => '/Channelmanager/Channel/query',
+)
+2015-09-29 04:40:56 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-09-29 04:41:22 [request] - LV1 - /index.php/Mc/Visit/index.html
+2015-09-29 04:42:04 [request] - LV1 - /index.php/Mc/Visit/index.html
+2015-09-29 04:42:55 [request] - LV1 - /index.php/Channel/Visitn/index.html
+2015-09-29 04:44:48 [request] - LV1 - /index.php/Mcmanager/Group/index.html
+2015-09-29 04:44:49 [request] - LV1 - /Api/index/getMcs
+2015-09-29 04:44:49 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 04:44:49 [request] - LV1 - /Api/index/getGroups
+2015-09-29 04:44:49 [request] - LV1 - array (
+  's' => '/Api/index/getGroups',
+)
+2015-09-29 04:44:49 [request] - LV1 - /Mcmanager/Group/getMc
+2015-09-29 04:44:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443516289210',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 04:44:49 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getMc',
+)
+2015-09-29 04:44:49 [request] - LV1 - /Mcmanager/Group/getgroups
+2015-09-29 04:44:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443516289245',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-29 04:44:49 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getgroups',
+)
+2015-09-29 04:45:59 [request] - LV1 - /index.php/Cashier/Member/index.html
+2015-09-29 04:47:15 [request] - LV1 - /index.php/Pt/Member/index.html
+2015-09-29 04:47:15 [request] - LV1 - /index.php/Pt/Member/query.html
+2015-09-29 04:47:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443516435894',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 05:02:59 [request] - LV1 - /index.php/Finance/Report/index.html
+2015-09-29 05:03:10 [request] - LV1 - /index.php/Finance/Report/queryReport.html
+2015-09-29 05:03:10 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+    1 => '1040',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-28',
+  'end_time' => '',
+)
+2015-09-29 05:03:22 [request] - LV1 - /index.php/Finance/Payhistory/index.html
+2015-09-29 05:03:33 [request] - LV1 - /Finance/Payhistory/queryReport
+2015-09-29 05:03:33 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443517413748',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"type","op":"eq","data":"1"},{"field":"start_time","op":"eq","data":"2015-09-29"},{"field":"club_ids","op":"eq","data":"1039,1040"}]}',
+)
+2015-09-29 05:03:33 [request] - LV1 - array (
+  's' => '/Finance/Payhistory/queryReport',
+)
+2015-09-29 05:03:46 [request] - LV1 - /index.php/Finance/Report/index.html
+2015-09-29 05:03:50 [request] - LV1 - /index.php/Finance/Report/queryReport.html
+2015-09-29 05:03:50 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+    1 => '1040',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+)
+2015-09-29 05:03:52 [request] - LV1 - /Finance/Report/detail?clubs=1039,1040&type=1&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+2015-09-29 05:03:52 [request] - LV1 - array (
+  's' => '/Finance/Report/detail',
+  'clubs' => '1039,1040',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+)
+2015-09-29 05:03:52 [request] - LV1 - /Finance/Report/getdetail
+2015-09-29 05:03:52 [request] - LV1 - array (
+  'clubs' => '1039,1040',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+  '_search' => 'false',
+  'nd' => '1443517432652',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 05:03:52 [request] - LV1 - array (
+  's' => '/Finance/Report/getdetail',
+)
+2015-09-29 05:03:59 [request] - LV1 - /index.php/Finance/Payhistory/index.html
+2015-09-29 05:04:05 [request] - LV1 - /Finance/Payhistory/queryReport
+2015-09-29 05:04:05 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443517445067',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"type","op":"eq","data":"1"},{"field":"start_time","op":"eq","data":"2015-09-29"},{"field":"club_ids","op":"eq","data":"1039,1040"}]}',
+)
+2015-09-29 05:04:05 [request] - LV1 - array (
+  's' => '/Finance/Payhistory/queryReport',
+)
+2015-09-29 05:04:42 [request] - LV1 - /index.php/Finance/Report/index.html
+2015-09-29 05:04:47 [request] - LV1 - /index.php/Finance/Report/queryReport.html
+2015-09-29 05:04:47 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+    1 => '1040',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+)
+2015-09-29 05:04:48 [request] - LV1 - /Finance/Report/detail?clubs=1039,1040&type=1&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+2015-09-29 05:04:48 [request] - LV1 - array (
+  's' => '/Finance/Report/detail',
+  'clubs' => '1039,1040',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+)
+2015-09-29 05:04:48 [request] - LV1 - /Finance/Report/getdetail
+2015-09-29 05:04:48 [request] - LV1 - array (
+  'clubs' => '1039,1040',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015-09-29',
+  'end_time' => '0',
+  'reporttype' => '1',
+  '_search' => 'false',
+  'nd' => '1443517488828',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 05:04:48 [request] - LV1 - array (
+  's' => '/Finance/Report/getdetail',
+)
+2015-09-29 05:04:56 [request] - LV1 - /Finance/Payhistory/queryReport
+2015-09-29 05:04:56 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443517496848',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"type","op":"eq","data":"1"},{"field":"start_time","op":"eq","data":"2015-09-29"},{"field":"pay_id","op":"eq","data":"8870"},{"field":"club_ids","op":"eq","data":"1039,1040"}]}',
+)
+2015-09-29 05:04:56 [request] - LV1 - array (
+  's' => '/Finance/Payhistory/queryReport',
+)
+2015-09-29 05:05:00 [request] - LV1 - /index.php/Finance/Goods/index.html
+2015-09-29 05:05:04 [request] - LV1 - /index.php/Finance/Goods/queryReport.html
+2015-09-29 05:05:04 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+    1 => '1040',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+)
+2015-09-29 05:05:24 [request] - LV1 - /index.php/Finance/McReport/index.html
+2015-09-29 05:05:33 [request] - LV1 - /index.php/Finance/McReport/queryReport.html
+2015-09-29 05:05:33 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+  'mc_id' => '0',
+)
+2015-09-29 05:06:01 [request] - LV1 - /index.php/Finance/McReport/queryReport.html
+2015-09-29 05:06:01 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1039',
+  ),
+  'type' => '1',
+  'start_time' => '2015-09-29',
+  'end_time' => '',
+  'mc_id' => '2372',
+)
+2015-09-29 05:06:12 [request] - LV1 - /index.php/Reception/Invit/index.html
+2015-09-29 05:06:12 [request] - LV1 - /Reception/Invit/query
+2015-09-29 05:06:12 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517572843',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:06:12 [request] - LV1 - array (
+  's' => '/Reception/Invit/query',
+)
+2015-09-29 05:06:19 [request] - LV1 - /index.php/Mc/Manage/sale.html
+2015-09-29 05:06:20 [request] - LV1 - /Mc/Manage/getMembers
+2015-09-29 05:06:20 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'false',
+  'nd' => '1443517580054',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:06:20 [request] - LV1 - array (
+  's' => '/Mc/Manage/getMembers',
+)
+2015-09-29 05:06:35 [request] - LV1 - /Mc/Manage/getMembers
+2015-09-29 05:06:35 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'true',
+  'nd' => '1443517595733',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"st_type","op":"eq","data":{"type":"2","day":"1100"}}]}',
+)
+2015-09-29 05:06:35 [request] - LV1 - array (
+  's' => '/Mc/Manage/getMembers',
+)
+2015-09-29 05:06:38 [request] - LV1 - /Mc/Manage/getMembers
+2015-09-29 05:06:38 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'true',
+  'nd' => '1443517598291',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"st_type","op":"eq","data":{"type":"3","day":"1100"}}]}',
+)
+2015-09-29 05:06:38 [request] - LV1 - array (
+  's' => '/Mc/Manage/getMembers',
+)
+2015-09-29 05:06:40 [request] - LV1 - /Mc/Manage/getMembers
+2015-09-29 05:06:40 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'true',
+  'nd' => '1443517600161',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"st_type","op":"eq","data":{"type":"1","day":"1100"}}]}',
+)
+2015-09-29 05:06:40 [request] - LV1 - array (
+  's' => '/Mc/Manage/getMembers',
+)
+2015-09-29 05:06:46 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-09-29 05:06:47 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 05:06:47 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443517607043',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:06:47 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 05:06:52 [request] - LV1 - /Mcmanager/Member/show
+2015-09-29 05:06:52 [request] - LV1 - array (
+  'id' => '99946692',
+)
+2015-09-29 05:06:52 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/show',
+)
+2015-09-29 05:07:15 [request] - LV1 - /Mcmanager/Member/assign
+2015-09-29 05:07:15 [request] - LV1 - array (
+  'members' => 
+  array (
+    0 => '99946692',
+  ),
+  'mc_id' => '2372',
+)
+2015-09-29 05:07:15 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/assign',
+)
+2015-09-29 05:07:22 [request] - LV1 - /index.php/Mc/Manage/sale.html
+2015-09-29 05:07:22 [request] - LV1 - /Mc/Manage/getMembers
+2015-09-29 05:07:22 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'false',
+  'nd' => '1443517642568',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:07:22 [request] - LV1 - array (
+  's' => '/Mc/Manage/getMembers',
+)
+2015-09-29 05:07:25 [request] - LV1 - /Mc/Manage/show
+2015-09-29 05:07:25 [request] - LV1 - array (
+  'id' => '99946692',
+)
+2015-09-29 05:07:25 [request] - LV1 - array (
+  's' => '/Mc/Manage/show',
+)
+2015-09-29 05:07:38 [request] - LV1 - /index.php/Mc/Manage/addfollowup.html
+2015-09-29 05:07:38 [request] - LV1 - array (
+  'member_id' => '99946692',
+  'ret' => '1',
+  'failed_reason' => '未接通',
+  'appoint_time' => '2015-09-29 18:05:22',
+  'desc' => '123',
+)
+2015-09-29 05:07:54 [request] - LV1 - /Mc/Manage/followlist
+2015-09-29 05:07:54 [request] - LV1 - array (
+  'id' => '99946692',
+)
+2015-09-29 05:07:54 [request] - LV1 - array (
+  's' => '/Mc/Manage/followlist',
+)
+2015-09-29 05:08:36 [request] - LV1 - /index.php/Mcmanager/Member/ismember.html
+2015-09-29 05:08:37 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-09-29 05:08:37 [request] - LV1 - array (
+  'is_member' => '1',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1443517717049',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:08:37 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-09-29 05:08:38 [request] - LV1 - /Mcmanager/Member/show
+2015-09-29 05:08:38 [request] - LV1 - array (
+  'id' => '99946691',
+)
+2015-09-29 05:08:38 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/show',
+)
+2015-09-29 05:09:09 [request] - LV1 - /index.php/Mcmanager/Group/index.html
+2015-09-29 05:09:09 [request] - LV1 - /Api/index/getMcs
+2015-09-29 05:09:09 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 05:09:09 [request] - LV1 - /Api/index/getGroups
+2015-09-29 05:09:09 [request] - LV1 - array (
+  's' => '/Api/index/getGroups',
+)
+2015-09-29 05:09:09 [request] - LV1 - /Mcmanager/Group/getMc
+2015-09-29 05:09:09 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517749394',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:09:09 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getMc',
+)
+2015-09-29 05:09:09 [request] - LV1 - /Mcmanager/Group/getgroups
+2015-09-29 05:09:09 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517749428',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-29 05:09:09 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getgroups',
+)
+2015-09-29 05:09:26 [request] - LV1 - /Mcmanager/Group/getMc
+2015-09-29 05:09:26 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517766619',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:09:26 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getMc',
+)
+2015-09-29 05:09:26 [request] - LV1 - /Api/index/getGroups
+2015-09-29 05:09:26 [request] - LV1 - array (
+  's' => '/Api/index/getGroups',
+)
+2015-09-29 05:09:54 [request] - LV1 - /Mcmanager/Group/set
+2015-09-29 05:09:54 [request] - LV1 - array (
+  'name' => '组1',
+  'team_leader_id' => '2374',
+  'oper' => 'add',
+  'id' => '_empty',
+)
+2015-09-29 05:09:54 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/set',
+)
+2015-09-29 05:09:54 [request] - LV1 - /Mcmanager/Group/getgroups
+2015-09-29 05:09:54 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517794578',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-29 05:09:54 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getgroups',
+)
+2015-09-29 05:09:55 [request] - LV1 - /Mcmanager/Group/getMc
+2015-09-29 05:09:55 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517795666',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:09:55 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getMc',
+)
+2015-09-29 05:09:55 [request] - LV1 - /Api/index/getGroups
+2015-09-29 05:09:55 [request] - LV1 - array (
+  's' => '/Api/index/getGroups',
+)
+2015-09-29 05:09:59 [request] - LV1 - /Mcmanager/Group/setGroup
+2015-09-29 05:09:59 [request] - LV1 - array (
+  'id' => 
+  array (
+    0 => '2374',
+    1 => '2372',
+    2 => '2373',
+  ),
+  'group' => '70',
+)
+2015-09-29 05:09:59 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/setGroup',
+)
+2015-09-29 05:10:03 [request] - LV1 - /index.php/Mcmanager/Group/index.html
+2015-09-29 05:10:03 [request] - LV1 - /Api/index/getMcs
+2015-09-29 05:10:03 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 05:10:04 [request] - LV1 - /Api/index/getGroups
+2015-09-29 05:10:04 [request] - LV1 - array (
+  's' => '/Api/index/getGroups',
+)
+2015-09-29 05:10:04 [request] - LV1 - /Mcmanager/Group/getMc
+2015-09-29 05:10:04 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517804091',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:10:04 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getMc',
+)
+2015-09-29 05:10:04 [request] - LV1 - /Mcmanager/Group/getgroups
+2015-09-29 05:10:04 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517804150',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-29 05:10:04 [request] - LV1 - array (
+  's' => '/Mcmanager/Group/getgroups',
+)
+2015-09-29 05:10:11 [request] - LV1 - /index.php/Mcmanager/Plannew/index.html
+2015-09-29 05:10:15 [request] - LV1 - /index.php/Mcmanager/Plannew/plan.html
+2015-09-29 05:10:15 [request] - LV1 - /index.php/Mcmanager/Plannew/loadTotalPlan.html
+2015-09-29 05:10:15 [request] - LV1 - array (
+  'user_id' => '2373',
+  'time' => '2015-10',
+  'type' => '0',
+)
+2015-09-29 05:10:15 [request] - LV1 - /index.php/Mcmanager/Plannew/getnewjson.html?user_id=2373&start=1443369600&end=1446393600&_=1443517815754
+2015-09-29 05:10:15 [request] - LV1 - array (
+  'user_id' => '2373',
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1443517815754',
+)
+2015-09-29 05:10:31 [request] - LV1 - /index.php/Mcmanager/Plannew/newmonth.html
+2015-09-29 05:10:31 [request] - LV1 - array (
+  'protential' => '100',
+  'invit' => '100',
+  'invit_success' => '0',
+  'invit_come' => '0',
+  'a_member' => '0',
+  'b_member' => '0',
+  'pre_sale' => '0',
+  'sale' => '0',
+  'deal_num' => '0',
+  'transform' => '0',
+  'user_id' => '2373',
+  'time' => '2015-10',
+)
+2015-09-29 05:10:35 [request] - LV1 - /index.php/Mcmanager/Plannew/loadTotalPlan.html
+2015-09-29 05:10:35 [request] - LV1 - array (
+  'user_id' => '2373',
+  'time' => '2015-10',
+  'type' => '0',
+)
+2015-09-29 05:10:35 [request] - LV1 - /index.php/Mcmanager/Plannew/getnewjson.html?user_id=2373&start=1443369600&end=1446393600&_=1443517815755
+2015-09-29 05:10:35 [request] - LV1 - array (
+  'user_id' => '2373',
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1443517815755',
+)
+2015-09-29 05:10:48 [request] - LV1 - /index.php/Mcmanager/Plannew/index.html
+2015-09-29 05:10:58 [request] - LV1 - /index.php/mcmanager/Plannew/query.html
+2015-09-29 05:10:58 [request] - LV1 - array (
+  'user_id' => '2374',
+  'time' => '0',
+  'start_time' => '2015-09',
+  'end_time' => '',
+)
+2015-09-29 05:11:02 [request] - LV1 - /index.php/mcmanager/Plannew/query.html
+2015-09-29 05:11:02 [request] - LV1 - array (
+  'user_id' => '2374',
+  'time' => '0',
+  'start_time' => '2015-10',
+  'end_time' => '',
+)
+2015-09-29 05:11:06 [request] - LV1 - /index.php/mcmanager/Plannew/query.html
+2015-09-29 05:11:06 [request] - LV1 - array (
+  'user_id' => '2373',
+  'time' => '0',
+  'start_time' => '2015-10',
+  'end_time' => '',
+)
+2015-09-29 05:11:10 [request] - LV1 - /index.php/mcmanager/Plannew/query.html
+2015-09-29 05:11:10 [request] - LV1 - array (
+  'user_id' => '2372',
+  'time' => '0',
+  'start_time' => '2015-10',
+  'end_time' => '',
+)
+2015-09-29 05:11:52 [request] - LV1 - /index.php/Mcmanager/Mcstatistics/index.html
+2015-09-29 05:11:52 [request] - LV1 - /Mcmanager/Mcstatistics/getMemberStatistics
+2015-09-29 05:11:52 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+  'user_id' => '',
+)
+2015-09-29 05:11:52 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcstatistics/getMemberStatistics',
+)
+2015-09-29 05:11:52 [request] - LV1 - /Mcmanager/Mcstatistics/getProtential
+2015-09-29 05:11:52 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcstatistics/getProtential',
+)
+2015-09-29 05:11:52 [request] - LV1 - /Mcmanager/Mcstatistics/getTransform
+2015-09-29 05:11:52 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcstatistics/getTransform',
+)
+2015-09-29 05:11:52 [request] - LV1 - /Mcmanager/Mcstatistics/getProtentialFinish
+2015-09-29 05:11:52 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcstatistics/getProtentialFinish',
+)
+2015-09-29 05:12:11 [request] - LV1 - /index.php/Mcmanager/Mcsale/servicelist.html
+2015-09-29 05:12:11 [request] - LV1 - /Mcmanager/Mcsale/queryservicelist
+2015-09-29 05:12:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443517931445',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:12:11 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcsale/queryservicelist',
+)
+2015-09-29 05:14:09 [request] - LV1 - /index.php/Mcmanager/Mcsale/followuplist.html
+2015-09-29 05:14:09 [request] - LV1 - /Mcmanager/Mcsale/queryfollowup
+2015-09-29 05:14:09 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518049790',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:14:09 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcsale/queryfollowup',
+)
+2015-09-29 05:14:15 [request] - LV1 - /index.php/Mcmanager/Mcsale/servicelist.html
+2015-09-29 05:14:15 [request] - LV1 - /Mcmanager/Mcsale/queryservicelist
+2015-09-29 05:14:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518055618',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:14:15 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcsale/queryservicelist',
+)
+2015-09-29 05:14:17 [request] - LV1 - /Mcmanager/Mcsale/queryservicelist
+2015-09-29 05:14:17 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443518057199',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"mc_id","op":"eq","data":"0"},{"field":"ret","op":"eq","data":"-1"},{"field":"create_time","op":"eq","data":"0"}]}',
+)
+2015-09-29 05:14:17 [request] - LV1 - array (
+  's' => '/Mcmanager/Mcsale/queryservicelist',
+)
+2015-09-29 05:14:22 [request] - LV1 - /index.php/Mc/Visit/mynotmemberlist.html
+2015-09-29 05:14:23 [request] - LV1 - /Mc/Visit/getMembers
+2015-09-29 05:14:23 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'false',
+  'nd' => '1443518063075',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:14:23 [request] - LV1 - array (
+  's' => '/Mc/Visit/getMembers',
+)
+2015-09-29 05:14:28 [request] - LV1 - /index.php/Mc/Manage/sale.html
+2015-09-29 05:14:29 [request] - LV1 - /Mc/Manage/getMembers
+2015-09-29 05:14:29 [request] - LV1 - array (
+  'is_member' => '0',
+  '_search' => 'false',
+  'nd' => '1443518069076',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:14:29 [request] - LV1 - array (
+  's' => '/Mc/Manage/getMembers',
+)
+2015-09-29 05:14:30 [request] - LV1 - /Mc/Manage/show
+2015-09-29 05:14:30 [request] - LV1 - array (
+  'id' => '99946692',
+)
+2015-09-29 05:14:30 [request] - LV1 - array (
+  's' => '/Mc/Manage/show',
+)
+2015-09-29 05:14:33 [request] - LV1 - /Mc/Manage/followlist
+2015-09-29 05:14:33 [request] - LV1 - array (
+  'id' => '99946692',
+)
+2015-09-29 05:14:33 [request] - LV1 - array (
+  's' => '/Mc/Manage/followlist',
+)
+2015-09-29 05:14:39 [request] - LV1 - /index.php/Mc/Manage/myappoint.html
+2015-09-29 05:14:39 [request] - LV1 - /Mc/Manage/getAppoints
+2015-09-29 05:14:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518079449',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'appoint_time',
+  'sord' => 'desc',
+)
+2015-09-29 05:14:39 [request] - LV1 - array (
+  's' => '/Mc/Manage/getAppoints',
+)
+2015-09-29 05:14:47 [request] - LV1 - /index.php/Reception/Invit/index.html
+2015-09-29 05:14:48 [request] - LV1 - /Reception/Invit/query
+2015-09-29 05:14:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518088038',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:14:48 [request] - LV1 - array (
+  's' => '/Reception/Invit/query',
+)
+2015-09-29 05:15:48 [request] - LV1 - /index.php/Mc/Manage/myappoint.html
+2015-09-29 05:15:48 [request] - LV1 - /Mc/Manage/getAppoints
+2015-09-29 05:15:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518148588',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'appoint_time',
+  'sord' => 'desc',
+)
+2015-09-29 05:15:48 [request] - LV1 - array (
+  's' => '/Mc/Manage/getAppoints',
+)
+2015-09-29 05:17:12 [request] - LV1 - /Mc/Manage/show
+2015-09-29 05:17:12 [request] - LV1 - array (
+  'id' => '99946692',
+)
+2015-09-29 05:17:12 [request] - LV1 - array (
+  's' => '/Mc/Manage/show',
+)
+2015-09-29 05:18:37 [request] - LV1 - /index.php/Mc/Cardtype/index.html
+2015-09-29 05:18:37 [request] - LV1 - /Mc/Cardtype/getCardtype
+2015-09-29 05:18:37 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518317613',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:18:37 [request] - LV1 - array (
+  's' => '/Mc/Cardtype/getCardtype',
+)
+2015-09-29 05:18:45 [request] - LV1 - /index.php/Cashier/Consume/index.html
+2015-09-29 05:18:45 [request] - LV1 - /index.php/Cashier/Consume/queryConsume.html
+2015-09-29 05:18:45 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518325506',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:18:51 [request] - LV1 - /index.php/Reception/Consume/index.html
+2015-09-29 05:18:51 [request] - LV1 - /index.php/Reception/Consume/query.html
+2015-09-29 05:18:51 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443518331787',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:20:07 [request] - LV1 - /index.php/Reception/Appoint/checkappoint.html
+2015-09-29 05:20:12 [request] - LV1 - /index.php/Reception/Appoint/checkappoint.html
+2015-09-29 05:20:12 [request] - LV1 - array (
+  'time' => '2015-09-29',
+)
+2015-09-29 05:26:23 [request] - LV1 - /index.php/Mc/List/index.html
+2015-09-29 05:26:47 [request] - LV1 - /index.php/Mc/Group/index.html
+2015-09-29 05:46:42 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 05:46:43 [request] - LV1 - /Api/index/getCardType
+2015-09-29 05:46:43 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 05:46:43 [request] - LV1 - /Api/index/getMcs
+2015-09-29 05:46:43 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 05:46:43 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 05:46:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443520003792',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:46:44 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 05:46:44 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443520004701',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 05:46:46 [request] - LV1 - /Cashier/Contract/upgrade/id/46545
+2015-09-29 05:46:46 [request] - LV1 - array (
+  's' => '/Cashier/Contract/upgrade/id/46545',
+)
+2015-09-29 05:47:48 [request] - LV1 - /Api/index/getCardType
+2015-09-29 05:47:48 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 05:47:48 [request] - LV1 - /Api/index/getMcs
+2015-09-29 05:47:48 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 05:47:48 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 05:47:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443520068252',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:49:03 [request] - LV1 - /index.php/Brand/Review/contract.html
+2015-09-29 05:49:03 [request] - LV1 - /Api/index/getCardType
+2015-09-29 05:49:03 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 05:49:06 [request] - LV1 - /index.php/Brand/Review/queryNew.html
+2015-09-29 05:49:06 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443520146088',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 05:49:07 [request] - LV1 - /Brand/Review/show
+2015-09-29 05:49:07 [request] - LV1 - array (
+  'id' => '46545',
+)
+2015-09-29 05:49:07 [request] - LV1 - array (
+  's' => '/Brand/Review/show',
+)
+2015-09-29 05:49:12 [request] - LV1 - /Brand/Review/passnew
+2015-09-29 05:49:12 [request] - LV1 - array (
+  'id' => '46545',
+)
+2015-09-29 05:49:12 [request] - LV1 - array (
+  's' => '/Brand/Review/passnew',
+)
+2015-09-29 05:49:16 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-09-29 05:49:16 [request] - LV1 - /Api/index/getCardType
+2015-09-29 05:49:16 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-09-29 05:49:16 [request] - LV1 - /Api/index/getMcs
+2015-09-29 05:49:16 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-09-29 05:49:16 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-09-29 05:49:16 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443520156828',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:52:01 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-29 05:52:01 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 05:52:01 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443520321821',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-29 05:52:02 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-29 05:52:02 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443520322801',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-29 06:07:53 [request] - LV1 - /
+2015-09-29 06:07:54 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-29 06:07:56 [request] - LV1 - /Home/Mc/query
+2015-09-29 06:07:56 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443521276520',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-29 06:07:56 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-29 06:08:38 [request] - LV1 - /index.php/Cashier/Ptcontract/index.html
+2015-09-29 06:08:39 [request] - LV1 - /index.php/Cashier/Ptcontract/query.html
+2015-09-29 06:08:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443521319495',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-09-29 06:08:43 [request] - LV1 - /index.php/Cashier/Ptcontract/query.html
+2015-09-29 06:08:43 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443521323826',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)

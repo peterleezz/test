@@ -18,7 +18,7 @@ public function mynotmemberlistAction()
         $this->assign("is_member",0);    
         $this->assign("show_add",$this->show_add());    
         $this->assign("show_edit",$this->show_edit());    
-        $this->assign("show_url",U("show"));    
+        $this->assign("show_url", U("show"));    
         $this->assign("display_card_number",$this->display_card_number());   
         $this->assign("display_channel",$this->display_channel());   
         $this->assign("display_member_type",$this->display_member_type());   
@@ -264,8 +264,9 @@ public function addAction()
                         $model->where("id=$id")->setField("avatar",$avatar);
                     }
                 }   
-        } 
-         $this->success('成功！', $this->getAddRedirectUrl($member['is_member']),1);  
+        }  
+          $this->success('成功！',  Cookie('__forward__'));  
+         // $this->success('成功！', $this->getAddRedirectUrl($member['is_member']),1);  
     }
 
     public function setIndexActiveClass()

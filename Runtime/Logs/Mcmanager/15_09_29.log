@@ -1,0 +1,1749 @@
+[ 2015-09-29T13:40:08+08:00 ] 127.0.0.1 /Mcmanager/Mcsale/queryfollowup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Mcmanager/Controller/McsaleController.class.php 第 99 行.
+
+[ 2015-09-29T14:14:25+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/notmember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013700s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000063s ]
+
+[ 2015-09-29T14:14:26+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000063s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T14:14:54+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/ismember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038260s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000061s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000047s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000097s ]
+
+[ 2015-09-29T14:14:55+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000117s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T14:14:56+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T14:15:02+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T14:15:03+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/ismember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+
+[ 2015-09-29T14:15:03+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000068s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T14:15:05+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T14:15:07+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T14:17:46+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/notmember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000066s ]
+
+[ 2015-09-29T14:17:46+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T14:18:05+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/notmember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000186s ]
+
+[ 2015-09-29T14:18:11+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/notmember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013137s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000099s ]
+
+[ 2015-09-29T14:18:11+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000107s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T16:44:49+08:00 ] 127.0.0.1 /index.php/Mcmanager/Group/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040262s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040331s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2015-09-29T16:44:49+08:00 ] 127.0.0.1 /Mcmanager/Group/getMc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 59 行.
+NOTIC: [8] Undefined variable: offset /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: num /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T16:44:49+08:00 ] 127.0.0.1 /Mcmanager/Group/getgroups
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:06:46+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/notmember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000075s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031331s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000077s ]
+
+[ 2015-09-29T17:06:47+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T17:06:52+08:00 ] 127.0.0.1 /Mcmanager/Member/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000113s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020463s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020552s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000064s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+
+[ 2015-09-29T17:07:15+08:00 ] 127.0.0.1 /Mcmanager/Member/assign
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:08:36+08:00 ] 127.0.0.1 /index.php/Mcmanager/Member/ismember.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2015-09-29T17:08:37+08:00 ] 127.0.0.1 /Mcmanager/Member/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-09-29T17:08:38+08:00 ] 127.0.0.1 /Mcmanager/Member/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011253s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011322s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000025s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000112s ]
+
+[ 2015-09-29T17:09:09+08:00 ] 127.0.0.1 /index.php/Mcmanager/Group/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039067s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000170s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+
+[ 2015-09-29T17:09:09+08:00 ] 127.0.0.1 /Mcmanager/Group/getMc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 59 行.
+NOTIC: [8] Undefined variable: offset /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: num /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:09:09+08:00 ] 127.0.0.1 /Mcmanager/Group/getgroups
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:09:26+08:00 ] 127.0.0.1 /Mcmanager/Group/getMc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 59 行.
+NOTIC: [8] Undefined variable: offset /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: num /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:09:54+08:00 ] 127.0.0.1 /Mcmanager/Group/set
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:09:54+08:00 ] 127.0.0.1 /Mcmanager/Group/getgroups
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:09:55+08:00 ] 127.0.0.1 /Mcmanager/Group/getMc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 59 行.
+NOTIC: [8] Undefined variable: offset /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: num /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:09:59+08:00 ] 127.0.0.1 /Mcmanager/Group/setGroup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000066s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:10:03+08:00 ] 127.0.0.1 /index.php/Mcmanager/Group/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000111s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000131s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000045s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000152s ]
+
+[ 2015-09-29T17:10:04+08:00 ] 127.0.0.1 /Mcmanager/Group/getMc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000108s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 59 行.
+NOTIC: [8] Undefined variable: offset /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: num /var/www/yoga/Yoga/Common/Model/McGroupModel.class.php 第 71 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:10:04+08:00 ] 127.0.0.1 /Mcmanager/Group/getgroups
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:10:11+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000065s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 344 行.
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 345 行.
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 346 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 346 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 347 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.ret!=0 and b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.is_come=1 and b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT SUM(b.price) AS tp_sum FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 349 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 349 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 350 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"    ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.club_id=1039 and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"    ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00" ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.ret!=0 and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00" ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.is_come=1 and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and  b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT SUM(b.price) AS tp_sum FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5)  and  b.create_time between "-00 00:00:00"  and "-31 23:59:59" and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 352 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 352 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 354 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT SUM(b.price) AS tp_sum FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 400 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 404 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 405 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 407 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 408 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 412 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 413 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 415 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 416 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 420 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 421 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 423 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 400 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 404 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 405 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 407 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 408 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 412 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 413 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 415 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 416 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 420 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 421 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 423 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 424 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 400 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 404 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 405 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 407 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 408 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 412 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 413 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 415 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 416 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 420 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 421 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 423 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 424 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 449 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 453 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 454 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 456 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 457 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 461 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 462 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 464 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 465 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 469 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 470 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 472 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 449 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 453 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 454 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 456 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 457 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 461 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 462 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 464 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 465 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 469 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 470 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 472 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 473 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 449 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 453 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 454 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 456 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 457 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 461 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 462 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 464 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 465 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 469 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 470 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 472 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 473 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 495 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 499 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 500 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 502 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 503 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 507 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 508 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 510 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 511 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 515 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 516 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 518 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 495 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 499 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 500 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 502 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 503 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 507 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 508 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 510 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 511 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 515 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 516 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 518 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 519 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 495 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 499 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 500 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 502 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 503 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 507 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 508 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 510 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 511 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 515 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 516 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 518 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 519 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000066s ]
+
+[ 2015-09-29T17:10:15+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/plan.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000085s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000066s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000056s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000196s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000316s ]
+
+[ 2015-09-29T17:10:15+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/loadTotalPlan.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:10:16+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/getnewjson.html?user_id=2373&start=1443369600&end=1446393600&_=1443517815754
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Mcmanager/Controller/PlannewController.class.php 第 128 行.
+
+[ 2015-09-29T17:10:35+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/newmonth.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:10:35+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/loadTotalPlan.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000080s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:10:35+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/getnewjson.html?user_id=2373&start=1443369600&end=1446393600&_=1443517815755
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:10:48+08:00 ] 127.0.0.1 /index.php/Mcmanager/Plannew/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 344 行.
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 345 行.
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 346 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 346 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 347 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.ret!=0 and b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.is_come=1 and b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59' at line 1
+ [ SQL语句 ] : SELECT SUM(b.price) AS tp_sum FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time between "-00 00:00:00" and  "-31 23:59:59"   ) LIMIT 1  
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 349 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 349 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 350 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"    ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.club_id=1039 and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"    ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00" ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.ret!=0 and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00" ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_mc_follow_up` `b` WHERE ( b.is_come=1 and  b.create_time between "-00 00:00:00"  and "-31 23:59:59"  and  b.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT SUM(b.price) AS tp_sum FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5)  and  b.create_time between "-00 00:00:00"  and "-31 23:59:59" and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.create_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [8] Undefined variable: time /var/www/yoga/Yoga/Service/McNewService.class.php 第 352 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 352 行.
+NOTIC: [8] Undefined variable: user_id /var/www/yoga/Yoga/Service/McNewService.class.php 第 354 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1  
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT SUM(b.price) AS tp_sum FROM `yoga_member_basic` `a`,`yoga_bill_project` `b` WHERE ( b.`type` in(0,4,5) and  a.club_id=1039 and b.mc_id= and b.member_id=a.id and a.join_time < "-00 00:00:00"   ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 400 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 404 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 405 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 407 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 408 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 412 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 413 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 415 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 416 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 420 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 421 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 423 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 400 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 404 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 405 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 407 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 408 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 412 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 413 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 415 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 416 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 420 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 421 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 423 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 424 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 400 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 404 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 405 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 406 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 407 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 408 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 412 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 413 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 414 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 415 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 416 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 420 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 421 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 422 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 423 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 424 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 449 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 453 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 454 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 456 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 457 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 461 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 462 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 464 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 465 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 469 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 470 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 472 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 449 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 453 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 454 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 456 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 457 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 461 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 462 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 464 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 465 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 469 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 470 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 472 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 473 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 449 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 453 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 454 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 455 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 456 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 457 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 461 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 462 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 463 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 464 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 465 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 469 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 470 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 471 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 472 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 473 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 495 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 499 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 500 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 502 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 503 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 507 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 508 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 510 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 511 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 515 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 516 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 518 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 495 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 499 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 500 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 502 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 503 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 507 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 508 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 510 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 511 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 515 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 516 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 518 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 519 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: time /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 495 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 499 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 500 行.
+NOTIC: [8] Undefined index: transform_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: protential_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 501 行.
+NOTIC: [8] Undefined index: cardsale_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 502 行.
+NOTIC: [8] Undefined index: br_plan /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 503 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 507 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 508 行.
+NOTIC: [8] Undefined index: transform_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: protential_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 509 行.
+NOTIC: [8] Undefined index: cardsale_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 510 行.
+NOTIC: [8] Undefined index: br_value /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 511 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 515 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 516 行.
+NOTIC: [8] Undefined index: transform_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: protential_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [2] Division by zero /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 517 行.
+NOTIC: [8] Undefined index: cardsale_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 518 行.
+NOTIC: [8] Undefined index: br_total /var/www/yoga/Runtime/Cache/Mcmanager/1c5f9ae82f9d7b6d307aadc9bfc44b2c.php 第 519 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000089s ]
+
+[ 2015-09-29T17:10:58+08:00 ] 127.0.0.1 /index.php/mcmanager/Plannew/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:11:02+08:00 ] 127.0.0.1 /index.php/mcmanager/Plannew/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:11:06+08:00 ] 127.0.0.1 /index.php/mcmanager/Plannew/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000060s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:11:10+08:00 ] 127.0.0.1 /index.php/mcmanager/Plannew/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-29T17:11:52+08:00 ] 127.0.0.1 /index.php/Mcmanager/Mcstatistics/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000061s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] Division by zero /var/www/yoga/Yoga/Mcmanager/Controller/McstatisticsController.class.php 第 98 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 338 行.
+NOTIC: [2] Division by zero /var/www/yoga/Yoga/Mcmanager/Controller/McstatisticsController.class.php 第 147 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016088s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016145s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000037s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000074s ]
+
+[ 2015-09-29T17:11:52+08:00 ] 127.0.0.1 /Mcmanager/Mcstatistics/getProtential
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:11:52+08:00 ] 127.0.0.1 /Mcmanager/Mcstatistics/getTransform
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:11:52+08:00 ] 127.0.0.1 /Mcmanager/Mcstatistics/getProtentialFinish
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000117s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+
+[ 2015-09-29T17:11:53+08:00 ] 127.0.0.1 /Mcmanager/Mcstatistics/getMemberStatistics
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:12:11+08:00 ] 127.0.0.1 /index.php/Mcmanager/Mcsale/servicelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000108s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028806s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028856s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000072s ]
+
+[ 2015-09-29T17:12:11+08:00 ] 127.0.0.1 /Mcmanager/Mcsale/queryservicelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000121s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Mcmanager/Controller/McsaleController.class.php 第 31 行.
+
+[ 2015-09-29T17:14:09+08:00 ] 127.0.0.1 /index.php/Mcmanager/Mcsale/followuplist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028603s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000049s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000066s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000128s ]
+
+[ 2015-09-29T17:14:09+08:00 ] 127.0.0.1 /Mcmanager/Mcsale/queryfollowup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Mcmanager/Controller/McsaleController.class.php 第 99 行.
+
+[ 2015-09-29T17:14:15+08:00 ] 127.0.0.1 /index.php/Mcmanager/Mcsale/servicelist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011927s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011979s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2015-09-29T17:14:15+08:00 ] 127.0.0.1 /Mcmanager/Mcsale/queryservicelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Mcmanager/Controller/McsaleController.class.php 第 31 行.
+
+[ 2015-09-29T17:14:17+08:00 ] 127.0.0.1 /Mcmanager/Mcsale/queryservicelist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+

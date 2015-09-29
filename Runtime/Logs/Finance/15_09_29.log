@@ -1,0 +1,453 @@
+[ 2015-09-29T15:12:04+08:00 ] 127.0.0.1 /index.php/Finance/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2015-09-29T15:12:10+08:00 ] 127.0.0.1 /index.php/Finance/Report/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Undefined index: own /var/www/yoga/Yoga/Finance/Controller/ReportController.class.php 第 241 行.
+
+[ 2015-09-29T15:21:23+08:00 ] 127.0.0.1 /Finance/Report/detail?clubs=1039,1040&type=7&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000160s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2015-09-29T15:21:23+08:00 ] 127.0.0.1 /Finance/Report/getdetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T15:21:28+08:00 ] 127.0.0.1 /Finance/Report/detail?clubs=1039,1040&type=1&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000075s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001352s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000025s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000102s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2015-09-29T15:21:28+08:00 ] 127.0.0.1 /Finance/Report/getdetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:02:59+08:00 ] 127.0.0.1 /index.php/Finance/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011126s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000068s ]
+
+[ 2015-09-29T17:03:10+08:00 ] 127.0.0.1 /index.php/Finance/Report/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Undefined index: own /var/www/yoga/Yoga/Finance/Controller/ReportController.class.php 第 241 行.
+
+[ 2015-09-29T17:03:22+08:00 ] 127.0.0.1 /index.php/Finance/Payhistory/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000101s ]
+
+[ 2015-09-29T17:03:33+08:00 ] 127.0.0.1 /Finance/Payhistory/queryReport
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:03:46+08:00 ] 127.0.0.1 /index.php/Finance/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000213s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000069s ]
+
+[ 2015-09-29T17:03:51+08:00 ] 127.0.0.1 /index.php/Finance/Report/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Undefined index: own /var/www/yoga/Yoga/Finance/Controller/ReportController.class.php 第 241 行.
+
+[ 2015-09-29T17:03:52+08:00 ] 127.0.0.1 /Finance/Report/detail?clubs=1039,1040&type=1&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001266s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2015-09-29T17:03:52+08:00 ] 127.0.0.1 /Finance/Report/getdetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:03:59+08:00 ] 127.0.0.1 /index.php/Finance/Payhistory/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011870s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000068s ]
+
+[ 2015-09-29T17:04:05+08:00 ] 127.0.0.1 /Finance/Payhistory/queryReport
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:04:42+08:00 ] 127.0.0.1 /index.php/Finance/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000068s ]
+
+[ 2015-09-29T17:04:47+08:00 ] 127.0.0.1 /index.php/Finance/Report/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000079s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Undefined index: own /var/www/yoga/Yoga/Finance/Controller/ReportController.class.php 第 241 行.
+
+[ 2015-09-29T17:04:48+08:00 ] 127.0.0.1 /Finance/Report/detail?clubs=1039,1040&type=1&subtype=0&start_time=2015-09-29&end_time=0&reporttype=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002156s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000116s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000207s ]
+
+[ 2015-09-29T17:04:48+08:00 ] 127.0.0.1 /Finance/Report/getdetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:04:56+08:00 ] 127.0.0.1 /Finance/Payhistory/queryReport
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:05:00+08:00 ] 127.0.0.1 /index.php/Finance/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012637s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2015-09-29T17:05:04+08:00 ] 127.0.0.1 /index.php/Finance/Goods/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Finance/Controller/GoodsController.class.php 第 84 行.
+
+[ 2015-09-29T17:05:24+08:00 ] 127.0.0.1 /index.php/Finance/McReport/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000066s ]
+
+[ 2015-09-29T17:05:33+08:00 ] 127.0.0.1 /index.php/Finance/McReport/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+
+[ 2015-09-29T17:06:01+08:00 ] 127.0.0.1 /index.php/Finance/McReport/queryReport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+

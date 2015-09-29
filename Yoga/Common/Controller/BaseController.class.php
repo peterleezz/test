@@ -9,7 +9,7 @@ class BaseController extends Controller {
         if( !UID ){// 还没登录 跳转到登录页面
             $this->redirect('Home/Index/index');
         }    
-       
+       // Cookie('__forward__',$_SERVER['REQUEST_URI']); 
         $loginuser=getLoginUser(); 
     	$this->user = $loginuser['UserExtension']['name_cn'];        
         $this->assign("useravatar", "/Public/uploads/em_avatar/". $loginuser['UserExtension']['avatar']);

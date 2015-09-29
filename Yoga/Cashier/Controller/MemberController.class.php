@@ -6,6 +6,7 @@ class MemberController extends BaseController {
 
 public function indexAction()
 {
+	Cookie('__forward__',$_SERVER['REQUEST_URI']);
 	$model = D("CardSaleclub");
 	$types = $model->getCanSaleCards();
 	$this->assign("types",$types);
