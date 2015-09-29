@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Contract</title>
+
+    <style type="text/css">
+     body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000; 
+    }
+    *{
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+         font: 0.4cm "Microsoft Yahei"; 
+    }
+
+       .contract{
+         background: white; 
+         width: 21cm;
+            min-height: 29.7cm; 
+            margin: 0cm auto;
+//            border: 1px #D3D3D3 solid;
+            border-radius: 5px; 
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position:relative;
+       }
+
+       img{
+         width:100%;
+         height:100%;
+       }
+       .content{
+        position: absolute;
+        left:0px;
+        top:0px; 
+        white-space:nowrap;
+       }
+
+       .content span{
+            position: absolute;
+       }
+        @media screen { 
+                img{display: none} 
+        span:nth-child(1){left:3.3cm;top:5.3cm}
+        span:nth-child(2){left:8.5cm;top:5.3cm}
+        span:nth-child(3){left:4.7cm;top:5.9cm}
+        span:nth-child(4){left:8cm;top:5.9cm}
+        span:nth-child(5){left:11.3cm;top:5.9cm}
+        span:nth-child(6){left:16cm;top:5.9cm}
+        span:nth-child(7){left:17cm;top:5.9cm;}
+        span:nth-child(8){left:5cm;top:6.5cm}
+        span:nth-child(9){left:15.6cm;top:6.5cm;}
+        span:nth-child(10){left:5cm;top:7.1cm;}
+        span:nth-child(11){left:10cm;top:7.1cm;}
+        span:nth-child(12){left:13.5cm;top:7.1cm;}
+        span:nth-child(13){left:4cm;top:7.7cm;}
+        span:nth-child(14){left:5.5cm;top:8.3cm;}
+
+        span:nth-child(15){left:15cm;top:8.3cm;}
+        span:nth-child(16){left:5.7cm;top:10.7cm;}
+        span:nth-child(17){left:12cm;top:10.7cm;}
+        span:nth-child(18){left:4cm;top:11.3cm;}
+        span:nth-child(19){left:13.5cm;top:11.3cm;}
+
+        span:nth-child(20){left:5cm;top:13.7cm;}
+        span:nth-child(21){left:13cm;top:13.7cm;}
+        span:nth-child(22){left:5.5cm;top:14.4cm;}
+        span:nth-child(23){left:13.2cm;top:14.4cm;}
+        span:nth-child(24){left:6cm;top:16.9cm;}
+        span:nth-child(25){left:12.8cm;top:17cm;}
+        span:nth-child(26){left:14.5cm;top:17cm;}
+        span:nth-child(27){left:17.2cm;top:17cm;}
+         .cnt{position:absolute;left:3.5cm;top:18cm;height:100px;white-space:normal;width:15cm} 
+        }
+
+        @media print {
+         img{display: none} 
+        span:nth-child(1){left:3.3cm;top:5.3cm}
+        span:nth-child(2){left:8.5cm;top:5.3cm}
+        span:nth-child(3){left:4.7cm;top:5.9cm}
+        span:nth-child(4){left:8cm;top:5.9cm}
+        span:nth-child(5){left:11.3cm;top:5.9cm}
+        span:nth-child(6){left:16cm;top:5.9cm}
+        span:nth-child(7){left:17cm;top:5.9cm;}
+        span:nth-child(8){left:5cm;top:6.5cm}
+        span:nth-child(9){left:15.6cm;top:6.5cm;}
+        span:nth-child(10){left:5cm;top:7.1cm;}
+        span:nth-child(11){left:10cm;top:7.1cm;}
+        span:nth-child(12){left:13.5cm;top:7.1cm;}
+        span:nth-child(13){left:4cm;top:7.7cm;}
+        span:nth-child(14){left:5.5cm;top:8.3cm;}
+
+        span:nth-child(15){left:15cm;top:8.3cm;}
+        span:nth-child(16){left:5.7cm;top:10.7cm;}
+        span:nth-child(17){left:12cm;top:10.7cm;}
+        span:nth-child(18){left:4cm;top:11.3cm;}
+        span:nth-child(19){left:13.5cm;top:11.3cm;}
+
+        span:nth-child(20){left:5cm;top:13.7cm;}
+        span:nth-child(21){left:13cm;top:13.7cm;}
+        span:nth-child(22){left:5.5cm;top:14.4cm;}
+        span:nth-child(23){left:13.2cm;top:14.4cm;}
+        span:nth-child(24){left:6cm;top:16.9cm;}
+        span:nth-child(25){left:12.8cm;top:17cm;}
+        span:nth-child(26){left:14.5cm;top:17cm;}
+        span:nth-child(27){left:17.2cm;top:17cm;}
+         .cnt{position:absolute;left:3.5cm;top:18cm;height:100px;white-space:normal;width:15cm} 
+	}
+
+    </style>
+    <script type="text/javascript">
+        window.print();
+    </script>
+</head>
+<body>
+    <div class="contract">
+        <img src="/Public/images/contract_background.jpg" alt="">
+        <div class="content">
+            <span style="">{$member.name}</span>
+            <span style="">{$member.country}</span>
+            <span style="">{$member.birthday|substr=0,4}</span>
+            <span style="">{$member.birthday|substr=5,2}</span>
+            <span style="">{$member.birthday|substr=8,2}</span>
+            <span style="">  <if condition="male eq $member['sex']">
+                √
+		</if>
+            </span>
+	<span style="">  <if condition="female eq $member['sex']">
+                √
+                </if>
+            </span>
+
+
+            <span style="" class="char">{$member.certificate_number}</span>
+            <span style="">{$member.phone}</span>
+            <span style="" class="char">{$member.home_phone}</span>
+
+            <span style="" class="char">{$member.office_phone}</span>
+            <span style="" class="char">&nbsp</span>
+	
+            <span style="" class="char">{$member.email}</span>
+
+            <span style="" class="char">{$member.home_addr}</span>
+            
+            <span style="" class="char">&nbsp</span>
+
+            <span style="" class="char">{$member.office_name}</span>
+  
+            <span style="" class="char">&nbsp</span>
+            
+            <span style="" class="char">{$member.office_addr}</span>
+		<span style="" class="char">&nbsp</span>
+
+            <span style="">{$contract.card_type.name}</span>
+            <span style="" class="char">{$card.card_number}</span>
+            <span style=""  class="char">{$contract.start_time}</span>
+            <span style=""  class="char">{$contract.end_time}</span>
+
+            <span style=""  class="char">￥{$bill.paid}.00</span>
+             <span style="" class="char">√</span>
+
+	    <div class="cnt" >{$contract.description} &nbsp</div> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">基础设置</li>
+		<li class="active">高峰时段设置</li>
+
+	</ul>
+</block>
+
+<block name="content">
+	<h4 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+		高峰时段，用于禁止普通会员在这些时段入馆！
+	</h4>
+	  
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="table-responsive">
+				<table id="peak_table" class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>时段名</th>
+							<!-- <th>会所</th>						  -->
+							<th>
+								<i class="icon-time bigger-110 hidden-480"></i>
+								高峰时间
+							</th>
+							<th>创建时间</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<volist name="peaks" id="peak">
+							<tr>
+								<td>{$peak.peak_name}</td>
+								<!-- <td>
+									<a href="/Brand/Shop/clubinfo?id={$peak.club_id}">{$peak.club.club_name}</a>
+								</td> -->
+								<td>
+								<volist name="peak.peak_time" id="ptime" key="k">
+								<if condition="1 neq $k"> 
+									 &&  
+								</if>
+								<?php $arr=array("","周一","周二","周三","周四","周五","周六","周日");echo $arr[$ptime['week']] ?>
+									
+									   {$ptime.start_time}-{$ptime.end_time}
+									
+									
+								</volist>								
+								</td> 
+								<td>{$peak.create_time}</td>
+								<td>
+									<div class="action-buttons">
+										<a class="green" href="{:U('Brand/Shop/showEditPeak?id='.$peak['id'])}">
+											<i class="icon-pencil bigger-130"></i>
+										</a>
+
+										<a class="red" href="javascript:void(0)" onclick="delPeak({$peak.id},this)">
+											<i class="icon-trash bigger-130"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+						</volist>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="script">
+	<script src="/Public/js/chosen.jquery.min.js"></script>
+	<script>
+		$("#menu_1").addClass("active open");
+    $("#menu_17").addClass("active");
+    $("#menu_20").addClass("active");
+	</script>
+</block>
+<block name="css">
+	<link rel="stylesheet" href="/Public/css/chosen.css" />
+</block>

@@ -1,0 +1,257 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+         <li class="active">基础设置</li>
+        <li class="active">PT课程管理</li>
+
+    </ul>
+</block>
+
+ 
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="ptclass">
+           <form class="form-inline" role="form" action="{:U('Brand/Ptclass/query')}" method="post" id="query_ptclass" style="margin-bottom:10px">
+                                    <div class="form-group">
+                                        <label  class="sr-only" for="club">请选择会所：</label>
+                                        <select name="club" id="club" class="form-control"> 
+                                            <option value="-1">所有会所</option>
+                                            <volist name="clubarray" id="club">
+                                                <option value="{$club.id}">{$club.club_name}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+                                    
+
+                                    <div class="form-group">
+                                        <label  for="name">商品名称:</label>
+                                        <input type="text" class="form-control" name="name"  id="name"></div>
+
+                                 
+                                    <button type="submit" class="btn  btn-info btn-sm">
+                                        <i class="icon-search"></i>
+                                        查询
+                                    </button>
+
+                                </form>
+
+
+                                <table id="pt_class_grid"></table>
+                                <div id="pt_class_pager"></div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+     
+        function setClubs()
+        {
+              var obj=jQuery("#pt_class_grid").jqGrid('getGridParam', 'userData');
+                 var options = "";
+                   for(var i=0;i<obj.length;i++)
+                    {
+                        if(i!=0)
+                        {
+                            options+=";";
+                        }
+                        options+=obj[i]['id']+":"+obj[i]['club_name'];
+                    }
+            var length=obj.length>4?"70px":(30*obj.length)+"px";
+             $("#pt_class_grid").setColProp('clubs', { editoptions: {value:options,style:"width:150px;height:"+length} });
+        }
+
+    $(function(){
+
+        $("#menu_1").addClass("active open");
+    $("#menu_17").addClass("active");
+    $("#menu_22").addClass("active");
+
+           var  grid_selector = "#pt_class_grid";
+            var  pager_selector = "#pt_class_pager";    
+              
+                jQuery(grid_selector).jqGrid({
+                    url:"/Brand/Ptclass/getPtclass",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:$('#ptclass').width(),        
+                    mtype:"POST",
+                    colNames:['','ID','名称','课时长','单价','可售会所','是否可卖','备注','创建时间'],
+                    colModel:[                        
+                        {name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,editable: false ,
+                            formatter:'actions', 
+                            formatoptions:{ 
+                                keys:true,
+                                
+                                delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
+                                //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
+                            }
+                        },
+
+                        {name:'id',index:'id',sortable:true,editable: false ,width:70,align:'center',sorttype:'integer'},
+                        {name:'name',index:'name',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center',search:true},
+                        {name:'time',index:'time',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center',search:true},
+                           
+                          {name:'price',editrules:{required:true},index:'price',editable: true ,width:80,align:'center'},     
+                          
+                          {name:'clubs',index:'clubs',width:350,editoptions:{size:"20",maxlength:"30"},align:'center',search:false,edittype:"select",editoptions:{multiple:true,value:""},formatter : function(value, options, rData){
+                            if(isString(value)) return value;
+                                if(value!=null && value.length > 0)
+                                {
+                                     var userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                                    var ret ="";
+                                    for(var i=0;i<value.length;i++)
+                                    {
+                                        if(i!=0) ret+=";";
+                                        for(var j=0;j<userData.length;j++)
+                                        {
+                                            if(userData[j]['id']==value[i]['club_id'])
+                                            {
+                                                ret+=userData[j]['club_name'];
+                                                break;
+                                            }
+                                        }
+                                        
+                                    }
+                                   
+                                    return ret;
+                                }
+                                return "无可卖会所";                            
+                         }}, 
+                         {name:'status',index:'status', width:70,editable:true, edittype:'checkbox', editoptions: { value:"1:0"},  formatter: "checkbox", formatoptions:{disabled:false},align:'center'},  
+                          
+                          {name:'description',index:'description',width:150,editoptions:{size:"20",maxlength:"30"},align:'center',edittype:'textarea'},
+
+                          {name:'create_time',index:'create_time',width:200,editoptions:{size:"20",maxlength:"30"},align:'center',editable:false},
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                    editurl: "/Brand/Ptclass/setPtclass",          
+                    // autowidth: true,
+                     shrinkToFit:false,  
+                    caption: "Pt课程信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() { 
+                          setClubs();
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0);
+                      
+                    },
+                 
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        add: true,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: true,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                );
+ 
+
+})
+    </script>
+</block>

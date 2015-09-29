@@ -1,0 +1,410 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">客户管理</li>
+
+    </ul>
+</block>
+
+<block name="content">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-inline" role="form" action="{:U('Mc/Manage/Members')}" method="post" id="mc_query_stmember" >
+
+                <input type="hidden" value="1" name="is_member" oper="eq">
+
+                <div class="input-group form-group">
+                    <input type="text" class="form-control" id="day">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" type="button" disabled="">日内</button>
+                    </span>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
+                            <span  id="action">统计类型</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+                            <li>
+                                <a href="javascript:void(0)" onclick="$('#action').text('新入会');$('.detail_query').addClass('hide');st_query(6)">新入会</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="$('#action').text('无跟进');$('.detail_query').addClass('hide');st_query(7)">无跟进</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="$('#action').text('新分配');$('.detail_query').addClass('hide');st_query(4)">新分配</a>
+                            </li>
+                             
+
+                            <li class="divider"></li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="$('#action').text('精确查询');$('.detail_query').removeClass('hide')">精确查询</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <hr/>
+        <div class="col-xs-12 detail_query hide"  >
+            <form class="form-inline" role="form" action="{:U('Mc/Manage/getMembers')}" method="post" id="mc_query_smember" >
+
+                <input type="hidden" value="1" name="is_member" oper="eq">
+                <!-- <div class="form-group">
+                <label class="sr-only" for="channel_id">选择渠道</label>
+                <select name="channel_id" id="channel_id" class="form-control">
+                    <option value="0">所有渠道</option>
+                    <volist name="channels" id="channel">
+                        <option value="{$channel.id}">{$channel.name}</option>
+                    </volist>
+                </select>
+            </div>
+            -->
+            <div class="form-group">
+                <label class="sr-only" for="type">客户分类</label>
+                <select name="type" id="type" class="form-control" oper="eq">
+                    <option value="0">所有客户</option>
+                    <option value="4">A类</option>
+                    <option value="3">B类</option>
+                    <option value="2">C类</option>
+                    <option value="1">D类</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label  for="name">姓名:</label>
+                <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+
+            <div class="form-group">
+                <label  for="phone">手机号:</label>
+                <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+            <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                查询
+            </button>
+
+        </form>
+    </div>
+    <div class="col-xs-12">
+        <table id="mc_smember_grid"></table>
+        <div id="mc_smember_grid_pager"></div>
+    </div>
+
+</div>
+<div id="show_detail"></div>
+
+<div class="modal fade " id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="followupmodallabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form class="form-horizontal ajaxForm" role="form" id="servicelistform" action="{:U('Mc/Manage/addservicelist')}">
+                            <input type="hidden" name="member_id" id="follow_id"  oper="eq">
+                            <div class="form-group">
+
+                                <label class="col-sm-4  control-label no-padding-right" for="f_name">
+                                    姓名:
+                                    <span id="f_name" ></span>
+                                </label>
+                                <label class="col-sm-4  control-label no-padding-left" for="f_phone">
+                                    电话:
+                                    <a id="f_phone"></a>
+                                </label>
+
+                            </div>
+                            <div class="form-group">
+                                 <label class="col-sm-2  control-label no-padding-right" for="recommend_goods_id">推荐产品:</label>
+                                <div class="col-sm-4">
+                                    <select name="recommend_goods_id" id="recommend_goods_id" class=" form-control">
+                                        <volist name="goodslist" id="goods">
+                                        <option value="{$goods.id}">{$goods.name}</option> 
+                                    </volist>
+                                    </select>
+                                </div>
+
+
+                                <label class="col-sm-2  control-label no-padding-right" for="name">结果:</label>
+                                <div class="col-sm-4">
+                                    <select name="ret" id="ret" class=" form-control">
+                                        <option value="0">无意向</option>
+                                        <option value="1">有意向</option>
+                                        <option value="2">成功</option>
+                                    </select>
+                                </div>
+
+                               
+                            </div>
+                             <div class="form-group">
+
+                                <label class="failed col-sm-2  control-label no-padding-right" for="failed_reason">失败反馈:</label>
+                                <div class="col-sm-10 failed">
+                                   <input type="text" class="form-control" name="failed_reason" id="failed_reason">
+                                </div> 
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="col-xs-2  control-label no-padding-right" for="desc">备注:</label>
+                                <div class="col-xs-10">
+                                    <textarea type="text" id="desc"  rows="3" class="form-control col-xs-12" name="desc" ></textarea>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary" >保存</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="servicelistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">跟进历史记录</h4>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-condensed followlist" >
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>跟进日期</th>
+                             <th>推荐商品</th>
+                            <th>结果</th> 
+                            <th>反馈</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">已阅</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</block>
+
+<block name="script">
+<script>
+  
+
+
+function show_service(self)
+{ 
+    $("#serviceModal").modal("show");
+    $(self).removeClass("btn-danger").addClass("btn-default");
+}
+
+
+function st_query(type)
+{
+    var day = $("#day").val();
+    if(parseInt(day)>0)
+    {
+         var rules="";
+        rules = '{"field":"st_type","op":"eq","data":{"type":"' + type + '","day":"'+day+'"}}'; 
+
+        var filtersStr = '{"groupOp":"AND","rules":[' + rules + ']}';  
+         var postData = $("#mc_smember_grid").jqGrid("getGridParam", "postData"); 
+         $.extend(postData, {filters: filtersStr});  
+        $("#mc_smember_grid").jqGrid("setGridParam", {  
+          datatype:'json',
+              search: true    
+          }).trigger("reloadGrid", [{page:1}]);   
+       
+    }
+    
+}
+function showdetail(id)
+{
+ if(lasdetailtid==id && $("#show_detail").text()!='')return; lasdetailtid=id;
+     $.post("/Mc/Manage/show", {id:id}, function(data,textStatus){
+                              $("#show_detail").text("");
+                              $("#show_detail").append(data);
+                        }, "json");
+ 
+}
+$(function(){ 
+
+    $("#menu_8").addClass("active open");
+    $("#menu_53").addClass("active");
+
+ 
+    var grid_selector = "#mc_smember_grid";
+    var pager_selector = "#mc_smember_grid_pager";
+
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Mc/Manage/getMembers",                 
+                    datatype: "json",
+                    height: "100%",  
+                    width:"100%",          
+                    mtype:"POST",
+                    postData:{is_member:1},
+                    colNames:['ID','姓名','手机号码','性别','分类','访客状态','跟进'],
+                    colModel:[ 
+                        {name:'id',index:'id',hidden:true,sortable:true,editable: false ,width:100,formatter : function(value, options, rData){
+                            return value;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+value+")>"+value+"</a>";
+            },sorttype:'integer', searchoptions:{sopt:['eq','ne','le','lt','gt','ge']}},
+                        {name:'name',index:'name',width:80,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                            return value;
+                            //   var v=rData.id;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+v+")>"+value+"</a>";
+            }},
+                        {name:'phone',index:'phone',hidden:true,width:150,editoptions:{size:"20",maxlength:"30"},search:true},
+                       {name:'sex',index:'sex', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",editoptions:{value:"male:男;female:女"},formatter : function(value, options, rData){
+                           return value=='male'|| value=='男'?"男":"女";
+            },},
+                        {name:'type',index:'type', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",formatter : function(value, options, rData){
+                         var a=new Array("","D类","C类","B类","A类");
+                           return getValue(a,value); 
+            }}, 
+             {name:'is_member',index:'is_member',hidden:true, width:100,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                            var a=new Array("潜在客户","正式会员");
+                           return getValue(a,value);
+            },},
+
+                        {name:'id',index:'id',editable: false , width:100,formatter : function(value, options, rData){
+                          return '<button class="btn btn-danger btn-sm followup" onclick="show_service(this)"><i class="icon-reply icon-only"></i>跟进</button>';
+            }},  
+                    ],       
+                   
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false},
+                    sortorder: "desc",
+                    editurl: "",    
+                     autowidth: true,
+                     shrinkToFit:true,  
+                    caption: "客户信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},
+                     onSelectRow: function (rowid, status) { 
+                       
+                        var id = jQuery("#mc_smember_grid").jqGrid('getGridParam','selrow');
+                        var rowData = $("#mc_smember_grid").jqGrid("getRowData",id);
+                        var name=rowData.name;
+                        var phone=rowData.phone;
+                          $("#f_name").text(name); 
+                        $("#f_phone").text(phone);
+                        $("#f_phone").attr("href","tel:"+phone);
+                        $("#follow_id").val(id);
+                         if(status==true)
+                         {
+                             showdetail(rowid);
+                             return;
+                         } 
+                         else
+                         {
+                            $("#show_detail").text("");
+                         }
+                     }, 
+
+                    loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+ 
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    } 
+                );
+
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-calendar blue',caption:"",title:"",
+    onClickButton:function(){ 
+        var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+    if (id) {
+          var ret = jQuery(grid_selector).jqGrid('getRowData',id);
+        $.post("/Mc/Manage/servicelist", {id:id}, function(data,textStatus){
+                             if(data.status)
+                             {
+                                var data=data.data;
+                                if(data==null)
+                                {
+                                    bootbox.alert('无跟进记录',null);
+                                    return;
+                                }
+                                $(".followlist tr:not(:first)").remove();
+                                for(var i=0;i<data.length;i++)
+                                {
+                                    var record=data[i];
+                                    var html='<tr><td>'+ret.name+'</td>';
+                                    var rslt="";
+                                     html+="<td>"+record.create_time+"</td>";
+                                     html+="<td>"+record.goods.name+"</td>";
+                                    if(record.ret==0)rslt="无意向"; 
+                                    else if(record.ret==1)rslt="有意向"; 
+                                    else rslt="成功"; 
+                                    
+                                     html+="<td>"+rslt+"</td>";
+                                       html+="<td>"+record.failed_reason+"</td>";
+                                      html+="<td>"+record.desc+"</td></tr>"; 
+
+                                    $(".followlist").append(html); 
+                                }
+                                  
+                                 $("#servicelistModal").modal("show");
+                             }
+                             else
+                             {
+                                bootbox.alert(data.info,null);
+                             }
+                        }, "json");       
+    } else { alert("请先选中要修改的行！");}
+         
+    } 
+}); 
+
+
+
+})
+</script>
+</block>

@@ -1,0 +1,246 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">会籍合同查询</li>
+	</ul>
+</block>
+
+<block name="content">
+	<div class="row">
+		<div class="col-xs-12" id="fcontainer">
+
+			<form class="form-inline" role="form" action="{:U('Brand/Mcontract/query')}" method="post" id="query_contract_form" style="margin-bottom:10px">
+				<input type="hidden" name="totalrows" value="1000">
+				<div class="form-group">
+					<label  class="sr-only" for="sale_club_id">销售会所：</label>
+					<select name="sale_club_id" id="sale_club_id"  oper="eq" class="form-control">
+						<option value="0">请选择销售会所</option>
+						<volist name="clubs" id="club">
+							<option value="{$club.id}">{$club.club_name}</option>
+						</volist>
+					</select>
+				</div>
+				<div class="form-group">
+					<label  class="sr-only" for="mc_id">MC：</label>
+					<select name="mc_id" id="mc_id" class="form-control"  oper="eq">
+						<option value="0">请选择MC</option>
+						<volist name="mcs" id="mc">
+							<option value="{$mc.id}">{$mc.name_cn}</option>
+						</volist>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="sr-only" for="card_type_id">卡种分类</label>
+					<select name="card_type_id" id="card_type_id" class="form-control"  oper="eq">
+						<option value="0">请选择卡种分类</option>
+						<volist name="cardtypes" id="cardtype">
+							<option value="{$cardtype.id}">{$cardtype.name}</option>
+						</volist>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label  for="name">会员姓名:</label>
+					<input type="text" class="form-control" name="name"  id="name"  oper="eq"></div>
+				<div class="form-group">
+					<label  for="phone">手机号码:</label>
+					<input type="text" class="form-control" name="phone"  id="phone"  oper="eq"></div>
+
+				<div class="form-group">
+					<label  for="start_time">开始日期:</label>
+					<input type="text" class="form-control date_ymd" name="start_time"  id="start_time"  oper="egt"></div>
+
+				<div class="form-group">
+					<label  for="end_time">结束日期:</label>
+					<input type="text" oper="elt" class="form-control date_ymd" name="end_time"  id="end_time"></div>
+
+				<button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+					查询
+				</button>
+			</form>
+
+			<table id="contract_grid"></table>
+			<div id="contract_pager"></div>
+
+		</div>
+	</div>
+
+</block>
+
+<block name="script">
+	<script> 
+    $(function(){
+    $("#menu_1").addClass("active open");
+    $("#menu_16").addClass("active");
+
+            var grid_selector = "#contract_grid";
+            var pager_selector = "#contract_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Brand/Mcontract/query')}",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','合同编号','会员名称','性别', '手机号码','卡种','合同类型','合同状态','卡种价格','应收金额','实收金额','欠款金额','签约日期','合同生效日期','合同结束日期','开卡方式','当前MC'],
+                    colModel:[   
+                        {name:'id',index:'id',width:150,align:'center',sorttype:'integer'},
+                        {name:'contract_number',index:'contract_number',width:150,align:'center',search:true,searchoptions:{sopt:['eq']}},
+                        {name:'name',index:'name',width:50,align:'center'},
+                        {name:'sex',index:'sex',width:50,align:'center',formatter : function(value, options, rData){
+                       		return value=='male'|| value=='男'?"男":"女";
+           				 }},
+                        {name:'phone',index:'phone',hidden:true,width:150,align:'center'},
+                        {name:'card_name',index:'card_name',width:150,align:'center'},
+                        {name:'type',index:'type',width:100,align:'center',formatter : function(value, options, rData){
+                       		 var a=new Array("普通合同","团卡合同");
+                           return getValue(a,value); 
+           				 }},
+                        {name:'status',index:'status',width:100,align:'center',formatter : function(value, options, rData){
+                       		 var a=new Array("","新增合同","续费","升级","转让");
+                           return getValue(a,value); 
+           				 }},
+                        {name:'card_type_price',index:'card_type_price',width:50,align:'center'},
+                        {name:'price',index:'price',width:80,align:'center'},
+                        {name:'payed',index:'payed',width:80,align:'center'},
+                        {name:'',index:'',width:80,align:'center',formatter : function(value, options, rData){                       		 
+                           return rData.price-rData.payed; 
+           				 }},
+                        {name:'create_time',index:'create_time',width:150,align:'center'},
+                        {name:'start_time',index:'start_time',width:100,align:'center'},
+                        {name:'end_time',index:'end_time',width:100,align:'center'},
+                        {name:'active_type',index:'active_type',width:150,align:'center',formatter : function(value, options, rData){
+                       		 var a=new Array("买卡当天开卡","指定日期开卡","第一次到开卡","指定天数内开卡");
+                           return getValue(a,value); 
+           				 }},
+                        {name:'mc_name',index:'mc_name',width:80,align:'center'},                  
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                    editurl: "",          
+                    // autowidth: true,
+                    shrinkToFit:false,  
+                    autoScroll: true,
+                    caption: "会籍合同信息" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                    	// jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                           var res = $.parseJSON(response.responseText);
+                             // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                ); 
+
+})
+    </script>
+</block>

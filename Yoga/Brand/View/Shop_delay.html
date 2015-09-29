@@ -1,0 +1,75 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">会员批量延期</li>
+	</ul>
+</block>
+
+<block name="content">
+	<h4 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+		延期后所有此会馆的会员卡有效期将批量延期！
+	</h4>
+
+	<form class="form-inline" id="form_add_delay" role="form" action="{:U('Brand/Shop/adddelay')}">
+		<div class="form-group">
+			<label  for="club_id">会所名称:</label>
+			<select name="club_id" id="club_id">
+				<volist name="clubs" id="club">
+					<option value="{$club.id}">{$club.club_name}</option>
+				</volist>
+			</select>
+		</div>
+			<div class="form-group">
+			<label  for="delay_day">&nbsp;延期天数:</label>
+			<input type="text" name="delay_day" class="form-control" id="delay_day"></div>
+
+		<div class="form-group">
+			<label class="" for="reason">&nbsp;延期原因:</label>
+			<input type="text" class="form-control" id="reason" name ="reason"></div>
+	 
+		<button type="submit" class="btn btn-success btn-sm">延期</button>
+	</form>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="table-responsive">
+				<div class="table-header">延期历史记录</div>
+
+				<table id="delay_table" class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>会所名称</th>
+							<th>延期天数</th>
+							<th>延期原因</th>
+							<th>开始时间</th>
+						</tr>
+					</thead>
+					<tbody>
+						<volist name="history" id="delay">
+							<tr>
+								<td>{$delay.club.club_name}</td>
+								<td>{$delay.delay_day}</td>
+								<td>{$delay.reason}</td>
+								<td>{$delay.create_time}</td>
+							</tr>
+						</volist>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="script"> 
+	<script>
+	$(function(){
+		 $("#menu_1").addClass("active open");
+	    $("#menu_15").addClass("active");
+	}) 
+	</script>
+</block>
+<block name="css">
+	<link rel="stylesheet" href="/Public/css/chosen.css" />
+</block>

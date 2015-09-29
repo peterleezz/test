@@ -1,0 +1,48 @@
+<extend name="Home@Public:base" />
+<block name="script">
+  <script> 
+</script>
+</block>
+<block name="content">
+<table width="200" border="0" cellspacing="1" cellpadding="3" id="upvote">
+  <tr>
+    <th colspan="2">添加調查
+    <div id="msg" style="color:red;"></div>
+  </th>
+    </tr>
+  
+  <tr id="itemap">
+    <td width="41px">其它</td>
+    <td width="706px">
+        排序
+        <input name="txtnum" type="text" value="10" id="txtnum" style="width:20px;" />        
+         類型
+        <input name="txttype" type="text" value="1" id="txttype" style="width:20px;" />        
+        </td>    
+    </tr>
+  <tr>
+    <td width="41px">主 題</td>
+    <td width="706px"><input name="txttitle" type="text" value="" id="txttitle" style="width:300px;" />
+        <a href="javascript:void(0);" onclick="$('#sendctrl').before($(this).parents('tr').next().clone())">增加選項</a> 
+    </td>
+    </tr>
+    
+  <tr>
+    <td>選 項</td>
+    <td><label>
+  編號:<input readonly="readonly" type="text" style="width:15px" name="id1" value="" /> 
+      <input width="100px" type="text" name="answer1" value=""/>
+      其它
+      <input  width="50px" type="text" name="other1" value=""/>
+    </label>  <a href="javascript:void(0);" onclick="$(this).parents('tr').remove()">删除</a></td>
+    </tr>
+  <tr id="sendctrl">
+    <td>&nbsp;</td>
+    <td><label>
+      
+    <input type="button"  onclick="javascript:itemsave();" value="添加"  />
+      <input type="reset" name="button2" id="button2" value="重設" />
+    </label></td>
+    </tr>
+</table>
+</block>

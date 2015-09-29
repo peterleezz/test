@@ -1,0 +1,302 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">前台</a>
+		</li>
+	    <li class="active">访客信息</li>	
+	</ul>
+</block>
+
+<block name="content">
+	<div class="profile-user-info profile-user-info-striped">
+		<div class="profile-info-row">
+			<div class="profile-info-name">姓名：</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.name}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">手机号码</div>
+			<div class="profile-info-value">
+				<span >
+				 &nbsp{$member.phone}
+				</span>
+			</div>
+		</div>
+
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">性别</div>
+			<div class="profile-info-value">
+				<span >
+					<switch name="member.sex">
+					    <case value="female">女</case>
+					    <case value="male">男</case>
+					    <default />女
+					</switch>
+				</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">来自渠道</div>
+
+			<div class="profile-info-value"> 
+				<span >&nbsp<if condition="$member.channel_id eq 0">朋友推荐<else />{$member.channel.name}</if></span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">推荐人</div>
+
+			<div class="profile-info-value"> 
+				<span >&nbsp<if condition="$member.recommend_id eq 0">{$member.recommend_name}<else />{$member.user.name_cn}</if></span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">推荐人手机号码</div>
+
+			<div class="profile-info-value"> 
+				<span >&nbsp<if condition="$member.recommend_id eq 0">{$member.recommend_phone}<else />{$member.user.phone}</if></span>
+			</div>
+		</div>
+
+	<div class="profile-info-row">
+			<div class="profile-info-name">分类</div>
+			<div class="profile-info-value">
+				<span >
+					<switch name="member.type">
+					    <case value="4">A类</case>
+					    <case value="3">B类</case>
+					    <case value="2">C类</case>
+					    <case value="1">D类</case>
+					    <default />D类
+					</switch>
+				</span>
+			</div>
+		</div> 
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">邮件</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.email}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">生日</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.birthday}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">家庭座机</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.home_phone}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">家庭地址</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.home_addr}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">国籍</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.country}</span>
+			</div>
+
+		</div>
+
+			<div class="profile-info-row">
+			<div class="profile-info-name">民族</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.nation}</span>
+			</div>
+		</div>
+			<div class="profile-info-row">
+			<div class="profile-info-name">职业</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.job}</span>
+			</div>
+		</div>
+
+<div class="profile-info-row">
+			<div class="profile-info-name">公司名</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.office_name}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">公司地址</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.office_addr}</span>
+			</div>
+		</div>
+	<div class="profile-info-row">
+			<div class="profile-info-name">公司电话</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.office_phone}</span>
+			</div>
+		</div>
+<div class="profile-info-row">
+			<div class="profile-info-name">兴趣爱好</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.hobby}</span>
+			</div>
+		</div>
+
+
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">最近会馆</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.near_club_info.club_name}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">目的</div>
+			<div class="profile-info-value">
+				<span ><switch name="member.purpose">
+					    <case value="1">减肥</case>
+					    <case value="2">增肌</case>
+					    <case value="3">保持健康</case>
+					    <case value="4">时尚</case>
+					    <case value="5">习惯</case>
+					    <case value="6">其他</case>
+					    <default />其他
+					</switch></span>
+			</div>
+		</div>
+
+<div class="profile-info-row">
+			<div class="profile-info-name">证件类型</div>
+			<div class="profile-info-value">
+				<span ><switch name="member.certificate_type">
+					    <case value="1">身份证</case>
+					    <case value="2">护照</case>
+					    <case value="3">其他</case>
+					  
+					    <default />身份证
+					</switch></span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">证件号码</div>
+			<div class="profile-info-value">
+				<span > &nbsp{$member.certificate_number}</span>
+			</div>
+		</div>
+
+
+<div class="profile-info-row">
+			<div class="profile-info-name">获取咨询习惯</div>
+			<div class="profile-info-value">
+				<span ><switch name="member.certificate_type">
+					    <case value="1">网络</case>
+					    <case value="2">杂志</case>
+					    <case value="3">报纸</case>
+					    <case value="4">电视</case>
+					    <case value="5">广播</case>
+					    <case value="6">短信</case>
+						 <case value="7">其他</case>
+					  
+					    <default />其他
+					</switch></span>
+			</div>
+		</div>
+
+<div class="profile-info-row">
+			<div class="profile-info-name">婚姻状况</div>
+			<div class="profile-info-value">
+				<span >&nbsp<switch name="member.marriage">
+					    <case value="0">未婚</case>
+					    <case value="1">已婚</case>
+					   
+					    <default />未婚
+					</switch></span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">子女状况</div>
+			<div class="profile-info-value">
+				<span >&nbsp<switch name="member.has_child">
+					    <case value="0">无子女</case>
+					    <case value="1">有子女</case>
+					   
+					    <default />无子女
+					</switch></span>
+			</div>
+		</div>
+
+<div class="profile-info-row">
+			<div class="profile-info-name">紧急联系人</div>
+			<div class="profile-info-value">
+				<span > &nbsp{$member.emergency_name}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">联系人电话</div>
+			<div class="profile-info-value">
+				<span >&nbsp {$member.emergency_phone}</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name">参加过其他品牌</div>
+			<div class="profile-info-value">
+				<span > &nbsp{$member.other_clubs}</span>
+			</div>
+		</div>
+
+<div class="profile-info-row">
+			<div class="profile-info-name">照片</div>
+			<div class="profile-info-value">
+				<img src="/Public/uploads/mmb_avatar/{$member.avatar}" alt="" style="width:100px;height:100px">
+			</div>
+		</div>
+<div class="profile-info-row">
+			<div class="profile-info-name">备注</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.desc}</span>
+			</div>
+		</div> 
+ 
+		<div class="profile-info-row">
+			<div class="profile-info-name">录入人</div>
+			<div class="profile-info-value">
+				<span >&nbsp<if condition="$member.record_user eq null">品牌帐号录入<else />{$member.record_user.name_cn}</if></span>
+			</div>
+		</div>
+
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">创建时间</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.create_time}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">更新时间</div>
+			<div class="profile-info-value">
+				<span >&nbsp{$member.update_time}</span>
+			</div>
+		</div>
+		
+	</div>
+</block>
+
+<block name="script">
+	<script>
+$(function(){
+	     $("#menu_4").addClass("active open");
+    $("#menu_33").addClass("active");
+})
+	</script>
+</block>

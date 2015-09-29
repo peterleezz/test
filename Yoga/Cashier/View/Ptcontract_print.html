@@ -1,0 +1,161 @@
+<extend name="Home@Public:base" />
+
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">升级</li>
+    </ul>
+</block>
+
+<block name="content">
+    <!--startprint1-->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">会员资料/Personal Data</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" id="user_id" value="{$member.id}">
+                    <div class="row">
+                        <div class="form-group col-xs-4 col-md-4">姓名/Name&nbsp;&nbsp;:{$contract.member.name}</div>
+                        <div class="form-group col-xs-4 col-md-4">电话/Mobile&nbsp;&nbsp;:{$contract.member.phone}</div>
+                        <div class="form-group col-xs-4 col-md-4">
+                            性别/Gender&nbsp;&nbsp;:
+                            <if condition="female eq $contract['member']['sex']">
+                                女
+                                <else/>
+                                男
+                            </if>
+                        </div>
+                        <div class="form-group col-xs-4 col-md-4">国籍/Nationality&nbsp;&nbsp;:{$contract.member.country}</div>
+                        <div class="form-group  col-xs-4 col-md-4">家庭住址/Addr&nbsp;&nbsp;:{$contract.member.home_addr}</div>
+                        <div class="form-group  col-xs-12 col-md-4">
+                            证件号码/Passport NO&nbsp;&nbsp;:{$contract.member.certificate_number}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">当前合同信息</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" id="contract_id" value="{$contract.id}">
+                    <div class="form-group col-xs-12 col-md-4">合同编号/Contract NO&nbsp;&nbsp;:{$contract.contract_number}</div>
+                    <div class="form-group col-xs-4 col-md-4">PT课程/PT Class&nbsp;&nbsp;:{$contract.ptclass.name}</div>
+                    <div class="form-group col-xs-4 col-md-4">
+                        次数/Times&nbsp;&nbsp;: 
+                    {$contract.used_num}/{$contract.total_num}
+                    </div>
+                    <!-- <div class="form-group col-xs-4">应收价格:{$contract.price}</div>
+                <div class="form-group col-xs-4">已付:{$contract.payed}</div>
+                <div class="form-group col-xs-4">欠款:{$contract['price']-$contract['payed']}</div>
+                -->
+                <div class="form-group col-xs-4 col-md-4">
+                    类型/Type&nbsp;&nbsp;:
+                    <switch name="contract['sale_type']" >
+                        <case value="1">新会员购买</case>
+                        <case value="2">续课</case>
+                        <case value="3">POS销售</case>
+                        <case value="4">场地开发</case>
+                        <default />
+                        新会员购买
+                    </switch>
+                </div>
+                <div class="form-group col-xs-6 col-md-4">
+                    有效日期/Valid Date&nbsp;&nbsp;:{$contract.start_time}--{$contract.end_time}
+                </div>
+                <div class="form-group col-xs-6 col-md-4">购买时间/Purchase Time&nbsp;&nbsp;:{$contract.create_time}</div>
+                <div class="form-group col-xs-12">备注信息/Note&nbsp;&nbsp;:{$contract.description}</div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">付款信息/Payment Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th>现金/Cash</th>
+                                <th>刷卡/Pos</th>
+                                <th>支票/Check</th>
+                                <th>储值卡/Recharge</th>
+                                <th>收款时间/Payment Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="history" id="record">
+                                <tr>
+                                    <td>
+                                       ￥{$record.cash}
+                                    </td>
+                                    <td>￥{$record.pos}</td>
+                                     <td>￥{$record.check}</td>
+                                      <td>￥{$record.recharge}</td>
+                                    <td>{$record.create_time}</td>
+                                </tr>
+                            </volist>
+
+                        </tbody>
+                    </table>
+
+                    <div class="form-group col-xs-12">总计：{$contract.paid}￥</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">其他信息/Other</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-xs-4">会所名称/Studio&nbsp;&nbsp;:{$club.club_name}</div>
+                    <div class="form-group col-xs-4">收银/Cashier&nbsp;&nbsp;:{$user}</div>
+
+                    <div class="form-group col-xs-6 col-md-4">打印时间/Print Time:&nbsp;&nbsp;:{$print_time}</div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--endprint1-->
+<div class="clearfix"></div>
+<div class="clearfix form-actions">
+    <div class="col-md-offset-5 col-md-9">
+        <button class="btn btn-info" type="button" onclick="print_contract(1)"> <i class="icon-ok bigger-110"></i>
+            打印
+        </button>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script>
+    function print_contract(oper)
+    {
+         
+            bdhtml=window.document.body.innerHTML; 
+            sprnstr="<!--startprint"+oper+"-->"; 
+            eprnstr="<!--endprint"+oper+"-->"; 
+            prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18);  
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));  
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+            window.document.body.innerHTML=bdhtml;  
+    }
+         
+    </script>
+</block>

@@ -1,0 +1,454 @@
+<extend name="Home@Public:base" />
+
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">升级</li>
+    </ul>
+</block>
+
+<block name="css">
+    <style type="text/css">
+     .r_line{
+        padding:0 5px;
+
+    } 
+
+     .r_line input{ 
+        border:none;border-bottom:1px solid #000;width:100%;font-size:10px; height: 16px;    line-height: 16px;
+    } 
+ 
+    .r_label
+    { 
+        padding:0px 0px 5px;
+    }
+    .r_content{
+        margin-left:8px;
+        font-size:10px;
+        margin-bottom: 20px;
+    }
+    .r_title
+    {
+         margin-left:-8px;
+        font-size:12px;
+        margin-bottom: 10px;
+    }
+ 
+</style>
+
+</block>
+
+<block name="content">
+    <!--startprint1-->
+    <div class="row" style="max-width:1024px">
+        <div class="col-xs-12">
+            <div>
+                <img src="/Public/images/contract_header.jpg" alt="" style="width:100%">
+            </div>
+            <div style="margin:20px 40px 0px" class="contract_detail">
+                <div class="r_title"> <strong>申请人资料 Personal Data</strong>
+                </div>
+                <div class="r_content">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >姓名/ Name:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value="{$member.name}" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >性别/ Gender:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value='
+     <if condition="female eq $member['sex']">
+                                    女
+                                    <else/>
+                                    男
+                                </if>
+                                '/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 r_label" >国籍/Nationality:</div>
+                                <div class="col-xs-8 r_line" >
+                                    <input type="text" value="{$member.country}"/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-7 r_label" >身份证件/护照号码 ID/Passport No:</div>
+                                <div class="col-xs-5 r_line" >
+                                    <input type="text" value="{$member.certificate_number}"/>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >家庭住址/Addr:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value="{$member.home_addr}"/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >联系电话/Tel:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value="{$member.phone}"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                 </div>
+
+                <div class="r_title"> <strong>会籍详情 Membership Details</strong>
+                </div>
+                <div class="r_content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >合同编号/ Contract No:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value="{$contract.contract_number}" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >类别/ Type:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value=' <if condition="0 eq $contract['type']">
+                                    普通合同
+                                    <else/>
+                                    团卡合同
+                                </if>
+                                '/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 r_label" >会员卡编号/Card No:</div>
+                                <div class="col-xs-8 r_line" >
+                                    <input type="text"  value="{$card.card_number}"/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-5 r_label" >购买卡种/ Card Type:</div>
+                                <div class="col-xs-7 r_line" >
+                                    <input type="text" value="{$contract.card_type.name}" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-5 r_label" >会员卡类型/Card Type:</div>
+                                <div class="col-xs-7 r_line" >
+                                    <input type="text" value=' <if condition="1 eq $contract['card_type']['type']">
+                                    时间卡
+                                    <else/>
+                                    次数卡
+                                </if>
+                                '/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 r_label" >有效期/Expiry Date:</div>
+                                <div class="col-xs-8 r_line" >
+                                    <input type="text" value='{$contract.start_time}--{$contract.end_time}'/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >购买时间/Purchase Time:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$contract.create_time}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-2 r_label" >备注其他/Note:</div>
+                                <div class="col-xs-10 r_line" >
+                                    <input type="text" value='{$contract.description}'/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="r_title">
+                    <strong>付款信息/Payment Information</strong>
+                </div>
+                <div class="r_content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >收款方式/ Paid By:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value='{$via}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+            	       <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >合计实收金额/ Total Payment:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$bill.paid}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-5 r_label" >其他费用/ Other Fee:</div>
+                                <div class="col-xs-7 r_line" >
+                                    <input type="text" value='0' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >收款时间/ Payment Time:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$bill.update_time}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+            	       <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-5 r_label" >操作类型/ Source:</div>
+                                <div class="col-xs-7 r_line" >
+                                    <input type="text" value='<if condition = "1 eq $historycount">初办收费 <else/>收款</if>' />
+                                </div>
+
+                            </div>
+                        </div> 
+                    </div>
+                </div> 
+
+
+
+
+                <div class="r_title">
+                    <strong>其他信息/Other</strong>
+                </div>
+                <div class="r_content">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >打印时间/ Print Time:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$print_time}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+                       <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >打印次数/ Times:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$contract.print_count}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >所属门店/ Studio:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$club.club_name}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-7 r_label" >服务会籍/ Consultant:</div>
+                                <div class="col-xs-5 r_line" >
+                                    <input type="text" value='{$mc_name}' />
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                       <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >门店收银/ Cashier:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" value='{$cashier_name}' />
+                                </div>
+
+                            </div>
+                        </div> 
+
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-8 r_label" >门店经理/ Store Manager:</div>
+                                <div class="col-xs-4 r_line" >
+                                    <input type="text" value='{$shopkeeper_name}' />
+                                </div>
+
+                            </div>
+                        </div> 
+
+			<div class="col-xs-12" style="margin-top:30px">
+                            <div class="row">
+                                <div class="col-xs-2 r_label" >经办人/ Staff:</div>
+                                <div class="col-xs-10 r_line" >
+                                    <input type="text" value='{$user}' />
+                                </div>
+
+                            </div>
+                        </div> 
+
+			<div class="col-xs-6" >
+                            <div class="row">
+                                <div class="col-xs-6 r_label" >收银签名/ Cashier Signature:</div>
+                                <div class="col-xs-6 r_line" >
+                                    <input type="text" />
+                                </div>
+
+                            </div>
+                        </div> 
+
+			<div class="col-xs-6" >
+                            <div class="row">
+                                <div class="col-xs-5 r_label" >用户签名/ Signature:</div>
+                                <div class="col-xs-7 r_line" >
+                                    <input type="text" />
+                                </div>
+
+                            </div>
+                        </div> 
+
+ 			<div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-5 r_label" >门店经理/ Store Manager:</div>
+                                <div class="col-xs-7 r_line" >
+                                    <input type="text" value='' />
+                                </div>
+
+                            </div>
+                        </div> 
+
+			<div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-3 r_label" >日期/ Date:</div>
+                                <div class="col-xs-9 r_line" >
+                                    <input type="text" value='{$print_time|substr=0,10}' />
+                                </div>
+
+                            </div>
+                        </div> 
+
+
+                        
+                    </div>
+                </div> 
+
+
+                
+            </div>
+        </div>
+
+
+        <div>
+            <img src="/Public/images/contract_tail.jpg" alt="" style="width:100%">
+        </div>
+
+
+     </div> 
+  
+<!--endprint1-->
+<div class="clearfix"></div>
+<div class="clearfix form-actions">
+<div class="row" style="max-width:1024px">
+    
+
+<div class="col-md-offset-5 col-md-9">
+<button class="btn btn-info" type="button" onclick="print_contract(1)"> <i class="icon-ok bigger-110"></i>
+打印
+</button>
+</div>
+</div>
+</div>
+</block>
+
+<block name="script">
+<script>
+    function print_contract(oper)
+    {
+         
+            bdhtml=window.document.body.innerHTML; 
+            sprnstr="<!--startprint"+oper+"-->"; 
+            eprnstr="<!--endprint"+oper+"-->"; 
+            prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18);  
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));  
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+            window.document.body.innerHTML=bdhtml;  
+    }
+         
+    </script>
+</block>

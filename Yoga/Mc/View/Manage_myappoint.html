@@ -1,0 +1,284 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">客户管理</li>
+
+    </ul>
+</block>
+
+<block name="content">
+
+    <div class="row">
+        <div class="col-xs-12 "  >
+            <form class="form-inline" role="form" action="{:U('Mc/Manage/getAppoints')}" method="post" id="mc_query_appoint" >
+
+                <div class="form-group">
+                    <label class="sr-only" for="time">time</label>
+                    <select name="time" id="time" class="form-control" oper="eq">
+                        <option value="1">当天</option>
+                        <option value="3">三天内</option>
+                        <option value="7">一周内</option>
+                        <option value="30">一月内</option>
+                        <option value="0">其他</option>
+                    </select>
+                </div>
+                <div class="form-group hide day">
+                    <label  for="day">几天内:</label>
+                    <input type="text" class="form-control" name="day"  id="day" oper="eq"></div>
+
+                <div class="form-group">
+                    <label  for="name">姓名:</label>
+                    <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+
+                <div class="form-group">
+                    <label  for="phone">手机号:</label>
+                    <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                    查询
+                </button>
+
+            </form>
+        </div>
+        <div class="col-xs-12">
+            <table id="mc_appoint_grid"></table>
+            <div id="mc_appoint_grid_pager"></div>
+        </div>
+
+    </div>
+    <div id="show_detail"></div>
+
+    <div class="modal fade " id="changeappointModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">修改邀约</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal ajaxForm" role="form" id="changeappointform" action="{:U('Mc/Manage/changeappoint')}">
+                        <input type="hidden" name="appoint_id" id="appoint_id"  oper="eq">
+                        <div class="form-group">
+
+                            <label class="col-sm-2  control-label no-padding-right" for="modify">修改为:</label>
+                            <div class="col-sm-4">
+                                <select name="modify" id="modify" class=" form-control">
+                                    <option value="0">更改备注</option>
+                                    <option value="1">取消</option>
+                                    <option value="2">更改时间</option>
+                                </select>
+                            </div>
+                            <label class="successed hide col-sm-2  control-label no-padding-right" for="appoint_time">预约时间:</label>
+                            <div class="successed  hide col-sm-4">
+                                <input type="text" name="appoint_time" id="appoint_time" class="date_ymdhis form-control"></div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="col-xs-2  control-label no-padding-right" for="desc">备注:</label>
+                            <div class="col-xs-10">
+                                <textarea type="text" id="desc"  rows="3" class="form-control col-xs-12" name="desc" ></textarea>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" >保存</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+  
+ 
+ function dox(id,self)
+{
+     $.post("/index.php/Mc/Manage/docheck", {id:id}, function(data,textStatus){ 
+                       bootbox.alert(data.info,null); 
+                       if(data.status)
+                       {
+                            // $("#reception_member_grid").jqGrid('setRowData',id,{is_come:1,come_time:new Date().format('yyyy-MM-dd hh:mm:ss')});
+                            $(self).attr("disabled","disabled");
+                       }
+
+     }, "json");
+}
+
+
+ function change(self)
+{ 
+    $("#changeappointModel").modal("show");
+    $(self).removeClass("btn-danger").addClass("btn-default");
+}
+
+
+function showdetail(id)
+{
+ if(lasdetailtid==id && $("#show_detail").text()!='')return; lasdetailtid=id;
+     $.post("/Mc/Manage/show", {id:id}, function(data,textStatus){
+                              $("#show_detail").text("");
+                              $("#show_detail").append(data);
+                        }, "json");
+ 
+}
+function showorhide(rowId, tv, rawObject, cm, rdata) {
+    if (rdata.name=="") { return ' style="display:none;"' }
+}
+
+
+$(function(){ 
+
+    $("#menu_8").addClass("active open");
+    $("#menu_50").addClass("active");
+
+$("#time").change(function(){
+    if($(this).val()==0)
+    { 
+         $(".day").removeClass("hide");
+    }
+    else
+    { 
+         $(".day").addClass("hide");
+         $(".day").val(0);
+    }
+});
+
+$("#modify").change(function(){
+    if($(this).val()==2)
+    { 
+         $(".successed").removeClass("hide");
+    }
+    else
+    { 
+         $(".successed").addClass("hide");
+    }
+});
+ 
+
+    var grid_selector = "#mc_appoint_grid";
+    var pager_selector = "#mc_appoint_grid_pager";
+
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Mc/Manage/getAppoints",                 
+                    datatype: "json",
+                    height: "100%",  
+                    width:"100%",          
+                    mtype:"POST",
+                    colNames:['ID','姓名','手机号码','G','预约','时间','','',''],
+                    colModel:[ 
+                        {name:'id',index:'id',hidden:true,sortable:true,editable: false ,width:100,formatter : function(value, options, rData){
+                            return value;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+value+")>"+value+"</a>";
+            },sorttype:'integer', searchoptions:{sopt:['eq','ne','le','lt','gt','ge']}},
+                        {name:'name',index:'name',width:80,editoptions:{size:"20",maxlength:"30"}, cellattr:showorhide,formatter : function(value, options, rData){
+                            return value;
+                            //   var v=rData.id;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+v+")>"+value+"</a>";
+            }},
+                        {name:'phone',index:'phone',hidden:true,width:160,editoptions:{size:"20",maxlength:"30"},search:true, cellattr:showorhide},
+                       {name:'sex',index:'sex', width:60,hidden:true,editoptions:{size:"20",maxlength:"30"},edittype:"select",editoptions:{value:"male:男;female:女"},formatter : function(value, options, rData){
+                           return value=='male'|| value=='男'?"男":"女";
+            },cellattr:showorhide},
+                        {name:'ret',index:'ret', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",formatter : function(value, options, rData){
+                         var a=new Array("","参观","体验");
+                           return getValue(a,value); 
+            },cellattr:showorhide}, 
+             {name:'appoint_time',index:'appoint_time', width:80,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                        return value.substring(5,16);
+            },cellattr:showorhide}, 
+            {name:'desc',index:'desc', width:100,hidden:false,editoptions:{size:"20",maxlength:"30"}, cellattr: function(rowId, tv, rawObject, cm, rdata) {
+                            if (rdata.name=="")return 'colspan=6'; else  return ' style="display:none;"'  } },
+
+
+            {name:'id',index:'id',editable: false , width:1,formatter : function(value, options, rData){
+                          var html= '<button class="btn btn-danger btn-sm followup" onclick="change(this)"><i class="icon-pencil"></i>修改</button>';
+                          if(rData.is_come==0)
+                                html+= '<button class="btn btn-success btn-sm followup" onclick="dox('+rData.id+',this)"><i class="icon-ok icon-only"></i>到场</button>';
+                           else 
+                            html+= '<button disabled="disabled" class="btn btn-success btn-sm followup" onclick="dox('+rData.id+',this)"><i class="icon-ok icon-only"></i>已到场</button>';
+                            return html;
+
+
+            },cellattr:showorhide},  
+             {name:'member_id',index:'member_id', width:100,hidden:true,editoptions:{size:"20",maxlength:"30"}},
+                    ],       
+                   
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false},
+                    sortname:"appoint_time",
+                    sortorder: "desc",
+                    editurl: "",    
+                     autowidth: true,
+                     shrinkToFit:true,  
+                    caption: "员工信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},
+                     onSelectRow: function (rowid, status) { 
+                       
+                        var id = jQuery("#mc_appoint_grid").jqGrid('getGridParam','selrow');
+                        var rowData = $("#mc_appoint_grid").jqGrid("getRowData",id); 
+                        $("#appoint_id").val(id);
+                         if(status==true)
+                         {
+                             showdetail(rowData.member_id);
+                             return;
+                         } 
+                         else
+                         {
+                            $("#show_detail").text("");
+                         }
+                     }, 
+
+                    loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+ 
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }  
+                ); 
+})
+</script>
+</block>

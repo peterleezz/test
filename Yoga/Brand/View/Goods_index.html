@@ -1,0 +1,527 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">基础设置</li>
+        <li class="active">商品管理</li>
+
+    </ul>
+</block>
+
+ 
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="tabbable">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li  class="active">
+                                <a data-toggle="tab" href="#goods"> <i class="green icon-shopping-cart bigger-110"></i>
+                                    商品管理
+                                </a>
+                            </li >
+
+                            <li>
+                                <a data-toggle="tab" href="#goods_category">
+                                    <i class="green icon-home bigger-110"></i>
+                                    商品分类管理
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="goods" class="tab-pane in  active">
+
+                                <form class="form-inline" role="form" action="{:U('Brand/Goods/query')}" method="post" id="query_goods" style="margin-bottom:10px">
+                                    <div class="form-group">
+                                        <label  class="sr-only" for="club">请选择会所：</label>
+                                        <select name="club" id="club" class="form-control"> 
+                                            <option value="-1">所有会所</option>
+                                            <volist name="clubarray" id="club">
+                                                <option value="{$club.id}">{$club.club_name}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="category_id">请选择商品种类：</label>
+                                      <select name="category_id" id="category_id" class="form-control">             
+                                             <option value="-1">所有种类</option>
+                                            <volist name="categories" id="category">
+                                                <option value="{$category.id}">{$category.name}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label class="sr-only" for="sale_type">请选择售卖类型：</label>
+                                      <select name="sale_type" id="sale_type" class="form-control">             
+                                             <option value="-1">所有类型</option> 
+                                                <option value="0">经销</option>
+                                                <option value="1">代销</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="name">商品名称:</label>
+                                        <input type="text" class="form-control" name="name"  id="name"></div>
+
+                                 
+                                    <button type="submit" class="btn  btn-info btn-sm">
+                                        <i class="icon-search"></i>
+                                        查询
+                                    </button>
+
+                                </form>
+
+
+                                <table id="goods_grid"></table>
+                                <div id="goods_pager"></div>
+
+                            </div>
+
+                            <div id="goods_category" class="tab-pane">
+                                <table id="goods_category_grid"></table>
+                                <div id="goods_category_pager"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /span --> </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+    
+    function setCateGory()
+    {
+         var obj = $("#goods_category_grid").jqGrid('getGridParam','data');
+         var options = "";
+           for(var i=0;i<obj.length;i++)
+            {
+                if(i!=0)
+                {
+                    options+=";";
+                }
+                options+=obj[i]['id']+":"+obj[i]['name'];
+            }
+         $("#goods_grid").setColProp('category_id', { editoptions: {value:options} });
+    }
+        function setClubs()
+        {
+              var obj=jQuery("#goods_grid").jqGrid('getGridParam', 'userData');
+                 var options = "";
+                   for(var i=0;i<obj.length;i++)
+                    {
+                        if(i!=0)
+                        {
+                            options+=";";
+                        }
+                        options+=obj[i]['id']+":"+obj[i]['club_name'];
+                    }
+            var length=obj.length>4?"70px":(30*obj.length)+"px";
+             $("#goods_grid").setColProp('clubs', { editoptions: {value:options,style:"width:150px;height:"+length} });
+        }
+
+    $(function(){
+
+        $("#menu_1").addClass("active open");
+    $("#menu_17").addClass("active");
+    $("#menu_21").addClass("active");
+
+
+           var goods_grid_selector = "#goods_grid";
+            var goods_pager_selector = "#goods_pager";    
+              
+                jQuery(goods_grid_selector).jqGrid({
+                    url:"/Brand/Goods/getGoods",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:$('#goods').width(),        
+                    mtype:"POST",
+                    colNames:['','ID','商品名称','商品种类','售卖类型', '进货价','售价','单位','可售会所','是否可卖','条形码','总量','已售','备注','创建时间'],
+                    colModel:[                        
+                        {name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,editable: false ,
+                            formatter:'actions', 
+                            formatoptions:{ 
+                                keys:true,
+                                
+                                delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
+                                //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
+                            }
+                        },
+
+                        {name:'id',index:'id',sortable:true,editable: false ,width:70,align:'center',sorttype:'integer'},
+                        {name:'name',index:'name',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center',search:true},
+                        {name:'category_id',index:'category_id',width:150,editoptions:{size:"20",maxlength:"30"},align:'center',search:true,edittype:"select",editoptions:{value:""}, formatter : function(value, options, rData){ 
+                            if(rData.category==null)
+                            {
+                                if(value=='0')
+                                    return "未知分类";
+                                return value;
+                            }  
+                            return rData.category.name;
+                        }},
+                         {name:'sale_type',index:'sale_type',width:70,editoptions:{size:"20",maxlength:"30"},align:'center',search:false,edittype:"select",editoptions:{value:"0:经销;1:代销"},formatter : function(value, options, rData){  
+                                var a=new Array("经销","代销");
+                                for(var i=0;i<a.length;i++)
+                                {
+                                    if(a[i]==value) return value;
+                                }
+                            return a[value];    
+                         }}, 
+                          {name:'price_buy',index:'price_buy',editable: true ,width:80,align:'center'},     
+                          {name:'price',index:'price',editable: true ,width:80,align:'center'},     
+                          {name:'unit_price',index:'unit_price',editable: true ,width:50,align:'center'},     
+
+                          {name:'clubs',index:'clubs',width:350,editoptions:{size:"20",maxlength:"30"},align:'center',search:false,edittype:"select",editoptions:{multiple:true,value:""},formatter : function(value, options, rData){
+                            if(isString(value)) return value;
+                                if(value!=null && value.length > 0)
+                                {
+                                     var userData=jQuery(goods_grid_selector).jqGrid('getGridParam', 'userData');
+                                    var ret ="";
+                                    for(var i=0;i<value.length;i++)
+                                    {
+                                        if(i!=0) ret+=";";
+                                        for(var j=0;j<userData.length;j++)
+                                        {
+                                            if(userData[j]['id']==value[i]['club_id'])
+                                            {
+                                                ret+=userData[j]['club_name'];
+                                                break;
+                                            }
+                                        }
+                                        
+                                    }
+                                   
+                                    return ret;
+                                }
+                                return "无可卖会所";                            
+                         }}, 
+                         {name:'status',index:'status', width:70,editable:true, edittype:'checkbox', editoptions: { value:"1:0"},  formatter: "checkbox", formatoptions:{disabled:false},align:'center'},   
+                          {name:'code',index:'code',width:150,editoptions:{size:"20",maxlength:"30"},align:'center'},
+                          {name:'total_num',index:'total_num',width:50,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center'},
+                          {name:'sold_num',index:'sold_num',editable: false ,width:50,editoptions:{size:"20",maxlength:"30"},align:'center'},
+                          {name:'description',index:'description',width:150,editoptions:{size:"20",maxlength:"30"},align:'center',edittype:'textarea'},
+
+                          {name:'create_time',index:'create_time',width:200,editoptions:{size:"20",maxlength:"30"},align:'center',editable:false},
+
+                    ],      
+                    pager : goods_pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                    editurl: "/Brand/Goods/setGoods",          
+                    // autowidth: true,
+                     shrinkToFit:false,  
+                    caption: "商品分类信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {
+                        // jQuery("#employee_grid").jqGrid('setGridParam',{datatype:'local'});
+                          setClubs();
+                        var table = this;
+                        setTimeout(function(){
+        
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0);
+                        // var userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                        // alert(userData[0].club_name);
+
+                    },
+                    // onPaging : function(which_button) {
+                    //    jQuery(grid_selector).jqGrid('setGridParam',{datatype:'json'});
+                    // },
+            
+                }); 
+
+// jQuery(grid_selector).jqGrid('navGrid',pager_selector,{edit:false,add:false,del:false,search:false,refresh:false});
+
+
+// jQuery(grid_selector).jqGrid('filterToolbar',{stringResult: true,searchOnEnter : true}); //search on every properties
+    // jQuery(goods_grid_selector).jqGrid('inlineNav',goods_pager_selector);
+                //navButtons
+                jQuery(goods_grid_selector).jqGrid('navGrid',goods_pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        add: true,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: true,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                );
+
+
+
+
+
+
+
+    var grid_selector = "#goods_category_grid";
+    var pager_selector = "#goods_category_pager";    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Brand/Goods/getGoodsCategory",                 
+                    datatype: "json",
+                    height: "100%",                  
+                    mtype:"POST",
+                    colNames:['','ID','分类名称','分类属性','商品类型','创建时间'],
+                    colModel:[                        
+                        {name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,editable: false ,
+                            formatter:'actions', 
+                            formatoptions:{ 
+                                keys:true,
+                                
+                                delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
+                                //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
+                            }
+                        },
+
+                        {name:'id',index:'id',sortable:true,editable: false ,width:150,align:'center',sorttype:'integer', searchoptions:{sopt:['eq','ne','le','lt','gt','ge']}},
+                        {name:'name',index:'name',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center',search:true,searchoptions:{sopt:['cn']}},
+                        {name:'property',index:'property',width:150,editoptions:{size:"20",maxlength:"30"},align:'center',search:false,edittype:"select",editoptions:{value:"0:普通商品;1:入场类;2:收费团操类;3:手续费类;4:其他"},formatter : function(value, options, rData){
+                            var a=new Array("普通商品","入场类","收费团操类","手续费类","其他");
+                           return getValue(a,value); 
+            }}, {name:'type',index:'type',width:150,editoptions:{size:"20",maxlength:"30"},align:'center',search:false,edittype:"select",editoptions:{value:"0:实物商品;1:虚拟商品"},formatter : function(value, options, rData){
+                            var a=new Array("实物商品","虚拟商品");
+                           return getValue(a,value); 
+            }},                       
+                        {name:'create_time',index:'create_time',editable: false , width:200,align:'center'}                                  
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:true,editable: true,search:false},
+                    sortorder: "desc",
+                    editurl: "/Brand/Goods/setGoodsCategory",          
+                    autowidth: true,
+                    caption: "商品分类信息" ,
+                    loadonce: true,
+                    // hidegrid:false,
+                    rowNum:10,
+                    rowTotal: 2000,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {
+                        // jQuery("#employee_grid").jqGrid('setGridParam',{datatype:'local'});
+                        setCateGory();
+                        var table = this;
+                        setTimeout(function(){
+        
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0);
+                        // var userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                        // alert(userData[0].club_name);
+
+                    },
+
+                    // onPaging : function(which_button) {
+                    //    jQuery(grid_selector).jqGrid('setGridParam',{datatype:'json'});
+                    // },
+            
+                }); 
+
+// jQuery(grid_selector).jqGrid('navGrid',pager_selector,{edit:false,add:false,del:false,search:false,refresh:false});
+
+
+// jQuery(grid_selector).jqGrid('filterToolbar',{stringResult: true,searchOnEnter : true}); //search on every properties
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        add: true,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: true,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                            var res = $.parseJSON(response.responseText);
+                            jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                );
+
+
+})
+    </script>
+</block>

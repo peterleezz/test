@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Card Profile</title>
+</head>
+<body>
+<div style="text-align:center">
+	<table cellspacing="30">
+	<tr >
+			<td colspan="2" style="text-align:left">
+				<img src="/Public/uploads/mmb_avatar/{$member.avatar}" alt="" style="width:200px;height:200px"></td>
+		</tr>
+
+		<tr>
+			<td>姓名:{$member.name}</td>
+			<td>性别: <if condition="female eq $member['sex']">
+                                女
+                                <else/>
+                                男
+                            </if></td>
+		</tr>
+		
+		<tr>
+			<td>卡号：{$card.card_number}</td>
+			<td>开卡时间：{$card.create_time}</td>
+		</tr>
+		<volist name="contracts" id="contract">
+		<tr>
+			<td>卡种：{$contract.card_type.name}</td>
+
+			<td>有效次数：
+			  <if condition="1 eq $contract['card_type']['type']">
+                        不限次数
+                        <else/>
+                        {$contract.used_num}/{$contract.total_num}
+                    </if> 
+
+			</td>
+			<td>购买时间：{$contract.create_time}</td>
+			<td>有效期：{$contract.start_time}--{$contract.end_time}</td>
+		</tr>
+			
+		</volist>
+	</table> 
+</div>
+</body>
+</html>

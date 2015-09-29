@@ -1,0 +1,229 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">财务</a>
+    </li>
+    <li class="active">销售业绩报表</li>
+
+  </ul>
+</block>
+
+<block name="content">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="form-inline" role="form" action="{:U('Finance/McReport/queryReport')}" method="post" id="finance_mc_report" >
+
+        <div class="form-group col-xs-12">
+          <label for="cc">选择会所：</label>
+          <label class="checkbox-inline">
+            <input type="checkbox"  id="allclub" onchange="chooseall()">所有会所</label>
+          <volist name="clubs" id="club">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="club_ids[]" id="club_ids" class="club_ids" value="{$club.id}"  checked='checked'>{$club.club_name}</label>
+          </volist> 
+        </div>
+
+        <div class="form-group">
+          <label  for="type">报表类型：</label>
+          <select name="type" id="type" class="form-control" oper="eq">
+            <option value="1">日报表</option>
+            <option value="2">月报表</option>
+            <option value="3">年报表</option>
+            <option value="4">时间段报表</option>
+          </select>
+        </div> 
+
+        <div class="form-group">
+          <label  for="name">开始时间:</label>
+          <input type="text" class="date_ymd" name="start_time"  id="start_time" oper="eq"></div>
+        <div class="form-group hide" id="end">
+          <label  for="name">结束时间:</label>
+          <input type="text" class="date_ymd" name="end_time"  id="end_time" oper="eq"></div>
+
+
+        <div class="form-group">
+          <label  for="type">销售人员：</label>
+          <select name="mc_id" id="mc_id" class="form-control" oper="eq"> 
+            <option value="0">所有销售</option>
+            <volist name="mcs" id="mc">
+                <option value="{$mc.id}">{$mc.name_cn}</option>
+            </volist>
+          </select>
+        </div>
+        <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+          查询
+        </button>
+      </form>
+    </div>
+
+    <div class="col-xs-12">
+      <table id="finance_mc_grid"></table>
+      <div id="finance_mc_grid_pager"></div>
+    </div>
+
+  </div>
+
+</block>
+
+<block name="script">
+  <script>
+  
+  function chooseall()
+  {
+      var all=$("#allclub").prop("checked");
+      if(all)
+      {
+        $(".club_ids").prop("checked", true);  
+      }
+      else
+      {
+        $(".club_ids").prop("checked", false);  
+      }
+  }
+
+$("#type").change(function(){
+     $('#start_time,#end_time').val("");
+    if($(this).val()==1)
+    {
+        $('#start_time').datetimepicker('remove');
+         $("#start_time").datetimepicker({
+          format: 'yyyy-mm-dd',
+          minView:'2',
+          startView:'2',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").addClass("hide");
+    }
+    else if($(this).val()==2)
+    {
+        $('#start_time').datetimepicker('remove');
+         $("#start_time").datetimepicker({
+          format: 'yyyy-mm',
+          minView:'3',
+          startView:'3',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").addClass("hide");
+    }
+    else if($(this).val()==3)
+    {
+       $('#start_time').datetimepicker('remove');
+         $("#start_time").datetimepicker({
+          format: 'yyyy',
+          minView:'4',
+          startView:'4',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").addClass("hide");
+    }
+    else
+    {
+      $('#start_time').datetimepicker('remove');
+       $("#start_time").datetimepicker({
+          format: 'yyyy-mm-dd',
+          minView:'2',
+          startView:'2',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").removeClass("hide");
+    }
+
+}); 
+$(function(){ 
+var clubs,start_time,end_time,type,clubsstring="";
+$("#finance_mc_report").submit(function(){   
+         var self = $(this);  
+          clubs=$('input[name="club_ids[]"]:checked'); 
+         if(clubs.length==0)
+         {
+             bootbox.alert("请选中需要统计的会所！");
+            return false;
+         }  
+         clubsstring="";
+         clubs.each(function(){  
+            clubsstring+=$(this).val()+",";
+          })  
+         clubsstring=clubsstring.substring(0,clubsstring.length-1); 
+          start_time=$("#start_time").val();
+         if(start_time=='')
+         {
+            bootbox.alert("请输入查询时间！");
+            return false;
+         }
+        end_time=$("#end_time").val();
+          type=$("#type").val();
+         if(type==4 && end_time=='')
+         {
+            bootbox.alert("请输入查询结束时间！");
+            return false;
+         }
+
+         jQuery("#finance_mc_grid").jqGrid('setGridParam',{postData:self.serialize(),url:self.attr("action"),page:1,datatype:'json'}).trigger("reloadGrid"); 
+         return false;
+     });
+
+
+
+    $("#menu_3").addClass("active open");
+    $("#menu_66").addClass("active"); 
+    var grid_selector = "#finance_mc_grid";
+    var pager_selector = "#finance_mc_grid_pager";
+
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Finance/McReport/queryReport",                 
+                   mtype:"POST",        
+                  datatype: "local",
+                  height: 'auto', 
+                  width:"auto",
+                    colNames:['销售人员','合同数','应缴收入','实际收入','欠款','classify'],
+                    colModel:[ 
+                      
+                        {name:'name_cn',index:'name_cn',formatter : function(value, options, rData){  
+                            if(end_time=="")end_time="0";
+                                            return "<a target='_blank' href='/Finance/McReport/detail?type="+rData.type+"&mc_id="+rData.mc_id+"&start_time="+start_time+"&end_time="+end_time+"&reporttype="+type+"'>"+value+"</a>"
+                         }}, 
+                       {name:'number',index:'number'},  
+                       {name:'price',index:'price',summaryType:'sum',summaryTpl:'<b>总收入: ￥{0}</b>'},  
+                       {name:'paid',index:'paid',summaryType:'sum',summaryTpl:'<b>实际总收入: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'own',index:'own',summaryType:'sum',summaryTpl:'<b>总欠款: ￥{0}</b>',formatter : function(value, options, rData){ 
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }}, 
+                       {name:'classify',index:'classify',hidden:true},
+                    ],       
+                   
+                    pager : pager_selector,
+                     viewrecords: true,
+    sortname: 'classify',
+    rowList:[],
+    grouping:true,
+    autowidth: true,
+    shrinkToFit:true,  
+    rowNum: 99999,
+    pginput:false,
+  pgbuttons: false,
+   gridview: false,
+    caption: "销售业绩报表" ,
+    groupingView : {
+      groupField : ['classify'],
+      groupSummary : [true],
+      groupColumnShow : [false],
+      groupText : ['<b>{0} - {1} 项</b>'],
+      groupCollapse : false,
+      scroll:false,
+    groupOrder: ['desc']      
+    }, 
+                });   
+})
+</script>
+</block>

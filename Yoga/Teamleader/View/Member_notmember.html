@@ -1,0 +1,403 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">组长</a>
+        </li>
+        <li class="active">潜客管理</li>
+
+    </ul>
+</block>
+
+<block name="content">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-inline" role="form" action="{:U('Teamleader/Member/getMembers')}" method="post" id="mcmanager_query_member" > 
+             
+                <input type="hidden" value="{$is_member}" name="is_member" oper="eq">
+                <div class="form-group">
+                    <label class="sr-only" for="mc_id">MC</label>
+                    <select name="mc_id" id="mc_id" class="form-control" oper="eq">
+                        <option value="-1">所有MC</option>
+                        <option value="0">未指定MC</option>
+                        <volist name="mcs" id="mc">
+                            <option value="{$mc.id}">{$mc.name_cn}</option>
+                        </volist>
+                    </select>
+                </div>
+                
+                
+                 <div class="form-group">
+                    <label class="sr-only" for="create_time">创建时间</label>
+                    <select name="create_time" id="create_time" class="form-control" oper="eq">
+                        <option value="0">创建时间</option>
+                        <option value="1">当日</option>
+                        <option value="3">三天内</option>
+                        <option value="7">一周内</option>
+                        <option value="30">一个月内</option>
+                        <option value="-1">自定义</option>
+                    </select>
+                </div>
+
+             
+                
+                <div class="form-group define hide">
+                    <label  for="start_time">起始时间:</label>
+                    <input type="text" class="date_ymd form-control" name="start_time"  id="start_time" oper="eq"></div>
+
+                <div class="form-group define hide">
+                    <label  for="end_time">结束时间:</label>
+                    <input type="text" class="date_ymd form-control" name="end_time"  id="end_time" oper="eq">
+                    </div>
+                   
+
+                      <div class="form-group">
+                    <label class="sr-only" for="follow_time">跟进时间</label>
+                    <select name="follow_time" id="follow_time" class="form-control" oper="eq">
+                          <option value="0">跟进时间</option>
+                        <option value="1">从未跟进</option>
+                        <option value="2">当日有跟进</option>
+                        <option value="3">三天无跟进</option>
+                        <option value="4">一周无跟进</option> 
+                    </select>
+                </div>
+
+
+
+                <if condition="0 eq $is_member">
+                <div class="form-group">
+                    <label class="sr-only" for="type">客户分类</label>
+                    <select name="type" id="type" class="form-control" oper="eq">
+                        <option value="0">所有客户</option>
+                        <option value="4">A类</option>
+                        <option value="3">B类</option>
+                        <option value="2">C类</option>
+                        <option value="1">D类</option>
+                    </select>
+                </div>
+                <else/>
+                      <div class="form-group">
+                    <label  for="name">卡号:</label>
+                    <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
+               </if>
+                <div class="form-group">
+                    <label  for="name">姓名:</label>
+                    <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+
+                <div class="form-group">
+                    <label  for="phone">手机号:</label>
+                    <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                    查询
+                </button>
+
+            </form>
+        </div>
+        <div class="col-xs-12">
+            <table id="mcmanager_member_grid"></table>
+            <div id="mcmanager_member_grid_pager"></div>
+
+             <div align="center">
+            <select  id='assign_mc'>
+                <volist name="mcs" id="mc">
+                    <option value="{$mc.id}">{$mc.name_cn}</option>
+                </volist>
+            </select>
+              <button class="btn  btn-danger btn-sm" onclick="point()"> <i class="icon-signin">指派MC</i></button>
+        </div>
+       </div>
+      
+
+    </div>
+ <div id="show_detail"></div>
+
+ <div class="modal fade " id="followlistModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">跟进历史记录</h4>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-condensed followlist" >
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>通话日期</th>
+                            <th>结果</th>
+                            <th>相关</th>
+                            <th>到店</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">已阅</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</block>
+
+<block name="script">
+    <script>
+
+
+    var grid_selector = "#mcmanager_member_grid";
+    var pager_selector = "#mcmanager_member_grid_pager";
+    
+
+    function point()
+{
+     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow'); 
+    if (id) {
+        var selectedIds = $("#mcmanager_member_grid").jqGrid("getGridParam", "selarrrow");
+        var mcid=$("#assign_mc").val(); 
+        var mcname=$.trim($("#assign_mc   option:selected").text());
+        $.post("/Teamleader/Member/assign", {members:selectedIds,mc_id:mcid}, function(data,textStatus){
+                           bootbox.alert(data.info,null);
+                           if(data.status)
+                           {
+                                
+                                for(var i=0;i<selectedIds.length;i++)
+                                     $("#mcmanager_member_grid").jqGrid('setRowData',selectedIds[i],{mc:mcname}); 
+                           }
+
+                        }, "json");
+        
+    } else { alert("请先选中要修改的行！");}
+         
+    
+}
+
+
+
+
+function showdetail(id)
+{
+ if(lasdetailtid==id && $("#show_detail").text()!='')return; lasdetailtid=id;
+     $.post("/Teamleader/Member/show", {id:id}, function(data,textStatus){
+                              $("#show_detail").text("");
+                              $("#show_detail").append(data);
+                        }, "json");
+ 
+}
+$(function(){ 
+var is_member =  '{$is_member}' ;
+var active =  '{$active}' ;
+var active_open =  '{$active_open}' ;
+$(active).addClass("active");
+$(active_open).addClass("active open");
+
+var mcs = eval("(" + '{$mcsarr}' + ")");
+var mcselect="<select id='assign_mc'>";
+for(var i=0;i<mcs.length;i++)
+{
+    mcselect+="<option value='"+mcs[i].id+"'>"+mcs[i].name_cn+"</option>";
+}
+mcselect+="</select>";
+
+$("#create_time").change(function(){
+    var value=$(this).val();
+    if(value==-1)
+    {
+        $(".define").removeClass("hide");
+    }
+    else
+    {
+        $(".define").addClass("hide");
+        $(".define :input").val("");
+    }
+});
+
+
+
+
+
+                jQuery(grid_selector).jqGrid({
+                    url:"/Teamleader/Member/getMembers",                 
+                    datatype: "json",
+                    height: "100%",  
+                    width:"100%",          
+                    mtype:"POST",
+                    postData:{is_member:is_member,mc_id:-1},
+                    colNames:['ID','姓名','手机号码','性别','分类','当前MC','创建时间'],
+                    colModel:[ 
+                        {name:'id',index:'id',hidden:true,sortable:true,editable: false ,width:100,formatter : function(value, options, rData){
+                            return value;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+value+")>"+value+"</a>";
+            },sorttype:'integer', searchoptions:{sopt:['eq','ne','le','lt','gt','ge']}},
+                        {name:'name',index:'name',width:80,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                          var html='<a  target="_blank" href="/Mc/Visit/index/id/'+rData.id+'" >'+value+'</a>'; 
+                           return html;
+                            //   var v=rData.id;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+v+")>"+value+"</a>";
+            }},
+                        {name:'phone',index:'phone',hidden:true,width:150,editoptions:{size:"20",maxlength:"30"},search:true},
+                       {name:'sex',index:'sex', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",editoptions:{value:"male:男;female:女"},formatter : function(value, options, rData){
+                           return value=='male'|| value=='男'?"男":"女";
+            },},
+                        {name:'type',index:'type', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",formatter : function(value, options, rData){
+                         var a=new Array("","D类","C类","B类","A类");
+                           return getValue(a,value); 
+            }}, 
+             {name:'mc',index:'mc',hidden:false, width:100,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                            if(value==null) return "No Mc!";
+                            if(isString(value)) return value;
+                           return value.name_cn;
+            },},
+
+                        {name:'create_time',index:'create_time',hidden:true,editable: false , width:100,editable: true,sorttype:'date', editrules:{date:true},formatter:'datetime', datefmt:'Y-m-d H:i:s',},   
+                    ],       
+                   
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false},
+                    sortorder: "desc",
+                    editurl: "",    
+                     autowidth: true,
+                     shrinkToFit:true,  
+                    caption: "客户信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},
+                     onSelectRow: function (rowid, status) { 
+                         if(status==true)
+                         {
+                             showdetail(rowid);
+                             return;
+                         } 
+                         else
+                         {
+                            $("#show_detail").text("");
+                         }
+                     }, 
+
+                    loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+ 
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    } 
+                );
+
+//     jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-signin blue',caption:"指派MC",title:"指派MC",
+//     onClickButton:function(){ 
+//         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow'); 
+//     if (id) {
+//         var selectedIds = $("#mcmanager_member_grid").jqGrid("getGridParam", "selarrrow");
+//         var mcid=$("#assign_mc").val(); 
+//         var mcname=$("#assign_mc   option:selected").text();
+//         $.post("/Mcmanager/Member/assign", {members:selectedIds,mc_id:mcid}, function(data,textStatus){
+//                            bootbox.alert(data.info,null);
+//                            if(data.status)
+//                            {
+                                
+//                                 for(var i=0;i<selectedIds.length;i++)
+//                                      $("#mcmanager_member_grid").jqGrid('setRowData',selectedIds[i],{mc:mcname}); 
+//                            }
+
+//                         }, "json");
+        
+//     } else { alert("请先选中要修改的行！");}
+         
+//     } 
+// });
+
+//     $("#mcmanager_member_grid_pager_left table.navtable tbody tr").append ( 
+//                 '<td><div>'+mcselect+' </div></td>');
+
+
+
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-calendar blue',caption:"",title:"",
+    onClickButton:function(){ 
+        var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+    if (id) {
+          var ret = jQuery(grid_selector).jqGrid('getRowData',id);
+        $.post("/Mc/Manage/followlist", {id:id}, function(data,textStatus){
+                             if(data.status)
+                             {
+                                var data=data.data;
+                                if(data==null)
+                                {
+                                    bootbox.alert('无销售记录',null);
+                                    return;
+                                }
+                                $(".followlist tr:not(:first)").remove();
+                                for(var i=0;i<data.length;i++)
+                                {
+                                    var record=data[i];
+                                    var html='<tr><td>'+ret.name+'</td>';
+                                    var rslt;var info;var is_come;
+                                    is_come=record.is_come==1?"是":"否";
+                                    if(record.ret==0)
+                                    {
+                                        rslt="跟进失败";
+                                        info=record.failed_reason;
+                                    }
+                                    else
+                                    {
+                                        rslt=record.ret==1?"邀约参观":"邀约体验";
+                                        info=record.appoint_time.substr(0,16)+"来店"
+                                    }
+                                     html+="<td>"+record.create_time.substr(0,10)+"</td>";
+                                     html+="<td>"+rslt+"</td>";
+                                      html+="<td>"+info+"</td>"; 
+                                     
+                                        html+="<td>"+is_come+"</td></tr>";
+
+                                    $(".followlist").append(html); 
+                                }
+                                  
+                                 $("#followlistModel").modal("show");
+                             }
+                             else
+                             {
+                                bootbox.alert(data.info,null);
+                             }
+                        }, "json");       
+    } else { alert("请先选中要修改的行！");}
+         
+    } 
+}); 
+
+  
+})
+</script>
+</block>

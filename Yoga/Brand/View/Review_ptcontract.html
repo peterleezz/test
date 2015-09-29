@@ -1,0 +1,264 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+         <li class="active">稽核</li>
+        <li class="active">PT合同稽核</li>
+    </ul>
+</block>
+
+ <block name="css">
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+
+
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="fcontainer">
+
+            <table id="conract_review_grid"></table>
+            <div id="conract_review_pager"></div>
+            <div class="panel panel-default">
+
+                <div class="panel-heading">备注</div>
+                <div class="panel-body">
+                    <textarea class="col-xs-12 col-sm-12"  name="note" id="note" rows="3"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script> 
+    $(function(){
+    $("#menu_1").addClass("active open");
+     $("#menu_18").addClass("active open");
+    $("#menu_26").addClass("active");
+
+
+            var grid_selector = "#conract_review_grid";
+            var pager_selector = "#conract_review_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Brand/Review/ptQuery')}",                 
+                    datatype: "json",
+                    height: "100%",   
+                     postData:{type:0}, 
+                    // width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','操作',"状态", '异常原因', '时间','合同状态', '标准价格','实际价格','课程名','课程数', '会所','合同编号','会员','性别','合同类型','实收金额','欠款金额','签约日期','合同生效日期','合同结束日期',"备注"],
+                    colModel:[   
+                        {name:'id',index:'id',hidden:true},
+                        {name:'op',index:'op',width:70,hidden:true,formatter : function(value, options, rData){ 
+                            var id=rData.id;
+                            var note=$("#note").val();
+                            var html='<a class="btn  btn-primary btn-xs"  href="javascript:void(0)" onclick="review_pass('+id+',1,0)"><i class="icon-ok bigger-130"></i>通过</a>&nbsp&nbsp&nbsp';                           
+                              
+                              return html;
+                         }},
+                          {name:'status',index:'status',width:80,align:'center',search:true,stype: 'select',searchoptions:{sopt:['eq'],value:"0:未审核;1:审核通过;2:审核未通过",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("未审核","审核通过","审核未通过");
+                           return getValue(a,value); 
+                         }},
+                         {name:'reason',index:'reason'},
+                         {name:'create_time',index:'create_time'},
+                         { cellattr: addCellAttr,name:'invalid',index:'invalid',width:100,align:'center',search:false,stype: 'select',searchoptions:{sopt:['eq'],value:"1:新增合同;2:转让;",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("","新增合同","转让");
+                           var ret=getValue(a,rData.extension.invalid); 
+                           if(rData.original_extension!=null && rData.original_extension.invalid!=null && rData.extension.invalid!=rData.original_extension.invalid)
+                           {
+                                ret=ret+"["+getValue(a,rData.original_extension.invalid)+"]"; 
+                           }
+                            return ret;
+                         }},
+                          {name:'card_type_price',index:'card_type_price',width:80,formatter : function(value, options, rData){ 
+                           var ret= rData.extension.standard_price; 
+                            if(rData.original_extension!=null && rData.original_extension.standard_price!=null && rData.extension.standard_price!=rData.original_extension.standard_price)
+                           {
+                                ret=ret+"["+rData.original_extension.standard_price+"]"; 
+                           }
+                            return ret;
+
+                         },cellattr: addCellAttr},
+                        {name:'should_pay',index:'should_pay',width:80,formatter : function(value, options, rData){
+                            var ret= rData.extension.should_pay;
+                             if(rData.original_extension!=null && rData.original_extension.should_pay!=null && rData.extension.should_pay!=rData.original_extension.should_pay)
+                           {
+                                ret=ret+"["+rData.original_extension.should_pay+"]"; 
+                           }
+                            return ret;
+
+                         },cellattr: addCellAttr}, 
+                          {name:'pt_class_name',index:'pt_class_name',width:80,formatter : function(value, options, rData){ 
+                            var ret= rData.extension.ptclass.name;
+                             if(rData.original_extension!=null && rData.original_extension.ptclass!=null && rData.extension.ptclass.name!=rData.original_extension.ptclass.name)
+                           {
+                                ret=ret+"["+rData.original_extension.ptclass.name+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr}, 
+                          {name:'pt_class_number',index:'pt_class_number',width:80,formatter : function(value, options, rData){ 
+                             var ret= rData.extension.total_num;
+                             if(rData.original_extension!=null && rData.original_extension.total_num!=null && rData.extension.total_num!=rData.original_extension.total_num)
+                           {
+                                ret=ret+"["+rData.original_extension.total_num+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr}, 
+
+                        {name:'club_id',index:'club_id',width:150,search:true,stype: 'select',searchoptions:{sopt:['eq'],value:getSearchClubs(),style:"width:150px"},formatter : function(value, options, rData){
+                            return rData.club.club_name;
+                         }},
+                        {name:'contract_number',index:'contract_number',formatter : function(value, options, rData){
+                            return rData.extension.contract_number;
+                         }},
+                        {name:'member_name',index:'member_name',width:80,formatter : function(value, options, rData){
+                            var ret= rData.extension.member.name;
+                             if(rData.original_extension!=null && rData.original_extension.member!=null && rData.extension.member.name!=rData.original_extension.member.name)
+                           {
+                                ret=ret+"["+rData.original_extension.member.name+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+                        {name:'sex',index:'sex',width:40,formatter : function(value, options, rData){
+                            return rData.extension.sex=='male'?"男":"女";
+                         }}, 
+                         
+                        {name:'sale_type',index:'sale_type',width:80,align:'center',formatter : function(value, options, rData){
+                             var a=new Array("","新会员购买","续课","POS销售","场地开发"); 
+                            var ret=getValue(a,rData.extension.sale_type); 
+                           if(rData.original_extension!=null && rData.original_extension.sale_type!=null && rData.extension.sale_type!=rData.original_extension.sale_type)
+                           {
+                                ret=ret+"["+getValue(a,rData.original_extension.sale_type)+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+                       
+                       
+                        {name:'paid',index:'paid',width:80,formatter : function(value, options, rData){
+                              var ret= rData.extension.paid;
+                           //   if(rData.original_extension!=null && rData.original_extension.payed!=null && rData.extension.payed!=rData.original_extension.payed)
+                           // {
+                           //      ret=ret+"["+rData.original_extension.payed+"]"; 
+                           // }
+                            return ret;
+                         }}, 
+                        {name:'',index:'',width:80,formatter : function(value, options, rData){                              
+                           return rData.extension.should_pay-rData.extension.paid; 
+                         }},
+                        {name:'create_time',index:'create_time',width:150,formatter : function(value, options, rData){                               
+                           return rData.extension.create_time; 
+                         }},
+                        {name:'start_time',index:'start_time',width:100,formatter : function(value, options, rData){                               
+                           // return rData.extension.start_time; 
+                           var ret= rData.extension.start_time;
+                             if(rData.original_extension!=null && rData.original_extension.start_time!=null && rData.extension.start_time!=rData.original_extension.start_time)
+                           {
+                                ret=ret+"["+rData.original_extension.start_time+"]"; 
+                           }
+                           return ret;
+                         },cellattr: addCellAttr},
+                        {name:'end_time',index:'end_time',width:100,formatter : function(value, options, rData){                               
+                           // return rData.extension.end_time; 
+                           var ret= rData.extension.end_time;
+                             if(rData.original_extension!=null && rData.original_extension.end_time!=null && rData.extension.end_time!=rData.original_extension.end_time)
+                           {
+                                ret=ret+"["+rData.original_extension.end_time+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+                         
+                         {name:'note',index:'note'}, 
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortname: "id",
+                    sortorder: "desc",
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "PT合同稽核" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                        // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: true,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                );
+
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-remove red',caption:"批量不通过",title:"批量不通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_unpass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-ok blue',caption:"批量通过",title:"批量通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_pass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+
+})
+    </script>
+</block>

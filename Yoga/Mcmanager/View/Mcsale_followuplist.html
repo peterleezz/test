@@ -1,0 +1,320 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">MC经理</a>
+        </li>
+        <li class="active">MC销售跟进</li>
+
+    </ul>
+</block>
+ <block name="css">
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+<block name="content">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-inline" role="form" action="{:U('Mcmanager/Mcsale/queryfollowup')}" method="post" id="mcmanager_query_followup" > 
+              
+                <div class="form-group">
+                    <label class="sr-only" for="mc_id">MC</label>
+                    <select name="mc_id" id="mc_id" class="form-control" oper="eq">
+                        <option value="0">所有MC</option> 
+                        <volist name="mcs" id="mc">
+                            <option value="{$mc.id}">{$mc.name_cn}</option>
+                        </volist>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="sr-only" for="ret">跟进结果</label>
+                    <select name="ret" id="ret" class="form-control" oper="eq">
+                        <option value="-1">所有</option> 
+                        <option value="0">跟进失败</option>
+                        <option value="1">邀约参观</option>
+                        <option value="2">邀约体验</option>
+                    </select>
+                </div>
+
+                
+                
+                 <div class="form-group">
+                    <label class="sr-only" for="create_time">创建时间</label>
+                    <select name="create_time" id="create_time" class="form-control" oper="eq">
+                        <option value="0">创建时间</option>
+                        <option value="1">当日</option>
+                        <option value="3">三天内</option>
+                        <option value="7">一周内</option>
+                        <option value="30">一个月内</option>
+                        <option value="-1">自定义</option>
+                    </select>
+                </div>
+                
+                <div class="form-group define hide">
+                    <label  for="start_time">起始时间:</label>
+                    <input type="text" class="date_ymd form-control" name="start_time"  id="start_time" oper="eq"></div>
+
+                <div class="form-group define hide">
+                    <label  for="end_time">结束时间:</label>
+                    <input type="text" class="date_ymd form-control" name="end_time"  id="end_time" oper="eq">
+                    </div>
+                   
+               
+
+                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                    查询
+                </button>
+
+            </form>
+        </div>
+        <div class="col-xs-12">
+            <table id="mcmanager_followup_grid"></table>
+            <div id="mcmanager_followup_grid_pager"></div>
+        </div>
+       
+    </div> 
+     <div id="show_detail"></div>
+
+     <div class="modal fade " id="followlistModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">跟进历史记录</h4>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-condensed followlist" >
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>通话日期</th>
+                            <th>结果</th>
+                            <th>相关</th>
+                            <th>到店</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">已阅</button>
+            </div>
+        </div>
+    </div>
+</div>
+</block>
+
+<block name="script">
+    <script>
+ 
+ function showdetail(id)
+{
+ if(lasdetailtid==id && $("#show_detail").text()!='')return; lasdetailtid=id;
+     $.post("/Mcmanager/Member/show", {id:id}, function(data,textStatus){
+                              $("#show_detail").text("");
+                              $("#show_detail").append(data);
+                        }, "json");
+ 
+}
+
+
+$(function(){ 
+ 
+$("#menu_7").addClass("active");
+$("#menu_56").addClass("active open");
+
+$("#create_time").change(function(){
+    var value=$(this).val();
+    if(value==-1)
+    {
+        $(".define").removeClass("hide");
+    }
+    else
+    {
+        $(".define").addClass("hide");
+        $(".define :input").val("");
+    }
+});
+
+
+    var grid_selector = "#mcmanager_followup_grid";
+    var pager_selector = "#mcmanager_followup_grid_pager";
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Mcmanager/Mcsale/queryfollowup",                 
+                    datatype: "json",
+                    height: "100%",  
+                    width:"100%",          
+                    mtype:"POST", 
+                    colNames:['ID',"member_id", "MC",'姓名','手机号码','性别','分类','跟进结果','用户反馈', '备注', '邀约时间','创建时间'],
+                    colModel:[ 
+                        {name:'id',index:'id',hidden:true},
+                         {name:'member_id',index:'member_id',hidden:true},
+                        {name:'mc',index:'mc',width:70,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                           return value.name_cn;
+            }},
+
+             {name:'member',index:'member',width:70,formatter : function(value, options, rData){
+                           return value.name;
+            }},
+                        {name:'member_phone',index:'member_phone',hidden:true,width:150,formatter : function(value, options, rData){
+                           return rData.member.phone;
+            }},
+                       {name:'member_gender',index:'member_gender', width:30,formatter : function(value, options, rData){
+                           return rData.member.sex=='male'|| rData.member.sex=='男'?"男":"女";
+            },},
+                        {name:'member_cat',index:'member_cat', hidden:true,width:40,editoptions:{size:"20",maxlength:"30"},edittype:"select",formatter : function(value, options, rData){
+                         var a=new Array("","D类","C类","B类","A类");
+                           return getValue(a,rData.member.type); 
+            }}, 
+             {name:'ret',index:'ret',hidden:false, width:75,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                            var a=new Array("跟进失败","邀约参观","邀约体验");
+                           return getValue(a,value); 
+            },},
+            {name:'failed_reason',index:'failed_reason',width:100,formatter : function(value, options, rData){
+                         if(rData.ret!=0) return "";
+                         return value;
+            },},
+	      {name:'desc',index:'desc',width:100},
+             {name:'appoint_time',index:'appoint_time',width:100}, 
+                        {name:'create_time',index:'create_time',editable: false , width:100,editable: true,sorttype:'date', editrules:{date:true},formatter:'datetime', datefmt:'Y-m-d H:i:s',},   
+                    ],       
+                   
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false},
+                    sortorder: "desc",
+                    editurl: "",    
+                     autowidth: false,
+                     shrinkToFit:true,  
+                    caption: "跟进信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},
+                     onSelectRow: function (rowid, status) {  
+                         if(status==true)
+                         {
+
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                            if (id) { 
+                                 var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+                                        var member_id = (rowData.member_id);
+                                 showdetail(member_id); 
+                            } else { alert("请先选中！");} 
+                             return;
+                         } 
+                         else
+                         {
+                            $("#show_detail").text("");
+                         }
+                     }, 
+
+                    loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+ 
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    } 
+                ); 
+
+
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-calendar blue',caption:"",title:"",
+    onClickButton:function(){ 
+        var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+    if (id) {
+          var ret = jQuery(grid_selector).jqGrid('getRowData',id); 
+        $.post("/Mc/Manage/followlist", {id:ret.member_id}, function(data,textStatus){
+                             if(data.status)
+                             {
+                                var data=data.data;
+                                if(data==null)
+                                {
+                                    bootbox.alert('无销售记录',null);
+                                    return;
+                                }
+                                $(".followlist tr:not(:first)").remove();
+                                for(var i=0;i<data.length;i++)
+                                {
+                                    var record=data[i];
+                                    var html='<tr><td>'+ret.member+'</td>';
+                                    var rslt;var info;var is_come;
+                                    is_come=record.is_come==1?"是":"否";
+                                    if(record.ret==0)
+                                    {
+                                        rslt="跟进失败";
+                                        info=record.failed_reason;
+                                    }
+                                    else
+                                    {
+                                        rslt=record.ret==1?"邀约参观":"邀约体验";
+                                        info=record.appoint_time.substr(0,16)+"来店"
+                                    }
+                                     html+="<td>"+record.create_time.substr(0,10)+"</td>";
+                                     html+="<td>"+rslt+"</td>";
+                                      html+="<td>"+info+"</td>"; 
+                                     
+                                        html+="<td>"+is_come+"</td></tr>";
+
+                                    $(".followlist").append(html); 
+                                }
+                                  
+                                 $("#followlistModel").modal("show");
+                             }
+                             else
+                             {
+                                bootbox.alert(data.info,null);
+                             }
+                        }, "json");       
+    } else { alert("请先选中要修改的行！");}
+         
+    } 
+}); 
+  
+})
+</script>
+</block>

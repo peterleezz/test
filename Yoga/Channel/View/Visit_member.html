@@ -1,0 +1,401 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">前台</a>
+        </li>
+
+        <li class="active">来访登记</li>
+
+    </ul>
+</block>
+
+<block name="content">
+<h4 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+        访客信息不能重复录入！
+    </h4>
+    <div class="row">
+        <div class="col-xs-12">
+            <form  enctype="multipart/form-data"  class="form-horizontal" role="form" id="addEmployeeForm" <empty name="member">
+                action="{:U('Channel/Visit/addMember')}"
+                <else/>
+                action="{:U('Channel/Visit/editMember')}"
+            </empty>
+            method="post">
+            <input type="hidden" name="id" value={$member.id}>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">必填信息</h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="col-sm-4  control-label no-padding-right" for="channel_id">获取渠道:</label>
+                                <div class="col-sm-8">
+                                    <select name="channel_id" id="channel_id" class=" form-control">                                     
+                                        <volist name="channels" id="channel">
+                                            <option value="{$channel.id}"  <if condition="$channel['id'] eq $member['channel_id']">selected="selected"</if>>{$channel.name}</option>
+                                        </volist>
+                                    </select>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="col-sm-4  control-label no-padding-right" for="name">访客姓名:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="name" id="name"  class=" form-control"  value="{$member.name}" onblur="check_exsit()"></div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="col-sm-4  control-label no-padding-right" for="phone">手机号码:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" value="{$member.phone}" name="phone" id="phone"  class=" form-control"  onblur="check_exsit()"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="col-sm-4  control-label no-padding-right" for="sex">性别:</label>
+                                <div class="col-sm-8">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" id="sex" value="female" checked="checked">女</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" id="sex" value="male" <if condition="male eq $member['sex']"> checked="checked"</if>>男</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="type">访客分类:</label>
+                                <div class="col-sm-8">
+                                    <select name="type" id="type"  class=" form-control">
+                                        <option value="4"  <if condition="4 eq $member['type']">selected="selected"</if>>A类</option>
+                                        <option value="3" <if condition="3 eq $member['type']">selected="selected"</if>>B类</option>
+                                        <option value="2" <if condition="2 eq $member['type']">selected="selected"</if>>C类</option>
+                                        <option value="1" <if condition="1 eq $member['type']">selected="selected"</if>>D类</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">选填信息</h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="col-sm-4  control-label no-padding-right" for="email">邮箱:</label>
+                                <div class="col-sm-8">
+                                    <input type="email" value="{$member.email}" name="email" id="email"  class=" form-control"></div>
+                            </div>
+
+                            <div class="col-sm-4" id="rid">
+                                <label class="col-sm-4  control-label no-padding-right" for="birthday">生日:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" value="{$member.birthday}" class="date_ymd" name="birthday" id="birthday"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="home_phone">家庭座机:</label>
+                                <div class="col-sm-8">
+                                    <input type="text"  value="{$member.home_phone}" name="home_phone" id="home_phone" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="home_addr">家庭地址:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" value="{$member.home_addr}" name="home_addr" id="home_addr" class=" form-control"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="country">国籍:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" value="{$member.country}" name="country" id="country" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="nation">民族:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="nation" value="{$member.nation}" id="nation" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="job">职业:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="job" value="{$member.job}" id="job" class=" form-control"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="office_name">公司名:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="office_name" value="{$member.office_name}"  id="office_name" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="office_addr">公司地址:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="office_addr"  value="{$member.office_addr}" id="office_addr" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="office_phone">公司电话:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="office_phone" value="{$member.office_phone}"  id="office_phone" class=" form-control"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="hobby">兴趣爱好:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="hobby" id="hobby" value="{$member.hobby}"  class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="near_club">最近会馆:</label>
+                                <div class="col-sm-8">
+                                    <select name="near_club" id="near_club" class=" form-control">
+                                        <volist name="clubs" id="club">
+                                            <option value="{$club.id}" <if condition="$club['id'] eq $member['near_club']">selected="selected"</if>>{$club.club_name}</option>
+                                        </volist>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="purpose">目的:</label>
+                                <div class="col-sm-8">
+                                    <select name="purpose" id="purpose" class=" form-control">
+                                        <option value="1"  <if condition="1 eq $member['purpose']">selected="selected"</if>>减肥</option>
+                                        <option value="2"  <if condition="2 eq $member['purpose']">selected="selected"</if>>增肌</option>
+                                        <option value="3"  <if condition="3 eq $member['purpose']">selected="selected"</if>>保持健康</option>
+                                        <option value="4"  <if condition="4 eq $member['purpose']">selected="selected"</if>>时尚</option>
+                                        <option value="5"  <if condition="5 eq $member['purpose']">selected="selected"</if>>习惯</option>
+                                        <option value="6"  <if condition="6 eq $member['purpose']">selected="selected"</if>>其他</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="certificate_type">证件类型:</label>
+                                <div class="col-sm-8">
+                                    <select name="certificate_type" id="certificate_type" class=" form-control">
+                                        <option value="1"  <if condition="1 eq $member['certificate_type']">selected="selected"</if>>身份证</option>
+                                        <option value="2" <if condition="2 eq $member['certificate_type']">selected="selected"</if>> 护照</option>
+                                        <option value="3" <if condition="3 eq $member['certificate_type']">selected="selected"</if>>其他</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="certificate_number">证件号码:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" value="{$member.certificate_number}" name="certificate_number" id="certificate_number" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="how_getinfo">获取咨询习惯:</label>
+                                <div class="col-sm-8">
+                                    <select  name="how_getinfo" id="how_getinfo" class=" form-control">
+                                        <option value="1" <if condition="1 eq $member['how_getinfo']">selected="selected"</if>>网络</option>
+                                        <option value="2" <if condition="2 eq $member['how_getinfo']">selected="selected"</if>>杂志</option>
+                                        <option value="3" <if condition="3 eq $member['how_getinfo']">selected="selected"</if>>报纸</option>
+                                        <option value="4" <if condition="4 eq $member['how_getinfo']">selected="selected"</if>>电视</option>
+                                        <option value="5" <if condition="5 eq $member['how_getinfo']">selected="selected"</if>>广播</option>
+                                        <option value="6" <if condition="6 eq $member['how_getinfo']">selected="selected"</if>>短信</option>
+                                        <option value="7" <if condition="7 eq $member['how_getinfo']">selected="selected"</if>>其他</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="marriage">婚姻状况:</label>
+                                <div class="col-sm-8">
+                                    <select name="marriage" id="marriage" class=" form-control">
+                                        <option value="0" <if condition="0 eq $member['marriage']">selected="selected"</if>>未婚</option>
+                                        <option value="1"  <if condition="1 eq $member['marriage']">selected="selected"</if>>已婚</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="has_child">子女状况:</label>
+                                <div class="col-sm-8">
+                                    <select name="has_child" id="has_child" class=" form-control">
+                                        <option value="0"  <if condition="0 eq $member['has_child']">selected="selected"</if>>无子女</option>
+                                        <option value="1" <if condition="1 eq $member['has_child']">selected="selected"</if>>有子女</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="emergency_name">紧急联系人:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="emergency_name" value="{$member.emergency_name}" id="emergency_name" class=" form-control"></div>
+                            </div>
+                            <div class="col-sm-4" >
+                                <label class="col-sm-4  control-label no-padding-right" for="emergency_phone">联系人电话:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="emergency_phone" value="{$member.emergency_phone}" id="emergency_phone" class=" form-control"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-12" >
+                                <label class="col-sm-2  control-label no-padding-right" for="other_clubs">参加过的其他品牌:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="other_clubs" id="other_clubs" value="{$member.other_clubs}" class=" form-control"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label no-padding-right" for="avatar">照片:</label>
+                        <div class="col-sm-2">
+						
+						<empty name="member">
+               			 <input type="file" name="avatar" id="avatar" >
+                <else/>
+               	 <div class="profile-picture">
+               	 		<a href="javascript:void(0)">
+                        	<img src="/Public/uploads/mmb_avatar/{$member.avatar}?{$member.update_time}" alt="" style="width:100px;height:100px" onclick="change_avatar(this)">
+                        	</a>
+                        </div> 
+                        <div class="avatardiv hide" >
+							<input type="file" name="avatar" id="avatar" >
+						</div>
+                         
+            </empty>
+
+			</div> 
+                                            
+                           
+                        <label class="col-sm-1 control-label no-padding-right" for="desc">备注:</label>
+                        <div class="col-sm-7">
+                            <textarea type="text" id="desc"  rows="6" class="form-control col-xs-10 col-sm-5" name="desc" >{$member.desc}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="submit"> <i class="icon-ok bigger-110"></i>
+                                提交
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="reset">
+                                <i class="icon-undo bigger-110"></i>
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script>
+     
+     $("#menu_13").addClass("active open");
+    $("#menu_34").addClass("active");
+
+     function check_exsit()
+     {
+        var name = $("#name").val();
+        var phone =$("#phone").val();
+        if(name=="" || phone =="") return;
+         $.post("/Channel/Visit/exist", {name:name,phone:phone}, function(data,textStatus){ 
+                      
+               if(data.status){ 
+                } else {
+                   bootbox.confirm("该访客已存在，是否修改信息?", function(result) {
+                      if (result) {
+                          window.location.href = "/Channel/Visit/member/id/"+data.id;
+                      }
+                      else
+                      {
+                         $("#name").val("");
+                         $("#phone").val("");
+                      }
+                     });                
+                }            
+        }, "json");
+     }
+     function change_avatar(obj)
+     {
+     	$(obj).parents().find(".profile-picture").hide();
+     	$(".avatardiv").removeClass("hide");
+     }
+     $(function(){
+           
+            if($("#channel_id").val()==0)
+             {
+                $("#rid").addClass("hide");
+                $(".friend").removeClass("hide");
+             }
+             else
+             {
+                $("#rid").removeClass("hide");
+                $(".friend").addClass("hide");
+             }
+
+        $("#channel_id").change(function(){
+             if($("#channel_id").val()==0)
+             {
+                $("#rid").addClass("hide");
+                $(".friend").removeClass("hide");
+             }
+             else
+             {
+                $("#rid").removeClass("hide");
+                $(".friend").addClass("hide");
+             }
+        });
+     });
+
+
+  </script>
+</block>

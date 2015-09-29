@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>美妙瑜伽之旅</title>
+
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="/Public/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="/Public/css/bootstrap-theme.min.css">
+	 <link href="/Public/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	 
+	<block name="css"></block>
+
+	<style type="text/css"> 
+		.container-fluid{padding-left: 0px;padding-right: 0px}
+		#head {width:100%; padding-left: 0px;padding-right: 0px;margin-left: 0px;margin-right: 0px} 
+		#head img{width:100%;}
+		.appoint:link{color:red;}
+	.appoint:visited{color:red;}
+	.appoint:hover{color:red;}
+	.appoint:active{color:red;}
+
+	</style>
+</head>
+<body>
+	  
+			<div class="jumbotron" style="100%">
+				<h2 align="center" style="margin-bottom:40px">Hello! 欢迎使用瑜伽约课系统</h2>
+			</div> 
+
+
+			<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{$member['name']}---{$member['phone']}</h3>
+			</div>
+			<div class="panel-body">
+				<div role="tabpanel"> 
+					<ul id="myTab" class="nav nav-tabs nav-justified">  
+					<empty name="classes">今日没有课程<else />  
+								  <!-- Nav tabs -->
+								  <ul class="nav nav-tabs" id="myTabs" role="tablist">
+								  <volist name="classes" id="class"  key="k">
+								  		<li role="presentation"  ><a href="#c{$key}" aria-controls="c{$key}" role="tab" data-toggle="tab">{$key}</a></li>
+								  </volist> 
+								  </ul>
+					 </empty>
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+							<volist name="classes" id="class"  >
+							  		 <div role="tabpanel" class="tab-pane " id="c{$key}">
+							  		 	
+							  		 	<ul class="list-unstyled">
+							  		 		<li>
+							  		 				<table class="table table-condensed table-hover" border="0" cellspacing="0" cellpadding="0" >
+							  		 				 <tr>
+												 		<th   >时间</th>
+												 		<th   >课程名</th> 
+												 		<th  >教室</th>
+												 		<th  >时长</th>
+												 		<th >学分</th> 
+												 		<th >老师</th> 
+												 		<th >语言</th> 
+												 		<th >难度</th> 
+												 		<th >预约</th> 
+										 		      </tr>
+
+
+							  		 		<volist name="class" id="c"> 
+									  		 			 
+									  		 				 <tr> 
+													 			<td  >{$c.start|substr=10,6}</td>
+													 			<td  class="classname_cn">{$c.class.name}</td>  
+													 			<td  >{$c.room.name}</td>
+													 			<td  >{$c.class.time}min</td>
+													 			<td >{$c.class.level}</td>
+
+													 				<td >{$c.class.teacher_name}</td>
+													 					<td ><if condition="$c['class']['lang'] eq 'zh-chs'">中文<else/>英文</if> </td>
+													 						<td ><switch name="c['class']['level']">
+																	    <case value="1">入门</case>
+																	    <case value="2">容易</case>
+																	     <case value="3">一般</case>
+																	      <case value="4">困难</case>
+																	    <default />入门
+			 													</switch></td>
+
+			 													<td> <a href="#" onclick="appoint({$c.id})" ><if condition="$c.is_appointed eq 1">取消预约     <else/> 预约</if>  </a></td>
+												 		 
+												 			</tr>
+												  
+ 
+							  		 		</volist>
+
+
+
+							  		 				</table>
+							  		 		</li>
+
+							  		 		
+							  		 		<hr> 
+							  		 	</ul>　
+
+							  		 </div>
+							 </volist>  
+					    
+					    </div> 
+				</div>
+			</div>
+	 
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="/Public/js/jquery.min.js"></script>  
+	<script src="/Public/js/bootbox.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="/Public/js/bootstrap.min.js"></script>
+	 
+	 <script type="text/javascript"> 
+
+	    var member_id = "{$member_id}";
+			 function appoint(id)
+			 {
+			 	 bootbox.setDefaults("locale","zh_CN");  
+			 	 bootbox.confirm("预约此课程?",function(result) {　
+			         if(result)
+			            {
+			            	 
+			            			window.location.href= "/index.php/Reception/Appoint/choosepos/member_id/"+member_id+  "/schedule_id/"+id;
+			            	 
+			            }　
+			    })
+			 }
+
+			 $(function(){
+			 	 $('#myTabs a:first').tab('show') ;
+
+			 // 	 currentLang = navigator.language;  
+				// if(!currentLang)  
+			 //    currentLang = navigator.browserLanguage;  
+				// currentLang=currentLang.toLowerCase();
+				// if(currentLang=='zh-cn')
+				// {
+				// 	$(".classname_en").hide();
+				// }
+				// else
+				// {
+				// 	$(".classname_cn").hide();
+				// }
+			 });
+ 	</script>
+ 
+</body>
+</html>

@@ -1,0 +1,245 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">计划</li>
+
+	</ul>
+</block>
+
+<block name="content">
+
+	<form class="form-inline" role="form" action="{:U('mcmanager/Plannew/query')}" method="post" id="query_mc_plan_new" style="margin-bottom:10px">
+
+		<div class="form-group">
+			<label  class="sr-only" for="user_id">time：</label>
+			<select name="user_id" id="user_id" class="form-control">
+				<option value="0" selected="true">总计划</option>
+				<volist name="users" id="user">
+					<option value="{$user.id}">{$user.name_cn}</option>
+				</volist>
+			</select>
+		</div>
+
+		<div class="form-group hide">
+			<label  class="sr-only" for="time">time：</label>
+			<select name="time" id="time" class="form-control">
+				<option value="0" selected="true">单月</option>
+				<option value="1">多月</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label  for="start_time">时间:</label>
+			<input type="text" class="date_ym form-control" name="start_time"  id="start_time"></div>
+
+		<div class="form-group" id="et" style="display:none">
+			<label  for="end_time">终止时间:</label>
+			<input type="text" class="date_ym form-control" name="end_time"  id="end_time"></div>
+
+		<button type="submit" class="btn  btn-info btn-sm" > <i class="icon-search"></i>
+			查询
+		</button>
+
+		<a href="{:U('plan')}" class="btn  btn-info btn-sm" onclick="newplan()"> <i class="icon-plus-sign"></i>增加/修改计划</a>
+		
+	</form>
+
+	<h2 class="center green">新潜客产出</h2>
+
+	<table class="table newtable">
+		<thead>
+			<tr>
+				<th></th>
+				<th>新增潜客量</th>
+				<th>邀约次数</th>
+				<th>邀约量</th>
+				<th>到场量</th>
+				<th>A类客户量</th>
+				<th>B类客户量</th>
+				<th>预购金额</th>
+				<th>售出金额</th>
+				<th>成交单数</th>
+				<th>转换量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="statistics" id="st">
+				<tr  class="info" >
+					<td colspan="6" align="center">{$st.time}</td>
+				</tr>
+				<tr class="warning">
+					<td>计划</td>
+					<td>{$st.protential_plan}</td>
+					<td>{$st.transform_plan}</td>
+					<td>{$st['transform_plan']*100/$st['protential_plan']} %</td>
+					<td>{$st.cardsale_plan}</td>
+					<td>{$st.br_plan}</td>
+				</tr>
+				<tr class="danger">
+					<td>实际</td>
+					<td>{$st.protential_value}</td>
+					<td>{$st.transform_value}</td>
+					<td>{$st['transform_value']*100/$st['protential_value']} %</td>
+					<td>{$st.cardsale_value}</td>
+					<td>{$st.br_value}</td>
+				</tr>
+				<tr class="err">
+					<td>完成率</td>
+					<td>{$st.protential_total}</td>
+					<td>{$st.transform_total}</td>
+					<td>{$st['transform_total']*100/$st['protential_total']} %</td>
+					<td>{$st.cardsale_total}</td>
+					<td>{$st.br_total}</td>
+				</tr>
+
+			</volist>
+
+		</tbody>
+	</table>
+
+	<h2 class="center green">老潜客产出</h2>
+
+	<table class="table oldtable">
+		<thead>
+			<tr>
+				<th></th>
+				<th>邀约次数</th>
+				<th>邀约量</th>
+				<th>到场量</th>
+				<th>A类客户量</th>
+				<th>B类客户量</th>
+				<th>预购金额</th>
+				<th>售出金额</th>
+				<th>成交单数</th>
+				<th>转换量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="statistics" id="st">
+				<tr  class="info" >
+					<td colspan="6" align="center">{$st.time}</td>
+				</tr>
+				<tr class="warning">
+					<td>计划</td>
+					<td>{$st.protential_plan}</td>
+					<td>{$st.transform_plan}</td>
+					<td>{$st['transform_plan']*100/$st['protential_plan']} %</td>
+					<td>{$st.cardsale_plan}</td>
+					<td>{$st.br_plan}</td>
+				</tr>
+				<tr class="danger">
+					<td>实际</td>
+					<td>{$st.protential_value}</td>
+					<td>{$st.transform_value}</td>
+					<td>{$st['transform_value']*100/$st['protential_value']} %</td>
+					<td>{$st.cardsale_value}</td>
+					<td>{$st.br_value}</td>
+				</tr>
+				<tr class="err">
+					<td>完成率</td>
+					<td>{$st.protential_total}</td>
+					<td>{$st.transform_total}</td>
+					<td>{$st['transform_total']*100/$st['protential_total']} %</td>
+					<td>{$st.cardsale_total}</td>
+					<td>{$st.br_total}</td>
+				</tr>
+
+			</volist>
+
+		</tbody>
+	</table>
+
+	<h2 class="center green">会员产出</h2>
+
+	<table class="table membertable">
+		<thead>
+			<tr>
+				<th></th>
+				<th>A类客户量</th>
+				<th>B类客户量</th>
+				<th>预购金额</th>
+				<th>售出金额</th>
+				<th>成交单数</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="statistics" id="st">
+				<tr  class="info" >
+					<td colspan="6" align="center">{$st.time}</td>
+				</tr>
+				<tr class="warning">
+					<td>计划</td>
+					<td>{$st.protential_plan}</td>
+					<td>{$st.transform_plan}</td>
+					<td>{$st['transform_plan']*100/$st['protential_plan']} %</td>
+					<td>{$st.cardsale_plan}</td>
+					<td>{$st.br_plan}</td>
+				</tr>
+				<tr class="danger">
+					<td>实际</td>
+					<td>{$st.protential_value}</td>
+					<td>{$st.transform_value}</td>
+					<td>{$st['transform_value']*100/$st['protential_value']} %</td>
+					<td>{$st.cardsale_value}</td>
+					<td>{$st.br_value}</td>
+				</tr>
+				<tr class="err">
+					<td>完成率</td>
+					<td>{$st.protential_total}</td>
+					<td>{$st.transform_total}</td>
+					<td>{$st['transform_total']*100/$st['protential_total']} %</td>
+					<td>{$st.cardsale_total}</td>
+					<td>{$st.br_total}</td>
+				</tr>
+
+			</volist>
+
+		</tbody>
+	</table>
+
+</block>
+
+<block name="script">
+
+	<script>
+ 
+ function newplan()
+ {
+ 	// var user_id=$("#user_id").val();
+ 	// if(user_id==0)
+ 	// {1111
+ 	// 	bootbox.alert("请先选中MC");
+ 	// 	return;
+ 	// }
+
+ 	// var time=$("#start_time").val();
+ 	// if(time=='')
+ 	// {
+ 	// 	bootbox.alert("请先选择时间");
+ 	// 	return;
+ 	// }
+ 	 // window.location.href = "plan/id/"+user_id+"/time/"+time;
+ }
+	$(function(){
+		  	$("#menu_7").addClass("active");
+ 	$("#menu_71").addClass("active open");
+
+		$("#time").change(function(){
+			var value = ($(this).val());
+			if(value==0)
+			{
+				$("#et").hide();
+			}
+			else
+			{
+				$("#et").show();
+			}
+		});
+
+		$(".table").removeClass("hide");
+	})
+</script>
+</block>

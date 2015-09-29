@@ -1,0 +1,255 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+
+		<li class="active">添加会所</li>
+
+	</ul>
+</block>
+
+<block name="script">
+
+	<script type="text/javascript">  
+	var map;var marker;var point;
+
+	function locate()
+	{
+		var pos = marker.getPosition();
+		lat = pos.lat;
+		lon=pos.lng;
+		$("#lat").val(lat);
+		$("#lon").val(lon);
+	}
+
+	function initialize() {  
+	   map = new BMap.Map('map');  
+	   var lat = {$lat};
+	   var lon={$lon};
+	   if(lat==0 && lon==0)
+	   {
+	   		lon = 121.438075;
+	   		lat=31.188287;
+	   }
+	   point = new BMap.Point(lon, lat);
+	  map.centerAndZoom(point,12);    
+	  map.addControl(new BMap.NavigationControl());   
+	  map.addControl(new BMap.OverviewMapControl());    
+	  map.enableScrollWheelZoom();
+	 marker = new BMap.Marker(point);        // 创建标注    
+	var label = new BMap.Label("请把跳跃点拖到准确位置！",{offset:new BMap.Size(20,-10)});
+	marker.setLabel(label);
+	map.addOverlay(marker);   
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+	marker.enableDragging();    
+	marker.addEventListener("dragend", function(e){    
+	  
+	}) 
+
+	 lat = {$lat};
+	 lon={$lon};
+	  if(lat==0 && lon==0)
+	  {
+	  		var geolocation = new BMap.Geolocation();
+		geolocation.getCurrentPosition(function(r){if(this.getStatus() == BMAP_STATUS_SUCCESS){ 
+			var point = new BMap.Point(r.point.lng, r.point.lat);
+			marker.setPosition(point);
+			map.panTo(point);
+			 
+		}
+		else {
+			alert('failed'+this.getStatus());
+		}        
+	},{enableHighAccuracy: true}) 
+
+	}  
+	  }
+	
+	  
+	  function search()
+	  {
+	  	 map.centerAndZoom(point,12);    
+	  	var loc_desc = document.getElementById('s4').value;
+	  	var name =document.getElementById('club_name').value;
+	  	var myKeys = new Array();
+	  
+	  	if(name!="") myKeys.push(name); 
+	  		if(loc_desc!="") myKeys.push(loc_desc);
+	  	var size = 4/myKeys.length;
+		var local = new BMap.LocalSearch(map, {
+			renderOptions:{map: map, panel:"r-result"},
+			pageCapacity:size
+		});
+		local.searchInBounds(myKeys, map.getBounds());
+
+		local.setInfoHtmlSetCallback(function(poi){
+			document.getElementById("r-result").addEventListener("click",function(){
+					var point = new BMap.Point(poi.point.lng, poi.point.lat);
+					marker.setPosition(point);
+				});
+		});
+
+	  } 
+	  
+
+	function loadScript() {  
+	  var script = document.createElement("script");  
+	  script.src = "http://api.map.baidu.com/api?v=2.0&ak={$baidu_key}&callback=initialize";//此为v1.5版本的引用方式   
+	  document.body.appendChild(script);  
+	}  
+	   
+	window.onload = loadScript;  
+	</script>  
+
+
+	<script type="text/javascript" src="/Public/js/geo.js"></script>
+	<script>
+	$(function(){
+	$("#menu_1").addClass("active open");
+    $("#menu_17").addClass("active");
+    $("#menu_19").addClass("active");
+})
+	
+		var loc = "{$club.location}";
+		var s4value=null;
+		function promptinfo()
+		{
+		    var address = document.getElementById('address');
+		    var s1 = document.getElementById('s1');
+		    var s2 = document.getElementById('s2');
+		    var s3 = document.getElementById('s3'); 
+		    var s4=document.getElementById('s4');
+		    if(s4value!=null && s4value!=s4.value && s4.value!='')
+		    {
+		    	s4value=s4.value;
+		    	search();
+		    }
+		    address.value = s1.value +","+ s2.value +","+ s3.value+"," +s4.value;
+
+		}
+		$(function(){
+
+			$("#club_name,#s4").on('blur',function(e){  
+   				search();
+		});  
+
+
+				setup();
+				cities = loc.split(",");
+				if(cities.length>1)
+				{
+					preselect(cities[0]);
+					preselect1(cities[1]);
+					if(cities.length>2)preselect2(cities[2]);
+					if(cities.length>3) s4.value=cities[3];
+				}
+				else
+				{
+					preselect('上海市');
+				}
+				promptinfo();
+
+
+			}
+		);
+
+</script>
+</block>
+<block name="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+
+			<form class="form-horizontal" role="form" id="addClubForm" <empty name="club"> action="{:U('Brand/Shop/add')}" <else/> action="{:U('Brand/Shop/edit')}"</empty>method="post">
+			<input type="hidden" name="id" value="{$club.id}">
+			<input type="hidden" name="lat" id="lat" value="{$club.lat}">
+			<input type="hidden" name="lon" id="lon" value="{$club.lon}">
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="club_name">会所名称:</label>
+					<div class="col-sm-9">
+						<input type="text" id="club_name"  class="col-xs-10 col-sm-5" name="club_name" value="{$club.club_name}"/>
+					</div>
+				</div>
+				<!-- <div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-2">会所代码:</label>
+					<div class="col-sm-9">
+						<input type="text" id="form-field-2"  class="col-xs-10 col-sm-5" name="code" value="{$club.code}"/>
+					</div>
+				</div> -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-3" >地址:</label>
+					<div class="col-sm-9">
+						<select class="select" name="province" id="s1">
+							<option></option>
+						</select>
+						<select class="select" name="city" id="s2">
+							<option></option>
+						</select>
+						<select class="select" name="town" id="s3">
+							<option></option>
+						</select>
+						<input id="s4" name="s4" type="text" />
+						<input id="address" name="location" type="hidden" value="" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-4">电话:</label>
+					<div class="col-sm-9">
+						<input type="text" id="form-field-4"  class="col-xs-10 col-sm-5" name="phone" value="{$club.phone}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-5">传真:</label>
+					<div class="col-sm-9">
+						<input type="text" id="form-field-5"  class="col-xs-10 col-sm-5" name="fax" value="{$club.fax}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-6">电子邮件:</label>
+					<div class="col-sm-9">
+						<input type="email" id="form-field-6"  class="col-xs-10 col-sm-5" name="email" value="{$club.email}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-7">备注:</label>
+					<div class="col-sm-4">
+						<textarea id="form-field-7" rows="5" class="form-control" name="desc" >{$club.desc}</textarea>
+					</div>
+				</div>
+
+
+				<div class="form-group"> 
+				 <div id="r-result" class="col-sm-4"  style="height:320px;"></div>
+					<div id="map" class="col-sm-8"  style="width:500px;height:320px"></div>
+					
+					
+				</div>
+
+
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-9">
+						<empty name="club">
+							<button class="btn btn-info" type="submit"> <i class="icon-ok bigger-110"></i>
+								提交
+							</button>
+							<else/>
+							<button class="btn btn-info" type="submit">
+								<i class="icon-ok bigger-110"></i>
+								修改
+							</button>
+						</empty>
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn" type="reset">
+							<i class="icon-undo bigger-110"></i>
+							重置
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</block>
+
+ 

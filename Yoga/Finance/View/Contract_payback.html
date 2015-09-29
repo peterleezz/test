@@ -1,0 +1,175 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">财务</a>
+    </li>
+    <li class="active">退款</li>
+
+  </ul>
+</block>
+
+<block name="content">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="form-inline" role="form" action="{:U('Finance/Contract/queryPayback')}" method="post" id="finance_payback_report" >
+
+        <div class="form-group col-xs-12">
+          <label for="cc">选择会所：</label>
+          <label class="checkbox-inline">
+            <input type="checkbox"  id="allclub" onchange="chooseall()">所有会所</label>
+          <volist name="clubs" id="club">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="club_ids[]" id="club_ids" class="club_ids" value="{$club.id}"  checked='checked'>{$club.club_name}</label>
+          </volist> 
+        </div> 
+
+        <div class="form-group">
+          <label  for="name">开始时间:</label>
+          <input type="text" class="date_ymdhis" name="start_time"  id="start_time" oper="eq"></div>
+        <div class="form-group" id="end">
+          <label  for="name">结束时间:</label>
+          <input type="text" class="date_ymdhis" name="end_time"  id="end_time" oper="eq"></div>
+        <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+          查询
+        </button>
+      </form>
+    </div>
+
+    <div class="col-xs-12">
+      <table id="finance_payback_grid"></table>
+      <div id="finance_payback_grid_pager"></div>
+      
+    </div>
+
+  </div>
+
+</block>
+
+<block name="script">
+  <script>
+  
+  function changestatus(self,id)
+  {  
+      $(".op"+id).addClass("disabled");  
+      jQuery("#finance_payback_grid").jqGrid('delRowData',id); return;
+  }
+
+
+  function chooseall()
+  {
+      var all=$("#allclub").prop("checked");
+      if(all)
+      {
+        $(".club_ids").prop("checked", true);  
+      }
+      else
+      {
+        $(".club_ids").prop("checked", false);  
+      }
+  }
+
+  function disagree(self,contract_id,id)
+  {  
+     $(".op"+id).addClass("disabled");  
+    $.post("/Finance/Contract/disagree", {id:contract_id}, function(data,textStatus){
+             if(data.status){ 
+                    jQuery("#finance_payback_grid").jqGrid('delRowData',id); 
+                } else {
+                    bootbox.alert(data.info,null);             
+                }
+        }, "json");
+     return false;
+  }
+ 
+$(function(){ 
+var clubs,start_time,end_time,clubsstring="";
+$("#finance_payback_report").submit(function(){   
+         var self = $(this);  
+          clubs=$('input[name="club_ids[]"]:checked'); 
+         if(clubs.length==0)
+         {
+             bootbox.alert("请选中需要统计的会所！");
+            return false;
+         } 
+         clubsstring=""; 
+         clubs.each(function(){  
+            clubsstring+=$(this).val()+",";
+          })  
+         clubsstring=clubsstring.substring(0,clubsstring.length-1); 
+        //   start_time=$("#start_time").val();
+        //  if(start_time=='')
+        //  {
+        //     bootbox.alert("请输入查询时间！");
+        //     return false;
+        //  }
+        // end_time=$("#end_time").val();
+        //  if(end_time=='')
+        //  {
+        //     bootbox.alert("请输入查询结束时间！");
+        //     return false;
+        //  }
+         jQuery("#finance_payback_grid").jqGrid('setGridParam',{postData:self.serialize(),url:self.attr("action"),page:1,datatype:'json'}).trigger("reloadGrid"); 
+         return false;
+     });
+
+
+
+    $("#menu_3").addClass("active open");
+    $("#menu_69").addClass("active"); 
+    var grid_selector = "#finance_payback_grid";
+    var pager_selector = "#finance_payback_grid_pager";
+
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Finance/Contract/queryPayback",                 
+                   mtype:"POST",        
+                  datatype: "local",
+                  height: 'auto', 
+                  width:"auto",
+                    colNames:["id",'合同号','申请人','合同价格','已付款','欠款','申请时间','操作'],
+                    colModel:[  
+                    {name:'id',index:'id',hidden:true},
+                        {name:'contract_number',index:'contract_number',formatter : function(value, options, rData){                         
+                          return rData.contract.contract_number;
+                       }}, 
+                        {name:'recorder',index:'recorder_number',formatter : function(value, options, rData){                         
+                          return rData.recorder.name_cn;
+                       }}, 
+                        {name:'price',index:'price',formatter : function(value, options, rData){                         
+                          return rData.bill.price;
+                       }}, 
+  {name:'paid',index:'paid',formatter : function(value, options, rData){                         
+                          return rData.bill.paid;
+                       }}, 
+  {name:'own',index:'own',formatter : function(value, options, rData){                         
+                          return rData.bill.price-rData.bill.paid;
+                       }}, 
+{name:'create_time',index:'create_time'},
+{name:'op',index:'op',formatter : function(value, options, rData){             
+  var html='<a class="btn  btn-primary btn-xs op'+rData.id+'"  target="view_window" onclick="changestatus(this,'+rData.id+')" href="/Finance/Contract/paybackdetail/id/'+rData.contract_id+'" ><i class="icon-ok bigger-130"></i>退款</a>&nbsp&nbsp&nbsp';
+                            html+='<a class="btn  btn-default btn-xs op'+rData.id+'" href="javascript:void(0)" onclick="disagree(this,'+rData.contract_id+','+rData.id+')"><i class="icon-remove bigger-130"></i>不退</a>&nbsp&nbsp&nbsp';
+  return html; 
+                       }}, 
+                        
+                    ],       
+                   
+                    pager : pager_selector,
+                     viewrecords: true,
+    sortname: 'id',
+    rowList:[], 
+    autowidth: true,
+    shrinkToFit:true,  
+    rowNum: 99999,
+    pginput:false,
+    pgbuttons: false,
+    gridview: false,
+    caption: "申请列表" ,  
+
+                });   
+ 
+
+})
+</script>
+</block>

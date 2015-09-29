@@ -1,0 +1,152 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">Mc经理</a>
+        </li>
+        <li class="active">本月新增产出计划</li>
+
+    </ul>
+</block>
+
+<block name="content">
+    <div class="col-xs-12">
+    <form action="">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>金额</th>
+                    <th>成交量</th>
+                    <th>到场</th>
+                    <th>邀约</th>
+                    <th>新增潜客户</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td><input type="text" value="{$create_time}" disabled> </td>
+                    <td><input type="text" value="{$total_price}"></td>
+                    <td><input type="text" value="{$contract_count}"></td>
+                    <td><input type="text" value="{$come_visit}"></td>
+                    <td><input type="text" value="{$invite_count}"></td>
+                    <td><input type="text" value="{$new_member_count}"></td>
+                    <td> <button type="submit" class="btn-sm btn-primary ">保存</button></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+</form>
+
+        <table  id="plan_new_grid"></table>
+        <div id="plan_new_grid_pager"></div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script> 
+ 
+$(function(){ 
+    
+    var grid_selector = "#plan_new_grid";
+    var pager_selector = "#plan_new_grid_pager"; 
+                jQuery(grid_selector).jqGrid({
+                    url:"{$action}",                 
+                    datatype: "json",
+                    height: "100%",  
+                    width:"100%",          
+                    mtype:"POST", 
+                    colNames:['ID','日期','金额','成交量','到场','邀约','新增潜客户'],
+                    colModel:[ 
+                            {name:'id',index:'id',hidden:true},
+                             {name:'id',index:'id',hidden:true},
+                             {name:'id',index:'id',hidden:true},
+                             {name:'id',index:'id',hidden:true},
+                             {name:'id',index:'id',hidden:true},
+                             {name:'id',index:'id',hidden:true},
+                             {name:'id',index:'id',hidden:true},
+                    ],       
+                   
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false},
+                    sortorder: "desc",
+                    editurl: "",    
+                     autowidth: true,
+                     shrinkToFit:true,  
+                    caption: "本月新增产出计划" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},
+                     onSelectRow: function (rowid, status) { 
+                         if(status==true)
+                         {
+                             showdetail(rowid);
+                             return;
+                         } 
+                         else
+                         {
+                            $("#show_detail").text("");
+                         }
+                     }, 
+
+                    loadComplete : function() {  
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+ 
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    } 
+                );
+ <if condition="1 eq $show_edit">
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-pencil blue',caption:"",title:"修改",
+    onClickButton:function(){ 
+        var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+    if (id) {
+        var ret = jQuery(grid_selector).jqGrid('getRowData',id);
+        window.location.href = "index/id/"+ret.id;
+    } else { alert("请先选中要修改的行！");}
+         
+    } 
+});
+</if>
+
+ <if condition="1 eq $show_add">
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-plus-sign purple',caption:"",title:"新增",
+    onClickButton:function(){ 
+         window.location.href = "index";
+    } 
+});
+</if>
+
+})
+</script>
+</block>

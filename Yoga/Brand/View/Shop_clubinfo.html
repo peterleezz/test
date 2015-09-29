@@ -1,0 +1,84 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">基础设置</li>
+	    <li class="active">会所详情</li>	
+
+	</ul>
+</block>
+
+<block name="content">
+	<div class="profile-user-info profile-user-info-striped">
+		<div class="profile-info-row">
+			<div class="profile-info-name">会所名</div>
+			<div class="profile-info-value">
+				<span >{$club.club_name}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">会所编号</div>
+			<div class="profile-info-value">
+				<span >{$club.code}</span>
+			</div>
+		</div>
+
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">会所地址</div>
+
+			<div class="profile-info-value"> <i class="icon-map-marker light-orange bigger-110"></i>
+				<span >{$club.location}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">电话</div>
+			<div class="profile-info-value"> <i class="icon-phone light-orange bigger-110"></i>
+				<span >{$club.phone}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">传真</div>
+			<div class="profile-info-value"><i class="icon-phone light-orange bigger-110"></i>
+				<span >{$club.fax}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">邮件</div>
+			<div class="profile-info-value"><i class="icon-envelope light-orange bigger-110"></i>
+				<span >{$club.email}</span>
+			</div>
+		</div>
+
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">创建时间</div>
+			<div class="profile-info-value"><i class="icon-calendar light-orange bigger-110"></i>
+				<span >{$club.create_time}</span>
+			</div>
+		</div>
+
+		<div class="profile-info-row">
+			<div class="profile-info-name">备注</div>
+			<div class="profile-info-value"><i class="icon-book light-orange bigger-110"></i>
+				<span >{$club.desc}</span>
+			</div>
+		</div> 
+	</div>
+</block>
+
+<block name="script">
+	<script>
+$(function(){
+	$("#menu_1").addClass("active open");
+    $("#menu_17").addClass("active");
+    $("#menu_19").addClass("active");
+})
+	</script>
+</block>

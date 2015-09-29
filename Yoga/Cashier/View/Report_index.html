@@ -1,0 +1,144 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">财务</a>
+    </li>
+    <li class="active">财务报表</li>
+
+  </ul>
+</block>
+
+<block name="content">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="form-inline" role="form" action="{:U('Cashier/Report/queryReport')}" method="post" id="finance_query_report" > 
+
+        <div class="form-group">
+          <label  for="name">开始时间:</label>
+          <input type="text" class="date_ymd" name="start_time"  id="start_time" oper="eq"></div>
+        <div class="form-group hide" id="end">
+          <label  for="name">结束时间:</label>
+          <input type="text" class="date_ymd" name="end_time"  id="end_time" oper="eq"></div>
+        <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+          查询
+        </button>
+      </form>
+    </div>
+
+    <div class="col-xs-12">
+      <table id="finance_report_grid"></table>
+      <div id="finance_report_grid_pager"></div>
+    </div>
+
+  </div>
+
+</block>
+
+<block name="script">
+  <script>
+   
+$(function(){ 
+var clubs,start_time,end_time,type,clubsstring="";
+$("#finance_query_report").submit(function(){   
+         var self = $(this);  
+         
+          start_time=$("#start_time").val();
+         if(start_time=='')
+         {
+            bootbox.alert("请输入查询时间！");
+            return false;
+         } 
+         jQuery("#finance_report_grid").jqGrid('setGridParam',{postData:self.serialize(),url:self.attr("action"),page:1,datatype:'json'}).trigger("reloadGrid"); 
+         return false;
+     });
+
+
+
+    $("#menu_6").addClass("active open");
+    $("#menu_74").addClass("active"); 
+    var grid_selector = "#finance_report_grid";
+    var pager_selector = "#finance_report_grid_pager";
+
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Finance/Report/queryReport",                 
+                   mtype:"POST",        
+                  datatype: "local",
+                  height: 'auto', 
+                  width:"auto",
+                    colNames:['项目','收款笔数','合同单数','应缴收入','实际收入','欠款','现金','支票','POS','储值卡','网络支付','网银分期', 'classify'],
+                    colModel:[ 
+                      
+                        {name:'name',index:'name',formatter : function(value, options, rData){ 
+                            if(end_time=="")end_time="0";
+                                            return "<a target='_blank' href='/Cashier/Report/detail?type="+rData.type+"&subtype="+rData.subtype+"&start_time="+start_time+"&reporttype="+1+"'>"+value+"</a>"
+                         }}, 
+                          {name:'pay_number',index:'pay_number'},  
+                       {name:'number',index:'number'},  
+                       {name:'price',index:'price',summaryType:'sum',summaryTpl:'<b>总收入: ￥{0}</b>'},  
+                       {name:'paid',index:'paid',summaryType:'sum',summaryTpl:'<b>实际总收入: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'own',index:'own',summaryType:'sum',summaryTpl:'<b>总欠款: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'cash',index:'cash',summaryType:'sum',summaryTpl:'<b>总现金: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'check',index:'check',summaryType:'sum',summaryTpl:'<b>总支票: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'pos',index:'pos',summaryType:'sum',summaryTpl:'<b>总POS: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'recharge',index:'recharge',summaryType:'sum',summaryTpl:'<b>总储值卡: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                        {name:'network',index:'network',summaryType:'sum',summaryTpl:'<b>总网络支付: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                        {name:'netbank',index:'netbank',summaryType:'sum',summaryTpl:'<b>总网银分期: ￥{0}</b>',formatter : function(value, options, rData){
+                          if(isNaN(value)) return "未知";
+                          return value;
+                       }},
+                       {name:'classify',index:'classify',hidden:true},
+                    ],       
+                   
+                    pager : pager_selector,
+                     viewrecords: true,
+    sortname: 'classify',
+    rowList:[],
+    grouping:true,
+    autowidth: true,
+    shrinkToFit:false,  
+    rowNum: 99999,
+    pginput:false,
+  pgbuttons: false,
+   gridview: false,
+    caption: "报表" ,
+    groupingView : {
+      groupField : ['classify'],
+      groupSummary : [true],
+      groupColumnShow : [false],
+      groupText : ['<b>{0} - {1} 项</b>'],
+      groupCollapse : false,
+      scroll:false,
+    groupOrder: ['desc']      
+    },
+
+    footerrow: true,
+    userDataOnFooter: true
+
+                });   
+})
+</script>
+</block>

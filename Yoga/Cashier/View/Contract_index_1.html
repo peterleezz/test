@@ -1,0 +1,377 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">品牌管理</a>
+    </li>
+    <li class="active">续会升级转让</li>
+  </ul>
+</block>
+
+<block name="content">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
+
+      <form class="form-inline" role="form" action="{:U('Cashier/Contract/query')}" method="post" id="cashier_contract_form" style="margin-bottom:10px">
+
+        <!--  <div class="form-group">
+        <label class="sr-only" for="card_type_id">卡种分类</label>
+        <select name="card_type_id" id="card_type_id" class="form-control" oper="eq">
+          <option value="0">请选择卡种分类</option>
+          <volist name="cardtypes" id="cardtype">
+            <option value="{$cardtype.id}">{$cardtype.name}</option>
+          </volist>
+        </select>
+      </div>
+      -->
+      <div class="form-group ">
+        <label  for="contract_number">合同号:</label>
+        <input type="text" class="form-control" name="contract_number"  id="contract_number" oper="eq"></div>
+
+      <div class="form-group">
+        <label  for="card_number">卡号:</label>
+        <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
+      <div class="form-group">
+        <label  for="name">会员姓名:</label>
+        <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+      <div class="form-group">
+        <label  for="phone">手机号码:</label>
+        <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+      <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+        查询
+      </button>
+    </form>
+
+    <table id="cashier_contract_grid"></table>
+    <div id="cashier_contract_pager"></div>
+
+    <div id="show_detail"  >
+        
+    </div>
+
+  </div>
+</div>
+
+</block>
+
+<block name="script">
+<script> 
+ 
+  
+    $(function(){ 
+    $("#menu_6").addClass("active open");
+    $("#menu_38").addClass("active");
+
+            var grid_selector = "#cashier_contract_grid";
+            var pager_selector = "#cashier_contract_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Cashier/Contract/query')}",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','合同编号','对应卡号','合同状态','普通/团卡','姓名','性别', '手机号码','卡种','次数','赠送时间(天)','赠送次数(次)','应收价格','卡种价格','已付','欠款','生效时间','结束时间','合同类型','开卡方式','MC姓名', '录入人','签约日期'],
+                    colModel:[   
+                         {name:'id',index:'id',width:150,hidden:true},
+                        {name:'contract_number',index:'contract_number',width:150,},      
+                        {name:'card_number',index:'card_number',width:150,editable: true,},
+                        {name:'invalid',index:'invalid',width:70,formatter : function(value, options, rData){
+                                             var a=new Array("无效","有效");
+                                               return getValue(a,value); 
+                                }},
+                        {name:'type',index:'type',width:70,formatter : function(value, options, rData){
+                                           var a=new Array("普通合同","团卡合同");
+                                           return getValue(a,value); 
+                                   },editable: true,edittype: 'select',editoptions:{sopt:['eq'],value:"0:普通合同;1:团卡合同"}},
+                         {name:'name',index:'name',width:100},
+                                                {name:'sex',index:'sex',width:50,formatter : function(value, options, rData){
+                                                  return value=='male'|| value=='男'?"男":"女";
+                                           }},
+                        {name:'phone',index:'phone',hidden:true,width:150,},
+                        {name:'card_type_id',index:'card_type_id',width:150,editable: true,edittype: 'select',editoptions:{sopt:['eq'],value:getCardTyps()},formatter : function(value, options, rData){
+                                          return rData.card_name;
+                                           }},  
+                        {name:'times',index:'times',width:100,formatter : function(value, options, rData){
+                                                    if(rData.card_type==1) return "时间卡"
+                                                          return rData.used_num+"/"+rData.total_num;
+                                           }},  
+                        {name:'present_day',index:'present_day',width:100,editable: true},      
+                         {name:'present_num',index:'present_num',width:100,editable: true},      
+                                                              
+                      {name:'price',index:'price',width:80,editable: true},
+                      {name:'card_type_price',index:'card_type_price',width:80},
+                        {name:'payed',index:'payed',width:80,editable: false},
+                        {name:'',index:'',width:80,formatter : function(value, options, rData){                            
+                           return rData.price-rData.payed; 
+                   }},
+                    {name:'start_time',index:'start_time',width:150,editable: true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd',      minView:'2',          language:'zh-CN',      autoclose:true,})}}} ,
+                    {name:'end_time',index:'end_time',width:150,editable: true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd',      minView:'2',          language:'zh-CN',      autoclose:true,})}}} ,
+
+                      {name:'status',index:'status',width:100,formatter : function(value, options, rData){
+                           var a=new Array("","新增合同","续费","升级","转让");
+                           return getValue(a,value); 
+                   }}, 
+                         {name:'active_type',index:'active_type',width:100,formatter : function(value, options, rData){
+                           var a=new Array("买卡当天开卡","指定日期开卡","第一次到开卡");
+                           return getValue(a,value); 
+                   },editable: true,edittype: 'select',editoptions:{sopt:['eq'],value:"0:买卡当天开卡;1:指定日期开卡;2:第一次到开卡"}},     
+                       {name:'mc_name',index:'mc_name',width:80}, 
+                        {name:'recorder_name',index:'recorder_name',width:80},                          
+                        {name:'create_time',index:'create_time',width:150},                        
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false,align:"left"},
+                    sortorder: "desc",
+                    editurl: "{:U('Cashier/Member/edit')}",         
+                    autowidth: false,
+                    shrinkToFit:false,  
+                    autoScroll: true,
+                    caption: "会员卡信息" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    onSelectRow: function (rowid, status) {
+                        var ret = jQuery(grid_selector).jqGrid('getRowData',rowid);
+                         if(status==0)
+                         {
+                             show_detail(ret);
+                             return;
+                         }
+                        //     $.post("/Cashier/Member/show", {id:ret.member_id}, function(data,textStatus){
+                        //       $("#show_detail").text("");
+                        //       $("#show_detail").append(data);
+                        // }, "json");
+                     }, 
+
+                    gridview: true,
+                    subGrid : true,
+                   subGridRowExpanded: function(subgrid_id, row_id) {
+                        var subgrid_table_id, pager_id; subgrid_table_id = subgrid_id+"_t";
+                        pager_id = "p_"+subgrid_table_id;
+                        $("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div>");
+                        $("#"+subgrid_table_id).jqGrid({
+                            datatype: "json",
+                            url:"/Cashier/Contract/querypayhistory?id="+row_id,
+                            colNames: ['ID', '付款时间','现金','刷卡','支票','总计',""],
+                            colModel: [
+                            {name:"create_time",index:"contract_number",width:100,align:"left",hidden:true}, 
+                                  {name:"create_time",index:"contract_number",width:200,align:"left"}, 
+                                        {name:"cash",index:"cash",width:100,align:"left"},
+                                        {name:"pos",index:"pos",width:100,align:"left"},
+                                        {name:"check",index:"check",width:100,align:"left"}, 
+                                        {name:"total",index:"total",width:100,align:"left",formatter : function(value, options, rData){
+                                         return parseInt(rData.cash)+parseInt(rData.pos)+parseInt(rData.check);
+                                          }}, 
+                                           {name:"print",index:"print",width:100,align:"left",formatter : function(value, options, rData){
+                                            return "<a href='/Cashier/Contract/printrecord/id/"+rData.id+"'>打印收据</a>"
+                                          }}, 
+
+                                        ], 
+                            rowNum:100,
+                            // pager: pager_id,
+                            sortname: 'id',
+                            loadonce:true,
+                            autowidth: false,
+                            shrinkToFit:false,  
+                            autoScroll: true,
+                            sortorder: "desc", height: '100%' });
+                    },
+
+
+                    subGridOptions: {
+                        "plusicon": "icon-plus",
+                        "minusicon": "icon-minus",
+                        "openicon": "icon-list",
+                        "reloadOnExpand": false,
+                        "selectOnExpand": true
+                    },
+
+
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                      // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        // $("#show_detail").addClass("hide");
+                        userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+ 
+   
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        edittext:"编辑",
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                           var res = $.parseJSON(response.responseText);
+                             // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                ); 
+
+
+  
+
+ // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-info-sign red',caption:"综合信息",title:"综合信息",
+ //                        onClickButton:function(){ 
+ //                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+ //                        if (id) {
+ //                           var info = getCardInfo(id);
+ //                        } else { alert("请先选中！");}
+                             
+ //                        } 
+ //                    });
+
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-print black',caption:"打印",title:"打印",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                           window.location.href="/Cashier/Contract/print/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-money orange',caption:"收款",title:"收款",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                          var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+                          if(rowData.own<=0){
+                            bootbox.alert("该合同已付清");
+                            return;
+                          }
+                           window.location.href="/Cashier/Contract/pay/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-exchange blue',caption:"转让",title:"转让",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                           window.location.href="/Cashier/Contract/transform/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-upload-alt green',caption:"升级",title:"升级",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                          window.location.href="/Cashier/Contract/upgrade/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+
+
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-retweet brown',caption:"续会",title:"续会",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                            window.location.href="/Cashier/Contract/continue/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    }); 
+          
+})
+    </script>
+</block>

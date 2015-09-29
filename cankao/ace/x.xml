@@ -1,0 +1,115 @@
+<li>
+              <a href="#" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text"> 前台 </span>
+
+                <b class="arrow icon-angle-down"></b>
+              </a>
+
+              <ul class="submenu">               
+                <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                    员工管理
+                  </a>
+                </li>
+                <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                    会员批量延期
+                  </a>
+                </li>
+                <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                    会籍合同查询
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="dropdown-toggle">
+                    <i class="icon-double-angle-right"></i>
+
+                    基础设置
+                    <b class="arrow icon-angle-down"></b>
+                  </a>
+
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        会所信息管理
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        高峰时段设置
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        商品管理
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        PT课程设置
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        卡种设置
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        系统设置
+                      </a>
+                    </li>
+  
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#" class="dropdown-toggle">
+                    <i class="icon-double-angle-right"></i>
+
+                    稽核
+                    <b class="arrow icon-angle-down"></b>
+                  </a>
+
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        合同修改审批
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        合同金额异常审批
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        退会申请
+                      </a>
+                    </li>
+                     <li>
+                      <a href="#">
+                        <i class="icon-leaf"></i>
+                        消费明细
+                      </a>
+                    </li>                    
+  
+                  </ul>
+                </li>
+              </ul>
+            </li>

@@ -1,0 +1,218 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">Pt</a>
+        </li> 
+        <li class="active">课程管理</li>
+
+    </ul>
+</block>
+
+ 
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="ptclass">
+           <form class="form-inline" role="form" action="{:U('Pt/Class/query')}" method="post" id="pt_class_public" style="margin-bottom:10px"> 
+
+                                    <div class="form-group">
+                                        <label  for="name">课程名称:</label>
+                                        <input type="text" class="form-control" name="name"  id="name" oper="cn"></div> 
+                                 
+                                    <button type="submit" class="btn  btn-info btn-sm">
+                                        <i class="icon-search"></i>
+                                        查询
+                                    </button>
+
+                                </form>
+
+
+                                <table id="pt_class_public_grid"></table>
+                                <div id="pt_class_public_pager"></div>
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script>
+      
+    $(function(){
+
+        $("#menu_10").addClass("active open");
+    $("#menu_77").addClass("active");
+   
+
+           var  grid_selector = "#pt_class_public_grid";
+            var  pager_selector = "#pt_class_public_pager";    
+              
+                jQuery(grid_selector).jqGrid({
+                    url:"/Pt/Class/query",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:"100%",        
+                    mtype:"POST",
+                    colNames:['ID','名称','课时长(分钟)','语言','难度等级','图片','备注','创建时间'],
+                    colModel:[      
+                        {name:'id',index:'id',sortable:true,editable: false ,width:70,align:'center',sorttype:'integer'},
+                        {name:'name',index:'name',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center',search:true},
+                        {name:'time',index:'time',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'center',search:true},
+                           
+                       {name:'lang',index:'lang', width:90, editable: true,edittype:"select",editoptions:{value:"中文:zh-chs;English:en-us"},formatter : function(value, options, rData){
+                            return value=='zh-chs'?"中文":"English";
+            }}, 
+                       {name:'level',index:'level', width:90, editable: true,edittype:"select",editoptions:{value:"一级:1;二级:2;三级:3;四级:4"},formatter : function(value, options, rData){
+                         var a=new Array("","一级","二级","三级","四级");
+                           return getValue(a,value); 
+            }},      
+                        {name:'image',index:'image',width:50,formatter : function(value, options, rData){  
+                          return '<img width="50px" src="'+value+'">' ; 
+                         }},
+                          {name:'desc',index:'desc',width:50,align:'center',formatter : function(value, options, rData){  
+                            return value?"有":"无";
+                         }},
+                          {name:'create_time',index:'create_time',width:200,editoptions:{size:"20",maxlength:"30"},align:'center',editable:false},
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                    editurl: "/Pt/Class/setPtclass",          
+                    // autowidth: true,
+                     shrinkToFit:false,  
+                    caption: "Pt课程信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0);
+                      
+                    },
+                 
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                       edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: true,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                );
+ 
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-pencil blue',caption:"",title:"修改",
+    onClickButton:function(){ 
+        var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+    if (id) {
+        var ret = jQuery(grid_selector).jqGrid('getRowData',id);
+        window.location.href = "/Pt/Class/showEdit/id/"+ret.id;
+    } else { alert("请先选中要修改的行！");}
+         
+    } 
+});
+
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-plus-sign purple',caption:"",title:"新增",
+    onClickButton:function(){ 
+         window.location.href = "/Pt/Class/showAdd";
+    } 
+});
+
+
+})
+    </script>
+</block>

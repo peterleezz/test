@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slicebox - 3D Image Slider</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+        <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+		<meta name="author" content="Pedro Botelho for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+	</head>
+	<body>
+		<div class="container"  style="width:100%">
+
+		 
+ 
+
+			<div class="wrapper"  style="width:100%">
+
+				<ul id="sb-slider" class="sb-slider"  style="width:100%;">
+					<li>
+						 <img style="width:100%;" src="images/x_1.jpg" alt="image1"/> 
+						<!-- <div class="sb-description">
+							<h3>Creative Lifesaver</h3>
+						</div> -->
+					</li>
+					<li>
+						 <img style="width:100%;" src="images/x_2.jpg" alt="image1"/> 
+						<!-- <div class="sb-description">
+							<h3>Honest Entertainer</h3>
+						</div> -->
+					</li>
+					<li>
+						 <img style="width:100%;" src="images/x_3.jpg" alt="image1"/> 
+						<!-- <div class="sb-description">
+							<h3>Brave Astronaut</h3>
+						</div> -->
+					</li>
+					<li>
+						 <img style="width:100%;" src="images/x_4.jpg" alt="image1"/> 
+						<!-- <div class="sb-description">
+							<h3>Affectionate Decision Maker</h3>
+						</div> -->
+					</li> 
+					<li>
+						 <img style="width:100%;" src="images/x_5.jpg" alt="image1"/> 
+						<!-- <div class="sb-description">
+							<h3>Affectionate Decision Maker</h3>
+						</div> -->
+					</li> 
+				</ul> <div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows"　>
+					<a href="#" style="display:none" id="nextid">Next</a>
+					<a href="#" style="display:none" >Previous</a>
+				</div>
+
+			</div><!-- /wrapper -->
+		 
+
+		</div>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+			
+				var slicebox;
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$shadow.show();
+
+							},
+							autoplay:true,
+							interval:10000,
+							orientation : 'r',
+							cuboidsRandom : true,
+							disperseFactor : 30
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+
+			// 	function next()
+			// {
+			// 	 $( '#nav-arrows' ).children( ':first' ).trigger("click");
+			// 	setTimeout(next,3000);
+			// }
+			// setTimeout(next,3000);
+
+			});
+
+
+
+
+		</script>
+	</body>
+</html>	

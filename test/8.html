@@ -1,0 +1,142 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>打印页面</title>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script charset="gb2312" language="javascript" src="../../js/print.js"></script>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<style>
+        body
+        {
+            background-color: White;
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+	<form name="form1" method="post" action="PrintPage.aspx?consumptionid=C0_b046c6ee-89ea-40cb-b5c5-8e1ee1b1f526&amp;added=1&amp;earnestno=" id="form1">
+	 
+
+		<!-- 开始 小票打印 -->
+		<center class="thissayprint">
+			<button class="button5" onclick="GPprint()">小票打印</button>
+		</center>
+		<table class="thisshowdiv" cellpadding="0" cellspacing="0" align="center">
+			<tr>
+				<td>
+
+					<!--starGPprint-->
+					<div class=" GPoutborder">
+						<!-- 开始 大标题 -->
+						<div class="hcenter f16">
+							firesoft.com
+							<br>010珞迦永新店会激付费退款票据（补）</div>
+						<br>
+						<br>
+						<!-- 结束 大标题 -->
+
+						<!-- 开始 客户资料 -->
+						<div id="PrintBill1_div_memberInfo" class="pdb10">
+							<span class="GPLeft">消费类型：</span>
+							<span class="GPRight">储值卡</span>
+						</div>
+
+						<!-- 结束 客户资料 -->
+
+						<!-- 开始 项目 -->
+						<div class="underdot">
+							<span class="GPPrgAT">品名</span>
+							<span class="GPPrgCT">数量</span>
+							<span class="GPPrgDT">实收</span>
+						</div>
+						<!--div class="underdot">
+						<span class="GPPrgA">（星卡）个人健身年卡</span>
+						<span class="GPPrgB">20000元</span>
+						<span class="GPPrgC">1</span>
+						<span class="GPPrgD">2000元</span>
+					</div-->
+					<div class="underdot">
+						<span class="GPPrgA">会员卡储值</span>
+						<span class="GPPrgC">1</span>
+						<span class="GPPrgD">4000元</span>
+					</div>
+					<br>
+					<!-- 结束 项目 -->
+
+					<!-- 开始 付费 -->
+					<div class="underdot">
+						<span class="GPPayAT">支付明细</span>
+						<span class="GPPayBT">金额</span>
+					</div>
+					<!--div class="underdot">
+					<span class="GPPayA">POS:20082043</span>
+					<span class="GPPayB">2009元</span>
+				</div-->
+
+				<br>
+
+				<!-- 结束 付费 -->
+
+				<!-- 开始 其他 -->
+				<div>
+					<!--span class="GPLeft">销售：</span>
+				<span class="GPRight">AFdsa</span>
+				<br-->
+
+				<span class="GPLeft">销售工号：</span>
+				<span class="GPRight">临时销售</span>
+				<br>
+
+				<span class="GPLeft">操作工号：</span>
+				<span class="GPRight">0003024</span>
+				<br>
+				<span class="GPLeft">消费时间：</span>
+				<span class="GPRight">2014/12/11 16:20:06</span>
+				<br>
+				<span class="GPLeft">打印时间：</span>
+				<span class="GPRight">2014/12/11 18:14:11</span>
+				<br></div>
+			<div class="hright mgt30">
+				会员签名:_________
+				<br />
+				<br/>
+				<br/>
+			</div>
+			<!-- 结束 其他 -->
+		</div>
+		<!--endGPprint-->
+
+	</td>
+</tr>
+</table>
+<!-- 结束 小票打印 --> 
+ 
+<hr />
+</form>
+</body>
+</html>
+
+<script language="javascript" type="text/javascript">
+
+    function locationContinueCard() {
+        var id = $("#txtCardId").val();
+        window.location = "../../Locale/Team/TeamMemberCard.aspx?continue=" + id + "&moduleId=111";
+    }
+    function locationPage(id,consumptionid,card) {
+        window.location = "PrintPage.aspx?CardId=" + id + "&Facture=1&back=true&consumptionid=" + consumptionid + "&CardNo=" + card;
+    }
+    function locationAddOrgPage(id, consumptionid, card) {
+        window.location = "PrintPage.aspx?CardId=" + id + "&back=true&consumptionid=" + consumptionid + "&CardNo=" + card;
+    }
+    function onClickFactureCard() {
+        if ($("#txtFacture").val() == "1") {
+            window.location = "FactureCard.aspx?CardId=" + $("#txtCardId").val() + "," + $("#txtCardNo").val() + "&Photo=" + $("#txtPhoto").val();
+        }
+    }
+
+  
+
+
+</script>

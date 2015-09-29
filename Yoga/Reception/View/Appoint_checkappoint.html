@@ -1,0 +1,121 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">前台</a>
+        </li>
+        <li class="active">当日约课</li>
+
+    </ul>
+</block>
+
+<block name="script">
+ <script type="text/javascript"> 
+
+	    
+			 $(function(){
+			 	 $('#myTab a:first').tab('show') ; 
+			 	  $("#menu_4").addClass("active open");
+    $("#menu_82").addClass("active");
+			 });
+ 	</script>
+</block> 
+
+<block name="content"> 
+ 		<div class="row">
+                <div class="col-xs-12">
+
+	<form class="form-inline" role="form"  method="post" style="margin-bottom:10px">
+
+	
+	<div class="form-group">
+			<label    for="time">时间：</label>
+			<input class="date_ymd" type="text" id="time" name="time"/>
+		</div>
+
+
+                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                    查询
+                </button>
+    </form>
+
+
+
+ 					<div class="tabbable">
+                        <ul class="nav nav-tabs" id="myTab">
+                          <volist name="classes" id="class"  key="k">
+                            <li  >
+                                <a data-toggle="tab" href="#c{$key}"> <i class="green icon-shopping-cart bigger-110"></i>
+                               {$key}
+                                </a>
+                            </li >
+
+                           </volist>
+                        </ul>
+                       
+
+
+						<div class="tab-content">
+						<volist name="classes" id="class"  >
+                            <div id="c{$key}" class="tab-pane in ">
+ 
+										<ul class="list-unstyled">
+							  		 		<li>
+							  		 				<table class="table table-condensed table-hover" border="0" cellspacing="0" cellpadding="0" >
+							  		 				 <tr>
+												 		<th   >时间</th>
+												 		<th   >课程名</th> 
+												 		<th  >教室</th>
+												 		<th  >时长</th>
+												 		<th >学分</th> 
+												 		<th >老师</th> 
+												 		<th >语言</th> 
+												 		<th >难度</th> 
+												 		<th >预约</th> 
+										 		      </tr>
+
+
+							  		 		<volist name="class" id="c"> 
+									  		 			 
+									  		 				 <tr> 
+													 			<td  >{$c.start|substr=10,6}</td>
+													 			<td  class="classname_cn">{$c.class.name}</td>  
+													 			<td  >{$c.room.name}</td>
+													 			<td  >{$c.class.time}min</td>
+													 			<td >{$c.class.level}</td>
+
+													 				<td >{$c.class.teacher_name}</td>
+													 					<td ><if condition="$c['class']['lang'] eq 'zh-chs'">中文<else/>英文</if> </td>
+													 						<td ><switch name="c['class']['level']">
+																	    <case value="1">入门</case>
+																	    <case value="2">容易</case>
+																	     <case value="3">一般</case>
+																	      <case value="4">困难</case>
+																	    <default />入门
+			 													</switch></td>
+
+			 													<td> <a href="{:U('Reception/Appoint/appointlist/id/'.$c['id'])}"   >查看预约情况</a></td>
+												 		 
+												 			</tr>
+												  
+ 
+							  		 		</volist>
+
+
+
+							  		 				</table>
+							  		 		</li>
+
+							  		 		
+							  		 		<hr> 
+							  		 	</ul>　
+                            </div>
+                            </volist>
+  						</div>
+ 					</div>
+                </div>
+   </div>
+
+ 
+			 
+</block>

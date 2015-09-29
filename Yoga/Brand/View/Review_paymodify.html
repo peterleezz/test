@@ -1,0 +1,244 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">稽核</li>
+        <li class="active">消费记录修改</li>
+    </ul>
+</block>
+
+ <block name="css">
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+
+
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="fcontainer">
+
+            <table id="conract_review_grid"></table>
+            <div id="payhistory_review_pager"></div>
+            <div class="panel panel-default">
+
+                <div class="panel-heading">备注</div>
+                <div class="panel-body">
+                    <textarea class="col-xs-12 col-sm-12"  name="note" id="note" rows="3"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script> 
+    $(function(){
+    $("#menu_1").addClass("active open");
+     $("#menu_18").addClass("active open");
+    $("#menu_68").addClass("active");
+
+            var grid_selector = "#conract_review_grid";
+            var pager_selector = "#payhistory_review_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Brand/Review/payHistoryQuery')}",                 
+                    datatype: "json",
+                    height: "100%",   
+                     postData:{type:0}, 
+                    // width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','操作','原因',"状态",'财务','项目','总额','现金','支票','POS','储值卡' ,'网络支付','网银分期','时间', '会员','性别','修改时间',"备注"],
+                    colModel:[   
+                        {name:'id',index:'id',hidden:true},
+                        {name:'op',index:'op',width:70,hidden:true,formatter : function(value, options, rData){ 
+                            var id=rData.id;
+                            var note=$("#note").val();
+                            var html='<a class="btn  btn-primary btn-xs"  href="javascript:void(0)" onclick="review_pass('+id+',1,0)"><i class="icon-ok bigger-130"></i>通过</a>&nbsp&nbsp&nbsp';
+                              return html;
+                         }},
+		                {name:'reason',index:'reason'},
+                          {name:'status',index:'status',width:80,align:'center',search:true,stype: 'select',searchoptions:{sopt:['eq'],value:"0:未审核;1:审核通过;2:审核未通过",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("未审核","审核通过","审核未通过");
+                           return getValue(a,value); 
+                         }}, 
+                          {name:'recorder',index:'recorder',formatter : function(value, options, rData){
+                            return value.name_cn;
+                         }},   
+                          {name:'project',index:'project',formatter : function(value, options, rData){
+                               var a=new Array("新会员入会","PT",'商品订单',"转让","续会","升级","", "充值");
+                               var b=new Array("首款","余款");
+                               return getValue(a,rData.original_extension.bill.type)+"-"+getValue(b,rData.original_extension.type);        
+                         }},  
+                          {name:'total',index:'total',formatter : function(value, options, rData){
+                            var ret= rData.extension.bill.price;
+                             if(rData.original_extension!=null && rData.original_extension.bill!=null && rData.extension.bill.price!=rData.original_extension.bill.price)
+                           {
+                                ret=ret+"["+rData.original_extension.bill.price+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                         {name:'cash',index:'cash',formatter : function(value, options, rData){
+                            var ret= rData.extension.cash;
+                             if(rData.original_extension!=null && rData.original_extension.cash!=null && rData.extension.cash!=rData.original_extension.cash)
+                           {
+                                ret=ret+"["+rData.original_extension.cash+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                         {name:'check',index:'check',formatter : function(value, options, rData){
+                            var ret= rData.extension.check;
+                             if(rData.original_extension!=null && rData.original_extension.check!=null && rData.extension.check!=rData.original_extension.check)
+                           {
+                                ret=ret+"["+rData.original_extension.check+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                         {name:'pos',index:'pos',formatter : function(value, options, rData){
+                            var ret= rData.extension.pos;
+                             if(rData.original_extension!=null && rData.original_extension.pos!=null && rData.extension.pos!=rData.original_extension.pos)
+                           {
+                                ret=ret+"["+rData.original_extension.pos+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                         {name:'recharge',index:'recharge',formatter : function(value, options, rData){
+                            var ret= rData.extension.recharge;
+                             if(rData.original_extension!=null && rData.original_extension.recharge!=null && rData.extension.recharge!=rData.original_extension.recharge)
+                           {
+                                ret=ret+"["+rData.original_extension.recharge+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                         {name:'network',index:'network',formatter : function(value, options, rData){
+                            var ret= rData.extension.network;
+                             if(rData.original_extension!=null && rData.original_extension.network!=null && rData.extension.network!=rData.original_extension.network)
+                           {
+                                ret=ret+"["+rData.original_extension.network+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                         {name:'netbank',index:'netbank',formatter : function(value, options, rData){
+                            var ret= rData.extension.netbank;
+                             if(rData.original_extension!=null && rData.original_extension.netbank!=null && rData.extension.netbank!=rData.original_extension.netbank)
+                           {
+                                ret=ret+"["+rData.original_extension.netbank+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+
+                         {name:'create_time',index:'create_time',formatter : function(value, options, rData){
+                            var ret= rData.extension.create_time;
+                             if(rData.original_extension!=null && rData.original_extension.create_time!=null && rData.extension.create_time!=rData.original_extension.create_time)
+                           {
+                                ret=ret+"["+rData.original_extension.create_time+"]"; 
+                           }
+                           return ret;
+
+                         },cellattr: addCellAttr},
+                          {name:'member',index:'member',formatter : function(value, options, rData){
+                            return rData.original_extension.member.name;
+                         }}, 
+                         {name:'member',index:'member',formatter : function(value, options, rData){
+                            return rData.original_extension.member.sex=='male'?"男":"女";
+                         }},  
+                          
+			             {name:'create_time',index:'create_time'}, 
+                         {name:'note',index:'note'}, 
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortname: "id",
+                    sortorder: "desc",
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "消费记录修改稽核" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                        // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: true,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                );
+
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-remove red',caption:"批量不通过",title:"批量不通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_unpass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-ok blue',caption:"批量通过",title:"批量通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_pass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+
+})
+    </script>
+</block>

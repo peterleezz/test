@@ -1,0 +1,47 @@
+<li >
+              <a href="#" class="dropdown-toggle">
+                <i class="icon-desktop"></i>
+                <span class="menu-text"> MC </span>
+
+                <b class="arrow icon-angle-down"></b>
+              </a>
+
+              <ul class="submenu">               
+                <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                    潜在客户管理
+                  </a>
+                </li>
+                 <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                MC预约查询
+                  </a>
+                </li>
+                 <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                  潜在客户管理
+                  </a>
+                </li>
+                 <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                    卡种查询
+                  </a>
+                </li>
+                 <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                  会员管理
+                  </a>
+                </li>
+                 <li>
+                  <a href="elements.html">
+                    <i class="icon-double-angle-right"></i>
+                    生日查询
+                  </a>
+                </li>
+                </ul>
+ </li>

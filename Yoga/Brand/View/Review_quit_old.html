@@ -1,0 +1,171 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">退会申请</li>
+    </ul>
+</block>
+
+ <block name="css">
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+
+
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="fcontainer">
+
+            <table id="conract_review_grid"></table>
+            <div id="conract_review_pager"></div>
+            <div class="panel panel-default">
+
+                <div class="panel-heading">备注</div>
+                <div class="panel-body">
+                    <textarea class="col-xs-12 col-sm-12"  name="note" id="note" rows="3"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script> 
+    $(function(){
+    $("#menu_1").addClass("active open");
+     $("#menu_18").addClass("active open");
+    $("#menu_25").addClass("active");
+function addCellAttr(rowId, val, rawObject, cm, rdata) {
+   if(val.indexOf("[")>0 && val.indexOf("]")>0)
+        return "style='color:red'";
+}
+
+            var grid_selector = "#conract_review_grid";
+            var pager_selector = "#conract_review_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Brand/Review/quitQuery')}",                 
+                    datatype: "json",
+                    height: "100%",   
+                     postData:{type:0}, 
+                    // width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','操作',"状态",'卡号','时间','会所','会员','性别',"备注"],
+                    colModel:[   
+                        {name:'id',index:'id',hidden:true},
+                        {name:'op',index:'op',width:70,hidden:true,formatter : function(value, options, rData){ 
+                            var id=rData.id;
+                            var note=$("#note").val();
+                            var html='<a class="btn  btn-primary btn-xs"  href="javascript:void(0)" onclick="review_pass('+id+',1,0)"><i class="icon-ok bigger-130"></i>通过</a>&nbsp&nbsp&nbsp';
+                              return html;
+                         }},
+                          {name:'status',index:'status',width:80,align:'center',search:true,stype: 'select',searchoptions:{sopt:['eq'],value:"0:未审核;1:审核通过;2:审核未通过",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("未审核","审核通过","审核未通过");
+                           return getValue(a,value); 
+                         }}, 
+                          {name:'card_number',index:'card_number',formatter : function(value, options, rData){
+                            return rData.extension.card_number;
+                         }},   
+                         {name:'create_time',index:'create_time'}, 
+                        {name:'club_id',index:'club_id',width:150,search:true,stype: 'select',searchoptions:{sopt:['eq'],value:getSearchClubs(),style:"width:150px"},formatter : function(value, options, rData){
+                            return rData.club.club_name;
+                         }}, 
+                        {name:'member_name',index:'member_name',width:80,formatter : function(value, options, rData){
+                            var ret= rData.extension.member.name; 
+                            return ret;
+                         },cellattr: addCellAttr},
+                        {name:'sex',index:'sex',width:40,formatter : function(value, options, rData){
+                            return rData.extension.sex=='male'?"男":"女";
+                         }},   
+                         {name:'note',index:'note'}, 
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortname: "id",
+                    sortorder: "desc",
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "会籍合同稽核" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                        // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: true,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                );
+
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-remove red',caption:"批量不通过",title:"批量不通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_unpass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-ok blue',caption:"批量通过",title:"批量通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_pass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+
+})
+    </script>
+</block>

@@ -1,0 +1,736 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">计划</li>
+
+	</ul>
+</block>
+
+<block name="css">
+	<link rel="stylesheet" href="/Public/css/ace.min.css" />
+	<style type="text/css">
+		table input{width:100%;}
+		table,input{margin:0px;padding:0px;}
+		.intr{margin-top:30px;padding:0px}
+		.intr div{width:100%;}
+	</style>
+</block>
+
+<block name="content">
+
+	<div class="form-group ">
+		<label for="user_id">选择MC:</label>
+		<select name="user_id" id="user_id">
+			<volist name="users" id="user">
+				<option value="{$user.id}">{$user.name_cn}</option>
+			</volist>
+		</select>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+
+			<div class="tabbable">
+				<ul class="nav nav-tabs" id="myTab">
+					<li  class="active">
+						<a data-toggle="tab" href="#new"> <i class="green icon-shopping-cart bigger-110"></i>
+							新潜客产出计划
+						</a>
+					</li >
+
+					<li >
+						<a data-toggle="tab" href="#old">
+							<i class="green icon-home bigger-110"></i>
+							老潜客产出计划
+						</a>
+					</li>
+
+					<li >
+						<a data-toggle="tab" href="#member">
+							<i class="green icon-home bigger-110"></i>
+							会员产出计划
+						</a>
+					</li>
+				</ul>
+
+				<div class="tab-content">
+					<div id="new" class="tab-pane in  active">
+
+						<form action="{:U('Mcmanager/Plannew/newmonth')}" method="post"  id="new_plan_form" class="plan_form">
+
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>新增潜客量</th>
+										<th>邀约次数</th>
+										<th>邀约量</th>
+										<th>到场量</th>
+										<th>A类客户量</th>
+										<th>B类客户量</th>
+										<th>预购金额</th>
+										<th>售出金额</th>
+										<th>成交单数</th>
+										<th>转换量</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="text" name="protential"></td>
+										<td>
+											<input type="text" name="invit"></td>
+										<td>
+											<input type="text" name="invit_success"></td>
+										<td>
+											<input type="text" name="invit_come"></td>
+										<td>
+											<input type="text" name="a_member"></td>
+										<td>
+											<input type="text" name="b_member"></td>
+										<td>
+											<input type="text" name="pre_sale"></td>
+										<td>
+											<input type="text" name="sale"></td>
+										<td>
+											<input type="text" name="deal_num"></td>
+										<td>
+											<input type="text" name="transform"></td>
+										<td>
+											<button type="submit" class="btn  btn-info btn-sm" >
+												<i class="icon-signin"></i>
+												自动分配
+											</button>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</form>
+						<div class="space" ></div>
+
+						<div id="calendar" class="col-xs-11 calendar_c"></div>
+						<div  class="col-xs-1 intr">
+							
+							 
+											
+											<div class="label label-success label-lg">新增潜客量</div>
+											
+											<div class="label label-warning label-lg"> 
+												到场量
+											</div>
+											<div class="label label-danger label-lg">A类客户量</div>
+											<div class="label label-info label-lg">预购金额</div>
+											<div class="label label-inverse label-lg">售出金额</div>
+											<div class="label label-lg">成交单数</div>
+									 
+
+						</div>
+
+						<div class="space" ></div>
+						<button type="submit" class="" style="width:100%;height:1px">
+							<i class="icon-ok"></i>
+							
+						</button>
+					</div>
+
+					<div id="old" class="tab-pane ">
+						
+
+						<form action="{:U('Mcmanager/Plannew/oldmonth')}" method="post"  id="old_plan_form" class="plan_form">
+
+							<table class="table table-condensed">
+								<thead>
+									<tr> 
+										<th>邀约次数</th>
+										<th>邀约量</th>
+										<th>到场量</th>
+										<th>A类客户量</th>
+										<th>B类客户量</th>
+										<th>预购金额</th>
+										<th>售出金额</th>
+										<th>成交单数</th>
+										<th>转换量</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										
+										<td>
+											<input type="text" name="invit"></td>
+										<td>
+											<input type="text" name="invit_success"></td>
+										<td>
+											<input type="text" name="invit_come"></td>
+										<td>
+											<input type="text" name="a_member"></td>
+										<td>
+											<input type="text" name="b_member"></td>
+										<td>
+											<input type="text" name="pre_sale"></td>
+										<td>
+											<input type="text" name="sale"></td>
+										<td>
+											<input type="text" name="deal_num"></td>
+										<td>
+											<input type="text" name="transform"></td>
+										<td>
+											<button type="submit" class="btn  btn-info btn-sm" >
+												<i class="icon-signin"></i>
+												自动分配
+											</button>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</form>
+						<div class="space" ></div>
+
+						<div id="calendar_old" class="col-xs-11 calendar_c"></div>
+						<div  class="col-xs-1 intr">
+							 
+											
+											<div class="label label-warning label-lg"> 
+												到场量
+											</div>
+											<div class="label label-danger label-lg">A类客户量</div>
+											<div class="label label-info label-lg">预购金额</div>
+											<div class="label label-inverse label-lg">售出金额</div>
+											<div class="label label-lg">成交单数</div>
+									 
+
+						</div>
+
+						<div class="space" ></div>
+						<button type="submit" class="" style="width:100%;height:1px">
+							<i class="icon-ok"></i>
+							
+						</button>
+
+					</div>
+
+					<div id="member" class="tab-pane ">
+						
+
+						<form action="{:U('Mcmanager/Plannew/membermonth')}" method="post"  id="member_plan_form" class="plan_form">
+
+							<table class="table table-condensed">
+								<thead>
+									<tr>  
+										<th>A类客户量</th>
+										<th>B类客户量</th>
+										<th>预购金额</th>
+										<th>售出金额</th>
+										<th>成交单数</th> 
+										<th>三个月内到期</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr> 
+									 
+										<td>
+											<input type="text" name="a_member"></td>
+										<td>
+											<input type="text" name="b_member"></td>
+										<td>
+											<input type="text" name="pre_sale"></td>
+										<td>
+											<input type="text" name="sale"></td>
+										<td>
+											<input type="text" name="deal_num"></td>
+										<td>
+											<input type="text" id="recently_num" ></td>
+										<td>
+											<button type="submit" class="btn  btn-info btn-sm" >
+												<i class="icon-signin"></i>
+												自动分配
+											</button>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</form>
+						<div class="space" ></div>
+
+						<div id="calendar_member" class="col-xs-11 calendar_c"></div>
+						<div  class="col-xs-1 intr"> 
+											<div class="label label-danger label-lg">A类客户量</div>
+											<div class="label label-info label-lg">预购金额</div>
+											<div class="label label-inverse label-lg">售出金额</div>
+											<div class="label label-lg">成交单数</div>
+									 
+
+						</div>
+
+						<div class="space" ></div>
+						<button type="submit" class="" style="width:100%;height:1px">
+							<i class="icon-ok"></i>
+							
+						</button> 
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</block>
+
+<block name="script"> 
+	<script src="/Public/js/jquery-ui-1.10.3.full.min.js"></script>
+	
+	<script type="text/javascript"> 
+
+	function spinner_init()
+	{
+
+			$( ".spinner" ).spinner({
+					create: function( event, ui ) {
+						//add custom classes and icons
+						$(this)
+						.next().addClass('btn btn-success').html('<i class="icon-plus"></i>')
+						.next().addClass('btn btn-danger').html('<i class="icon-minus"></i>')
+						
+						//larger buttons on touch devices
+						if(ace.click_event == "tap") $(this).closest('.ui-spinner').addClass('ui-spinner-touch');
+					}
+				});
+
+	}
+function loadTotalPlan(type)
+{
+	 if(type==0)
+             {
+             	var id="#new_plan_form";
+             }else if(type==1)
+             {
+             	var id="#old_plan_form";
+             }else  if(type==2)
+             {
+             	var id="#member_plan_form";
+             }
+	user_id=$("#user_id").val();
+	time = $(id).parent().find(".calendar_c").fullCalendar( 'getDate' );
+	time=time.format('yyyy-MM'); 
+	var now=new Date();
+	now=now.format('yyyy-MM'); 
+	if(now >=time)
+	{
+		$(id+" button[type=submit]").attr('disabled',"true");
+	}
+	else
+	{
+		$(id+" button[type=submit]").removeAttr("disabled");
+	}
+	 $.post("{:U('Mcmanager/Plannew/loadTotalPlan')}", {user_id:user_id,time:time,type:type }, function(data,textStatus){
+      if(data.status){ 
+             var info=data.data;    
+             $(id+" input[type=text]").val(0);
+             if(info==null)
+             {
+             	$(id+" button[type=submit]").removeAttr("disabled");
+             	return;
+             } 
+             $(id+" input[name=protential]").val(info.protential) ;
+             $(id+" input[name=invit]").val(info.invit) ;
+             $(id+" input[name=invit_success]").val(info.invit_success) ;
+             $(id+" input[name=invit_come]").val(info.invit_come) ;
+             $(id+" input[name=deal_num]").val(info.deal_num) ;
+             $(id+" input[name=a_member]").val(info.a_member) ;
+             $(id+" input[name=b_member]").val(info.b_member) ;
+             $(id+" input[name=pre_sale]").val(info.pre_sale) ;
+             $(id+" input[name=sale]").val(info.sale) ;
+             $(id+" input[name=transform]").val(info.transform) ;
+
+              $("#recently_num").val(data.recently_num) ;
+         } 
+     }, "json"); 
+}
+$(".plan_form").submit(function(){   
+  var self = $(this); 
+  var data = self.serialize();
+  var user_id=$("#user_id").val();
+  var calendar=$(this).parent().find('.calendar_c');
+  var d = $(this).parent().find('.calendar_c').fullCalendar('getDate');
+  var month= d.format("yyyy-MM"); 
+  data+="&user_id="+user_id+"&time="+month; 
+        $.post(self.attr("action"), data, function(data,textStatus){
+        	 bootbox.alert(data.info,null);        
+             if(data.status){ 
+                     calendar.fullCalendar('refetchEvents');
+                } 
+        }, "json");
+        return false;
+});
+
+
+
+			jQuery(function($) {
+ $("#menu_7").addClass("active");
+ $("#menu_59").addClass("active open");  
+
+
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) { 
+  	$('.calendar_c').fullCalendar('render');
+})
+
+
+	function getCountDays(date) { 
+        /* 获取当前月份 */
+        var curDate=new Date();
+        var curMonth = date.getMonth();
+       /*  生成实际的月份: 由于curMonth会比实际月份小1, 故需加1 */
+       curDate.setMonth(curMonth + 1);
+       /* 将日期设置为0, 这里为什么要这样设置, 我不知道原因, 这是从网上学来的 */
+       curDate.setDate(0);
+       /* 返回当月的天数 */
+       return curDate.getDate();
+	}
+
+	$("#user_id").change(function(){
+	    $('.calendar_c').fullCalendar('refetchEvents');
+	}); 
+
+	/* initialize the calendar
+	-----------------------------------------------------------------*/
+
+	var date = new Date(); 
+	var m = date.getMonth();
+	date.setMonth(m + 1);
+	var d = date.getDate();
+	var m = date.getMonth(); 
+	var y = date.getFullYear();
+   
+  
+	  $('#calendar').fullCalendar({
+		 titleFormat: {month:'yyyy年M月'}, 
+		 year:y,
+		 month:m,
+		 buttonText: {
+			prev: '<i class="icon-chevron-left"></i>',
+			next: '<i class="icon-chevron-right"></i>',
+			'today':"本月"
+		},
+		firstDay:1,
+		weekMode:'liquid' , 
+		monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dayNamesShort:["周日","周一","周二","周三","周四","周五","周六"],
+		dayNamesMin:["日","一","二","三","四","五","六"],
+		monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		header: {
+			left: 'prev,next today',
+			center: 'title', 
+			right:"xxx",
+			// right: 'month,agendaWeek,agendaDay'
+			right: ''
+		}, 
+		events: {
+				url:'{:U("Mcmanager/Plannew/getnewjson")}',
+				data: function() {
+				 return {
+                	user_id: $("#user_id").val()
+            	};
+            }
+			}, 
+		loading:function( isLoading, view )
+		{
+			if(isLoading) 
+			 loadTotalPlan(0);
+		},
+		editable: false,
+		droppable: false, // this allows things to be dropped onto the calendar !!! 
+		selectable: false,
+		selectHelper: true,
+		
+		eventClick: function(calEvent, jsEvent, view) {
+			var title=calEvent.title;
+			title=title.split(":");
+			var lbl=title[0];
+			var value=title[1];
+			var date=calEvent.start;
+			var days = getCountDays(date);
+			if(days == calEvent.start.getDate())
+			{
+				return; 
+			} 
+			if(calEvent.start.getTime() < new Date().getTime())
+			{
+				return;
+			}
+
+			var form = $("<form  action=\"{:U('Mcmanager/Plannew/setdaynew')}\" class='form-inline'><label>"+lbl+" &nbsp;</label></form>");
+			form.append("<input name='type' type=hidden value='" + calEvent.start + "' /> ");
+			form.append("<input id='processway' name='processway' type=hidden value='0' /> ");
+
+			form.append("<input name='value' class='spinner middle' autocomplete=off type=text value='" + value + "' /> ");  
+			form.append("<button type='submit' class='btn btn-sm btn-success' onClick=\"javascript:$('#processway').val(0);\"><i class='icon-ok'></i> 保存</button>");
+			form.append("<button type='submit' class='btn btn-sm btn-danger' onClick=\"javascript:$('#processway').val(1);\"><i class='icon-ok'></i> 修改</button>");
+
+			form.append('<h6 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>分配，进行分配后，会把总计划剩余的值平均分配到第二天到最后一天	</h6>');
+			form.append('<h6 class="red"> <i class="icon-hand-right icon-animated-hand-pointer red"></i>修改，本月其他时间的计划均不变，总计划值会根据修改的值变化！	</h6>');
+			var div = bootbox.dialog({
+				message: form,
+			
+				buttons: { 
+					"close" : {
+						"label" : "<i class='icon-remove'></i> 关闭",
+						"className" : "btn-sm"
+					} 
+				}
+
+			});
+			spinner_init();
+			form.on('submit', function(){ 
+
+				 var data = form.serialize();
+				  var user_id=$("#user_id").val(); 
+				  data+="&user_id="+user_id; 
+				  $.post(form.attr("action"), data, function(data,textStatus){ 
+				             if(data.status){ 
+				                     $('#calendar').fullCalendar('refetchEvents');
+				                } 
+				                else
+				                {
+				                	 bootbox.alert(data.info,null);   
+				                }
+				        }, "json"); 
+				div.modal("hide");
+				return false;
+				
+			}); 
+
+		}
+		
+	}); 
+
+
+
+
+
+
+$('#calendar_old').fullCalendar({
+		 titleFormat: {month:'yyyy年M月'}, 
+		 year:y,
+		 month:m,
+		 buttonText: {
+			prev: '<i class="icon-chevron-left"></i>',
+			next: '<i class="icon-chevron-right"></i>',
+			'today':"本月"
+		},
+		firstDay:1,
+		weekMode:'liquid' , 
+		monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dayNamesShort:["周日","周一","周二","周三","周四","周五","周六"],
+		dayNamesMin:["日","一","二","三","四","五","六"],
+		monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		header: {
+			left: 'prev,next today',
+			center: 'title',  
+			right: ''
+		}, 
+		events: {
+				url:'{:U("Mcmanager/Plannew/getoldjson")}',
+				data: function() {
+				 return {
+                	user_id: $("#user_id").val()
+            	};
+            }
+			}, 
+		loading:function( isLoading, view )
+		{
+			if(isLoading) 
+			 loadTotalPlan(1);
+		},
+		editable: false,
+		droppable: false, // this allows things to be dropped onto the calendar !!! 
+		selectable: false,
+		selectHelper: true,
+		
+		eventClick: function(calEvent, jsEvent, view) {
+			var title=calEvent.title;
+			title=title.split(":");
+			var lbl=title[0];
+			var value=title[1];
+			var date=calEvent.start;
+			var days = getCountDays(date);
+			if(days == calEvent.start.getDate())
+			{
+				return; 
+			} 
+			if(calEvent.start.getTime() < new Date().getTime())
+			{
+				return;
+			}
+
+			var form = $("<form  action=\"{:U('Mcmanager/Plannew/setdayold')}\" class='form-inline'><label>"+lbl+" &nbsp;</label></form>");
+			form.append("<input name='type' type=hidden value='" + calEvent.start + "' /> ");
+			form.append("<input id='processway' name='processway' type=hidden value='0' /> ");
+
+			form.append("<input name='value' class='spinner middle' autocomplete=off type=text value='" + value + "' /> ");  
+			form.append("<button type='submit' class='btn btn-sm btn-success' onClick=\"javascript:$('#processway').val(0);\"><i class='icon-ok'></i> 保存</button>");
+			form.append("<button type='submit' class='btn btn-sm btn-danger' onClick=\"javascript:$('#processway').val(1);\"><i class='icon-ok'></i> 修改</button>");
+
+			form.append('<h6 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>分配，进行分配后，会把总计划剩余的值平均分配到第二天到最后一天	</h6>');
+			form.append('<h6 class="red"> <i class="icon-hand-right icon-animated-hand-pointer red"></i>修改，本月其他时间的计划均不变，总计划值会根据修改的值变化！	</h6>');
+			var div = bootbox.dialog({
+				message: form,
+			
+				buttons: { 
+					"close" : {
+						"label" : "<i class='icon-remove'></i> 关闭",
+						"className" : "btn-sm"
+					} 
+				}
+
+			});
+			spinner_init();
+			form.on('submit', function(){ 
+
+				 var data = form.serialize();
+				  var user_id=$("#user_id").val(); 
+				  data+="&user_id="+user_id; 
+				  $.post(form.attr("action"), data, function(data,textStatus){ 
+				             if(data.status){ 
+				                     $('#calendar_old').fullCalendar('refetchEvents');
+				                } 
+				                else
+				                {
+				                	 bootbox.alert(data.info,null);   
+				                }
+				        }, "json"); 
+				div.modal("hide");
+				return false;
+				
+			}); 
+
+		}
+		
+	}); 
+
+
+
+
+$('#calendar_member').fullCalendar({
+		 titleFormat: {month:'yyyy年M月'}, 
+		 year:y,
+		 month:m,
+		 buttonText: {
+			prev: '<i class="icon-chevron-left"></i>',
+			next: '<i class="icon-chevron-right"></i>',
+			'today':"本月"
+		},
+		firstDay:1,
+		weekMode:'liquid' , 
+		monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dayNamesShort:["周日","周一","周二","周三","周四","周五","周六"],
+		dayNamesMin:["日","一","二","三","四","五","六"],
+		monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+		header: {
+			left: 'prev,next today',
+			center: 'title', 
+			right: '' 
+		}, 
+		events: {
+				url:'{:U("Mcmanager/Plannew/getmemberjson")}',
+				data: function() {
+				 return {
+                	user_id: $("#user_id").val()
+            	};
+            }
+			}, 
+		loading:function( isLoading, view )
+		{
+			if(isLoading) 
+			 loadTotalPlan(2);
+		},
+		editable: false,
+		droppable: false, // this allows things to be dropped onto the calendar !!! 
+		selectable: false,
+		selectHelper: true,
+		
+		eventClick: function(calEvent, jsEvent, view) {
+			var title=calEvent.title;
+			title=title.split(":");
+			var lbl=title[0];
+			var value=title[1];
+			var date=calEvent.start;
+			var days = getCountDays(date);
+			if(days == calEvent.start.getDate())
+			{
+				return; 
+			} 
+			if(calEvent.start.getTime() < new Date().getTime())
+			{
+				return;
+			}
+
+			var form = $("<form  action=\"{:U('Mcmanager/Plannew/setdaymember')}\" class='form-inline'><label>"+lbl+" &nbsp;</label></form>");
+			form.append("<input name='type' type=hidden value='" + calEvent.start + "' /> ");
+			form.append("<input id='processway' name='processway' type=hidden value='0' /> ");
+
+			form.append("<input name='value' class='spinner middle' autocomplete=off type=text value='" + value + "' /> ");  
+			form.append("<button type='submit' class='btn btn-sm btn-success' onClick=\"javascript:$('#processway').val(0);\"><i class='icon-ok'></i> 保存</button>");
+			form.append("<button type='submit' class='btn btn-sm btn-danger' onClick=\"javascript:$('#processway').val(1);\"><i class='icon-ok'></i> 修改</button>");
+
+			form.append('<h6 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>分配，进行分配后，会把总计划剩余的值平均分配到第二天到最后一天	</h6>');
+			form.append('<h6 class="red"> <i class="icon-hand-right icon-animated-hand-pointer red"></i>修改，本月其他时间的计划均不变，总计划值会根据修改的值变化！	</h6>');
+
+			 
+
+			var div = bootbox.dialog({
+				message: form,
+			
+				buttons: { 
+					"close" : {
+						"label" : "<i class='icon-remove'></i> 关闭",
+						"className" : "btn-sm"
+					} 
+				}
+
+			});
+			spinner_init();
+
+			form.on('submit', function(){ 
+
+				 var data = form.serialize();
+				  var user_id=$("#user_id").val(); 
+				  data+="&user_id="+user_id; 
+				  $.post(form.attr("action"), data, function(data,textStatus){ 
+				             if(data.status){ 
+				                     $('#calendar_member').fullCalendar('refetchEvents');
+				                } 
+				                else
+				                {
+				                	 bootbox.alert(data.info,null);   
+				                }
+				        }, "json"); 
+				div.modal("hide");
+				return false;
+				
+			}); 
+
+		}
+		
+	}); 
+
+
+
+
+
+})
+
+		</script>
+
+</block>

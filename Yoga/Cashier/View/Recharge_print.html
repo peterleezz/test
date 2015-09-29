@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+
+        body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF; 
+         font-family:  "Microsoft Yahei"; 
+    }
+        .xiaopiao{width:7.6cm; background-color:White; margin:0 auto;padding:4px;font-size:14px;line-height: 24px;}
+        .name,.num,.total,.name_r,.num_r,.total_r{float:left; text-align:center;}
+        .name,.num,.total{font-weight:bold}
+        .content{width:100%;padding:0px;margin:0px;}
+        .name,.name_r{width:20%;}
+        .num,.num_r{width:58%;}
+        .total,.total_r{width:20%;}
+        .title{width:100%;text-align:center;font-size:16px;}
+        .detail{width:100%;padding:0px;}
+        .lab{width:30%;font-weight:bold;padding:0px;margin:0px;float:left;text-align:right;}
+        .cnt{width:68%;padding:0px;margin:0px;text-align:left;float:left;}
+        .tail{margin-top:32px;}
+
+         @media print {
+            .xiaopiao{border:0px;width:7.6cm; background-color:White; margin:0 auto;padding:4px;font-size:14px;line-height: 24px;}
+         }
+    </style>
+
+     <script type="text/javascript">
+        window.print();
+    </script>
+</head>
+<body>
+    <div class="xiaopiao">
+        <div class="title">{$club.club_name}充值消费票据</div>
+        <br>
+        <div class="content">
+ <div class="title">明细</div>
+            <div class="head1">
+                <div class="name">金额</div>
+                <div class="num">时间</div>
+                <div class="total">备注</div>
+                    
+                 <volist name="records" id="record">
+
+                    <div class="name_r">￥{$record.value}</div>
+                    <div class="num_r">{$record.create_time}</div>
+                    <div class="total_r" ><if condition="$record.value gt 0">充值<else/> 消费 </if></div>
+ 
+                </volist>
+
+               
+            <div class="detail">
+                <div class="title"> 结果</div>
+                <div class="lab">店名：</div>
+                <div class="cnt">{$club.club_name}</div> 
+
+            <div class="lab">总计充值：</div>
+            <div class="cnt">￥{$in}.00</div>
+
+            <div class="lab">总计消费：</div>
+            <div class="cnt">￥{$out}.00</div>
+
+            <div class="lab">余额：</div>
+            <div class="cnt">￥{$member.recharge}.00</div>
+  
+            <div class="lab">打印日期：</div>
+            <div class="cnt">{$print_time}</div> 
+            <div class="lab tail">会员签名:</div>
+            <div class="cnt tail">________________</div>   
+            </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

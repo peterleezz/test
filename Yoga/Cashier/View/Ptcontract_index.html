@@ -1,0 +1,364 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">收银</a>
+    </li>
+    <li class="active">PT合同管理</li>
+  </ul>
+</block>
+
+<block name="content">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
+
+      <form class="form-inline" role="form" action="{:U('Cashier/Ptcontract/query')}" method="post" id="cashier_ptcontract_form" style="margin-bottom:10px">
+
+        <!--  <div class="form-group">
+        <label class="sr-only" for="card_type_id">卡种分类</label>
+        <select name="card_type_id" id="card_type_id" class="form-control" oper="eq">
+          <option value="0">请选择卡种分类</option>
+          <volist name="cardtypes" id="cardtype">
+            <option value="{$cardtype.id}">{$cardtype.name}</option>
+          </volist>
+        </select>
+      </div>
+      -->
+      <div class="form-group ">
+        <label  for="contract_number">合同号:</label>
+        <input type="text" class="form-control" name="contract_number"  id="contract_number" oper="eq"></div>
+
+      <div class="form-group">
+        <label  for="card_number">卡号:</label>
+        <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
+      <div class="form-group">
+        <label  for="name">会员姓名:</label>
+        <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+      <div class="form-group">
+        <label  for="phone">手机号码:</label>
+        <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+      <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+        查询
+      </button>
+    </form>
+
+    <table id="cashier_ptcontract_grid"></table>
+    <div id="cashier_ptcontract_pager"></div>
+    <div id="show_detail"  ></div>
+  </div>
+</div>
+
+</block>
+
+<block name="script">
+<script> 
+ 
+  
+    $(function(){ 
+    $("#menu_6").addClass("active open");
+    $("#menu_39").addClass("active");
+
+            var grid_selector = "#cashier_ptcontract_grid";
+            var pager_selector = "#cashier_ptcontract_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Cashier/Ptcontract/query')}",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','合同编号','PT课程名称','次数','合同状态','销售类型','姓名','性别', '手机号码','应收价格','标准价格','已付','欠款','有效期限','PT姓名', '录入人','签约日期'],
+                    colModel:[   
+                         {name:'id',index:'id',width:150,hidden:true},
+                        {name:'contract_number',index:'contract_number',width:150,},      
+                        {name:'ptclass',index:'ptclass',width:150,formatter : function(value, options, rData){
+                            return  value.name;    
+                        }},
+                        {name:'times',index:'times',width:100,formatter : function(value, options, rData){ 
+                            return rData.used_num+"/"+rData.total_num;
+                         }},  
+
+                        {name:'invalid',index:'invalid',width:70,formatter : function(value, options, rData){
+                                             var a=new Array("无效","有效","已转让");
+                                               return getValue(a,value); 
+                                }},
+                        {name:'sale_type',index:'sale_type',width:70,formatter : function(value, options, rData){
+                                           var a=new Array("","新会员购买","续课","POS销售","场地开发");
+                                           return getValue(a,value); 
+                                   }},
+                        {name:'name',index:'name',width:100,formatter : function(value, options, rData){                            
+                           return rData.member.name; 
+                       }},
+                        {name:'sex',index:'sex',width:50,formatter : function(value, options, rData){
+                                                  return rData.member.sex=='male'|| rData.member.sex=='男'?"男":"女";
+                         }},
+                        {name:'phone',index:'phone',hidden:true,width:150,formatter : function(value, options, rData){
+                                                  return rData.member.phone;
+                         }}, 
+                      {name:'should_pay',index:'should_pay',width:80},
+                      {name:'standard_price',index:'standard_price',width:80},
+                        {name:'paid',index:'paid',width:80},
+                        {name:'own',index:'own',width:80,formatter : function(value, options, rData){                            
+                           return rData.should_pay-rData.paid; 
+                   }},
+                      {name:'valid_time',index:'valid_time',width:150,formatter : function(value, options, rData){                           
+                            return rData.start_time+"--"+rData.end_time; 
+                }},
+                      
+                       {name:'pt_name',index:'pt_name',width:80,formatter : function(value, options, rData){   
+                            if(rData.pt!=null)                        
+                              return rData.pt.name_cn; 
+                            return "";
+                }},
+                        {name:'record_id',index:'record_id',width:80,formatter : function(value, options, rData){   
+                              return rData.recorder.name_cn;  
+                           
+                }},             
+                        {name:'create_time',index:'create_time',width:150},                        
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false,align:"left"},
+                    sortorder: "desc",
+                    sortname:'id',
+                    editurl: "",          
+                    autowidth: false,
+                    shrinkToFit:false,  
+                    autoScroll: true,
+                    caption: "PT合同信息" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    onSelectRow: function (rowid, status) {
+                        var ret = jQuery(grid_selector).jqGrid('getRowData',rowid);
+                         if(status==0)
+                         {
+                             show_detail(ret);
+                             return;
+                         }
+                        //     $.post("/Cashier/Member/show", {id:ret.member_id}, function(data,textStatus){
+                        //       $("#show_detail").text("");
+                        //       $("#show_detail").append(data);
+                        // }, "json");
+                     }, 
+
+                    gridview: true,
+                    subGrid : true,
+                   subGridRowExpanded: function(subgrid_id, row_id) {
+                        var subgrid_table_id, pager_id; subgrid_table_id = subgrid_id+"_t";
+                        pager_id = "p_"+subgrid_table_id;
+                        $("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div>");
+                        $("#"+subgrid_table_id).jqGrid({
+                            datatype: "json",
+                            url:"/Cashier/Ptcontract/querypayhistory?id="+row_id,
+                            colNames: ['ID', '付款时间','现金','刷卡','支票','储值卡','网络支付','网银分期', '总金额','收款人',""],
+                            colModel: [
+                            {name:"create_time",index:"contract_number",width:100,hidden:true}, 
+                                  {name:"create_time",index:"contract_number",width:200}, 
+                                        {name:"cash",index:"cash",width:100},
+                                        {name:"pos",index:"pos",width:100},
+                                        {name:"check",index:"check",width:100},
+                                        {name:"recharge",index:"recharge",width:100}, 
+                                         {name:"network",index:"network",width:100},
+                                          {name:"netbank",index:"netbank",width:100},
+                                        {name:"all",index:"all",width:100,formatter : function(value, options, rData){
+                                              return parseInt(rData.cash)+ parseInt(rData.pos)+ parseInt(rData.check)+ parseInt(rData.recharge)+ parseInt(rData.network)+ parseInt(rData.netbank);
+                                          }},                                          
+                                        {name:"recorder",index:"recorder",width:100,align:"left",formatter : function(value, options, rData){
+                                         return value.name_cn;
+                                          }},  
+                                            {name:"print",index:"print",width:100,align:"left",formatter : function(value, options, rData){
+                                            return "<a target='_blank' href='/Cashier/Ptcontract/printreceipts/id/"+rData.id+"'>打印收据</a>"
+                                          }}, 
+                                        ], 
+                            rowNum:100,
+                            // pager: pager_id,
+                            sortname: 'id',
+                            loadonce:true,
+                            autowidth: false,
+                            shrinkToFit:false,  
+                            autoScroll: true,
+                            sortorder: "desc", height: '100%' });
+                    },
+
+
+                    subGridOptions: {
+                        "plusicon": "icon-plus",
+                        "minusicon": "icon-minus",
+                        "openicon": "icon-list",
+                        "reloadOnExpand": false,
+                        "selectOnExpand": true
+                    },
+
+
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                      // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        // $("#show_detail").addClass("hide");
+                        userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+ 
+   
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                           var res = $.parseJSON(response.responseText);
+                             // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                ); 
+
+
+  
+
+ // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-info-sign red',caption:"综合信息",title:"综合信息",
+ //                        onClickButton:function(){ 
+ //                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+ //                        if (id) {
+ //                           var info = getCardInfo(id);
+ //                        } else { alert("请先选中！");}
+                             
+ //                        } 
+ //                    });
+
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-print black',caption:"打印",title:"打印",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                           window.location.href="/Cashier/Ptcontract/print/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-money orange',caption:"收款",title:"收款",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) { 
+                          var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+                          if(rowData.own<=0){
+                            bootbox.alert("该合同已付清");
+                            return;
+                          }
+                           window.location.href="/Cashier/Ptcontract/pay/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-exchange blue',caption:"转让",title:"转让",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                           window.location.href="/Cashier/Ptcontract/transform/id/"+id;
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    }); 
+
+jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-retweet green',caption:"购买PT课程",title:"购买PT课程",
+                        onClickButton:function(){  
+                            window.location.href="/Cashier/Pt/sale"; 
+                            }
+                    }); 
+          
+})
+    </script>
+</block>

@@ -1,0 +1,202 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">转让</li>
+    </ul>
+</block>
+
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">转出会员信息</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" id="user_id" value="{$member.id}">
+                    <div class="row">
+                        <div class="form-group col-xs-4">姓名:{$member.name}</div>
+                        <div class="form-group col-xs-4">电话:{$member.phone}</div>
+                        <div class="form-group col-xs-4">
+                            性别:
+                            <if condition="female eq $member['sex']">
+                                女
+                                <else/>
+                                男
+                            </if>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                    <div class="form-group col-xs-4">卡号:{$card.card_number}</div>
+                    <div class="form-group col-xs-4">
+                        卡状态:
+                        <switch name="$card.status">
+                            <case value="0">正常</case>
+                            <case value="1">挂失</case>
+                            <case value="1">新办</case>
+                            <case value="1">请假中</case>
+                            <case value="1">已销毁</case>
+                            <default />
+                            正常
+                        </switch>
+
+                    </div>
+                    <div class="form-group col-xs-4">
+                        是否激活：
+                        <if condition="1 eq $card['is_active']">
+                            激活
+                            <else />
+                            未激活
+                        </if>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">合同信息</h3>
+            </div>
+            <div class="panel-body">
+                <input type="hidden" id="contract_id" value="{$contract.id}">
+                <div class="form-group col-xs-4">合同编号:{$contract.contract_number}</div>
+                <div class="form-group col-xs-4">卡种:{$contract.card_type.name}</div>
+                <div class="form-group col-xs-4">
+                    次数:
+                    <if condition="1 eq $contract['card_type']['type']">
+                        不限次数
+                        <else/>
+                        {$contract.used_num}/{$contract.total_num}
+                    </if>
+                </div>
+                <div class="form-group col-xs-4">应收价格:{$contract.price}</div>
+                <div class="form-group col-xs-4">已付:{$contract.payed}</div>
+                <div class="form-group col-xs-4">欠款:{$contract['price']-$contract['payed']}</div>
+                <div class="form-group col-xs-4">
+                    开卡方式:
+                    <switch name="contract.active_type" >
+                        <case value="0">买卡当天开卡</case>
+                        <case value="1">指定日期开卡</case>
+                        <case value="2">第一次到开卡</case>
+                        <default />
+                        买卡当天开卡
+                    </switch>
+
+                </div>
+                <div class="form-group col-xs-4">
+                    有效期限:
+                    <if condition="2 eq $contract['active_type']">
+                        {$contract['card_type']['valid_time']}月 + {$contract.present_day}天
+                        <else/>
+                        {$contract.start_time}--{$contract.end_time}
+                    </if>
+
+                </div>
+            </div>
+
+        </div>
+
+    <if condition="0 eq $contract['free_trans']">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">转让费(￥{$extra})</h3>
+            </div>
+            <div class="panel-body">
+            <form class="form-horizontal" id="transform_pay_form">
+                 <div class="form-group">
+              <label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="cash" id="cash" value="0"></div>
+            </div>
+            <div class="form-group">
+              <label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="pos" id="pos"></div>
+            </div>
+            <div class="form-group">
+              <label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="check" id="check"></div>
+            </div>
+            <div class="form-group">
+              <label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
+            </div>
+
+
+                        <div class="form-group">
+                            <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="0" class=" col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="netbank" class="control-label col-xs-12 col-sm-3 no-padding-right">网银分期</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="0"  class="col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
+                        </div>
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="description" >备注:</label>
+              <div class="col-xs-12 col-sm-9">
+                <textarea type="text" class="col-xs-12 col-sm-6 " name="description" id="description"></textarea>
+              </div>
+            </div>
+        </form>
+            </div>
+
+        </div>
+
+    <else/>
+        <h4 class="red"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+        老合同有 {$contract['free_trans']} 次免费转让资格！本次不收费！
+    </h4>
+    </if>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">转入会员信息</h3>
+            </div>
+            <div class="panel-body">
+                <form id="join_form_query" action="{:U('Cashier/Member/queryWithCard')}">
+                    <span class="input-icon" style="float:left">
+                        <input type="text" placeholder="姓名"  name="name"/> <i class="icon-search nav-search-icon"></i>
+                    </span>
+                    <button type="submit" class="btn  btn-info btn-sm">
+                        <i class="icon-search"></i>
+                        查询
+                    </button>
+
+                    <button type="button" class="btn  btn-success btn-sm" onclick="transform()">
+                        <i class="icon-exchange blue"></i>
+                        转入
+                    </button>
+                </form>
+                <table class="table " id="member_info">
+                    <thead>
+                        <tr>
+                            <th>选择</th>
+                            <th>姓名</th>
+                            <th>电话</th>
+                            <th>性别</th>
+                            <th>会员类型</th>
+                            <th>转入会员卡</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="show_detail"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script></script>
+</block>

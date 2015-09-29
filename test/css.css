@@ -1,0 +1,51 @@
+
+/*simple nav1*/
+#nav1 li{float:left;list-style-type:none}
+#nav1 li a{
+width:97px;/*设置元素宽为80px*/
+height:22px;/*设置高度为28px*/
+/*line-height:28px; */
+background-color:#ececec;/*设置元素的背景为红色*/
+color:#000000;/*文字颜色是白色*/
+padding-top:4px;
+
+display:block;
+text-align:center;/*让文本居中*/
+text-decoration:none; /*去掉下划线*/
+}
+#nav1 li a:hover{
+	background-color: #bbbbbb;
+	color:#FFFFFF;
+}
+#nav1 li a#current{
+	background-color: #2788da;
+	color:#ffffff;
+}
+#nav1{
+	height:26px;
+	border-bottom: 2px solid #2788da;
+}
+
+
+
+/*simple nav2*/
+body{background-color: #000000;}
+#nav2{
+	height:26px;
+	border-bottom: 2px solid #FFFFFF;
+	list-style: none;
+}
+
+#nav2 li{float:left;font-size: 14px;font-weight: bold}
+#nav2 li a{
+width:97px;/*设置元素宽为80px*/
+height:19px;/*设置高度为28px*/
+/*line-height:28px; */
+background-color:#ececec;/*设置元素的背景为红色*/
+color:#FFFFFF;/*文字颜色是白色*/
+padding-top:7px;
+margin-left:2px;
+display:block;
+text-align:center;/*让文本居中*/
+text-decoration:none; /*去掉下划线*/
+}

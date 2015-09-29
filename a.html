@@ -1,0 +1,265 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">店长</a>
+    </li>
+    <li class="active">课程安排</li>
+
+  </ul>
+</block>
+
+<block name="css">
+  <link rel="stylesheet" href="/Public/css/ace.min.css" />
+</block>
+
+<block name="content">
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div id="calendar" class="col-xs-12 calendar_c"></div>
+
+    </div>
+  </div>
+
+</block>
+
+<block name="script">
+  <script src="/Public/js/jquery-ui-1.10.3.full.min.js"></script> 
+  <script type="text/javascript"> 
+
+  function spinner_init()
+  {
+
+      $( ".spinner" ).spinner({
+          create: function( event, ui ) {
+            //add custom classes and icons
+            $(this)
+            .next().addClass('btn btn-success').html('<i class="icon-plus"></i>')
+            .next().addClass('btn btn-danger').html('<i class="icon-minus"></i>')
+            
+            //larger buttons on touch devices
+            if(ace.click_event == "tap") $(this).closest('.ui-spinner').addClass('ui-spinner-touch');
+          }
+        });
+
+  }
+function loadTotalPlan(type)
+{
+   
+  user_id=$("#user_id").val();
+  time = $(id).parent().find(".calendar_c").fullCalendar( 'getDate' );
+  time=time.format('yyyy-MM'); 
+  var now=new Date();
+  now=now.format('yyyy-MM'); 
+  if(now >=time)
+  {
+    $(id+" button[type=submit]").attr('disabled',"true");
+  }
+  else
+  {
+    $(id+" button[type=submit]").removeAttr("disabled");
+  }
+   $.post("{:U('Mcmanager/Plannew/loadTotalPlan')}", {user_id:user_id,time:time,type:type }, function(data,textStatus){
+      if(data.status){ 
+             var info=data.data;    
+             $(id+" input[type=text]").val(0);
+             if(info==null)
+             {
+              $(id+" button[type=submit]").removeAttr("disabled");
+              return;
+             } 
+             $(id+" input[name=protential]").val(info.protential) ;
+             $(id+" input[name=invit]").val(info.invit) ;
+             $(id+" input[name=invit_success]").val(info.invit_success) ;
+             $(id+" input[name=invit_come]").val(info.invit_come) ;
+             $(id+" input[name=deal_num]").val(info.deal_num) ;
+             $(id+" input[name=a_member]").val(info.a_member) ;
+             $(id+" input[name=b_member]").val(info.b_member) ;
+             $(id+" input[name=pre_sale]").val(info.pre_sale) ;
+             $(id+" input[name=sale]").val(info.sale) ;
+             $(id+" input[name=transform]").val(info.transform) ;
+
+              $("#recently_num").val(data.recently_num) ;
+         } 
+     }, "json"); 
+}
+$(".plan_form").submit(function(){   
+  var self = $(this); 
+  var data = self.serialize();
+  var user_id=$("#user_id").val();
+  var calendar=$(this).parent().find('.calendar_c');
+  var d = $(this).parent().find('.calendar_c').fullCalendar('getDate');
+  var month= d.format("yyyy-MM"); 
+  data+="&user_id="+user_id+"&time="+month; 
+        $.post(self.attr("action"), data, function(data,textStatus){
+           bootbox.alert(data.info,null);        
+             if(data.status){ 
+                     calendar.fullCalendar('refetchEvents');
+                } 
+        }, "json");
+        return false;
+});
+
+
+
+      jQuery(function($) {
+ $("#menu_7").addClass("active");
+ $("#menu_59").addClass("active open");  
+
+
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) { 
+    $('.calendar_c').fullCalendar('render');
+})
+
+
+  function getCountDays(date) { 
+        /* 获取当前月份 */
+        var curDate=new Date();
+        var curMonth = date.getMonth();
+       /*  生成实际的月份: 由于curMonth会比实际月份小1, 故需加1 */
+       curDate.setMonth(curMonth + 1);
+       /* 将日期设置为0, 这里为什么要这样设置, 我不知道原因, 这是从网上学来的 */
+       curDate.setDate(0);
+       /* 返回当月的天数 */
+       return curDate.getDate();
+  }
+
+  $("#user_id").change(function(){
+      $('.calendar_c').fullCalendar('refetchEvents');
+  }); 
+
+  /* initialize the calendar
+  -----------------------------------------------------------------*/
+
+  var date = new Date(); 
+  var m = date.getMonth(); 
+  var d = date.getDate();
+  var m = date.getMonth(); 
+  var y = date.getFullYear(); 
+    $('#calendar').fullCalendar({
+     titleFormat: {month:'yyyy年M月'}, 
+     year:y,
+     month:m,
+     buttonText: {
+      prev: '<i class="icon-chevron-left"></i>',
+      next: '<i class="icon-chevron-right"></i>',
+      'today':"本月",
+      today: '今天',
+      month: '月',
+      week: '周',
+      day: '天'
+    },
+    firstDay:1,
+    weekMode:'liquid' , 
+    monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+    dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+    dayNamesShort:["周日","周一","周二","周三","周四","周五","周六"],
+    dayNamesMin:["日","一","二","三","四","五","六"],
+    monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+    header: {
+      left: 'prev,next, today',
+      center: 'title',  
+      right: 'month,agendaWeek,agendaDay' 
+    }, 
+    select: function(start, end) {
+        var title = prompt('Event Title:');
+        if (title) {
+          calendar.fullCalendar('renderEvent',
+            {
+              title: title,
+              start: start,
+              end: end,
+              allDay: allDay
+            },
+            true // make the event "stick"
+          );
+        }
+        calendar.fullCalendar('unselect');
+      },
+
+    events: {
+        url:'{:U("Mcmanager/Plannew/getnewjson")}',
+        data: function() {
+         return {
+                  user_id: $("#user_id").val()
+              };
+            }
+      }, 
+    loading:function( isLoading, view )
+    {
+      if(isLoading) 
+       loadTotalPlan(0);
+    },
+    editable: true,
+    droppable: false, // this allows things to be dropped onto the calendar !!! 
+    selectable: true,
+    selectHelper: true,
+    eventLimit: true,
+    eventClick: function(calEvent, jsEvent, view) {
+      var title=calEvent.title;
+      title=title.split(":");
+      var lbl=title[0];
+      var value=title[1];
+      var date=calEvent.start;
+      var days = getCountDays(date);
+      if(days == calEvent.start.getDate())
+      {
+        return; 
+      } 
+      if(calEvent.start.getTime() < new Date().getTime())
+      {
+        return;
+      }
+
+      var form = $("<form  action=\"{:U('Mcmanager/Plannew/setdaynew')}\" class='form-inline'><label>"+lbl+" &nbsp;</label></form>");
+      form.append("<input name='type' type=hidden value='" + calEvent.start + "' /> ");
+      form.append("<input id='processway' name='processway' type=hidden value='0' /> ");
+
+      form.append("<input name='value' class='spinner middle' autocomplete=off type=text value='" + value + "' /> ");  
+      form.append("<button type='submit' class='btn btn-sm btn-success' onClick=\"javascript:$('#processway').val(0);\"><i class='icon-ok'></i> 保存</button>");
+      form.append("<button type='submit' class='btn btn-sm btn-danger' onClick=\"javascript:$('#processway').val(1);\"><i class='icon-ok'></i> 修改</button>");
+
+      form.append('<h6 class="green"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>分配，进行分配后，会把总计划剩余的值平均分配到第二天到最后一天  </h6>');
+      form.append('<h6 class="red"> <i class="icon-hand-right icon-animated-hand-pointer red"></i>修改，本月其他时间的计划均不变，总计划值会根据修改的值变化！  </h6>');
+      var div = bootbox.dialog({
+        message: form,
+      
+        buttons: { 
+          "close" : {
+            "label" : "<i class='icon-remove'></i> 关闭",
+            "className" : "btn-sm"
+          } 
+        }
+
+      });
+      spinner_init();
+      form.on('submit', function(){ 
+
+         var data = form.serialize();
+          var user_id=$("#user_id").val(); 
+          data+="&user_id="+user_id; 
+          $.post(form.attr("action"), data, function(data,textStatus){ 
+                     if(data.status){ 
+                             $('#calendar').fullCalendar('refetchEvents');
+                        } 
+                        else
+                        {
+                           bootbox.alert(data.info,null);   
+                        }
+                }, "json"); 
+        div.modal("hide");
+        return false;
+        
+      }); 
+
+    }
+    
+  });  
+})
+
+    </script>
+
+</block>

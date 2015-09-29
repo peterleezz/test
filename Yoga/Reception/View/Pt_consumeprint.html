@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+
+        body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF; 
+         font-family:  "Microsoft Yahei"; 
+    }
+        .xiaopiao{width:7.6cm; background-color:White; margin:0 auto;padding:4px;font-size:14px;line-height: 24px;}
+        .name,.num,.total,.name_r,.num_r,.total_r{float:left; text-align:center;}
+        .name,.num,.total{font-weight:bold}
+        .content{width:100%;padding:0px;margin:0px;}
+        .name,.name_r{width:40%;}
+        .num,.num_r{width:30%;}
+        .total,.total_r{width:30%;}
+        .title{width:100%;text-align:center;font-size:16px;}
+        .detail{width:100%;padding:0px;}
+        .lab{width:30%;font-weight:bold;padding:0px;margin:0px;float:left;text-align:right;}
+        .cnt{width:68%;padding:0px;margin:0px;text-align:left;float:left;}
+        .tail{margin-top:32px;}
+
+         @media print {
+            .xiaopiao{border:0px;width:7.6cm; background-color:White; margin:0 auto;padding:4px;font-size:14px;line-height: 24px;}
+         }
+    </style>
+
+     <script type="text/javascript">
+        window.print();
+    </script>
+</head>
+<body>
+    <div class="xiaopiao">
+        <div class="title">{$contract.club.club_name}课程结算票据</div>
+        <br>
+        <div class="content"> 
+
+            <div class="detail"> 
+                <div class="lab">会员姓名：</div>
+                <div class="cnt">{$contract.member.name}</div>
+
+  <div class="lab">会员卡号：</div>
+            <div class="cnt">{$member_number}</div> 
+
+            <div class="lab">授课门店：</div>
+            <div class="cnt" >{$contract.club.club_name}</div>
+
+            <div class="lab">开始时间：</div>
+            <div class="cnt">{$history.create_time}</div>
+
+            <div class="lab">结束时间：</div>
+            <div class="cnt">{$history.end_time}</div>
+	    <div class="lab">总课程数：</div>
+            <div class="cnt">{$contract['total_num']}节</div>
+            <div class="lab">今日授课：</div>
+            <div class="cnt">{$count}节</div>
+            <div class="lab">本次结余：</div>
+            <div class="cnt">{$contract['total_num']-$contract['used_num']}节</div>
+            <div class="lab">授课教练：</div>
+            <div class="cnt">{$pt.name_cn}&nbsp</div>
+  	        <div class="lab">操作人员：</div>
+            <div class="cnt">{$user}</div>
+
+            <div class="lab">打印日期：</div>
+            <div class="cnt">{$print_time}</div> 
+            <div class="lab tail">会员签名:</div>
+            <div class="cnt tail">________________</div>   
+            </div>
+        </div>
+    </div>
+</body>
+</html>

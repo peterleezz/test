@@ -1,0 +1,304 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">收银</a>
+    </li>
+    <li class="active">PT购买</li>
+  </ul>
+</block>
+
+<block name="content">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">选择会员</h3>
+        </div>
+        <div class="panel-body">
+          <form id="pt_form_query" action="{:U('Cashier/Pt/queryMember')}">
+            <span class="input-icon" style="float:left">
+              <input type="text" placeholder="姓名"  name="name"/> <i class="icon-search nav-search-icon"></i>
+            </span>
+            <button type="submit" class="btn  btn-info btn-sm">
+              <i class="icon-search"></i>
+              查询
+            </button>
+          </form>
+          <table class="table " id="member_info">
+            <thead>
+              <tr>
+                <th>选择</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>性别</th>
+                <th>会员类型</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">选择PT课程</h3>
+        </div>
+        <div class="panel-body">
+
+          <form class="form-horizontal" action="{:U('Cashier/Pt/buy')}" id="buy_pt_form">
+            <input type="hidden" name="member_id" id="member_id">
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="class_id">请选择PT课程:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                  <select name="class_id" id="class_id" class="col-xs-12 col-sm-6">
+                    <option value="0">请选择PT课程</option>
+                    <volist name="classes" id="class">
+                      <option value="{$class.id}">{$class.name}</option>
+                    </volist>
+                  </select>
+
+                </div>
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="class_id">请选择私教老师:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                  <select name="pt_id" id="pt_id" class="col-xs-12 col-sm-6">
+                    <option value="0">请选择私教老师</option>
+                    <volist name="pts" id="pt">
+                      <option value="{$pt.id}">{$pt.name_cn}</option>
+                    </volist>
+                  </select>
+
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sale_type">销售类型:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                  <select name="sale_type" id="sale_type" class="col-xs-12 col-sm-6">
+                    <option value="1">新会员购买</option>
+                    <option value="2">续课</option>
+                    <option value="3">POS销售</option>
+                    <option value="4">场地开发</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="total_num">购买数量:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                  <input type="text" class="col-xs-12 col-sm-6" name="total_num" id="total_num" value="1" onkeyup="calcTotal()"></div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="start_time">开始日期:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                  <input type="text" class="col-xs-12 col-sm-6 date_ymd" name="start_time" id="start_time" ></div>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="end_time" >合同结束日期:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <input type="text" class="date_ymd col-xs-12 col-sm-6 " name="end_time" id="end_time"></div>
+
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="standard_price" >标准金额:</label>
+
+              <div class="col-xs-12 col-sm-9">
+                <input type="text" class="col-xs-12 col-sm-6 " name="standard_price" id="standard_price" ></div>
+
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="should_pay" >应收金额:</label>
+              <div class="col-xs-12 col-sm-9">
+                <input type="text" class="col-xs-12 col-sm-6 " name="should_pay" id="should_pay" value="0"></div>
+            </div>
+
+             <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pt_book_price" >已付押金:</label>
+              <div class="col-xs-12 col-sm-9">
+                <input type="text" class="col-xs-12 col-sm-6 " name="pt_book_price" id="pt_book_price" value="0" disabled></div>
+            </div>
+
+            <!-- <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pay_way1" >付款方式:</label>
+              <div class="col-xs-12 col-sm-6 ">
+                <label class="radio-inline">
+                  <input type="radio" name="pay_way" id="pay_way1" value="0" checked="checked" onclick="$('#paidgroup').show();">现金</label>
+                <label class="radio-inline">
+                  <input type="radio" name="pay_way" id="pay_way2" value="1" onclick="$('#paidgroup').show();">刷卡</label>
+                <label class="radio-inline">
+                  <input type="radio" name="pay_way" id="pay_way2" value="2" onclick="$('#paidgroup').hide();">
+                  储值卡
+                  <span class="red" id="recharge1">(￥0)</span>
+                </label>
+              </div>
+            </div> -->
+
+            <div class="form-group" id="paidgroup">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="paid" >使用储值卡:</label>
+              <div class="col-xs-12 col-sm-9">
+                <label>
+                  <input type="checkbox" id="use_recharge" name="use_recharge" onchange="tip()" value="1">
+                    <span class="red" id="recharge">余额(￥0)</span> <span class="orange" id="tip"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="cash" id="cash" value="0"></div>
+            </div>
+            <div class="form-group">
+              <label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="pos" id="pos"></div>
+            </div>
+            <div class="form-group">
+              <label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="check" id="check"></div>
+            </div>
+            <div class="form-group">
+              <label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
+            </div>
+
+  <div class="form-group">
+                            <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="0" class="col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="netbank" class="control-label col-xs-12 col-sm-3 no-padding-right">网银分期</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input  value="0"  class="col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
+                        </div>
+            <div class="form-group">
+              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="description" >备注:</label>
+              <div class="col-xs-12 col-sm-9">
+                <textarea type="text" class="col-xs-12 col-sm-6 " name="description" id="description"></textarea>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <div class="clearfix form-actions">
+        <div class="col-md-offset-5 col-md-12">
+          <button class="btn" type="button" onclick="pay()">
+            <i class="icon-share bigger-110"></i>
+            结账
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</block>
+
+<block name="script">
+  <script> 
+
+var classesarr = eval("(" + '{$classesarr}' + ")");
+
+function tip()
+{
+    var use_recharge=$("#use_recharge").prop("checked");
+    var left = parseInt($("#should_pay").val());
+    if(use_recharge)
+    {
+         left =left-recharge_value; 
+    } 
+    left = left > 0?left:0;
+    $("#tip").text("还需支付"+left);
+}
+  function pay()
+  {
+
+  var ele=$("#member_info tbody :radio:checked");           
+  if(ele.length==0) 
+   {
+      bootbox.alert("请先选中会员!",null);
+      return;
+   }  
+   var class_id=$("#class_id").val();
+   if(class_id==0)
+    {
+      bootbox.alert("请选择PT课程!");
+      return false;
+    }
+   var member_id= ele.val();
+   $("#member_id").val(member_id);
+   var self=$("#buy_pt_form");
+      $.post(self.attr("action"), self.serialize(), function(data,textStatus){
+             if(data.status){
+                 bootbox.alert(data.info,function(){
+                   window.location.href = data.url;
+                 });    
+                   
+                } else {
+                    bootbox.alert(data.info,null);                 
+                }
+        }, "json");
+  }
+ 
+
+  function calcTotal()
+  {  
+      $("#standard_price,#should_pay").val(parseInt(price) * parseInt($('#total_num').val()));
+
+  } 
+
+  var price=0;
+    $(function(){ 
+    $("#menu_6").addClass("active open");
+    $("#menu_63").addClass("active"); 
+    $(":input").keyup(function(){tip()});
+    $("#class_id").change(function(){
+      price=0; 
+        for(var i=0;i<classesarr.length;i++)
+        {
+          var clss=classesarr[i];
+          if(clss.id==$(this).val())
+          {
+              price=clss.price; 
+              break;
+          }
+        }
+        calcTotal();
+        tip();
+    });
+          
+})
+    </script></block>

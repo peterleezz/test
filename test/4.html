@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript">
+  String.prototype.replaceAll = function(s1,s2){ 
+return this.replace(new RegExp(s1,"gm"),s2); 
+} 
+
+   var current_contract = '{"id":"14773","total_num":"0","used_num":"85","contract_number":"1002C0121106_1545","type":"0","card_type_id":"869","card_id":"20132","member_id":"11001322","start_time":"2012-11-02","end_time":"2015-11-01","present_day":"0","present_num":"0","price":"1800","payed":"1800","brand_id":"35","description":"\u514d\u8d39\u51bb\u7ed3\u4e00\u6b21\uff0c\u8d60\u9001\u745c\u4f3d\u57ab\u4e00\u6761\u3002\r\n","record_id":"123006","create_time":"2012-11-02 00:00:00","update_time":"0000-00-00 00:00:00","status":"1","invalid":"1","sale_club_id":"1002","mc_id":"1400","c_id":"0","active_type":"0","contract_type":"0","club_id":"1002","print_count":"0","is_review":"0","free_rest":"0","rest_count":"0","free_trans":"0","trans_count":"0"}';
+        current_contract=current_contract.replaceAll("\r\n", "<br/>") ;
+
+       current_contract=eval("(" + current_contract + ")");
+alert(current_contract.description);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

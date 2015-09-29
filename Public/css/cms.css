@@ -1,0 +1,15 @@
+.head{
+margin-bottom: 30px;
+}
+.head .type
+{
+	margin-right:40px;
+}
+.pagination
+{	
+	margin:0px auto;
+}
+.table td
+{
+	word-break: keep-all;
+}

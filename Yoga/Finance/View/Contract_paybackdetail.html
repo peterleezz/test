@@ -1,0 +1,192 @@
+<extend name="Home@Public:base" />
+
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">财务</a>
+        </li>
+        <li class="active">退款</li>
+    </ul>
+</block>
+
+<block name="content">
+    <!--startprint1-->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">会员资料/Personal Data</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" id="user_id" value="{$member.id}">
+                    <div class="row">
+                        <div class="form-group col-xs-4 col-md-4">姓名/Name&nbsp;&nbsp;:{$member.name}</div>
+                        <div class="form-group col-xs-4 col-md-4">电话/Mobile&nbsp;&nbsp;:{$member.phone}</div>
+                        <div class="form-group col-xs-4 col-md-4">
+                            性别/Gender&nbsp;&nbsp;:
+                            <if condition="female eq $member['sex']">
+                                女
+                                <else/>
+                                男
+                            </if>
+                        </div>
+                        <div class="form-group col-xs-4 col-md-4">国籍/Nationality&nbsp;&nbsp;:{$member.country}</div>
+                        <div class="form-group  col-xs-4 col-md-4">家庭住址/Addr&nbsp;&nbsp;:{$member.home_addr}</div>
+                        <div class="form-group  col-xs-12 col-md-4">证件号码/Passport NO&nbsp;&nbsp;:{$member.certificate_number}</div>
+
+                    </div>
+
+                    <!-- <div class="row">
+                    <div class="form-group col-xs-4">卡号:{$card.card_number}</div>
+                    <div class="form-group col-xs-4">
+                        卡状态:
+                        <switch name="card.status">
+                            <case value="0">正常</case>
+                            <case value="1">挂失</case>
+                            <case value="1">新办</case>
+                            <case value="1">请假中</case>
+                            <case value="1">已销毁</case>
+                            <default />
+                            正常
+                        </switch>
+
+                    </div>
+                    <div class="form-group col-xs-4">
+                        是否激活：
+                        <if condition="1 eq $card['is_active']">
+                            激活
+                            <else />
+                            未激活
+                        </if>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">当前合同信息</h3>
+            </div>
+            <div class="panel-body">
+                <input type="hidden" id="contract_id" value="{$contract.id}">
+                <div class="form-group col-xs-12 col-md-4">合同编号/Contract NO&nbsp;&nbsp;:{$contract.contract_number}</div>
+                <div class="form-group col-xs-4 col-md-4">卡种/Card Type&nbsp;&nbsp;:{$contract.card_type.name}</div>
+                <div class="form-group col-xs-4 col-md-4">
+                    次数/Times&nbsp;&nbsp;:
+                    <if condition="1 eq $contract['card_type']['type']">
+                        不限次数
+                        <else/>
+                        {$contract.used_num}/{$contract.total_num}
+                    </if>
+                </div>
+                <div class="form-group col-xs-4">应收价格:￥{$bill.price}</div>
+                <div class="form-group col-xs-4">已付:{$bill.paid}</div>
+                <div class="form-group col-xs-4">欠款:{$bill['price']-$bill['paid']}</div>
+
+                <div class="form-group col-xs-4 col-md-4">
+                    类型/Type&nbsp;&nbsp;:
+                    <if condition="0 eq $contract['tpe']">
+                        普通合同
+                        <else/>
+                        团卡合同
+                    </if>
+                </div>
+                <div class="form-group col-xs-6 col-md-4">
+                    有效日期/Valid Date&nbsp;&nbsp;:{$contract.start_time}--{$contract.end_time}
+                </div>
+                <div class="form-group col-xs-6 col-md-4">购买时间/Purchase Time&nbsp;&nbsp;:{$contract.create_time}</div>
+                <div class="form-group col-xs-12">可使用门店/Stores&nbsp;&nbsp;:{$useClubs}</div>
+                <div class="form-group col-xs-12">备注信息/Note&nbsp;&nbsp;:{$contract.description}</div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">付款信息/Payment Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <volist name="history" id="record">
+                        <div class="form-group col-xs-4">现金/Cash&nbsp;&nbsp;:{$record.cash}￥</div>
+                        <div class="form-group col-xs-4">刷卡/Pos&nbsp;&nbsp;:{$record.pos}￥</div>
+                        <div class="form-group col-xs-4">支票/Check&nbsp;&nbsp;:{$record.check}￥</div>
+                        <div class="form-group col-xs-4">网络支付/Network&nbsp;&nbsp;:{$record.network}￥</div>
+                        <div class="form-group col-xs-4">网银分期/Netbank&nbsp;&nbsp;:{$record.netbank}￥</div>
+
+                        <div class="form-group col-xs-4">
+                            总计/Total Payment&nbsp;&nbsp;:{$record['cash']+$record['pos']+$record['check']}￥
+                        </div>
+                        <div class="form-group col-xs-6 col-md-4">收款时间/Payment Time&nbsp;&nbsp;:{$record.create_time}</div>
+                        <div class="form-group col-xs-12">
+                            <hr/>
+                        </div>
+                    </volist>
+                    <div class="form-group col-xs-12">总计：{$bill.paid}￥</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">其他信息/Other</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-xs-4">会所名称/Studio&nbsp;&nbsp;:{$club.club_name}</div>
+                    <div class="form-group col-xs-4">操作/Cashier&nbsp;&nbsp;:{$user}</div>
+
+                    <div class="form-group col-xs-6 col-md-4">当前时间/Print Time:&nbsp;&nbsp;:{$print_time}</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">退款信息</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <form  class="form-horizontal " role="form" id="dopayback" action="{:U('Finance/Contract/dopayback')}" method="post">
+                        <input type="hidden" name="id" value="{$contract.id}"/>
+                        <div class="form-group">
+                            <label class="control-label no-padding-right col-sm-2  col-xs-2" for="price">金额:</label>
+                            <div class="col-sm-4 col-xs-10">
+                                <input type="text" id="price"  class="form-control col-xs-10 col-sm-5" name="price" value="{$employee.identity_card}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-xs-2 control-label no-padding-right" for="desc">备注:</label>
+                            <div class="col-sm-4 col-xs-10">
+                                <textarea type="text" id="desc"  rows="6" class="form-control col-xs-10 col-sm-4" name="desc" ></textarea>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button class="btn btn-info" type="submit"> <i class="icon-ok bigger-110"></i>
+                                    提交
+                                </button>
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    重置
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</block>
+
+<block name="script">
+<script></script>
+</block>

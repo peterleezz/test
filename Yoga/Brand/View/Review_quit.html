@@ -1,0 +1,146 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+         <li class="active">稽核</li>
+        <li class="active">退会申请</li>
+    </ul>
+</block>
+
+ <block name="css">
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+
+
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="fcontainer">
+
+            <table id="conract_review_grid"></table>
+            <div id="conract_review_pager"></div> 
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script> 
+    $(function(){
+    $("#menu_1").addClass("active open");
+     $("#menu_18").addClass("active open");
+    $("#menu_27").addClass("active");
+function addCellAttr(rowId, val, rawObject, cm, rdata) {
+   if(val.indexOf("[")>0 && val.indexOf("]")>0)
+        return "style='color:red'";
+}
+
+            var grid_selector = "#conract_review_grid";
+            var pager_selector = "#conract_review_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Brand/Review/quitQuery')}",                 
+                    datatype: "json",
+                    height: "100%",    
+                    // width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID',"状态",'合同号','申请时间','申请人', '会所','会员','性别',"处理时间","财务","退款额", "备注"],
+                    colModel:[   
+                        {name:'id',index:'id',hidden:true}, 
+                          {name:'ret',index:'ret',width:80,align:'center',search:true,stype: 'select',searchoptions:{sopt:['eq'],value:"0:未处理;1:已退款;2:不予退款",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("未处理","已退款","不予退款");
+                           return getValue(a,value); 
+                         }}, 
+                          {name:'contract_number',index:'contract_number',formatter : function(value, options, rData){
+                            return rData.contract.contract_number;
+                         }},   
+                         {name:'create_time',index:'create_time'}, 
+{name:'recorder',index:'recorder',formatter : function(value, options, rData){
+                            return value.name_cn;
+                         }},   
+                        {name:'club_id',index:'club_id',width:150,search:true,stype: 'select',searchoptions:{sopt:['eq'],value:getSearchClubs(),style:"width:150px"},formatter : function(value, options, rData){
+                            return rData.club.club_name;
+                         }}, 
+                        {name:'member_name',index:'member_name',width:80,formatter : function(value, options, rData){
+                            var ret= rData.member.name; 
+                            return ret;
+                         },cellattr: addCellAttr},
+                        {name:'sex',index:'sex',width:40,formatter : function(value, options, rData){
+                            return rData.sex=='male'?"男":"女";
+                         }},   
+ {name:'update_time',index:'update_time'}, 
+{name:'reviewer',index:'reviewer',formatter : function(value, options, rData){
+        if(value==null) return '';
+                            return value.name_cn;
+                         }},   
+{name:'pay_back_price',index:'pay_back_price'},   
+
+                         {name:'description',index:'description'}, 
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: false,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortname: "id",
+                    sortorder: "desc",
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "会籍合同稽核" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                        // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: true,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                );
+  
+
+})
+    </script>
+</block>

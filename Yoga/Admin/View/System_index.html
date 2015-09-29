@@ -1,0 +1,45 @@
+<extend name="Public/base" />
+<block name="script">
+	<script>
+	$(function(){$(".navbar-nav>li:eq(0)").addClass("active").siblings().removeClass("active");
+});
+</script>
+</block>
+<block name="content"> 
+<form role="form" action="{:U('system/set')}" method="post">	
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="shopkeeper" name="roles[]" <notempty name="shopkeeper">checked</notempty>> 店长
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="finance" name="roles[]" <notempty name="finance">checked</notempty>> 财务
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="reception" name="roles[]" <notempty name="reception">checked</notempty>> 前台
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="bar" name="roles[]" <notempty name="bar">checked</notempty>> 水吧
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="cashier" name="roles[]" <notempty name="cashier">checked</notempty>> 收银员
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="mcmanager" name="roles[]" <notempty name="mcmanager">checked</notempty>> MC经理
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="mc" name="roles[]" <notempty name="mc">checked</notempty>> MC
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="ptmanager" name="roles[]" <notempty name="ptmanager">checked</notempty>> PT经理
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="pt" name="roles[]" <notempty name="pt">checked</notempty>> PT
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="channelmanager" name="roles[]" <notempty name="channelmanager">checked</notempty>> 渠道经理
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="default_role" value="channel" name="roles[]" <notempty name="channel">checked</notempty>> 渠道销售
+	</label>
+	<button type="submit" style="margin-left:10px" class="btn btn-primary">设置</button>
+	</form>
+</block>

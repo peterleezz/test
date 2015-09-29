@@ -1,0 +1,229 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">Mc Manager</a>
+		</li> 
+		<li class="active">MC计划</li>
+
+	</ul>
+</block>
+
+<block name="content"> 
+
+	<form class="form-inline" role="form" action="{:U('Channelmanager/Plan/query')}" method="post" id="query_channel_plan" style="margin-bottom:10px">
+
+	
+	<div class="form-group">
+			<label  class="sr-only" for="user_id">time：</label>
+			<select name="user_id" id="user_id" class="form-control">
+				<option value="0" selected="true">总计划</option>
+					<volist name="users" id="user">
+					<option value="{$user.id}">{$user.name_cn}</option>
+					</volist>
+			</select>
+		</div>
+
+
+		<div class="form-group">
+			<label  class="sr-only" for="time">time：</label>
+			<select name="time" id="time" class="form-control">
+				<option value="0" selected="true">单月</option>
+				<option value="1">多月</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label  for="start_time">起时时间:</label>
+			<input type="text" class="date_ym form-control" name="start_time"  id="start_time"></div>
+		  
+		<div class="form-group" id="et" style="display:none">
+			<label  for="end_time">终止时间:</label>
+			<input type="text" class="date_ym form-control" name="end_time"  id="end_time"></div>
+
+		<button type="submit" class="btn  btn-info btn-sm" > <i class="icon-search"></i>
+			查询
+		</button> 
+	
+	</form>
+	<a href="javascript:void(0)" class="btn  btn-info btn-sm" data-toggle="modal" data-target="#addPlanModel"> <i class="icon-plus-sign"></i>增加总计划</a>
+		
+		<a href="javascript:void(0)" class="btn  btn-info btn-sm" data-toggle="modal" data-target="#addOnePlanModel"> <i class="icon-plus-sign"></i>增加单人计划</a>
+
+		 
+
+	<table class="table hide">		
+        	<thead>
+        		<tr>
+        			<th> </th>
+        			<th>潜客量</th>
+        			<th>渠道量</th>
+        			<th>转化量</th>
+        			<th>转化率</th>
+        		</tr>
+        	</thead>
+        	<tbody>  
+        	<volist name="statistics" id="st">
+				    	<tr  class="info" ><td colspan="5" align="center">{$st.time}  </td></tr>
+    <tr class="warning">  
+      				<td>本月计划</td>
+        			<td>{$st.protential_plan}</td>
+        			<td>{$st.channel_plan}</td>
+        			<td>{$st.transform_plan}</td>
+        			<td>{$st['transform_plan']*100/$st['protential_plan']} %</td>
+    </tr>  
+    <tr class="danger">  
+      				<td>本月实际</td>
+        			<td>{$st.protential_value}</td>
+        			<td>{$st.channel_value}</td>
+        			<td>{$st.transform_value}</td>
+        			<td>{$st['transform_value']*100/$st['protential_value']} %</td>
+    </tr>  
+    <tr class="err">  
+      				<td>本月累计 </td>
+        			<td>{$st.protential_total}</td>
+        			<td>{$st.channel_total}</td>
+        			<td>{$st.transform_total}</td>
+        			<td>{$st['transform_total']*100/$st['protential_total']} %</td>
+    </tr>  
+
+
+        	</volist>
+    
+  </tbody>  
+	</table>
+
+
+
+<div class="modal fade addChannelPlan" id="addPlanModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">新增/修改计划</h4>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal" role="form" id="addplanform" action="{:U('Channelmanager/Plan/edit')}">
+			  <div class="form-group">
+			    <label for="add_time" class="col-sm-2 control-label">选择时间</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="date_ym form-control" name="time" id="add_time" >
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="protential_plan_value" class="col-sm-2 control-label">潜在客户</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="protential_plan" id="protential_plan_value" >
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="channel_plan_value" class="col-sm-2 control-label">渠道量</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="channel_plan" id="channel_plan_value" >
+			    </div>
+			  </div> 
+
+			  <div class="form-group">
+			    <label for="transform_plan" class="col-sm-2 control-label">转化量</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="transform_plan" id="transform_value" >
+			    </div>
+			  </div> 
+			</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" onclick="add_channel_plan()">保存</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+<div class="modal fade addChannelPlan" id="addOnePlanModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">新增/修改计划</h4>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal" role="form" id="addplanformone" action="{:U('Channelmanager/Plan/editone')}">
+			  <div class="form-group">
+			    <label for="add_time" class="col-sm-2 control-label">选择时间</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="date_ym form-control" name="time" id="add_time" >
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="userid" class="col-sm-2 control-label">选择员工</label>
+			    <div class="col-sm-10">
+			     <select name="user_id" id="user_id" class="form-control">  
+					<volist name="users" id="user">
+					<option value="{$user.id}">{$user.name_cn}</option>
+					</volist>
+			</select>
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="protential_plan_value" class="col-sm-2 control-label">潜在客户</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="protential_plan" id="protential_plan_value" >
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="channel_plan_value" class="col-sm-2 control-label">渠道量</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="channel_plan" id="channel_plan_value" >
+			    </div>
+			  </div> 
+
+			  <div class="form-group">
+			    <label for="transform_plan" class="col-sm-2 control-label">转化量</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="transform_plan" id="transform_value" >
+			    </div>
+			  </div> 
+			</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" onclick="add_channel_plan_one()">保存</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+</block>
+
+<block name="script">
+  
+<script>
+ 
+	$(function(){
+		   $("#menu_12").addClass("active open");
+    $("#menu_30").addClass("active");
+
+		$("#time").change(function(){
+			var value = ($(this).val());
+			if(value==0)
+			{
+				$("#et").hide();
+			}
+			else
+			{
+				$("#et").show();
+			}
+		});
+
+		$(".table").removeClass("hide");
+	})
+</script>
+</block>

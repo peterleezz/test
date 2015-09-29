@@ -1,0 +1,120 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">转让</li>
+    </ul>
+</block>
+
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">转出会员信息</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" id="user_id" value="{$contract.member.id}">
+                    <div class="row">
+                        <div class="form-group col-xs-4 col-md-4">姓名/Name&nbsp;&nbsp;:{$contract.member.name}</div>
+                        <div class="form-group col-xs-4 col-md-4">电话/Mobile&nbsp;&nbsp;:{$contract.member.phone}</div>
+                        <div class="form-group col-xs-4 col-md-4">
+                            性别/Gender&nbsp;&nbsp;:
+                            <if condition="female eq $contract['member']['sex']">
+                                女
+                                <else/>
+                                男
+                            </if>
+                        </div>
+                        <div class="form-group col-xs-4 col-md-4">国籍/Nationality&nbsp;&nbsp;:{$contract.member.country}</div>
+                        <div class="form-group  col-xs-4 col-md-4">家庭住址/Addr&nbsp;&nbsp;:{$contract.member.home_addr}</div>
+                        <div class="form-group  col-xs-12 col-md-4">
+                            证件号码/Passport NO&nbsp;&nbsp;:{$contract.member.certificate_number}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">合同信息</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="hidden" id="contract_id" value="{$contract.id}">
+                    <div class="form-group col-xs-12 col-md-4">合同编号/Contract NO&nbsp;&nbsp;:{$contract.contract_number}</div>
+                    <div class="form-group col-xs-4 col-md-4">PT课程/PT Class&nbsp;&nbsp;:{$contract.ptclass.name}</div>
+                    <div class="form-group col-xs-4 col-md-4">
+                        欠款/Own&nbsp;&nbsp;:{$contract['should_pay']-$contract['paid']}
+                    </div>
+                    <div class="form-group col-xs-4 col-md-4">
+                        次数/Times&nbsp;&nbsp;: 
+                    {$contract.used_num}/{$contract.total_num}
+                    </div>
+                    <!-- <div class="form-group col-xs-4">应收价格:{$contract.price}</div>
+                <div class="form-group col-xs-4">已付:{$contract.payed}</div>
+                <div class="form-group col-xs-4">欠款:{$contract['price']-$contract['payed']}</div>
+                -->
+                <div class="form-group col-xs-4 col-md-4">
+                    类型/Type&nbsp;&nbsp;:
+                    <switch name="contract['sale_type']" >
+                        <case value="1">新会员购买</case>
+                        <case value="2">续课</case>
+                        <case value="3">POS销售</case>
+                        <case value="4">场地开发</case>
+                        <default />
+                        新会员购买
+                    </switch>
+                </div>
+                <div class="form-group col-xs-6 col-md-4">
+                    有效日期/Valid Date&nbsp;&nbsp;:{$contract.start_time}--{$contract.end_time}
+                </div>
+                <div class="form-group col-xs-6 col-md-4">购买时间/Purchase Time&nbsp;&nbsp;:{$contract.create_time}</div>
+                <div class="form-group col-xs-12">备注信息/Note&nbsp;&nbsp;:{$contract.description}</div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">转入会员信息</h3>
+            </div>
+            <div class="panel-body">
+                <form id="pt_transform_form_query" action="{:U('Cashier/Member/query')}">
+                    <input type="hidden" name="is_member" value="1">
+                    <span class="input-icon" style="float:left">
+                        <input type="text" placeholder="姓名"  name="name"/> <i class="icon-search nav-search-icon"></i>
+                    </span>
+                    <button type="submit" class="btn  btn-info btn-sm">
+                        <i class="icon-search"></i>
+                        查询
+                    </button>
+                    <button type="button" class="btn  btn-success btn-sm" onclick="pt_transform()">
+                        <i class="icon-exchange blue"></i>
+                        转入
+                    </button>
+                </form>
+                <table class="table" id="member_info">
+                    <thead>
+                        <tr>
+                            <th>选择</th>
+                            <th>姓名</th>
+                            <th>电话</th>
+                            <th>性别</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="show_detail"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script></script>
+</block>

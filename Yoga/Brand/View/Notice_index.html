@@ -1,0 +1,198 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li> 
+        <li class="active">通知管理</li>
+
+    </ul>
+</block>
+
+ <block name="css">
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+
+<block name="content">
+<div class="row">
+  <div class="col-xs-12" id="list"> 
+    <table id="grid"></table>
+    <div id="pager"></div>
+    </div>
+
+</div>
+</div>
+
+</block>
+
+<block name="script">
+<script>
+     
+    $(function(){
+    $("#menu_1").addClass("active open");
+    $("#menu_83").addClass("active");
+    
+
+            var grid_selector = "#grid";
+            var pager_selector = "#pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"/Brand/Notice/query",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#list').width()),
+                    mtype:"POST",
+                    colNames:[ 'ID','发送时间','开始时间','结束时间','通知内容'],
+                    colModel:[    
+                        {name:'id',index:'id',sortable:true,editable: false ,width:150,align:'left',sorttype:'integer'},
+                        {name:'create_time',index:'create_time',width:150, editable: false,editoptions:{size:"20",maxlength:"30"},editrules:{required:false},align:'left',search:true},
+                        {name:'start_time',index:'start_time',width:150,editrules:{required:true},align:'left',search:true,editoptions: {size:20,maxlengh:30,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd HH:ii',      minView:'0',          language:'zh-CN',      autoclose:true,})}}} ,
+                        {name:'end_time',index:'end_time',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'left',search:true,editoptions: {size:20,maxlengh:30,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd HH:ii',      minView:'0',          language:'zh-CN',      autoclose:true,})}}} ,
+                        {name:'content',index:'content',width:450,editoptions:{rows:10,cols:45},editrules:{required:true},align:'left',search:true,edittype:'textarea'},
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                      editurl: "/Brand/Notice/set",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "通知内容" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {
+                        // jQuery("#employee_grid").jqGrid('setGridParam',{datatype:'local'});
+                    
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                  
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        add: true,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: true,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        width:500,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        width:500,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                           var res = $.parseJSON(response.responseText);
+                             // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        width:500,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        width:500,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                ); 
+
+})
+
+ 
+    </script>
+</block>

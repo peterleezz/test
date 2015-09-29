@@ -1,0 +1,102 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">品牌管理</a>
+		</li>
+		<li class="active">渠道经理</li>
+		<li class="active">渠道计划</li>
+
+	</ul>
+</block>
+
+<block name="content"> 
+
+	<form class="form-inline" role="form" action="{:U('Channel/Statistics/query')}" method="post" id="query_channel_statistics_self" style="margin-bottom:10px">
+ 
+		<div class="form-group">
+			<label  class="sr-only" for="time">time：</label>
+			<select name="time" id="time" class="form-control">
+				<option value="0" selected="true">单月</option>
+				<option value="1">时间段</option>
+			</select>
+		</div>
+		<div class="form-group st">
+			<label  for="start_month">月份时间:</label>
+			<input type="text" class="date_ym form-control" name="start_month"  id="start_month"></div>
+		  
+
+		  <div class="form-group et" style="display:none">
+			<label  for="start_time">起时时间:</label>
+			<input type="text" class="date_ymd form-control" name="start_time"  id="end_time"></div>
+		<div class="form-group et"   style="display:none">
+			<label  for="end_time">终止时间:</label>
+			<input type="text" class="date_ymd form-control" name="end_time"  id="end_time"></div>
+
+		<button type="submit" class="btn  btn-info btn-sm" > <i class="icon-search"></i>
+			查询
+		</button> 
+	
+	</form> 
+
+	<table class="table">		
+        	<thead>
+        		<tr>
+        			<th>序号</th>
+        			<th>渠道名称</th>
+        			<th>渠道等级</th>
+        			<th>产生潜客数量</th>
+        			<th>转化量</th>
+        			<th>转化率</th>
+        			<th>累计潜客数量</th>
+        			<th>累计转化量</th>
+        			<th>累计转化率</th>
+        		</tr>
+        	</thead>
+        	<tbody>  
+        	  <tr  class="info" ><td colspan="9" align="center">本月数据统计 </td></tr>
+        	<volist name="statistics" id="st"  key="k">				  
+					    <tr class="warning">  
+					      				<td>{$k}</td>
+					        			<td>{$st.name}</td>
+					        			<td>{$st.level}</td>
+					        			<td>{$st.protential}</td>
+					        			<td>{$st.mcount}</td>
+					        			<td> <if condition="$st.protential eq 0">0<else />  {$st['mcount']*100/$st['protential']}</if> %</td>
+					        			<td>{$st.protential_total}</td>
+					        			<td>{$st.mcount_total}</td>
+					        			<td> <if condition="$st.protential_total eq 0">0<else />  {$st['mcount_total']*100/$st['protential_total']}</if> %</td>
+					    </tr>   
+        	</volist>
+    
+  </tbody>  
+	</table>
+ 
+
+</block>
+
+<block name="script">
+  
+<script>
+ 
+	$(function(){
+		  $("#menu_13").addClass("active open");
+    		$("#menu_36").addClass("active");
+
+
+		$("#time").change(function(){
+			var value = ($(this).val());
+			if(value==0)
+			{
+				$(".et").hide();
+				$(".st").show();
+			}
+			else
+			{
+				$(".et").show();
+				$(".st").hide();
+			}
+		}); 
+	})
+</script>
+</block>

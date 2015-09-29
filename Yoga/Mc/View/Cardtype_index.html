@@ -1,0 +1,246 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">品牌管理</a>
+        </li>
+        <li class="active">基础设置</li>
+        <li class="active">会员卡种管理</li>
+
+    </ul>
+</block>
+
+<!-- <block name="css">
+    <style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block> -->
+<block name="content">
+    <div class="row">
+        <div class="col-xs-12" id="fcontainer">
+         
+                                <form class="form-inline" role="form" action= 
+                                <empty name="action">
+                                      "{:U('Cashier/Cardtype/getCardtype')}"
+                                <else /> 
+                                    {$action}
+                                </empty>
+                                 method="post" id="cashier_query_cardtype" style="margin-bottom:10px">
+                                <input type="hidden" name="totalrows" value="1000">
+                                    
+                                    <div class="form-group">
+                                        <label  class="sr-only" for="useclub">请选择会所：</label>
+                                        <select name="useclub" id="useclub" class="form-control"> 
+                                            <option value="-1">可使用会所</option>
+                                            <volist name="clubs" id="club">
+                                                <option value="{$club.id}">{$club.club_name}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="category">卡种分类</label>
+                                      <select name="category" id="category" class="form-control">             
+                                             <option value="-1">卡种分类</option>   
+                                                <option value="1">个人卡</option>
+                                             <!--    <option value="2">家庭卡</option>
+                                                 <option value="3">主副卡</option>
+                                                  <option value="4">VIP卡</option>
+                                                   <option value="5">不记名卡</option> -->
+                                                    <option value="6">团体卡</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="type">卡种类型</label>
+                                      <select name="type" id="type" class="form-control">             
+                                             <option value="-1">卡种类型</option>   
+                                                <option value="1">时间卡</option>
+                                                <option value="2">次数卡</option>                                             
+                                        </select>
+                                    </div>
+  
+                                    <div class="form-group">
+                                        <label  for="name">卡种名称:</label>
+                                        <input type="text" class="form-control" name="name"  id="name"></div>
+
+                                 
+                                    <button type="submit" class="btn  btn-info btn-sm">
+                                        <i class="icon-search"></i>
+                                        查询
+                                    </button>
+
+                                </form>
+
+
+                             <table id="card_type_grid"></table>
+                            <div id="card_type_pager"></div>
+
+                           
+                             
+                      
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script> 
+    $(function(){
+    $("#menu_6").addClass("active open");
+    $("#menu_40").addClass("active"); 
+
+            var grid_selector = "#card_type_grid";
+            var pager_selector = "#card_type_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"/Mc/Cardtype/getCardtype",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-10),
+                    mtype:"POST",
+                    colNames:['ID','卡种名称','卡种分类','卡种类型', '售价','限制时段','可用会所','有效次数','有效时间(月)','可赠送次数','可赠送天数','是否可售','起售时间','终止时间','备注','创建时间'],
+                    colModel:[    
+                        {name:'id',index:'id',sortable:true,editable: false ,width:150,align:'left',sorttype:'integer',hidden:true},
+                        {name:'name',index:'name',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'left',search:true},
+                        {name:'category',index:'category',width:80,editoptions:{size:"20",maxlength:"30"},align:'left',search:true,edittype:"select",editoptions:{value:"1:个人卡;6:团体卡",style:"width:150px"}, formatter : function(value, options, rData){ 
+                            var a=new Array("","个人卡","家庭卡","主副卡","VIP卡","不记名卡","团体卡");
+                            return  getValue(a,value);
+                        }},
+                         {name:'type',index:'type',width:80,editoptions:{size:"20",maxlength:"30"},align:'left',search:false,edittype:"select",editoptions:{value:"1:时间卡;2:次数卡",style:"width:150px"},formatter : function(value, options, rData){  
+                                var a=new Array("","时间卡","次数卡");
+                                return  getValue(a,value); 
+                         }}, 
+                          {name:'price',index:'price',editable: true ,width:50,align:'left',editrules:{required:true,number:true}},     
+                          {name:'peak_time',index:'peak_time',width:150,editoptions:{size:"20",maxlength:"30"},align:'left',search:false,edittype:"select",editoptions:{multiple:true,value:""},formatter : function(value, options, rData){
+                           
+                                if(value!=null && value !="")
+                                {
+                                    var userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                                    var peaktimes=userData['peaktimes'];
+                                    var params=value.split(",");
+                                    var ret ="";
+                                    for(var i=0;i<params.length;i++)
+                                    {
+                                        if(i!=0) ret+=";";
+                                        for(var j=0;j<peaktimes.length;j++)
+                                        {
+                                            if(params[i]==peaktimes[j]['id'])
+                                            {
+                                                ret+=peaktimes[j]['peak_name'];
+                                                break;
+                                            }
+                                        }
+                                        if(j==peaktimes.length)
+                                        {
+                                            ret+=value;
+                                        }
+                                        
+                                    }
+                                   
+                                    return ret;
+                                }
+                                return "";                            
+                         }}, 
+                           
+                          {name:'useclub',index:'useclub',width:350,editoptions:{size:"20",maxlength:"30"},align:'left',search:false,edittype:"select",editoptions:{multiple:true,value:""},formatter : function(value, options, rData){
+                            if(isString(value)) return value;
+                                if(value!=null && value.length > 0)
+                                {
+                                    var userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                                    var clubs=userData['clubs'];
+                                    var ret ="";
+                                    for(var i=0;i<value.length;i++)
+                                    {
+                                        if(i!=0) ret+=";";
+                                        for(var j=0;j<clubs.length;j++)
+                                        {
+                                            if(clubs[j]['id']==value[i]['club_id'])
+                                            {
+                                                ret+=clubs[j]['club_name'];
+                                                break;
+                                            }
+                                        }
+                                        
+                                    }
+                                   
+                                    return ret;
+                                }
+                                return "";                            
+                         }}, 
+   
+                          {name:'valid_number',index:'valid_number',editable: true ,width:80,align:'left',formatter : function(value, options, rData){  
+                                 if(rData.type==1) return "不限次数";
+                                return  value; 
+                         }}, 
+                          {name:'valid_time',index:'valid_time',editable: true ,width:100,align:'left'},     
+                          {name:'max_present_num',index:'max_present_value',editable: true ,width:100,align:'left'}, 
+                          {name:'max_present_day',index:'max_present_day',editable: true ,width:100,align:'left'},       
+                          {name:'status',index:'status',width:80, editable:true, edittype:'checkbox', editoptions: { value:"1:0"},  formatter: "checkbox", formatoptions:{disabled:false},align:'left'},   
+                           {name:'start_time',index:'start_time', width:100,editable:true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd',      minView:'2',          language:'zh-CN',      autoclose:true,})}}} ,
+
+                           {name:'end_time',index:'end_time', width:100,editable:true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd',      minView:'2',      language:'zh-CN',      autoclose:true})}}} ,
+
+                          {name:'description',index:'description',width:150,editoptions:{size:"20",maxlength:"30"},align:'left',edittype:'textarea'},
+                         {name:'create_time',index:'create_time', width:150,editable:false,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:10,dataInit:function(element){$(element).datepicker({dateFormat: 'yy-mm-dd'})}}} ,
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                    editurl: "/Cashier/Cardtype/setCardType",          
+                    // autowidth: true,
+                    shrinkToFit:false,  
+                    autoScroll: true,
+                    caption: "会员卡种信息" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                    
+            
+                }); 
+
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: true,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                ); 
+
+})
+    </script>
+</block>

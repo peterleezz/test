@@ -1,0 +1,325 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">财务</a>
+    </li>
+    <li class="active">入账记录</li>
+
+  </ul>
+</block>
+
+<block name="content">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="form-inline" role="form" action="{:U('Finance/Payhistory/queryReport')}" method="post" id="finance_payhistory_report" >
+
+        <div class="form-group col-xs-12">
+          <label for="cc">选择会所：</label>
+          <label class="checkbox-inline">
+            <input type="checkbox"  id="allclub" onchange="chooseall()">所有会所</label>
+          <volist name="clubs" id="club">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="club_ids[]" id="club_ids" class="club_ids" value="{$club.id}"  checked='checked'>{$club.club_name}</label>
+          </volist> 
+        </div>
+
+        <div class="form-group">
+          <label  for="type">记录类型：</label>
+          <select name="type" id="type" class="form-control" oper="eq">
+            <option value="1">日消费</option>
+            <option value="2">月消费</option>
+            <option value="3">年消费</option>
+            <option value="4">时间段消费</option>
+          </select>
+        </div> 
+
+        <div class="form-group">
+          <label  for="start_time">开始时间:</label>
+          <input type="text" class="date_ymd" name="start_time"  id="start_time" oper="eq"></div>
+        <div class="form-group hide" id="end">
+          <label  for="end_time">结束时间:</label>
+          <input type="text" class="date_ymd" name="end_time"  id="end_time" oper="eq"></div>
+
+
+        <div class="form-group">
+          <label  for="pay_id">单号：</label>
+          <input text="text" name="pay_id" id="pay_id" class="form-control" oper="eq">  
+        </div>
+        <button type="submit" class="btn  btn-info btn-sm"  id="dosubmit"> <i class="icon-search"></i>
+          查询
+        </button>
+      </form>
+    </div>
+
+    <div class="col-xs-12">
+      <table id="finance_payhistory_grid"></table>
+      <div id="finance_payhistory_grid_pager"></div>
+    </div>
+
+  </div>
+
+</block>
+
+<block name="script">
+  <script>
+  
+  function chooseall()
+  {
+      var all=$("#allclub").prop("checked");
+      if(all)
+      {
+        $(".club_ids").prop("checked", true);  
+      }
+      else
+      {
+        $(".club_ids").prop("checked", false);  
+      }
+  }
+
+$("#type").change(function(){
+     $('#start_time,#end_time').val("");
+    if($(this).val()==1)
+    {
+        $('#start_time').datetimepicker('remove');
+         $("#start_time").datetimepicker({
+          format: 'yyyy-mm-dd',
+          minView:'2',
+          startView:'2',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").addClass("hide");
+    }
+    else if($(this).val()==2)
+    {
+        $('#start_time').datetimepicker('remove');
+         $("#start_time").datetimepicker({
+          format: 'yyyy-mm',
+          minView:'3',
+          startView:'3',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").addClass("hide");
+    }
+    else if($(this).val()==3)
+    {
+       $('#start_time').datetimepicker('remove');
+         $("#start_time").datetimepicker({
+          format: 'yyyy',
+          minView:'4',
+          startView:'4',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").addClass("hide");
+    }
+    else
+    {
+      $('#start_time').datetimepicker('remove');
+       $("#start_time").datetimepicker({
+          format: 'yyyy-mm-dd',
+          minView:'2',
+          startView:'2',
+          language:'zh-CN',
+          autoclose:true,
+        });
+         $("#end").removeClass("hide");
+    }
+
+}); 
+ 
+
+
+function build(form)
+{
+
+         var rules="";
+        form.find(":input").each(function(i){
+            var searchField=$(this).attr("name");
+            var searchOper=$(this).attr("oper");
+            var searchString=$(this).val();
+            if(searchField && searchOper && searchString) {  
+                rules += ',{"field":"' + searchField + '","op":"' + searchOper + '","data":"' + searchString + '"}';  
+            }  
+         }); 
+
+      // allclub
+         var chk_value =[];    
+      $('.club_ids').each(function(){    
+       chk_value.push($(this).val());    
+      });  
+        var club_ids = chk_value.join(",");
+        rules += ',{"field":"club_ids","op":"eq","data":"' + club_ids + '"}';  
+
+         if(rules) {  
+            rules = rules.substring(1);  
+         }  
+         var filtersStr = '{"groupOp":"AND","rules":[' + rules + ']}';  
+         return filtersStr;
+}
+
+
+$(function(){ 
+var clubs,start_time,end_time,type,clubsstring="";
+ clubs=$('input[name="club_ids[]"]:checked'); 
+         if(clubs.length==0)
+         {
+             bootbox.alert("请选中需要统计的会所！");
+            return false;
+         }  
+         clubs.each(function(){  
+            clubsstring+=$(this).val()+",";
+          })  
+
+$("#finance_payhistory_report").submit(function(){   
+         var self = $(this);  
+          clubs=$('input[name="club_ids[]"]:checked'); 
+         if(clubs.length==0)
+         {
+             bootbox.alert("请选中需要统计的会所！");
+            return false;
+         }  
+         clubsstring="";
+         clubs.each(function(){  
+            clubsstring+=$(this).val()+",";
+          })  
+         clubsstring=clubsstring.substring(0,clubsstring.length-1); 
+          start_time=$("#start_time").val();
+         if(start_time=='')
+         {
+            bootbox.alert("请输入查询时间！");
+            return false;
+         }
+        end_time=$("#end_time").val();
+          type=$("#type").val();
+         if(type==4 && end_time=='')
+         {
+            bootbox.alert("请输入查询结束时间！");
+            return false;
+         } 
+         var postData = $("#finance_payhistory_grid").jqGrid("getGridParam", "postData");  
+
+         var filters = build(self); 
+         $.extend(postData, {filters: filters});  
+        $("#finance_payhistory_grid").jqGrid("setGridParam", {  
+          datatype:'json',
+              search: true    
+          }).trigger("reloadGrid", [{page:1}]);   
+       
+
+
+         // jQuery("#finance_payhistory_grid").jqGrid('setGridParam',{postData:self.serialize(),url:self.attr("action"),page:1,datatype:'json'}).trigger("reloadGrid"); 
+         return false;
+     });
+
+
+
+    $("#menu_3").addClass("active open");
+    $("#menu_67").addClass("active"); 
+    var grid_selector = "#finance_payhistory_grid";
+    var pager_selector = "#finance_payhistory_grid_pager";
+
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Finance/Payhistory/queryReport",                 
+                   mtype:"POST",        
+                  datatype: "local",
+                  height: 'auto', 
+                  width:"100%", 
+                    colNames:['单号','项目总价', '现金','POS','支票','储值卡','网络支付','网银分期','会员','消费项目','收银','时间'],
+                    colModel:[   
+			{name:'id',index:'id',editable: false},
+      {name:'total',index:'total',formatter : function(value, options, rData){ 
+                          return rData.bill.price;
+                       }},
+			{name:'cash',index:'cash'},
+			{name:'pos',index:'pos'},
+			{name:'check',index:'check'},
+			{name:'recharge',index:'recharge'},
+        {name:'network',index:'network'},
+          {name:'netbank',index:'netbank'},
+			{name:'member',index:'member',formatter : function(value, options, rData){ 
+                          return value.name;
+                       },editable: false},
+			{name:'type',index:'type',formatter : function(value, options, rData){ 
+          var a=new Array("新会员入会","PT",'商品订单',"转让","续会","升级","", "充值");
+           var b=new Array("首款","余款");
+          return getValue(a,rData.bill.type)+"-"+getValue(b,rData.type);                      
+      },editable: false},
+			{name:'recorder',index:'recorder',formatter : function(value, options, rData){ 
+                          return value.name_cn;
+                       },editable: false},
+      {name:'create_time',index:'create_time', width:200,editable:true,edittype:'text',editrules:{required:true},editoptions: {size:10,maxlengh:15,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd HH:ii:ss',           language:'zh-CN',      autoclose:true,})}}} ,
+
+                    ],       
+                   
+                    pager : pager_selector,
+                     viewrecords: true, 
+                      cmTemplate: {sortable:false,editable: true,search:false}, 
+   altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false, 
+                    sortorder: "desc",
+                    editurl: "",   
+                    sortname:'id', 
+                     autowidth: true,
+                     shrinkToFit:true,  
+                    caption: "消费记录" ,
+                    editurl: "/Finance/Payhistory/set",          
+                     rowNum: 30,
+                      rowList:[30,60,100],
+                    viewrecords: true,
+                    gridview: true,  
+                     loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+    
+                });   
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    } ,
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    }
+                );
+
+
+}) 
+</script>
+</block>

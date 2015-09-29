@@ -1,0 +1,322 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">品牌管理</a>
+    </li>
+    <li class="active">稽核</li>
+    <li class="active">会籍合同审批</li>
+  </ul>
+</block>
+
+<block name="css">
+  <style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
+</block>
+
+<block name="content">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
+
+      <form class="form-inline" role="form" action="{:U('Brand/Review/query')}" method="post" id="query_review_contract_form" style="margin-bottom:10px">
+
+        <div class="form-group">
+          <label  class="sr-only" for="club_id">请选择会所：</label>
+          <select name="club_id" id="club_id" class="form-control"  oper="eq">
+            <option value="-1">所有会所</option>
+            <volist name="clubarray" id="club">
+              <option value="{$club.id}">{$club.club_name}</option>
+            </volist>
+          </select>
+        </div>
+        <div class="form-group">
+          <label  for="time">选择日期:</label>
+          <input type="text" class="form-control date_ymd" name="time"  id="time" oper="eq"></div>
+      
+        <div class="form-group">
+          <label  for="mc_id">MC:</label>
+          <select name="mc_id" id="mc_id" class="form-control"  oper="eq">
+            <option value="0">所有MC</option>
+            <volist name="mcs" id="mc">
+              <option value="{$mc.id}">{$mc.name_cn}</option>
+            </volist>
+          </select>
+        </div>
+         <div class="form-group">
+          <label  for="extension">关键字:</label>
+          <input type="text" class="form-control" name="extension"  id="extension" oper="like"></div>
+          <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+            查询
+          </button>
+
+        </form>
+
+        <table id="conract_review_grid"></table>
+        <div id="conract_review_pager"></div>
+        <div class="panel panel-default">
+
+          <div class="panel-heading">备注</div>
+          <div class="panel-body">
+            <textarea class="col-xs-12 col-sm-12"  name="note" id="note" rows="3"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </block>
+
+  <block name="script">
+    <script> 
+    $(function(){
+    $("#menu_1").addClass("active open");
+     $("#menu_18").addClass("active open");
+    $("#menu_25").addClass("active");
+
+            var grid_selector = "#conract_review_grid";
+            var pager_selector = "#conract_review_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Brand/Review/query')}",                 
+                    datatype: "json",
+                    height: "100%",   
+                     postData:{type:0}, 
+                    // width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','操作',"状态", '异常原因', '时间','合同状态', '卡种价格','实际价格','赠送天数','赠送次数', '会所','合同编号','会员','性别','卡种','合同类型','实收金额','欠款金额','签约日期','合同生效日期','合同结束日期','开卡方式','mc', "备注"],
+                    colModel:[   
+                        {name:'id',index:'id',hidden:true},
+                        {name:'op',index:'op',width:70,hidden:true,formatter : function(value, options, rData){ 
+                            var id=rData.id;
+                            var note=$("#note").val();
+                            var html='<a class="btn  btn-primary btn-xs"  href="javascript:void(0)" onclick="review_pass('+id+',1,0)"><i class="icon-ok bigger-130"></i>通过</a>&nbsp&nbsp&nbsp';                           
+                              
+                              return html;
+                         }},
+                          {name:'status',index:'status',width:80,align:'center',search:true,stype: 'select',searchoptions:{sopt:['eq'],value:"0:未审核;1:审核通过;2:审核未通过",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("未审核","审核通过","审核未通过");
+                           return getValue(a,value); 
+                         }},
+                         {name:'reason',index:'reason'},
+                         {name:'create_time',index:'create_time'},
+                          { cellattr: addCellAttr,name:'contract_status',index:'contract_status',width:100,align:'center',search:false,stype: 'select',searchoptions:{sopt:['eq'],value:"1:新增合同;2:续费;3:升级;4:转让",style:"width:150px"},formatter : function(value, options, rData){
+                             var a=new Array("","新增合同","续费","升级","转让");
+                           var ret=getValue(a,rData.extension.status); 
+                           if(rData.original_extension!=null && rData.original_extension.status!=null && rData.extension.status!=rData.original_extension.status)
+                           {
+                                ret=ret+"["+getValue(a,rData.original_extension.status)+"]"; 
+                           }
+                            return ret;
+                         }},
+                          {name:'card_type_price',index:'card_type_price',width:80,formatter : function(value, options, rData){ 
+                            if(rData.extension.cardtype==null) return "Unknow";
+                           var ret= rData.extension.cardtype.price; 
+                            if(rData.original_extension!=null && rData.original_extension.cardtype!=null && rData.extension.cardtype.price!=rData.original_extension.cardtype.price)
+                           {
+                                ret=ret+"["+rData.original_extension.cardtype.price+"]"; 
+                           }
+                            return ret;
+
+                         },cellattr: addCellAttr},
+                        {name:'price',index:'price',width:80,formatter : function(value, options, rData){
+                            var ret= rData.extension.price;
+                             if(rData.original_extension!=null && rData.original_extension.price!=null && rData.extension.price!=rData.original_extension.price)
+                           {
+                                ret=ret+"["+rData.original_extension.price+"]"; 
+                           }
+                            return ret;
+
+                         },cellattr: addCellAttr}, 
+                          {name:'present_day',index:'present_day',width:80,formatter : function(value, options, rData){ 
+                            var ret= rData.extension.present_day;
+                             if(rData.original_extension!=null && rData.original_extension.present_day!=null && rData.extension.present_day!=rData.original_extension.present_day)
+                           {
+                                ret=ret+"["+rData.original_extension.present_day+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr}, 
+                          {name:'present_num',index:'present_num',width:80,formatter : function(value, options, rData){ 
+                             var ret= rData.extension.present_num;
+                             if(rData.original_extension!=null && rData.original_extension.present_num!=null && rData.extension.present_num!=rData.original_extension.present_num)
+                           {
+                                ret=ret+"["+rData.original_extension.present_num+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr}, 
+
+                        {name:'club_id',index:'club_id',width:150,search:true,stype: 'select',searchoptions:{sopt:['eq'],value:getSearchClubs(),style:"width:150px"},formatter : function(value, options, rData){
+                          if(rData.club==null) return "Unknow";
+                            return rData.club.club_name;
+                         }},
+                        {name:'contract_number',index:'contract_number',formatter : function(value, options, rData){
+                            return rData.extension.contract_number;
+                         }},
+                        {name:'member_name',index:'member_name',width:80,formatter : function(value, options, rData){
+                            var ret= rData.extension.member.name;
+                             if(rData.original_extension!=null && rData.original_extension.member!=null && rData.extension.member.name!=rData.original_extension.member.name)
+                           {
+                                ret=ret+"["+rData.original_extension.member.name+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+                        {name:'sex',index:'sex',width:40,formatter : function(value, options, rData){
+                            return rData.extension.sex=='male'?"男":"女";
+                         }}, 
+                        {name:'card_name',index:'card_name',formatter : function(value, options, rData){ 
+                          if(rData.extension.cardtype==null) return "Unknow";
+                            var ret= rData.extension.cardtype.name;
+                             if(rData.original_extension!=null && rData.original_extension.cardtype!=null && rData.extension.cardtype.name!=rData.original_extension.cardtype.name)
+                           {
+                                ret=ret+"["+rData.original_extension.cardtype.name+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr}, 
+                        {name:'type',index:'type',width:80,align:'center',formatter : function(value, options, rData){
+                             var a=new Array("普通合同","团卡合同"); 
+                            var ret=getValue(a,rData.extension.type); 
+                           if(rData.original_extension!=null && rData.original_extension.type!=null && rData.extension.type!=rData.original_extension.type)
+                           {
+                                ret=ret+"["+getValue(a,rData.original_extension.type)+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+                       
+                       
+                        {name:'payed',index:'payed',width:80,formatter : function(value, options, rData){
+                              var ret= rData.extension.payed;
+                           //   if(rData.original_extension!=null && rData.original_extension.payed!=null && rData.extension.payed!=rData.original_extension.payed)
+                           // {
+                           //      ret=ret+"["+rData.original_extension.payed+"]"; 
+                           // }
+                            return ret;
+                         }}, 
+                        {name:'',index:'',width:80,formatter : function(value, options, rData){                              
+                           return rData.extension.price-rData.extension.payed; 
+                         }},
+                        {name:'create_time',index:'create_time',width:150,formatter : function(value, options, rData){                               
+                           return rData.extension.create_time; 
+                         }},
+                        {name:'start_time',index:'start_time',width:100,formatter : function(value, options, rData){                               
+                           // return rData.extension.start_time; 
+                           var ret= rData.extension.start_time;
+                             if(rData.original_extension!=null && rData.original_extension.start_time!=null && rData.extension.start_time!=rData.original_extension.start_time)
+                           {
+                                ret=ret+"["+rData.original_extension.start_time+"]"; 
+                           }
+                           return ret;
+                         },cellattr: addCellAttr},
+                        {name:'end_time',index:'end_time',width:100,formatter : function(value, options, rData){                               
+                           // return rData.extension.end_time; 
+                           var ret= rData.extension.end_time;
+                             if(rData.original_extension!=null && rData.original_extension.end_time!=null && rData.extension.end_time!=rData.original_extension.end_time)
+                           {
+                                ret=ret+"["+rData.original_extension.end_time+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+                        {name:'active_type',index:'active_type',width:150,align:'center',formatter : function(value, options, rData){
+                             var a=new Array("买卡当天开卡","指定日期开卡","第一次到开卡","指定天数内开卡");
+                           // return getValue(a,rData.extension.active_type); 
+                           var ret=getValue(a,rData.extension.active_type); 
+                           if(rData.original_extension!=null && rData.original_extension.active_type!=null && rData.extension.active_type!=rData.original_extension.active_type)
+                           {
+                                ret=ret+"["+getValue(a,rData.original_extension.active_type)+"]"; 
+                           }
+                            return ret;
+                         },cellattr: addCellAttr},
+
+                          {name:'mc',index:'mc',width:100,formatter : function(value, options, rData){                               
+                           // return rData.extension.end_time; 
+                           var ret= rData.extension.mc;
+                           if(ret!=null) return ret.name_cn;
+                           return "";
+                         }},
+
+                         {name:'note',index:'note'}, 
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortname: "id",
+                    sortorder: "desc",
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "会籍合同稽核" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                        // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: true,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                );
+
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-remove red',caption:"批量不通过",title:"批量不通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_unpass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+                jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-ok blue',caption:"批量通过",title:"批量通过",
+                onClickButton:function(){ 
+                     var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                    if (id) {
+                     review_pass_all();  
+                } else { alert("请先选中！");}
+                     
+                }  
+            });
+
+
+})
+    </script>
+  </block>

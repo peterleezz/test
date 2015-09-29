@@ -1,0 +1,184 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="{:U('Home/Main/main')}">前台 </a>
+        </li>
+        <li class="active">预约签到</li>
+
+    </ul>
+</block>
+
+<block name="content">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form class="form-inline" role="form" action="{:U('Reception/Invit/query')}" method="post" id="reception_query_member" > 
+              
+                <div class="form-group ">
+                    <label class="sr-only" for="mc_id">MC</label>
+                    <select name="mc_id" id="mc_id" class="form-control" oper="eq">
+                        <option value="-1">所有MC</option> 
+                        <volist name="mcs" id="mc">
+                            <option value="{$mc.id}">{$mc.name_cn}</option>
+                        </volist>
+                    </select>
+                </div> 
+                <div class="form-group">
+                    <label  for="name">姓名:</label>
+                    <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+
+                <div class="form-group">
+                    <label  for="phone">手机号:</label>
+                    <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                    查询
+                </button>
+
+            </form>
+        </div>
+        <div class="col-xs-12">
+            <table id="reception_member_grid"></table>
+            <div id="reception_member_grid_pager"></div>
+        </div>
+       
+    </div>
+ <div id="show_detail"></div>
+</block>
+
+<block name="script">
+    <script>
+
+function dox(id,self)
+{
+     $.post("/index.php/Reception/Invit/do", {id:id}, function(data,textStatus){ 
+                       bootbox.alert(data.info,null); 
+                       if(data.status)
+                       {
+                            $("#reception_member_grid").jqGrid('setRowData',id,{is_come:1,come_time:new Date().format('yyyy-MM-dd hh:mm:ss')});
+                            $(self).attr("disabled","disabled");
+                       }
+
+     }, "json");
+}
+
+$(function(){ 
+
+var active =  '{$active}' ;
+var active_open =  '{$active_open}' ;
+$(active).addClass("active");
+$(active_open).addClass("active open");
+ 
+ 
+
+    var grid_selector = "#reception_member_grid";
+    var pager_selector = "#reception_member_grid_pager";
+    
+                jQuery(grid_selector).jqGrid({
+                    url:"/Reception/Invit/query",                 
+                    datatype: "json",
+                    height: "100%",  
+                    width:"100%",          
+                    mtype:"POST", 
+                    colNames:['ID','姓名','手机号码','性别','分类','当前MC','预约时间','预约类型','到场', '到场时间',''],
+                    colModel:[ 
+                        {name:'id',index:'id',hidden:true,sortable:true,editable: false ,width:100,formatter : function(value, options, rData){
+                            return value;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+value+")>"+value+"</a>";
+            },sorttype:'integer', searchoptions:{sopt:['eq','ne','le','lt','gt','ge']}},
+                        {name:'name',index:'name',width:80,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                            return value;
+                            //   var v=rData.id;
+                            // return "<a href='javascript:void(0)' onclick=showdetail("+v+")>"+value+"</a>";
+            }},
+                        {name:'phone',index:'phone',hidden:true,width:150,editoptions:{size:"20",maxlength:"30"},search:true},
+                       {name:'sex',index:'sex', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",editoptions:{value:"male:男;female:女"},formatter : function(value, options, rData){
+                           return value=='male'|| value=='男'?"男":"女";
+            },},
+                        {name:'type',index:'type', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",formatter : function(value, options, rData){
+                         var a=new Array("","D类","C类","B类","A类");
+                           return getValue(a,value); 
+            }}, 
+             {name:'mc',index:'mc',hidden:false, width:100,editoptions:{size:"20",maxlength:"30"},formatter : function(value, options, rData){
+                            if(value==null) return "No Mc!";
+                            if(isString(value)) return value;
+                           return value.name_cn;
+            },},
+
+                        {name:'appoint_time',index:'appoint_time',editable: false , width:100,editable: true,sorttype:'date', editrules:{date:true},formatter:'datetime', datefmt:'Y-m-d H:i:s',},   
+
+                         {name:'ret',index:'ret', width:60,editoptions:{size:"20",maxlength:"30"},edittype:"select",formatter : function(value, options, rData){
+                         var a=new Array("","预约参观","预约体验");
+                           return getValue(a,value); 
+            }}, 
+
+                          {name:'is_come',index:'is_come',editable: false , width:100,formatter : function(value, options, rData){
+                         var a=new Array("未到场","到场");
+                           return getValue(a,value); 
+                     }}, 
+
+                           {name:'come_time',index:'come_time',editable: false , width:100,editable: true,sorttype:'date', editrules:{date:true},formatter:'datetime', datefmt:'Y-m-d H:i:s',},   
+
+                            {name:'op',index:'op', width:100,formatter : function(value, options, rData){
+                            if(rData.is_come==0)
+                                return '<button class="btn btn-success btn-sm followup" onclick="dox('+rData.id+',this)"><i class="icon-ok icon-only"></i>到场</button>';
+                            return '<button disabled="disabled" class="btn btn-success btn-sm followup" onclick="dox('+rData.id+',this)"><i class="icon-ok icon-only"></i>到场</button>';
+            },},
+
+                    ],       
+                   
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: false,search:false},
+                    sortorder: "desc",
+                    editurl: "",    
+                     autowidth: true,
+                     shrinkToFit:true,  
+                    caption: "客户信息" ,
+                    // hidegrid:false,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},
+                     onSelectRow: function (rowid, status) { 
+                         
+                     }, 
+
+                    loadComplete : function() { 
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+ 
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    } 
+                ); 
+
+  
+})
+</script>
+</block>
