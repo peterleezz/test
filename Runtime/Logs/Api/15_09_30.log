@@ -1,0 +1,102 @@
+[ 2015-09-30T14:14:23+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: {"op":"myinfo","club_id":"1039","card_number":"1039050999"}
+[ 2015-09-30T14:14:23+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: []
+[ 2015-09-30T14:14:23+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000114s ]
+NOTIC: [2048] Declaration of Api\Controller\CardController::get() should be compatible with Think\Controller::get($name = '') /var/www/yoga/Yoga/Api/Controller/CardController.class.php 第 0 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-30T14:25:52+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: {"op":"myinfo","club_id":"1039","card_number":"1039050999"}
+[ 2015-09-30T14:25:52+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: []
+[ 2015-09-30T14:25:53+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+NOTIC: [2048] Declaration of Api\Controller\CardController::get() should be compatible with Think\Controller::get($name = '') /var/www/yoga/Yoga/Api/Controller/CardController.class.php 第 0 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-30T14:25:58+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: {"op":"myinfo","club_id":"1039","card_number":"1039050999"}
+[ 2015-09-30T14:25:58+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: []
+[ 2015-09-30T14:25:58+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000064s ]
+NOTIC: [2048] Declaration of Api\Controller\CardController::get() should be compatible with Think\Controller::get($name = '') /var/www/yoga/Yoga/Api/Controller/CardController.class.php 第 0 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-09-30T14:26:50+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: {"op":"myinfo","club_id":"1039","card_number":"1039050999"}
+[ 2015-09-30T14:26:50+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: []
+[ 2015-09-30T14:26:50+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000115s ]
+NOTIC: [2048] Declaration of Api\Controller\CardController::get() should be compatible with Think\Controller::get($name = '') /var/www/yoga/Yoga/Api/Controller/CardController.class.php 第 0 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+
+[ 2015-09-30T14:26:53+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: {"op":"myinfo","club_id":"1039","card_number":"1039050999"}
+[ 2015-09-30T14:26:53+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+DEBUG: []
+[ 2015-09-30T14:26:53+08:00 ] 127.0.0.1 /api.php?op=myinfo&club_id=1039&card_number=1039050999
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+NOTIC: [2048] Declaration of Api\Controller\CardController::get() should be compatible with Think\Controller::get($name = '') /var/www/yoga/Yoga/Api/Controller/CardController.class.php 第 0 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [2] mkdir(): Invalid path /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 39 行.
+NOTIC: [2] mkdir(): File exists /var/www/yoga/Framework/Library/Think/Log/Driver/File.class.php 第 41 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+

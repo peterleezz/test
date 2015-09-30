@@ -318,12 +318,12 @@
       <div class="breadcrumbs" id="breadcrumbs">
         <script type="text/javascript">try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}</script>
         
-  <ul class="breadcrumb">
-    <li> <i class="icon-home home-icon"></i>
-      <a href="<?php echo U('Home/Main/main');?>">水吧</a>
-    </li>
-    <li class="active"> 商品销售</li>
-  </ul>
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="<?php echo U('Home/Main/main');?>">水吧</a>
+		</li>
+		<li class="active">收款</li>
+	</ul>
 
         <!-- .breadcrumb -->
 
@@ -342,145 +342,112 @@
       <!-- <div class="page-header" ></div>
     -->
     
-  <div class="row">
-    <div class="col-xs-12" id="fcontainer">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">会员信息</h3>
+				</div>
+				<div class="panel-body">
+					<input type="hidden" id="user_id" value="<?php echo ($member["id"]); ?>">
+					<div class="row">
+						<div class="form-group col-xs-4">姓名:<?php echo ($order["member"]["name"]); ?></div>
+						<div class="form-group col-xs-4">电话:<?php echo ($order["member"]["phone"]); ?></div>
+						<div class="form-group col-xs-4">
+							性别:
+							<?php if(female == $order['member']['sex']): ?>女
+								<?php else: ?>
+								男<?php endif; ?>
+						</div>
+					</div>
+				</div>
+			</div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">选择会员</h3>
-        </div>
-        <div class="panel-body">
-          <form id="goods_form_query" action="<?php echo U('Bar/Goods/queryMember');?>">
-            <span class="input-icon" style="float:left">
-              <input type="text" placeholder="姓名"  name="name"/> <i class="icon-search nav-search-icon"></i>
-            </span>
-            <button type="submit" class="btn  btn-info btn-sm">
-              <i class="icon-search"></i>
-              查询
-            </button>
-          </form>
-          <table class="table " id="member_info_goods">
-            <thead>
-              <tr>
-                <th>选择</th>
-                <th>姓名</th>
-                <th>电话</th>
-                <th>性别</th>
-                <th>类型</th>
-                <th>储值卡余额</th>
-              </tr>
-            </thead>
-            <tbody>
-                <?php if(!empty($member)): ?><tr>
-                   <td>
-                      <input type="radio" name="member_id" value="<?php echo ($member["id"]); ?>" checked="checked">
-                   </td>
-                   <td>
-                     <?php echo ($member["name"]); ?>
-                   </td>
-                   <td><?php echo ($member["phone"]); ?></td>
-                   <td><?php echo ($member["sex"]); ?></td>
-                   <td><?php echo ($member["is_member"]); ?></td>
-                   <td><?php echo ($member["recharge"]); ?></td>
-                </tr><?php endif; ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
- 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">选择商品</h3>
-        </div>
-        <div class="panel-body"> 
-          <select name="goodstype" id="goodstype">
-            <option value='0'>选择商品类型</option>
-            <?php if(is_array($goodstypes)): $i = 0; $__LIST__ = $goodstypes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$goodstype): $mod = ($i % 2 );++$i;?><option value="<?php echo ($goodstype["id"]); ?>"   ><?php echo ($goodstype["name"]); ?></option>
-              <!-- <option value="<?php echo ($goodstype["id"]); ?>"   <?php if($goodstype['id'] == $goods['category_id']): ?>selected="selected"<?php endif; ?>     ><?php echo ($goodstype["name"]); ?></option> --><?php endforeach; endif; else: echo "" ;endif; ?>
-          </select> 
-          <select name="goods" id="goods">
-            <option value='0'  >选择商品</option>
-          </select>
-          <lable class="red" > <span id="unitpricetip"></span>元/个 </lable>
-          <label>折后单价：</label>
-          <input type="text" id="unitprice" name="unitprice">
-          &nbsp;&nbsp;&nbsp;&nbsp;X
-          <input type="text" name="goods_num" id="goods_num" value="1"/>
-          <button type="button" class="btn  btn-success btn-sm" onclick="addgoods()">
-            <i class="icon-shopping-cart"></i>
-            加入购物车
-          </button>
-        </div>
-      </div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">购买商品信息</h3>
+				</div>
+				<div class="panel-body">
+					<input type="hidden" id="contract_id" value="<?php echo ($contract["id"]); ?>">
+					<div class="form-group col-xs-4">合同编号:<?php echo ($bill_project["number"]); ?></div>
+					<div class="form-group col-xs-4">购买时间:<?php echo ($bill_project["create_time"]); ?></div>
+					<div class="form-group col-xs-4">应收价格:<?php echo ($bill_project["price"]); ?></div>
+					<div class="form-group col-xs-4">已付:<?php echo ($bill_project["paid"]); ?></div>
+					<div class="form-group col-xs-4">欠款:<?php echo ($bill_project['price']-$bill_project['paid']); ?></div>
+					<input type="hidden" id="recharge" value="<?php echo ($order["member"]["recharge"]); ?>">
+					<input type="hidden" id="total" value="<?php echo ($bill_project['price']-$bill_project['paid']); ?>">
+					<table class="table table-striped table-bordered list">
+						<thead>
+							<tr>
+								<th class="center">#</th>
+								<th>商品ID</th>
+								<th>商品</th>
+								<th class="hidden-xs">描述</th>
+								<th class="hidden-480">数量</th>
+								<th class="hidden-480">单价</th>
+								<th>总价</th>
+							</tr>
+						</thead>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">购物清单</h3>
-        </div>
-        <div class="panel-body">
-          <div>
-            <table class="table table-striped table-bordered list">
-              <thead>
-                <tr>
-                  <th class="center">#</th>
-                  <th>商品ID</th>
-                  <th>商品</th>
-                  <th class="hidden-xs">描述</th>
-                  <th class="hidden-480">数量</th>
-                  <th class="hidden-480">原单价</th>
-                  <th class="hidden-480">卖价</th>
-                  <th>总价</th>
-                  <th></th>
-                </tr>
-              </thead>
+						<tbody>
+							<?php if(is_array($order["goodslist"])): $i = 0; $__LIST__ = $order["goodslist"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$goods): $mod = ($i % 2 );++$i;?><tr>
+									<td><?php echo ($i); ?></td>
+									<td><?php echo ($goods["id"]); ?></td>
+									<td><?php echo ($goods["info"]["name"]); ?></td>
+									<td><?php echo ($goods["info"]["description"]); ?></td>
+									<td><?php echo ($goods["number"]); ?></td>
+									<td><?php echo ($goods["price"]); ?></td>
+									<td><?php echo ($goods['price']*$goods['number']); ?></td>
+								</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+						</tbody>
+					</table>
 
-              <tbody></tbody>
-            </table>
-          </div>
+				</div>
 
-          <div class="hr hr8 hr-double hr-dotted"></div>
+			</div>
 
-          <div class="row">
-            <div class="col-sm-5 pull-right">
-              <h4 class="pull-right">
-                总计 :
-                <span class="red" id="total">￥0</span>
-              </h4>
-            </div>
-            <div class="col-sm-7 pull-left">
-             <form class="form-horizontal" action="<?php echo U('Cashier/Pt/buy');?>" id="buy_pt_form">
-            <div class="form-group" id="paidgroup">
-              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="paid" >使用储值卡:</label>
-              <div class="col-xs-12 col-sm-9">
-                <label>
-                  <input type="checkbox" id="use_recharge" name="use_recharge" onchange="tip()" value="1">
-                    <span class="red" id="recharge">余额(￥0)</span> <span class="orange" id="tip"></span>
-                </label>
-              </div>
-            </div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">收款</h3>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal ajaxForm" id="validation-form" method="post" action="<?php echo U('Bar/Goods/doPay');?>">
+						<input type="hidden" name="id" value="<?php echo ($bill_project["id"]); ?>">
+						<input type="hidden" name="member_id" value="<?php echo ($bill_project["member_id"]); ?>"> 
+						<div class="col-xs-12">
 
-            <div class="form-group">
-              <label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
-              <div class="col-xs-12 col-sm-9">
-                <input class="col-xs-12 col-sm-6" type="text" name="cash" id="cash" value="0"></div>
-            </div>
-            <div class="form-group">
-              <label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
-              <div class="col-xs-12 col-sm-9">
-                <input value="0" class="col-xs-12 col-sm-6" type="text" name="pos" id="pos"></div>
-            </div>
-            <div class="form-group">
-              <label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
-              <div class="col-xs-12 col-sm-9">
-                <input value="0" class="col-xs-12 col-sm-6" type="text" name="check" id="check"></div>
-            </div>
-            <div class="form-group">
-              <label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
-              <div class="col-xs-12 col-sm-9">
-                <input class="col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
-            </div>
+							<div class="form-group" id="paidgroup">
+								<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="paid" >使用储值卡:</label>
+								<div class="col-xs-12 col-sm-9">
+									<label>
+										<input type="checkbox" id="use_recharge" name="use_recharge" onchange="tip()" value="1">
+										<span class="red" id="recharge">余额(￥<?php echo ($order["member"]["recharge"]); ?>)</span>
+										<span class="orange" id="tip"></span>
+									</label>
+								</div>
+							</div>
 
-  <div class="form-group">
+							<div class="form-group">
+								<label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
+								<div class="col-xs-12 col-sm-4">
+									<input class="form-control col-xs-12 col-sm-6" type="text" name="cash" id="cash" value="0"></div>
+							</div>
+							<div class="form-group">
+								<label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
+								<div class="col-xs-12 col-sm-4">
+									<input value="0" class="form-control col-xs-12 col-sm-6" type="text" name="pos" id="pos"></div>
+							</div>
+							<div class="form-group">
+								<label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
+								<div class="col-xs-12 col-sm-4">
+									<input value="0" class="form-control col-xs-12 col-sm-6" type="text" name="check" id="check"></div>
+							</div>
+							<div class="form-group">
+								<label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
+								<div class="col-xs-12 col-sm-4">
+									<input class="form-control col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
+							</div>
+							  <div class="form-group">
               <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
               <div class="col-xs-12 col-sm-9">
                 <input value="0" class="col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
@@ -492,43 +459,34 @@
             </div>
 
 
-            <div class="form-group">
-              <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="description" >备注:</label>
-              <div class="col-xs-12 col-sm-9">
-                <textarea type="text" class="col-xs-12 col-sm-6 " name="description" id="description"></textarea>
-              </div>
-            </div>
-          </form>
 
-                <!-- <label class="radio-inline">
-                <input type="radio" name="pay_way" id="pay_way1" value="0" checked="checked"> 现金
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="pay_way" id="pay_way2" value="1"> 刷卡
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="pay_way" id="pay_way2" value="2"> 储值卡
-              </label>
-              <span class="red" id="recharge">(￥0)</span> -->
-          <!--    <label class="radio-inline">
-              <input type="radio" name="pay_way" id="pay_way3" value="2"> 储值卡
-            </label> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="clearfix form-actions">
-        <div class="col-md-offset-5 col-md-12">
-          <button class="btn" type="button" onclick="pay()">
-            <i class="icon-share bigger-110"></i>
-            结账
-          </button>
-        </div>
-      </div>
+							<div class="form-group">
+								<label for="description" class="control-label col-xs-12 col-sm-3 no-padding-right">备注</label>
+								<div class="col-xs-12 col-sm-4">
+									<textarea class="form-control col-xs-12 col-sm-6"  name="description" id="description" rows="4"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix form-actions">
+							<div class="col-md-offset-3 col-md-9">
+								<button class="btn btn-info" type="submit"> <i class="icon-ok bigger-110"></i>
+									提交
+								</button>
+								&nbsp; &nbsp; &nbsp;
+								<button class="btn" type="reset">
+									<i class="icon-undo bigger-110"></i>
+									重置
+								</button>
+							</div>
+						</div>
 
-    </div>
-  </div>
+					</form>
 
+				</div>
+			</div>
+		</div>
+	</div>
 
 
   </div>
@@ -695,217 +653,22 @@
 <!-- inline scripts related to this page -->
 
 
-  <script> 
-  var goodstypesarr = eval("(" + '<?php echo ($goodstypesarr); ?>' + ")");
+<script type="text/javascript">
+tip();
+	function tip()
+	{
+	    var use_recharge=$("#use_recharge").prop("checked");
+	    var recharge_value =parseInt( $("#recharge").val());
+	    var left=parseInt($("#total").val());
+	    if(use_recharge)
+	    {
+	         left =left-recharge_value; 
+	    } 
+	    left = left > 0?left:0;
+	    $("#tip").text("还需支付"+left);
+	}
 
-function tip()
-{
-    var use_recharge=$("#use_recharge").prop("checked");
-    var left = calcTotal();
-    if(use_recharge)
-    {
-         left =left-recharge_value; 
-    } 
-    left = left > 0?left:0;
-    $("#tip").text("还需支付"+left);
-}
+</script>
 
-  function pay()
-  {
-
-  var ele=$("#member_info_goods tbody :radio:checked");           
-  if(ele.length==0) 
-   {
-      bootbox.alert("请先选中会员!",null);
-      return;
-   }  
-   var member_id= ele.val();
-   var price= $("#total").text().substring(1);
-   var cash=$("#cash").val();  
-   var netbank=$("#netbank").val();  
-   var network=$("#network").val();  
-     var pos=$("#pos").val();  
-             var check=$("#check").val();  
-             var check_num=$("#check_num").val();  
-             var description=$("#description").val();  
-             var use_recharge=$("#use_recharge").prop("checked");
-       use_recharge=use_recharge?1:0;      
-      var paid=$("#total").text();
-       var trs=$(".list tbody tr");
-       var arr = new Array();
-      for(var i=0;i<trs.length;i++)
-      {
-        var id = $(".list tbody tr:eq("+i+") td:eq(1)").text();
-        var num = $(".list tbody tr:eq("+i+") td:eq(4)").text(); 
-        var obj= new Object();
-        obj.id=id;
-        obj.num=num;
-         obj.unitprice= $(".list tbody tr:eq("+i+") td:eq(6)").text(); 
-        arr.push(obj);
-      }
-      var goods=$.toJSON( arr );
-      $.post('/Bar/Goods/buy',{use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
-             if(data.status){ 
-                    bootbox.alert(data.info,null); 
-                    window.location.href = data.url;
-                } else {
-                    bootbox.alert(data.info);                   
-                }
-    }, "json");
-  }
-
-
-  function del(obj)
-  {
-    $(obj).parents("tr").remove();
-    var trs=$(".list tbody tr");
-    for(var i=0;i<trs.length;i++)
-    {
-      $(".list tbody tr:eq("+i+") td:eq(0)").text(i+1);
-    }
-    calcTotal();
-    tip();
-  }
-  function calcTotal()
-  { 
-    var total=0;
-      $(".list tbody tr").each(function(i){
-             total+=parseInt($(this).find("td").eq(7).text());
-         }); 
-      $("#total").text("￥"+total);
-      return total;
-  }
-  function addgoods()
-  {
-      var choose_type=$("#goodstype").val();
-      var choose_goods=$("#goods").val();
-      var num=$("#goods_num").val();
-         var unitprice = $("#unitprice").val();
-                      if(unitprice=="") {bootbox.alert("请填写正确单价");return;}
-                      unitprice = parseInt(unitprice);
-                      if(!unitprice>0){bootbox.alert("请填写正确单价");return;}
-      if(type!=0 && goods !=0 && parseInt(num)>0)
-      {
-        for(var i=0;i<goodstypesarr.length;i++)
-        {
-          var type=goodstypesarr[i];
-          if(type.id==choose_type)
-          {
-              if(type.goods==null)return;
-              for(var j=0;j<type.goods.length;j++)
-              { 
-                 var goods=type.goods[j];
-                 if(goods.id==choose_goods)
-                 {
-
-                     var trs=$(".list tbody tr");
-                    for(var k=0;k<trs.length;k++)
-                    {
-                      var id = $(".list tbody tr:eq("+k+") td:eq(1)").text();
-                      if(id==goods.id)
-                      {
-                          var n=$(".list tbody tr:eq("+k+") td:eq(4)").text();
-                          n=parseInt(n)+parseInt(num);
-                          $(".list tbody tr:eq("+k+") td:eq(4)").text(n);
-                           $(".list tbody tr:eq("+k+") td:eq(6)").text(unitprice);
-                          $(".list tbody tr:eq("+k+") td:eq(7)").text(n*parseInt($(".list tbody tr:eq("+k+") td:eq(6)").text()));
-                           calcTotal();
-                           break;
-                      }
-                    }
-                    if(k==trs.length)
-                    {
-                       var price = goods.price;
-                   
-                      var html='<tr>';
-                      html+="<td>"+($(".list tbody tr").length+1)+"</td>";
-                      html+="<td>"+goods.id+"</td>";
-                      html+="<td>"+goods.name+"</td>";
-                      html+="<td>"+goods.description+"</td>";
-                      html+="<td>"+num+"</td>";
-                      html+="<td>"+price+"</td>";
-                        html+="<td>"+unitprice+"</td>";
-
-                      html+="<td>"+unitprice*num+"</td>";
-                      html+="<td><a href='javascript:void(0)' class='btn btn-danger btn-xs' onclick='del(this)'>删除</a></td></tr>";
-                      $(".list tbody").append(html); 
-                      calcTotal();
-                    }
-
-                    
-                     break;
-                 }
-                
-              }
-              break;
-          }
-        }
-        tip();
-      } 
-  }
-
-    $(function(){ 
-    $("#menu_5").addClass("active open");
-    $("#menu_46").addClass("active"); 
-
-    var category_id = '<?php echo ($category_id); ?>';
-
-    $("#goodstype").change(function(){
-        document.getElementById("goods").options.length=1;
-        for(var i=0;i<goodstypesarr.length;i++)
-        {
-          var type=goodstypesarr[i];
-          if(type.id==$(this).val())
-          {
-              if(type.goods==null)return;
-              for(var j=0;j<type.goods.length;j++)
-              {
-                var obj=document.getElementById("goods");
-                obj.options[obj.length]=new Option(type.goods[j].name,type.goods[j].id);
-              }
-              break;
-          }
-        }
-    });
-
-     $("#goods").change(function(){
-              var choose_type=$("#goodstype").val();
-              var choose_goods=$("#goods").val(); 
-              if(type!=0 && goods !=0 )
-              {
-                for(var i=0;i<goodstypesarr.length;i++)
-                {
-                  var type=goodstypesarr[i];
-                  if(type.id==choose_type)
-                  {
-                      if(type.goods==null)return;
-                      for(var j=0;j<type.goods.length;j++)
-                      { 
-                         var goods=type.goods[j];
-                         if(goods.id==choose_goods)
-                         {
-                            $("#unitprice").val(goods.price);
-                            $("#unitpricetip").text(goods.price);
-                          }
-                      }
-                    }
-                }
-              }
-
-
-    });
-
-      if(category_id!='')
-    {
-        $("#goodstype option[value=<?php echo ($category_id); ?>]").attr("selected",true);
-        $("#goodstype").trigger('change');
-
-        $("#goods option[value=<?php echo ($goods_id); ?>]").attr("selected",true);
-        $("#goods").trigger('change');
-    }
-
-          
-})
-    </script>
 </body>
 </html>

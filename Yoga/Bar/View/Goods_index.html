@@ -37,11 +37,27 @@
                 <th>储值卡余额</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                <notempty name="member"> 
+                <tr>
+                   <td>
+                      <input type="radio" name="member_id" value="{$member.id}" checked="checked">
+                   </td>
+                   <td>
+                     {$member.name}
+                   </td>
+                   <td>{$member.phone}</td>
+                   <td>{$member.sex}</td>
+                   <td>{$member.is_member}</td>
+                   <td>{$member.recharge}</td>
+                </tr>
+                    
+                </notempty>
+            </tbody>
           </table>
         </div>
       </div>
-
+ 
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">选择商品</h3>
@@ -50,11 +66,12 @@
           <select name="goodstype" id="goodstype">
             <option value='0'>选择商品类型</option>
             <volist name="goodstypes" id="goodstype">
-              <option value="{$goodstype.id}">{$goodstype.name}</option>
+              <option value="{$goodstype.id}"   >{$goodstype.name}</option>
+              <!-- <option value="{$goodstype.id}"   <if condition="$goodstype['id'] eq $goods['category_id']">selected="selected"</if>     >{$goodstype.name}</option> -->
             </volist>
           </select> 
           <select name="goods" id="goods">
-            <option value='0'>选择商品</option>
+            <option value='0'  >选择商品</option>
           </select>
           <lable class="red" > <span id="unitpricetip"></span>元/个 </lable>
           <label>折后单价：</label>
@@ -339,6 +356,9 @@ function tip()
     $(function(){ 
     $("#menu_5").addClass("active open");
     $("#menu_46").addClass("active"); 
+
+    var category_id = '{$category_id}';
+
     $("#goodstype").change(function(){
         document.getElementById("goods").options.length=1;
         for(var i=0;i<goodstypesarr.length;i++)
@@ -383,6 +403,15 @@ function tip()
 
 
     });
+
+      if(category_id!='')
+    {
+        $("#goodstype option[value={$category_id}]").attr("selected",true);
+        $("#goodstype").trigger('change');
+
+        $("#goods option[value={$goods_id}]").attr("selected",true);
+        $("#goods").trigger('change');
+    }
 
           
 })

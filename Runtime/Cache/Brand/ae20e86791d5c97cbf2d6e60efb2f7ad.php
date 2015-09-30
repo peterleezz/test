@@ -637,13 +637,12 @@
                     height: "100%",    
                     width:$('#goods').width(),        
                     mtype:"POST",
-                    colNames:['','ID','商品名称','商品种类','售卖类型', '进货价','售价','单位','可售会所','是否可卖','条形码','总量','已售','备注','创建时间'],
+                    colNames:['','ID','商品名称','商品种类','售卖类型', '进货价','售价','最低价','单位','可售会所','是否可卖','条形码','总量','已售','备注','创建时间'],
                     colModel:[                        
                         {name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,editable: false ,
                             formatter:'actions', 
                             formatoptions:{ 
-                                keys:true,
-                                
+                                keys:true, 
                                 delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
                                 //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
                             }
@@ -670,6 +669,7 @@
                          }}, 
                           {name:'price_buy',index:'price_buy',editable: true ,width:80,align:'center'},     
                           {name:'price',index:'price',editable: true ,width:80,align:'center'},     
+                           {name:'min_price',index:'min_price',editable: true ,width:80,align:'center'},     
                           {name:'unit_price',index:'unit_price',editable: true ,width:50,align:'center'},     
 
                           {name:'clubs',index:'clubs',width:350,editoptions:{size:"20",maxlength:"30"},align:'center',search:false,edittype:"select",editoptions:{multiple:true,value:""},formatter : function(value, options, rData){
@@ -798,7 +798,7 @@
                     {
                         //delete record form
                         recreateForm: true,
-                        beforeShowForm : function(e) {
+                        beforeShowForm : function(e) {  
                             var form = $(e[0]);
                             if(form.data('styled')) return false;
                             
@@ -806,9 +806,12 @@
                             style_delete_form(form);
                             
                             form.data('styled', true);
-                        }, 
-                        onClick : function(e) {
-                            alert(1);
+                        },  
+                        
+                        afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
                         }
                     },
                     {

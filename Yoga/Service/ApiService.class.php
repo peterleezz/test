@@ -584,8 +584,8 @@ public function checkpeak($card_id,$clubid,$time)
   }
 
 
-  public function myinfo($club_id,$card_number)
-  {
+private function checkCardStatus($club_id,$card_number)
+{
         $club = M("Club")->find($club_id);
         $brand_id =$club['brand_id'];
         $card = D("Card")->getCard($card_number,$brand_id);
@@ -594,6 +594,35 @@ public function checkpeak($card_id,$clubid,$time)
            $this->setError("卡号不存在，请检查!"); 
            return false;
         }
+        switch ($card['status']) {
+          case '0':
+            return true;
+          case '1':
+          $this->setError("此卡已挂失!"); 
+            return false;
+            case '3':
+            $this->setError("正在请假中!"); 
+            return false;
+            case '4':
+            $this->setError("此卡已退卡!"); 
+            return false;
+            $this->setError("此卡已退会!"); 
+            case '5':
+            return false; 
+          default:
+            # code...
+            break;
+        }
+}
+  public function myinfo($club_id,$card_number)
+  {
+    if(!$this->checkCardStatus($club_id,$card_number))
+    {
+        return false;
+    }
+        $club = M("Club")->find($club_id);
+        $brand_id =$club['brand_id'];
+        $card = D("Card")->getCard($card_number,$brand_id); 
         $member_id=$card['member_id'];
         $member = M("MemberBasic")->find($member_id); 
         $avatar=$member['avatar'];

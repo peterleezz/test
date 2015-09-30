@@ -406,4 +406,27 @@ public function checkUnRest1Action()
 		}
 	}
 
+
+	public function createSystemCardsAction()
+	{
+		// $brands = M("Brand")->select();
+		// foreach ($brands as $key => $value) {
+		// 	 M("GoodsCategory")->data(array("is_system"=>1, "name"=>"系统停补卡收费","property"=>3,"type"=>1,"brand_id"=>$value['id']))->add(); 
+		 
+		// }
+
+		$clubs = M("Club")->select();
+		foreach ($clubs as $key => $value) {
+			 $model = D("Goods");
+			 $category = M("GoodsCategory")->where(array("brand_id"=>$value['brand_id'],"is_system"=>1))->find();
+	   	 	 $data =array("sys_type"=>0,"name"=>$value['club_name']."--补卡费","category_id"=>$category['id'],"brand_id"=>$value['brand_id'],"price"=>100,"total_num"=>"999999","is_system"=>1);
+	   	 	 $model->data($data); 
+	   	 	 $id=$model->add();
+	   	 	 $goodsClubModel = M("GoodsClub");
+	   	 	 $clubs = explode(',', $clubs); 
+	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
+		}
+
+	}
+
 }

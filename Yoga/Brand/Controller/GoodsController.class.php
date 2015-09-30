@@ -39,6 +39,12 @@ class GoodsController extends BaseController {
    	 	);		
    	 	$model = D("GoodsCategory");
    	 	$id=I("id");
+   	 	$category = $model->find($id);
+   	 	if($category['is_system']==1) 
+   	 	{
+   	 		$response=array("success"=>false,"message"=>"系统分类不能修改！","new_id"=>$id);
+   	 	    $this->ajaxReturn($response);
+   	 	}
    	 	if(!$model->validate($rules)->create())
    	 	{
    	 		$response=array("success"=>false,"message"=>$model->getError(),"new_id"=>$id);
@@ -51,7 +57,14 @@ class GoodsController extends BaseController {
 	private function delGoodsCategory()
 	{ 
 		$id=I("id");
-   	 	$model = M("GoodsCategory");    	 	
+   	 	$model = M("GoodsCategory"); 
+   	 	$category = $model->find($id);
+   	 	if($category['is_system']==1) 
+   	 	{
+   	 		$response=array("success"=>false,"message"=>"系统分类不能修改！","new_id"=>$id);
+   	 	    $this->ajaxReturn($response);
+   	 	}
+   	 	   	 	
    	 	$model->where(array("brand_id"=>get_brand_id()))->delete($id);
    	 	$response=array("success"=>true,"message"=>"success!","new_id"=>$id);
    	 	$this->ajaxReturn($response);
@@ -163,22 +176,26 @@ class GoodsController extends BaseController {
 		 	
    	 	$model = D("Goods");
    	 	$id=I("id");
+   	 	$goods = $model->find($id);
    	 	if(!$model->create())
    	 	{
    	 		$response=array("success"=>false,"message"=>$model->getError(),"new_id"=>$id);
    	 	    $this->ajaxReturn($response);
    	 	} 
    	 	$model->save();
-   	 	$goodsClubModel = M("GoodsClub");
-   	 	$goodsClubModel->where(array("goods_id"=>$id))->delete();
-   	 	$clubs = I("clubs");
-   	 	if(!empty($clubs))
-   	 	{   	 		
-   	 		$clubs = explode(',', $clubs);
-   	 		foreach ($clubs as $key => $value) {
-   	 			$goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value))->add();
-   	 		}
-   	 	}
+   	 	if($goods['is_system']!=1)
+   	 	{
+   	 		$goodsClubModel = M("GoodsClub");
+	   	 	$goodsClubModel->where(array("goods_id"=>$id))->delete();
+	   	 	$clubs = I("clubs");
+	   	 	if(!empty($clubs))
+	   	 	{   	 		
+	   	 		$clubs = explode(',', $clubs);
+	   	 		foreach ($clubs as $key => $value) {
+	   	 			$goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value))->add();
+	   	 		}
+	   	 	}
+	   	 } 
    	 	$response=array("success"=>true,"message"=>"success!","new_id"=>$id);
    	 	$this->ajaxReturn($response);
 	}
@@ -186,6 +203,12 @@ class GoodsController extends BaseController {
 	{ 
 		$id=I("id");
    	 	$model = M("Goods");  
+   	 	$goods = $model->find($id);
+   	 	if($goods['is_system']==1) 
+   	 	{
+   	 		$response=array("success"=>false,"message"=>"failed!","new_id"=>$id);
+   	 		$this->ajaxReturn($response);
+   	 	}
    	 	$ret=$model->where(array("brand_id"=>get_brand_id()))->delete($id);
 		if(!$ret)
    	 	{

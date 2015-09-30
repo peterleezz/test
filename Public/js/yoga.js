@@ -520,7 +520,12 @@ function getnew()
              if(data.status){
                $("#reception_card_grid").jqGrid('setRowData',id,{card_number:data.new_card_number});
                   $('#newCardModal').modal('hide');    
-                    bootbox.alert(data.info,null); 
+                    bootbox.alert(data.info,function(){
+                       $("body").append('<a id="open" target="_blank" href="'+data.url+'" > </a>');
+                    document.getElementById("open").click();
+                    }); 
+                   
+                   // window.open(data.url,"newwindow");
                 } else {
                      bootbox.alert(data.info,null);                   
                 }

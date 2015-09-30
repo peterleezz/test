@@ -432,6 +432,7 @@
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="new_card_number" id="new_card_number" ></div>
                         </div>
+                         
                     </form>
 
                 </div>

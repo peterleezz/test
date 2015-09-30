@@ -32,7 +32,7 @@ class BrandController extends AdminController {
         if($brandModel->id==0)
         {
             $brandModel->roles=$rolestring;
-            $id= $brandModel->add();
+            $id= $brandModel->add();      $this->createSystemInfo($id);
             $id = $userModel->add(array("username"=>I("username"),"password"=>$password,"is_brand"=>$id,"brand_id"=>$id));
              
              $extensionModel->data(array("id"=>$id,"desc"=>"", "name_cn"=>I("brand_name"),"name_en"=>I("brand_name")))->add(); 
@@ -59,10 +59,16 @@ class BrandController extends AdminController {
                 $groupid = $authGroupModel->where(array("module"=>$group))->getField("id");              
                 $authGroupAccessModel->data(array("uid"=>$id,"group_id"=>$groupid))->add();
             }            
-        } 
+        }  
     	$this->success("success!");
     }
 
+    //创建系统信息
+    public function createSystemInfo($brand_id)
+    {
+        //系统类的商品，停转卡收费
+        M("GoodsCategory")->data(array("name"=>"系统停补卡收费","property"=>3,"type"=>1,"brand_id"=>$brand_id,"is_system"=>1))->add(); 
+    }
     public function delbrandAction($id)
     {
         $brandModel = M("Brand");

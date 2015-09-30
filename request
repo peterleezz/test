@@ -28568,3 +28568,2217 @@
   'sord' => 'desc',
   'filters' => '{"groupOp":"AND","rules":[]}',
 )
+2015-09-30 02:12:19 [request] - LV1 - /
+2015-09-30 02:12:22 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-30 02:12:28 [request] - LV1 - /Home/Mc/query
+2015-09-30 02:12:28 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443593548507',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-30 02:12:28 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-30 02:12:28 [request] - LV1 - /favicon.ico
+2015-09-30 02:12:28 [request] - LV1 - array (
+  's' => '/favicon.ico',
+)
+2015-09-30 02:13:44 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 02:13:44 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:13:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443593624939',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:13:46 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:13:46 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443593626177',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 02:13:49 [request] - LV1 - /Reception/Cardmanage/lost
+2015-09-30 02:13:49 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-30 02:13:49 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/lost',
+)
+2015-09-30 02:13:52 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:13:52 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443593632891',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 02:18:33 [request] - LV1 - /Reception/Cardmanage/unlost
+2015-09-30 02:18:33 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-30 02:18:33 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/unlost',
+)
+2015-09-30 02:25:57 [request] - LV1 - /Reception/Cardmanage/lost
+2015-09-30 02:25:57 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-30 02:25:57 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/lost',
+)
+2015-09-30 02:26:52 [request] - LV1 - /Reception/Cardmanage/unlost
+2015-09-30 02:26:52 [request] - LV1 - array (
+  'id' => '50999',
+)
+2015-09-30 02:26:52 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/unlost',
+)
+2015-09-30 02:27:03 [request] - LV1 - /Reception/Appoint/index/id/99946691
+2015-09-30 02:27:03 [request] - LV1 - array (
+  's' => '/Reception/Appoint/index/id/99946691',
+)
+2015-09-30 02:27:09 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 02:27:09 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:27:09 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594429649',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:27:11 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:27:11 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443594431544',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 02:27:53 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 02:27:53 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:27:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594473711',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:32:15 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 02:32:15 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:32:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594735659',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:32:16 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:32:16 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443594736854',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 02:32:31 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 02:32:31 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 02:32:31 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 02:32:35 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 02:32:35 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:32:35 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594755477',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:32:37 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 02:32:37 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443594757222',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 02:34:03 [request] - LV1 - /
+2015-09-30 02:34:03 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-09-30 02:34:16 [request] - LV1 - /index.php/Home/Index/login.html
+2015-09-30 02:34:16 [request] - LV1 - array (
+  'username' => 'peterx',
+  'password' => '111111',
+)
+2015-09-30 02:34:16 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-30 02:34:17 [request] - LV1 - /Home/Mc/query
+2015-09-30 02:34:17 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594857076',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-30 02:34:17 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-30 02:34:24 [request] - LV1 - /index.php/Brand/Systemconfig/index.html
+2015-09-30 02:35:12 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 02:35:13 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 02:35:13 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594913143',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:35:13 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 02:35:13 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 02:35:13 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443594913183',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 02:35:13 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 02:58:14 [request] - LV1 - /index.php
+2015-09-30 02:58:15 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-30 02:58:15 [request] - LV1 - /Home/Mc/query
+2015-09-30 02:58:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596295966',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-30 02:58:15 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-30 02:58:29 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 02:58:40 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 02:58:41 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 02:58:41 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596321461',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:58:41 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 02:58:41 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 02:58:41 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596321501',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 02:58:41 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 02:58:43 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 02:58:44 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 02:58:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596324205',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:58:44 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 02:58:44 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 02:58:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596324286',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 02:58:44 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 02:58:58 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 02:58:59 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 02:58:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596339209',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:58:59 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 02:58:59 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 02:58:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596339257',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 02:58:59 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 02:59:00 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 02:59:07 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 02:59:11 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 02:59:11 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 02:59:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596351693',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:59:11 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 02:59:11 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 02:59:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596351743',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 02:59:11 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 02:59:24 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 02:59:38 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 02:59:38 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 02:59:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596378885',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 02:59:38 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 02:59:38 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 02:59:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443596378933',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 02:59:38 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 03:17:37 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 03:17:38 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 03:17:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597458427',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 03:17:38 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 03:17:38 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 03:17:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597458498',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 03:17:38 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 03:23:54 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 03:24:00 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 03:24:02 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 03:24:02 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 03:24:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597841743',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 03:24:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597841709',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 03:24:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 03:24:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 03:24:10 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 03:24:11 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 03:24:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597851551',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 03:24:11 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 03:24:11 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 03:24:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597851586',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 03:24:11 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 03:24:24 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 03:24:24 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 03:24:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597864527',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 03:24:24 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 03:24:24 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 03:24:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443597864565',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 03:24:24 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:06:47 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:06:50 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:06:50 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604010305',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:06:50 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:06:50 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:06:50 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604010530',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:06:50 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:06:58 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:06:58 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:06:58 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:07:00 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:07:00 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:07:00 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604020519',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:07:00 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:07:00 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:07:00 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604020579',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:07:00 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:07:16 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:07:16 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:07:16 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:11 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:08:11 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:08:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604091907',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:08:11 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:08:11 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:08:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604091947',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:08:11 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:08:18 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:18 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:18 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:20 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:20 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:20 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:21 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:21 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:21 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:21 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:21 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:21 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:21 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:21 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:21 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:21 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:21 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:21 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:22 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:22 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:22 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:22 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:22 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:22 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:22 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:22 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:22 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:22 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:23 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:23 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:23 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:23 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:23 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:23 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:23 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:23 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:23 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:23 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:23 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:23 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:23 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:23 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:23 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:24 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:24 [request] - LV1 - array (
+  'name' => '系统停补卡收费1',
+  'property' => '3',
+  'type' => '1',
+  'oper' => 'edit',
+  'id' => '95',
+)
+2015-09-30 05:08:24 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:31 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:08:31 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:08:31 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:08:58 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:09:10 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:09:47 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:10:02 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:10:02 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:10:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604202557',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:10:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:10:02 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:10:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604202605',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:10:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:10:08 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:10:08 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:10:08 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:10:36 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:10:36 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:10:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604236780',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:10:36 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:10:36 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:10:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604236819',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:10:36 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:10:37 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:10:37 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604237243',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'asc',
+)
+2015-09-30 05:10:37 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:10:41 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:10:41 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:10:41 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:11:07 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:11:08 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:11:08 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604268552',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:11:08 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:11:08 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:11:08 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604268592',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:11:08 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:11:09 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:11:09 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604269011',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'asc',
+)
+2015-09-30 05:11:09 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:11:12 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:11:12 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:11:12 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:11:14 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:11:15 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:11:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604275074',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:11:15 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:11:15 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:11:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604275117',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:11:15 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:11:43 [request] - LV1 - /Brand/Goods/setGoodsCategory
+2015-09-30 05:11:43 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '95',
+)
+2015-09-30 05:11:43 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoodsCategory',
+)
+2015-09-30 05:16:43 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:16:43 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:16:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604603607',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:16:43 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:16:43 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:16:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604603646',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:16:43 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:16:52 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:16:52 [request] - LV1 - array (
+  'name' => '瑜伽服',
+  'category_id' => '64',
+  'sale_type' => '1',
+  'price_buy' => '99',
+  'price' => '199',
+  'min_price' => '12',
+  'unit_price' => '件',
+  'clubs' => '1040',
+  'status' => '0',
+  'code' => '',
+  'total_num' => '999',
+  'description' => '木有备注',
+  'oper' => 'edit',
+  'id' => '91',
+)
+2015-09-30 05:16:52 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:17:10 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:17:10 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:17:10 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604630931',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:17:10 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:17:10 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:17:10 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604630964',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:17:10 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:23:08 [request] - LV1 - /index.php
+2015-09-30 05:23:08 [request] - LV1 - /index.php/Home/Main/main.html
+2015-09-30 05:23:10 [request] - LV1 - /Home/Mc/query
+2015-09-30 05:23:10 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443604990187',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-09-30 05:23:10 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-09-30 05:23:25 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 05:23:36 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:23:36 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:23:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605016632',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:23:36 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:23:36 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:23:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605016682',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:23:36 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:24:43 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 05:24:58 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 05:25:36 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 05:25:38 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:25:39 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:25:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605139621',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:25:39 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:25:39 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:25:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605139669',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:25:39 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:25:41 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:25:42 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:25:42 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605142237',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:25:42 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:25:42 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:25:42 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605142276',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:25:42 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:25:43 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:25:43 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:25:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605143809',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:25:43 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:25:43 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:25:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605143892',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:25:43 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:25:54 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:25:55 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:25:55 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605155180',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:25:55 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:25:55 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:25:55 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605155231',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:25:55 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:25:56 [request] - LV1 - /index.php/Home/Script/createSystemCards
+2015-09-30 05:26:01 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:26:02 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:26:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605162142',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:26:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:26:02 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:26:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605162177',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:26:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:26:03 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:26:03 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:26:03 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605163912',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:26:03 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:26:03 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:26:03 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605163957',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:26:03 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:28:59 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-09-30 05:28:59 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:28:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605339993',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:28:59 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:00 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-09-30 05:29:00 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605340048',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-09-30 05:29:00 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-09-30 05:29:02 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:02 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:02 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605342692',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:02 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:05 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:05 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:05 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:05 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:05 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605345307',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:05 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:13 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:13 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:13 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:13 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:13 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605353806',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:13 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:15 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:15 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:15 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:15 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605355557',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:15 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:17 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:17 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:17 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:17 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:17 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605357194',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:17 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:18 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:18 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:18 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:18 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:18 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605358358',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:18 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:19 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:19 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:19 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:19 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:19 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605359332',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:19 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:20 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:20 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:20 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:20 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:20 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605360225',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:20 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:22 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:22 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '91',
+)
+2015-09-30 05:29:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:22 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605362509',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:22 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:24 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:24 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:24 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:24 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605364457',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:24 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:26 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:26 [request] - LV1 - array (
+  'oper' => 'del',
+  'id' => '193',
+)
+2015-09-30 05:29:26 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:26 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:26 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605366419',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:26 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:29:49 [request] - LV1 - /Brand/Goods/setGoods
+2015-09-30 05:29:49 [request] - LV1 - array (
+  'name' => 'vita国会--补卡费',
+  'category_id' => '95',
+  'sale_type' => '0',
+  'price_buy' => '111',
+  'price' => '100',
+  'min_price' => '12',
+  'unit_price' => '',
+  'clubs' => '1039',
+  'status' => '1',
+  'code' => '',
+  'total_num' => '999999',
+  'description' => '',
+  'oper' => 'edit',
+  'id' => '192',
+)
+2015-09-30 05:29:49 [request] - LV1 - array (
+  's' => '/Brand/Goods/setGoods',
+)
+2015-09-30 05:29:49 [request] - LV1 - /Brand/Goods/getGoods
+2015-09-30 05:29:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605389713',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:29:49 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-09-30 05:31:15 [request] - LV1 - /index.php/Bar/Goods/list.html
+2015-09-30 05:31:16 [request] - LV1 - /index.php/Bar/Goods/salelist.html
+2015-09-30 05:31:16 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605476496',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:31:18 [request] - LV1 - /index.php/Bar/Goods/salelist.html
+2015-09-30 05:31:18 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443605478606',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 05:31:22 [request] - LV1 - /index.php/Bar/Goods/index.html
+2015-09-30 05:31:25 [request] - LV1 - /index.php/Bar/Goods/queryMember.html
+2015-09-30 05:31:25 [request] - LV1 - array (
+  'name' => '李波',
+)
+2015-09-30 05:31:39 [request] - LV1 - /Bar/Goods/buy
+2015-09-30 05:31:39 [request] - LV1 - array (
+  'use_recharge' => '0',
+  'cash' => '0',
+  'netbank' => '0',
+  'network' => '0',
+  'pos' => '0',
+  'check' => '0',
+  'check_num' => '',
+  'description' => '',
+  'goods' => '[{"id":"192","num":"1","unitprice":"100"}]',
+  'member_id' => '99946691',
+  'price' => '100',
+)
+2015-09-30 05:31:39 [request] - LV1 - array (
+  's' => '/Bar/Goods/buy',
+)
+2015-09-30 05:31:40 [request] - LV1 - /index.php/Bar/Goods/list
+2015-09-30 05:31:40 [request] - LV1 - /index.php/Bar/Goods/salelist.html
+2015-09-30 05:31:40 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605500875',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:31:47 [request] - LV1 - /Bar/Goods/pay/id/2795
+2015-09-30 05:31:47 [request] - LV1 - array (
+  's' => '/Bar/Goods/pay/id/2795',
+)
+2015-09-30 05:31:52 [request] - LV1 - /index.php/Bar/Goods/salelist.html
+2015-09-30 05:31:52 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605512400',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:35:45 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 05:35:46 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:35:46 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443605746086',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:35:47 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:35:47 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443605747811',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 05:39:48 [request] - LV1 - /Bar/Goods/pay/id/2795
+2015-09-30 05:39:48 [request] - LV1 - array (
+  's' => '/Bar/Goods/pay/id/2795',
+)
+2015-09-30 05:41:13 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 05:41:14 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:41:14 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443606074864',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:41:15 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:41:15 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443606075368',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 05:42:36 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 05:42:37 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:42:37 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443606157352',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:42:37 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:42:37 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443606157725',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 05:48:16 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:48:16 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 05:48:16 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:49:42 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:49:42 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 05:49:42 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:51:24 [request] - LV1 - /index.php/Bar/Goods/index.html
+2015-09-30 05:57:34 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:57:34 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 05:57:34 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:57:38 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:57:38 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 05:57:38 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:58:54 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:58:54 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 05:58:54 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:58:57 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:58:57 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 05:58:57 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:59:11 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 05:59:12 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:59:12 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607152012',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 05:59:15 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 05:59:15 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607155060',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 05:59:20 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:59:20 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 05:59:20 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 05:59:46 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 05:59:46 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 05:59:46 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:02:31 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 06:02:31 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:02:31 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607351979',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:02:33 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:02:33 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607353717',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:02:46 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:02:46 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 06:02:46 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:03:09 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:03:09 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 06:03:09 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:03:32 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:03:32 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 06:03:32 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:04:19 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 06:04:21 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:04:21 [request] - LV1 - array (
+  'card_id' => '',
+  'name' => '',
+  'phone' => '',
+)
+2015-09-30 06:04:22 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:04:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607462324',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:04:25 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:04:25 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607465949',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:04:27 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:04:27 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607467630',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:04:32 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:04:32 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 06:04:32 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:04:49 [request] - LV1 - /index.php/Bar/Goods/index?id=192
+2015-09-30 06:04:49 [request] - LV1 - array (
+  'id' => '192',
+)
+2015-09-30 06:06:53 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 06:06:54 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:06:54 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607614196',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:06:55 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:06:55 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607615275',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:06:55 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:06:55 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607615541',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:06:58 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:06:58 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '22',
+)
+2015-09-30 06:06:58 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:07:00 [request] - LV1 - /index.php/Bar/Goods/index?id=192
+2015-09-30 06:07:00 [request] - LV1 - array (
+  'id' => '192',
+)
+2015-09-30 06:08:26 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 06:08:27 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:08:27 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607707722',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:08:30 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:08:30 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607710726',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:08:33 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:08:33 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '123',
+)
+2015-09-30 06:08:33 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:08:35 [request] - LV1 - /index.php/Bar/Goods/index?id=192
+2015-09-30 06:08:35 [request] - LV1 - array (
+  'id' => '192',
+)
+2015-09-30 06:09:01 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 06:09:02 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:09:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443607742409',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:09:02 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:09:02 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443607742790',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:09:06 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:09:06 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '321',
+)
+2015-09-30 06:09:06 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:09:08 [request] - LV1 - /index.php/Bar/Goods/index?id=192
+2015-09-30 06:09:08 [request] - LV1 - array (
+  'id' => '192',
+)
+2015-09-30 06:10:03 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=123
+2015-09-30 06:10:03 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '123',
+)
+2015-09-30 06:16:01 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:16:01 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:23:16 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:23:16 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:23:29 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:23:29 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:23:45 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:23:45 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:23:49 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:23:49 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:24:01 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:24:01 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:24:09 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:24:09 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:24:12 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:24:12 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:24:42 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:24:42 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:25:06 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:25:06 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:25:13 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:25:13 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:25:37 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:25:37 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:25:54 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:25:54 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:28:04 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:28:04 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:28:16 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:28:16 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:28:26 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:28:26 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:29:22 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:29:22 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:29:26 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:29:26 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:29:47 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:29:47 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:29:53 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:29:53 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:30:01 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:30:01 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:30:13 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:30:13 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:37:35 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:37:35 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:38:09 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:38:09 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:38:19 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:38:19 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:40:55 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:40:55 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:43:08 [request] - LV1 - /Public/js/jquery.js
+2015-09-30 06:43:08 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-09-30 06:43:18 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:43:18 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:43:18 [request] - LV1 - /Public/js/jquery.js
+2015-09-30 06:43:18 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-09-30 06:43:29 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:43:29 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:43:48 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:43:48 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:44:11 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:44:11 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:44:15 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:44:15 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:44:23 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:44:23 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:44:27 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:44:27 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:45:54 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:45:54 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:46:02 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:46:02 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:46:45 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:46:45 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:46:56 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:46:56 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:47:24 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:47:24 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:47:27 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:47:27 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:47:29 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:47:29 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:47:30 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:47:30 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:48:54 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:48:54 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:48:56 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:48:56 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:48:57 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:48:57 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:48:57 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:48:57 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:48:57 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:48:57 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:49:04 [request] - LV1 - /Bar/Goods/buy
+2015-09-30 06:49:04 [request] - LV1 - array (
+  'use_recharge' => '0',
+  'cash' => '0',
+  'netbank' => '0',
+  'network' => '0',
+  'pos' => '0',
+  'check' => '0',
+  'check_num' => '',
+  'description' => '',
+  'goods' => '[{"id":"192","num":"1","unitprice":"100"}]',
+  'member_id' => '99946691',
+  'price' => '100',
+)
+2015-09-30 06:49:04 [request] - LV1 - array (
+  's' => '/Bar/Goods/buy',
+)
+2015-09-30 06:49:05 [request] - LV1 - /index.php/Bar/Goods/list
+2015-09-30 06:49:05 [request] - LV1 - /index.php/Bar/Goods/salelist.html
+2015-09-30 06:49:05 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443610145867',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:49:24 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:49:24 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '1233',
+)
+2015-09-30 06:49:24 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:49:26 [request] - LV1 - /index.php/Bar/Goods/index?id=192
+2015-09-30 06:49:26 [request] - LV1 - array (
+  'id' => '192',
+)
+2015-09-30 06:50:23 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-09-30 06:50:23 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:50:23 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443610223827',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-09-30 06:50:25 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-09-30 06:50:25 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1443610225384',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-09-30 06:50:28 [request] - LV1 - /Reception/Cardmanage/getnew
+2015-09-30 06:50:28 [request] - LV1 - array (
+  'id' => '50999',
+  'card_number' => '12321',
+)
+2015-09-30 06:50:28 [request] - LV1 - array (
+  's' => '/Reception/Cardmanage/getnew',
+)
+2015-09-30 06:50:30 [request] - LV1 - /index.php/Bar/Goods/index?id=192&member_id=99946691
+2015-09-30 06:50:30 [request] - LV1 - array (
+  'id' => '192',
+  'member_id' => '99946691',
+)
+2015-09-30 06:50:50 [request] - LV1 - /Bar/Goods/buy
+2015-09-30 06:50:50 [request] - LV1 - array (
+  'use_recharge' => '0',
+  'cash' => '87',
+  'netbank' => '0',
+  'network' => '0',
+  'pos' => '0',
+  'check' => '0',
+  'check_num' => '',
+  'description' => '',
+  'goods' => '[{"id":"192","num":"1","unitprice":"88"}]',
+  'member_id' => '99946691',
+  'price' => '88',
+)
+2015-09-30 06:50:50 [request] - LV1 - array (
+  's' => '/Bar/Goods/buy',
+)
+2015-09-30 06:50:50 [request] - LV1 - /index.php/Bar/Goods/list
+2015-09-30 06:50:51 [request] - LV1 - /index.php/Bar/Goods/salelist.html
+2015-09-30 06:50:51 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1443610251403',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)

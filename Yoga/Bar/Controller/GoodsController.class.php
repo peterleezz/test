@@ -7,7 +7,18 @@ class GoodsController extends BaseController {
 		$goodstypes=D("GoodsCategory")->relation(true)->where(array("brand_id"=>get_brand_id()))->select();
 		$this->assign("goodstypes",$goodstypes);
 		$this->assign("goodstypesarr",json_encode($goodstypes));
-		
+		$id=I("id");
+		$member_id=I("member_id");
+		if(!empty($id) && !empty($member_id))
+		{
+			$member=M("MemberBasic")->find($member_id);
+			$this->member=$member;
+			$goods = M("Goods")->find($id); 
+			$this->goods=$goods;
+			$this->category_id=$goods['category_id'];
+			$this->goods_id=$id;
+			
+		}
 		$this->display();
 	}
 

@@ -156,9 +156,13 @@ class CardmanageController extends BaseController {
            
             M("Card")->where(array("id"=>$id))->setField("card_number",$card_number);
         } 
-  
-        D("CardOpHistory")->updateStatus($id,2,0,$new_id);
-        $this->ajaxReturn(array("new_card_number"=>$card_number,"status"=>1,"info"=>"补卡成功！新的卡号为 $card_number!"));
+         $club_id=get_club_id();
+         //记录此人今天有补卡，每天脚本检查哪些人没收钱的，没收钱的也要入进系统！
+        M("BukaTemp")->data(array("member_id"=>$card['member_id'],"ext"=>"补卡，卡号从".$card['card_number']."修改为".$card_number))->add();
+        $buka=M()->query("select a.* from yoga_goods a,yoga_goods_club b where b.club_id={$club_id} and b.goods_id=a.id and a.is_system=1 and a.sys_type=0");
+         
+        // D("CardOpHistory")->updateStatus($id,2,0,$new_id);
+        $this->ajaxReturn(array("new_card_number"=>$card_number,"status"=>1,"info"=>"补卡成功！新的卡号为 $card_number!请缴纳补卡费用!","url"=>"/index.php/Bar/Goods/index?id=".$buka[0]['id']."&member_id=".$card['member_id']));
 
     }
 
