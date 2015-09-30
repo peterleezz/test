@@ -183,7 +183,9 @@ public function printrecordAction($id)
 	        $filters=I("filters",'',''); 
 	        $brand_id=get_brand_id(); 
 	    $club_id=get_club_id(); 
-	   $condition=array("club_id"=>$club_id,"pt_id"=>is_user_login());
+	   if(MODULE_NAME=='Pt')   
+	$condition=array("club_id"=>$club_id,"pt_id"=>is_user_login());
+          else $condition=array("club_id"=>$club_id);
        $filters = json_decode($filters);   
         if($filters->groupOp=='AND')
         {

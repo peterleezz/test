@@ -1,6 +1,6 @@
 <?php
 return array(
-       'new_printer_club'=>array(30,29,28,27,26),
+       'new_printer_club'=>array(30,29,28,27,26,1022,1036),
 	'TMPL_FILE_DEPR'=>'_',
 	// 'TOKEN_ON'      =>    true,  // 是否开启令牌验证 默认关闭
 	// 'TOKEN_NAME'    =>    '__hash__',    // 令牌验证的表单隐藏字段名称，默认为__hash__

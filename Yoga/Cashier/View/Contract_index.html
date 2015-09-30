@@ -207,7 +207,7 @@ function xuhui()
 }
 function zhuanrang()
 {
-   var id = jQuery(grid_selector).jqGrid('getGridParam','seContractlrow');
+   var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                         if (id) {
                            var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
                            id=rowData.contract_id;
