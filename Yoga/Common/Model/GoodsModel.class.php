@@ -2,6 +2,41 @@
 namespace Common\Model;
 use Think\Model\RelationModel;
 class GoodsModel extends RelationModel {
+
+     const   BUKA     =   0;
+     const   TINGKA     =   1;
+     const   XUHUI     =  2;
+     const   SHENGJI     = 3;
+     const   ZHUANRANG     =4; 
+
+     public function getBukaFee()
+     {
+        $ret= $this->getSystemGoods(self::BUKA,get_club_id());
+        return $ret ;
+     }
+       public function getTingkaFee()
+     {
+        $ret= $this->getSystemGoods(self::TINGKA,get_club_id());
+         return $ret ;
+     }
+       public function getXuhuiFee()
+     {
+        $ret= $this->getSystemGoods(self::XUHUI,get_club_id());
+         return $ret ;
+     }
+       public function getShengjiFee()
+     {
+        $ret= $this->getSystemGoods(self::SHENGJI,get_club_id());
+         return $ret ;
+     }
+       public function getZhuanrangFee()
+     {
+        $ret= $this->getSystemGoods(self::ZHUANRANG,get_club_id());
+        return $ret ;
+     }
+      
+
+
     protected $_validate = array(
         array('name','require','商品名不能为空!',1),
         array('price','require','价格不能为空!',1),
@@ -35,4 +70,9 @@ class GoodsModel extends RelationModel {
         ) ,
      );
 
+    public function getSystemGoods($sys_type=0,$club_id=0)
+    {
+            $goods = $this->table(array("yoga_goods"=>"a","yoga_goods_club"=>"b"))->where("b.club_id={$club_id} and a.status=1 and a.id=b.goods_id and a.sys_type={$sys_type} and a.is_system=1")->field("a.*")->find();
+            return $goods;
+    }
 }

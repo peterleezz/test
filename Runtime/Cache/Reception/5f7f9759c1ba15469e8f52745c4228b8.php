@@ -614,11 +614,19 @@
        
   var grid_selector = "#reception_card_grid";
             var pager_selector = "#reception_card_pager";    
+
+    function getCardid()
+    {
+         var id = jQuery(grid_selector).jqGrid('getGridParam','selrow'); 
+           var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+            return (rowData.cid);
+                  
+    }
     function guashi()
     {
           var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                    lost(id);
+                    lost(getCardid());
                 } else { alert("请先选中！");}
                      
                 
@@ -640,42 +648,77 @@
     {
           var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                    unlost(id);
+                    unlost(getCardid());
                 } else { alert("请先选中！");}
     }
     function buka()
     {
        var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                   $('#newCardModal').modal('show');              
+
+                     var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+                            var buka = (rowData.buka);
+                     if(buka=='0') 
+                     {
+                         bootbox.confirm("请先购买补卡费，如果会所不收补卡费，做笔0元的单子！",function(result){
+                                     if(result)
+                                     {
+                                         window.open("<?php echo ($bukaurl); ?>/member_id/"+rowData.memberid+"/extension_id/"+getCardid(),'newwindow');
+                                     }
+
+                                });
+                     }
+                    else
+                    {
+                         $('#newCardModal').modal('show');  
+                    }
+
+                              
                 } else { alert("请先选中！");} 
     }
     function qingjia()
-    {
+    { 
            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                    $('#restModel').modal('show');                   
+                    var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+                            var cfree_rest = (rowData.cfree_rest);
+                            var str=cfree_rest.split("/"); 
+                            if(parseInt(str[0])  <parseInt( str[1]))
+                            {
+                                  $('#restModel').modal('show');           
+                            }     
+                            else
+                            {
+                                bootbox.confirm("请假次数用尽，请先到商品管理中购买请假次数！",function(result){
+                                     if(result)
+                                     {
+                                         window.open("<?php echo ($qingjiaurl); ?>/member_id/"+rowData.memberid+"/extension_id/"+id,'newwindow');
+                                     }
+
+                                });
+                            }return;
+                    // $('#restModel').modal('show');                   
                 } else { alert("请先选中！");}
     }
     function xiaojia()
     {
          var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                   unrest(id);
+                   unrest(getCardid());
                 } else { alert("请先选中！");}
     }
     function tuihui()
     {
           var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                   destroy(id);
+                   destroy(getCardid());
                 } else { alert("请先选中！");}
     }
     function xiaoka()
     {
          var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                   destroy_card(id);
+                   destroy_card(getCardid());
                 } else { alert("请先选中！");}
     }
 
@@ -692,9 +735,11 @@
                     height: "100%",    
                     width:($('#fcontainer').width()-10),
                     mtype:"POST",
-                    colNames:['ID','member_id','会员姓名', '卡号','办理会所','卡种名称','卡状态','签订日期', '手机号码','有效期起','有效期止','免费请假次数', '操作'],
-                    colModel:[   
-                       {name:'id',index:'id',width:1,align:'center',hidden:true},
+                    colNames:[ 'ID','cid','buka','member_id','会员姓名', '卡号','办理会所','卡种名称','卡状态','签订日期', '手机号码','有效期起','有效期止','免费请假次数', '操作'],
+                    colModel:[     
+                         {name:'id',index:'id',width:1,align:'center',hidden:true},
+                           {name:'cid',index:'cid',width:1,align:'center',hidden:true},
+                             {name:'buka',index:'buka',width:1,align:'center',hidden:true},
                          {name:'memberid',index:'memberid',width:1,align:'center',hidden:true},
                            {name:'member_name',index:'member_name',width:150,align:'center',formatter : function(value, options, rData){  
                            var html='<a  target="blank" href="/Reception/Visit/index/id/'+rData.memberid+'" >'+value+'</a>'; 

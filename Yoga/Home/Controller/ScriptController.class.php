@@ -409,11 +409,11 @@ public function checkUnRest1Action()
 
 	public function createSystemCardsAction()
 	{
-		// $brands = M("Brand")->select();
-		// foreach ($brands as $key => $value) {
-		// 	 M("GoodsCategory")->data(array("is_system"=>1, "name"=>"系统停补卡收费","property"=>3,"type"=>1,"brand_id"=>$value['id']))->add(); 
+		$brands = M("Brand")->select();
+		foreach ($brands as $key => $value) {
+			 M("GoodsCategory")->data(array("is_system"=>1, "name"=>"系统停补卡收费","property"=>3,"type"=>1,"brand_id"=>$value['id']))->add(); 
 		 
-		// }
+		}
 
 		$clubs = M("Club")->select();
 		foreach ($clubs as $key => $value) {
@@ -423,10 +423,53 @@ public function checkUnRest1Action()
 	   	 	 $model->data($data); 
 	   	 	 $id=$model->add();
 	   	 	 $goodsClubModel = M("GoodsClub");
-	   	 	 $clubs = explode(',', $clubs); 
 	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
 		}
 
+		foreach ($clubs as $key => $value) {
+			 $model = D("Goods");
+			 $category = M("GoodsCategory")->where(array("brand_id"=>$value['brand_id'],"is_system"=>1))->find();
+	   	 	 $data =array("sys_type"=>1,"name"=>$value['club_name']."--停卡费","category_id"=>$category['id'],"brand_id"=>$value['brand_id'],"price"=>100,"total_num"=>"999999","is_system"=>1);
+	   	 	 $model->data($data); 
+	   	 	 $id=$model->add();
+	   	 	 $goodsClubModel = M("GoodsClub");
+	    
+	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
+		}
+
+		foreach ($clubs as $key => $value) {
+			 $model = D("Goods");
+			 $category = M("GoodsCategory")->where(array("brand_id"=>$value['brand_id'],"is_system"=>1))->find();
+	   	 	 $data =array("sys_type"=>2,"name"=>$value['club_name']."--续会费","category_id"=>$category['id'],"brand_id"=>$value['brand_id'],"price"=>100,"total_num"=>"999999","is_system"=>1);
+	   	 	 $model->data($data); 
+	   	 	 $id=$model->add();
+	   	 	 $goodsClubModel = M("GoodsClub");
+	   	 	 
+	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
+		}
+
+
+		foreach ($clubs as $key => $value) {
+			 $model = D("Goods");
+			 $category = M("GoodsCategory")->where(array("brand_id"=>$value['brand_id'],"is_system"=>1))->find();
+	   	 	 $data =array("sys_type"=>3,"name"=>$value['club_name']."--升级费","category_id"=>$category['id'],"brand_id"=>$value['brand_id'],"price"=>100,"total_num"=>"999999","is_system"=>1);
+	   	 	 $model->data($data); 
+	   	 	 $id=$model->add();
+	   	 	 $goodsClubModel = M("GoodsClub");
+	   	  
+	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
+		}
+
+		foreach ($clubs as $key => $value) {
+			 $model = D("Goods");
+			 $category = M("GoodsCategory")->where(array("brand_id"=>$value['brand_id'],"is_system"=>1))->find();
+	   	 	 $data =array("sys_type"=>4,"name"=>$value['club_name']."--合同转让费","category_id"=>$category['id'],"brand_id"=>$value['brand_id'],"price"=>100,"total_num"=>"999999","is_system"=>1);
+	   	 	 $model->data($data); 
+	   	 	 $id=$model->add();
+	   	 	 $goodsClubModel = M("GoodsClub");
+	   	  
+	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
+		}
 	}
 
 }

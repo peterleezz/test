@@ -113,6 +113,8 @@ class ImportController extends BaseController {
 			 	
 			 	$count=0;
 			 	$arr=array();
+			 	$users = fgetcsv($handle); 
+
                 while ($users = fgetcsv($handle)) {
                 	try
                 	{
@@ -142,7 +144,7 @@ class ImportController extends BaseController {
 		                   		}
 		                   		if(empty($mc))
 		                   		{
-		                   			$mc_id=M("User")->data(array("username"=>"zj". $users[14],"password"=>md5('111111'),"club_id"=>get_club_id(),"brand_id"=>get_brand_id()))->add();
+		                   			$mc_id=M("User")->data(array("username"=>"xj". $users[14],"password"=>md5('111111'),"club_id"=>get_club_id(),"brand_id"=>get_brand_id()))->add();
 		                   			M("UserExtension")->data(array("work_status"=>0, "id"=>$mc_id,"name_cn"=>$users[14],"name_en"=>$users[14]))->add();
 		                   			M("AuthGroupAccess")->data(array("uid"=>$mc_id,"group_id"=>6))->add();	
 		                   			$users[14]=$mc_id;
@@ -159,10 +161,11 @@ class ImportController extends BaseController {
 	                   $m=M("MemberBasic")->where(array("club_id"=>get_club_id(),"name"=>trim($users[0]),"phone"=>trim($users[1])))->find();
 	                   if(!empty($m))
 	                   {
-	                   	$uid=$m['id'];
+	                   	  $uid=$m['id'];
 	                   }
 	                   else
-	                   {$model=D("MemberBasic");
+	                   {
+	                   	   $model=D("MemberBasic");
 	                   	   $data['sex']=$users[2];
 		                   $data['type']=1;
 		                   $data['email']=$users[3];
@@ -192,18 +195,58 @@ class ImportController extends BaseController {
 		                   $uid=$model->data($data)->add(); 	
 		               }
 
-		               	$card_type ="国会". trim($users[11]);
+		               	$card_type ="湘江世纪城——". trim($users[11]);
+		               	$pattern=array('/一/','/二/','/三/','/四/','/五/','/六/','/七/','/八/','/九/','/十/');
+  						$replace=array("1","2","3","4","5","6","7","8","9","10");
+ 						 $card_type = preg_replace($pattern, $replace, $card_type) ;
+
 		               	$cardTypeModel=M("CardType");
 							$cardType=$cardTypeModel->where(array("name"=>$card_type))->find(); 
 							//添加卡种
 						 		 if($users[12]==0)
 						 		 {
-						 		 	$valid_number=0;
-						 		 	  $valid_time = $users[13];
+						 		 	  $valid_number=0;
+						 		 	  if(preg_match('/[1|一]年卡/u', $card_type))
+						 		 	  {
+						 		 	  	 $valid_time =12;
+						 		 	  }else  if(preg_match('/[2|二|两]年卡/u', $card_type))
+						 		 	  {
+						 		 	  	 $valid_time =24;
+						 		 	  }else  if(preg_match('/[3|三]年卡/u', $card_type))
+						 		 	  {
+						 		 	  	 $valid_time =36;
+						 		 	  }
+						 		 	  else  if(preg_match('/半年(.*)卡/u', $card_type))
+						 		 	  {
+						 		 	  	 $valid_time =6;
+						 		 	  }else  if(preg_match('/季(度)?卡/u', $card_type))
+						 		 	  {
+						 		 	  	 $valid_time =3;
+						 		 	  }else  if( preg_match('/(\d+)(个)?月卡/i', $card_type,$matches))
+						 		 	  {
+						 		 	  	 $valid_time =$matches[1];
+						 		 	  }
+
+						 		 	  else
+						 		 	  {
+						 		 	  	$valid_time =12;
+						 		 	  }
+
+						 		 	 
 						 		 } 
 						 		 else 
 						 		 {
-						 		 	$valid_number=$users[13];
+						 		 	
+
+						 		 	  if(preg_match('/\d+/i', $card_type,$matches)) 
+						 		 	  {
+						 		 	  	 $valid_number=$matches[0];
+						 		 	  }
+									  else
+									  {
+									  	  	$this->clean($club_id);
+		                   					$this->error("{$count}行次不明！");
+									  }
 						 		 	 $valid_time = 12;
 						 		 }
 
@@ -232,38 +275,50 @@ class ImportController extends BaseController {
 						 	{
 						 			$this->clean($club_id);
 						 		$this->error("{$count}行卡种不存在!");
-						 	}
+						 	} 
+
 						 	if(empty($card_number))
 						 	{
-						 		$card_number=date("YmdHis").rand(0,10000);
-						 		$card=array("free_rest"=>0,"sale_club"=>get_club_id(),"is_active"=>0, "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$uid);
-		 						$card_id=$cardModel->data($card)->add();  
-		 						$card_number=get_club_id(). $card_id;
-		 						while(true)
-							 	{
-							 		if($cardModel->isExist($card_number,get_brand_id()))
-							 		{
-							 			$card_number.=rand(0,100);
-							 		}
-							 		else
-							 		{
-							 			break;
-							 		}
-							 	}
-							 		$cardModel->where("id=$card_id")->setField("card_number",$card_number);
+
+							 	$card_number=date("YmdHis").rand(0,10000);
+		                        $card=array("free_rest"=>0,"sale_club"=>get_club_id(),  "is_active"=>0, "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$uid);
+		                        $card['update_time']=getDbTime();
+		                        $card_id=$cardModel->data($card)->add();
+		                    
+
+						 			$max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
+		                        	if(empty($max_card))
+		                        		$card_number=get_club_id()."00001";
+		                        	else
+		                        		$card_number=$max_card['card_number']+1; 
+		                        	$card_number = preg_replace("/4/", "5", $card_number);
+					                while(true)
+					                {
+					                        if($cardModel->isExist($card_number,get_brand_id()))
+					                        {
+					                                $card_number+=1;
+					                                $card_number = preg_replace("/4/", "5", $card_number);
+					                        }
+					                        else
+					                        {
+					                                break;
+					                        }
+					                } 
+					                $cardModel->where("id=$card_id")->setField(array("card_number"=>$card_number,"is_auto_create"=>"1"));
 						 	}
 						 	else
 						 	{
-						 		$card=array("free_rest"=>0,"sale_club"=>get_club_id(),"is_active"=>0, "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$uid);
+						 		$card=array("free_rest"=>0,"sale_club"=>get_club_id(),"is_active"=>0,  "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$uid);
 		 						$card_id=$cardModel->data($card)->add();  
 						 	}
 						 	
+
 						 
 						 	if(!$card_id)
 						 		{$this->error("{$count}行开卡失败，请稍后再试!");	$this->clean($club_id);}
 						 	$model=D("Contract");
 						 	$payed=trim( $users[19]); $contract_number = date("YmdHis").rand(0,10000);
-						 	$data=array("total_num"=>$valid_number, "member_id"=>$uid, "start_time"=>$start_time,"end_time"=>$end_time, "brand_id"=>get_brand_id(), "card_type_id"=>$card_type_id, "type"=>0,"description"=>$users[22],"price"=>$payed,"sale_club_id"=>get_club_id(),"card_id"=>$card_id,"payed"=>$payed,"contract_number"=>$contract_number,"mc_id"=>trim($users[14]),"card_type_extension"=>json_encode($cardType),"active_type"=>0);
+						 	$data=array("total_num"=>$valid_number, "member_id"=>$uid, "start_time"=>$start_time,"end_time"=>$end_time, "brand_id"=>get_brand_id(), "card_type_id"=>$card_type_id, "type"=>0,"description"=>$users[22],"price"=>$payed,"sale_club_id"=>get_club_id(),"card_id"=>$card_id,"payed"=>$payed,"contract_number"=>$contract_number,"mc_id"=>trim($users[14]),"card_type_extension"=>json_encode($cardType),"active_type"=>2);
 						 	 $contract_id = $model->data($data)->add();
  
 						 	 $service=\Service\CService::factory("Financial");

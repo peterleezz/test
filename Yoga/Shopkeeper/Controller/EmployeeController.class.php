@@ -38,6 +38,7 @@ class EmployeeController extends \Brand\Controller\EmployeeController {
 	      			$this->error($extensionModel->getError());
 			}else{
 				  $extensionModel->work_status=I("work_status");
+				  $extensionModel->can_grant=I("can_grant");
 				if(!empty($_FILES["avatar"]["name"]))
 				{
 					$config["savePath"]="em_avatar";
@@ -159,7 +160,7 @@ class EmployeeController extends \Brand\Controller\EmployeeController {
 		foreach ($group_ids as $key => $value) {
 			$ids[]=$value['group_id'];
 		}
-		$map['id'] = array("in",$ids);
+		// $map['id'] = array("in",$ids);
 		$map['module'] = array("not in","Brand,Shopkeeper");
 
 		$groups = M("AuthGroup")->where($map)->field("id,title")->select();
@@ -245,7 +246,7 @@ class EmployeeController extends \Brand\Controller\EmployeeController {
 		foreach ($group_ids as $key => $value) {
 			$ids[]=$value['group_id'];
 		}
-		$map['id'] = array("in",$ids);
+		// $map['id'] = array("in",$ids);
 		$map['module'] = array("not in","Brand,Shopkeeper");
 		$groups = M("AuthGroup")->where($map)->field("id,title")->select();
 		$this->assign("groups",$groups);

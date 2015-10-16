@@ -5,6 +5,10 @@ use Common\Controller\BaseController;
 class CardmanageController extends BaseController {
   public function indexAction()
   {
+    $fee=D("Goods")->getTingkaFee(); 
+    $this->qingjiaurl=("/Bar/Goods/index/id/".$fee['id']);
+   $fee=D("Goods")->getBukaFee(); 
+    $this->bukaurl=("/Bar/Goods/index/id/".$fee['id']);
     $this->display();
   }
 
@@ -139,6 +143,10 @@ class CardmanageController extends BaseController {
         {
              $this->error("非正常状态不能补卡！");
         }
+        if($card['buka']<1)
+        {
+            $this->error("请先购买补卡费！");
+        }
 
         unset($card['id']);
         $card_number=I('card_number');
@@ -148,8 +156,9 @@ class CardmanageController extends BaseController {
           }
           if(empty($card_number))
           {
-            $card_number=date("YmdHis").rand(0,10000);
+            $card_number=getautocardnumber();
           }
+
      
         if(!empty($card_number))
         {
@@ -160,9 +169,9 @@ class CardmanageController extends BaseController {
          //记录此人今天有补卡，每天脚本检查哪些人没收钱的，没收钱的也要入进系统！
         M("BukaTemp")->data(array("member_id"=>$card['member_id'],"ext"=>"补卡，卡号从".$card['card_number']."修改为".$card_number))->add();
         $buka=M()->query("select a.* from yoga_goods a,yoga_goods_club b where b.club_id={$club_id} and b.goods_id=a.id and a.is_system=1 and a.sys_type=0");
-         
+        M("Card")->where("id=$id")->setDec('buka',1);
         // D("CardOpHistory")->updateStatus($id,2,0,$new_id);
-        $this->ajaxReturn(array("new_card_number"=>$card_number,"status"=>1,"info"=>"补卡成功！新的卡号为 $card_number!请缴纳补卡费用!","url"=>"/index.php/Bar/Goods/index?id=".$buka[0]['id']."&member_id=".$card['member_id']));
+        $this->ajaxReturn(array("new_card_number"=>$card_number,"status"=>1,"info"=>"补卡成功！新的卡号为 $card_number!"));
 
     }
 
@@ -182,8 +191,21 @@ class CardmanageController extends BaseController {
         {
             $this->    error("终止日期必须大于起始日期！");
         }
+        $contract = M("Contract")->find($id);
+         if(empty($contract))
+        {
+             $this->error("contract does not exist！");
+        }
+         $rest_count=$contract['rest_count'];
+          $free_rest=$contract['free_rest'];
+          if($rest_count>=$free_rest)
+          {
+             $this->    error("请先到商品中购买请假次数！");
+          }
+
          $model = M("Card"); 
-        $card=  M("Card")->find($id);
+         $card_id = $contract['card_id'];
+        $card=  M("Card")->find($contract['card_id']);
         if(empty($card))
         {
              $this->error("card does not exist！");
@@ -197,33 +219,28 @@ class CardmanageController extends BaseController {
 
         //find all contract
         $contractModel=D("Contract");
-        $contracts = D("Contract")->getAllContract($id);
-        foreach ($contracts as $key => $value) {
-            $valid_time =date('Y-m-d', strtotime($value['end_time'])+$interval); 
-            $contractModel->where(array("id"=>$value['id']))->setField("end_time",$valid_time);
-        }
+        // $contracts = D("Contract")->getAllContract($id);
+        // foreach ($contracts as $key => $value) {
+            $valid_time =date('Y-m-d', strtotime($contract['end_time'])+$interval); 
+            $contractModel->where(array("id"=>$id))->setField("end_time",$valid_time);
+        // }
 
-        $contracts = D("PtContract")->getAllContract($card['member_id']);
-        foreach ($contracts as $key => $value) {
-            $valid_time =date('Y-m-d', strtotime($value['end_time'])+$interval); 
-            D("PtContract")->where(array("id"=>$value['id']))->setField("end_time",$valid_time);
-        }
+        // $contracts = D("PtContract")->getAllContract($card['member_id']);
+        // foreach ($contracts as $key => $value) {
+        //     $valid_time =date('Y-m-d', strtotime($value['end_time'])+$interval); 
+        //     D("PtContract")->where(array("id"=>$value['id']))->setField("end_time",$valid_time);
+        // }
         
         if($start_date<=date('Y-m-d'))
-          M("Card")->where(array("id"=>$id))->setField(array("status"=>3,"extension"=>$extension));
+          M("Card")->where(array("id"=>$card_id))->setField(array("status"=>3,"extension"=>$extension));
         else
-          M("Card")->where(array("id"=>$id))->setField(array("extension"=>$extension));
-          M("Card")->where(array("id"=>$id))->setInc("rest_count",1);
+          M("Card")->where(array("id"=>$card_id))->setField(array("extension"=>$extension));
+          // M("Card")->where(array("id"=>$id))->setInc("rest_count",1);
         //change card valid time 
-         D("CardOpHistory")->updateStatus($id,3,0,$extension);
+         D("CardOpHistory")->updateStatus($card_id,3,0,$extension);
 
-          $rest_count=$card['rest_count'];
-          $free_rest=$card['free_rest'];
-          if($rest_count>=$free_rest)
-          {
-               $this->ajaxReturn(array("status"=>1,"info"=>"请假成功！免费请假次数已经用尽，请到商品中购买请假次数！","url"=>"/index.php/Bar/Goods/index/memberid/".$card['member_id']."/goodsid/"));
-          }
-          
+         
+            M("Contract")->where("id=$id")->setInc('rest_count',1);
          $this->ajaxReturn(array("status"=>1,"info"=>"请假成功！"));
          
     }
@@ -337,11 +354,11 @@ public function queryNewAction()
             $brand_id = get_brand_id();
             $club_id=get_club_id();
 
-        $valuesql=" select   a.*,c.start_time,c.end_time , c.free_rest as cfree_rest,c.rest_count as crest_count,c.card_type_extension, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c  where a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
+        $valuesql=" select c.id as cid, a.*,c.start_time,c.end_time , c.free_rest as cfree_rest,c.rest_count as crest_count,c.card_type_extension, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c  where a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
         $countsql="select count(*) as count from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
         if(is_user_brand())
         {
-             $valuesql=" select   a.*,c.start_time,c.end_time , c.card_type_extension,c.free_rest as cfree_rest,c.rest_count as crest_count, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
+             $valuesql=" select c.id  as cid,  a.*,c.start_time,c.end_time , c.card_type_extension,c.free_rest as cfree_rest,c.rest_count as crest_count, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
              $countsql="select count(*) as count from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
         }
        $filters = json_decode($filters);  
@@ -373,6 +390,9 @@ public function queryNewAction()
         $clubModel = M("Club"); 
          $ret =$model->query($valuesql);  
          foreach ($ret as $key => $value) {
+            $tempid =  $ret[$key]['id'];
+             $ret[$key]['id']=$ret[$key]['cid'];
+           $ret[$key]['cid']=$tempid;
              $ret[$key]["card_type_extension"]=json_decode($ret[$key]["card_type_extension"]);
              $club = $clubModel->find($value['sale_club']);
             $ret[$key]['club_name']=!empty($club)? $club['club_name']:""; 

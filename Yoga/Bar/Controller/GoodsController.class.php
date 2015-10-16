@@ -4,7 +4,21 @@ use Common\Controller\BaseController;
 class GoodsController extends BaseController {
 	public function indexAction()
 	{ 
-		$goodstypes=D("GoodsCategory")->relation(true)->where(array("brand_id"=>get_brand_id()))->select();
+		 $club_id=get_club_id();
+		$goodstypes=D("GoodsCategory")->where(array("brand_id"=>get_brand_id()))->select();
+		foreach ($goodstypes as $key => $value) {
+			$goods = M()->table(array("yoga_goods"=>"a","yoga_goods_club"=>"b"))->where("b.club_id={$club_id} and a.status=1 and a.id=b.goods_id and a.category_id=".$value['id'])->field("a.*")->select();
+			if(empty($goods))
+			{
+				unset($goodstypes[$key]);
+			}
+			else
+			{
+				$goodstypes[$key]['goods']=$goods;
+			}
+		}
+		$goodstypes= array_values($goodstypes); 
+		// $goodstypes=D("GoodsCategory")->relation(true)->where(array("brand_id"=>get_brand_id()))->select();
 		$this->assign("goodstypes",$goodstypes);
 		$this->assign("goodstypesarr",json_encode($goodstypes));
 		$id=I("id");
@@ -19,6 +33,8 @@ class GoodsController extends BaseController {
 			$this->goods_id=$id;
 			
 		}
+
+		$this->extension_id=I("extension_id");
 		$this->display();
 	}
 
@@ -195,7 +211,7 @@ class GoodsController extends BaseController {
 			// $value->price=$g['price'];	
 			$value->price = $value->unitprice;
 			$goods[$key]->name=$g['name'];
-			$total+=$num * $value->price;
+			$total+=$num * $value->price; 
 		}		
 		if($total!=$price)
 		{
@@ -244,6 +260,35 @@ class GoodsController extends BaseController {
 			$num=$value->num;
 			$id=$value->id; 
 			$listModel->data(array("sale_club_id"=>get_club_id(),"brand_id"=>get_brand_id(),"order_id"=>$order_id,"goods_id"=>$id,"number"=>$num,'price'=>$value->unitprice,"goods_name"=>$value->name))->add();
+			
+			$goods=M("Goods")->find($id);
+			if($goods['is_system'])
+			{
+				$extension_id=I("extension_id");
+				switch ($goods['sys_type']) {
+					case '0':
+					if(empty($extension_id))
+					 {
+					 	$extension_id=M("Card")->where("member_id=$member_id")->find();
+					 	$extension_id=$extension_id['id'];
+					 }
+						 M("Card")->where(array("id"=>$extension_id))->setInc('buka',1);
+						break;
+					case '1':
+					if(empty($extension_id))
+					 {
+					 	$extension_id=M("Contract")->where("member_id=$member_id and invalid=1 and status in(0,3,2,4)")->find();
+					 	$extension_id=$extension_id['id'];
+					 }
+						 M("Contract")->where(array("id"=>$extension_id))->setInc('free_rest',1);
+						break;
+
+					default:
+						# code...
+						break;
+				}
+			}
+
 		}	 
 
 
@@ -253,6 +298,9 @@ class GoodsController extends BaseController {
 			$data=array("member_id"=>$member_id,"value"=>"-$recharge","record_id"=>is_user_login(),"description"=>"购物消费,余额".($member['recharge']-$recharge));			 
 			M("RechargeHistory")->data($data)->add(); 
 		} 
+
+
+
 		$this->success("购买成功","list");	
 
 	}

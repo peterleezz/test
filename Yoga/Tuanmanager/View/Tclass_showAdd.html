@@ -1,0 +1,135 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+	<ul class="breadcrumb">
+		<li> <i class="icon-home home-icon"></i>
+			<a href="{:U('Home/Main/main')}">PT</a>
+		</li> 
+		<li class="active">添加/修改课程</li>
+
+	</ul>
+</block>
+ 
+<block name="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<form   enctype="multipart/form-data" class="form-horizontal" role="form" id="addPtClassPublicForm" <empty name="class"> action="{:U('Tuanmanager/Tclass/add')}" <else/> action="{:U('Tuanmanager/Tclass/edit')}"</empty>method="post">
+			<input type="hidden" name="id" value="{$class.id}">
+	 
+				<div class="form-group">
+				<label class="col-sm-1 control-label no-padding-right" for="pt_id">选择老师:</label>
+					<div class="col-sm-3">  
+						 <select name="pt_id" id="pt_id" class="form-control col-xs-10 col-sm-">
+				          <volist name="pt" id="teacher">
+				       			<option value="{$teacher.id}"   <if condition="$class['pt_id'] eq $teacher['id']">selected="selected"</if>>{$teacher.name_cn}</option>
+				          </volist>
+				        </select> 
+					</div>
+
+					<label class="col-sm-1 control-label no-padding-right" for="name">课程名称:</label>
+					<div class="col-sm-3">
+						<input type="text" id="name"  class="form-control col-xs-10 col-sm-5" name="name" value="{$class.name}"/>
+					</div>　
+					
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="name_en">Course:</label>
+					<div class="col-sm-3">
+						<input type="text" id="name_en"  class="form-control col-xs-10 col-sm-5" name="name_en" value="{$class.name_en}"/>
+					</div>
+					<label class="col-sm-1 control-label no-padding-right" for="time">课时长(分钟):</label>
+					<div class="col-sm-3">
+						<input type="text" id="time"  class="form-control col-xs-10 col-sm-5" name="time" value="{$class.time}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="lang">语言:</label>
+					<div class="col-sm-3">
+
+					<select name="lang" id="lang" class="form-control col-xs-10 col-sm-3" >
+						<option value="zh-chs"   <if condition="$class['lang'] eq 'zh-chs'">selected="selected"</if>>中文</option>
+						<option value="en-us"   <if condition="$class['lang'] eq 'en-us'">selected="selected"</if> >英文</option>
+							<option value="bili"   <if condition="$class['lang'] eq 'bili'">selected="selected"</if> >双语</option>
+					</select>
+						 
+					</div>
+					<label class="col-sm-1 control-label no-padding-right" for="level">难度等级:</label>
+					<div class="col-sm-3">
+						<select name="level" id="level" class="form-control col-xs-10 col-sm-3">
+						<option value="1"  <if condition="$class['level'] eq 1">selected="selected"</if>>一级</option>
+						<option value="2"  <if condition="$class['level'] eq 2">selected="selected"</if>>二级</option>
+						<option value="3"  <if condition="$class['level'] eq 3">selected="selected"</if>>三级</option>
+						<option value="4"  <if condition="$class['level'] eq 4">selected="selected"</if>>四级</option>
+						<option value="5"  <if condition="$class['level'] eq 5">selected="selected"</if>>五级</option>
+					</select>
+					</div> 
+				</div> 
+ 
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="image">照片:</label>
+					<div class="col-sm-3"> 
+						<div class="profile-picture">
+               	 		<a href="javascript:void(0)">
+                        	<img src="/Public/uploads/ptclass/{$class.image}?{$class.update_time}" alt="" onerror="this.src='/Public/images/class_default.jpg'" style="width:100px;height:100px" onclick="change_avatar(this)">
+                        	</a>
+                        </div> 
+                        <div class="avatardiv hide" >
+							<input type="file" name="image" id="image">
+						</div> 
+					</div>   
+					
+				</div>
+ 					
+ 				<input type="hidden" name="desc" id="desc">
+
+				<div class="form-group">
+					 <label class="col-sm-1 control-label no-padding-right" >内容:</label>
+					<div class="col-sm-7"> 
+						 <script id="container" name="content" type="text/plain"> 
+					    </script>
+					    <!-- 配置文件 -->
+					    <script type="text/javascript" src="/Public/ueditor/ueditor.config.js"></script>
+					    <!-- 编辑器源码文件 -->
+					    <script type="text/javascript" src="/Public/ueditor/ueditor.all.js"></script>
+					    <!-- 实例化编辑器 -->
+					    <script type="text/javascript">
+					        var ue = UE.getEditor('container'); 
+					    </script>
+
+					</div>
+				</div> 
+
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-9">						 
+							<button class="btn btn-info" type="submit"> <i class="icon-ok bigger-110"></i>
+								提交
+							</button>							 
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn" type="reset">
+							<i class="icon-undo bigger-110"></i>
+							重置
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</block>
+<block name="script">
+<script> 
+	$(function(){$("#menu_102").addClass("active open");
+    $("#menu_1081").addClass("active");})
+
+	ue.ready(function(){
+		ue.setContent('{$class.desc}');
+	})
+	 
+	
+     function change_avatar(obj)
+     {
+     	$(obj).parents().find(".profile-picture").hide();
+     	$(".avatardiv").removeClass("hide");
+     }
+</script>
+	 
+</block>

@@ -9,6 +9,11 @@ class ReportController extends BaseController {
 
 	public function queryReportAction()
 	{
+		$limit = date('Y-m-d',strtotime("-7 day"));
+		if($limit > I("start_time"))
+		{
+			$this->error("仅能查询一周的数据");
+		}
 		$club_id=get_club_id(); 
 		 R("Finance/Report/queryReport",array(array($club_id),1,I("start_time"),I("end_time"))); 
 	}

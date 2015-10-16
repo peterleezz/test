@@ -515,14 +515,14 @@ function unlost(id)
 function getnew()
 {
    var id=$("#reception_card_grid").jqGrid('getGridParam','selrow');
-
-   $.post('/Reception/Cardmanage/getnew',{id:id,"card_number":$("#new_card_number").val()}, function(data,textStatus){
+  var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+   $.post('/Reception/Cardmanage/getnew',{id:rowData.cid,"card_number":$("#new_card_number").val()}, function(data,textStatus){
              if(data.status){
                $("#reception_card_grid").jqGrid('setRowData',id,{card_number:data.new_card_number});
                   $('#newCardModal').modal('hide');    
                     bootbox.alert(data.info,function(){
-                       $("body").append('<a id="open" target="_blank" href="'+data.url+'" > </a>');
-                    document.getElementById("open").click();
+                    //    $("body").append('<a id="open" target="_blank" href="'+data.url+'" > </a>');
+                    // document.getElementById("open").click();
                     }); 
                    
                    // window.open(data.url,"newwindow");

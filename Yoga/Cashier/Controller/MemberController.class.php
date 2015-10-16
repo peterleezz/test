@@ -102,7 +102,38 @@ public function indexAction()
 	 	}
 	  if($cardType['min_price']>I("price"))
 	   {
-	   		$this->error("收银过低"); 
+	   		$grant_user_name = I("grant_user_name");
+			$grant_user_password=I("grant_user_password");
+	   		if(!empty($grant_user_name) && !empty($grant_user_password))
+	   		{
+					
+				$map=array('username'=>$grant_user_name);
+			        $user =M("User")->where($map)->find();
+			        if(is_array($user)){
+			            /* 验证用户密码 */
+			            if(ucenter_md5(I("grant_user_password"), C("MD5_SECRET_KEY")) === $user['password'] ){
+			              $extension = M("UserExtension")->find($user['id']);
+			              if($extension['work_status']==1)
+			              {
+			                $this->error('授权用户无效!');
+			              }
+			              else
+			              {
+
+			              }
+			            }
+			            else
+			            {
+			            	  $this->error("授权无效"); 
+			            }
+			        }
+			        else
+			        {
+			        	  $this->error("授权无效"); 
+			        }
+
+	   		}
+	   		else $this->error("收银过低"); 
 	   }
 	 	if(!empty($card_number) && $cardModel->isExist($card_number,get_brand_id()))
 	 	{
@@ -138,13 +169,18 @@ public function indexAction()
                         }
                         else
                         {
-                        	 $card_number=get_club_id().'0'. $card_id;   
-                        	 $card_number = preg_replace("/4/", "5", $card_number);
+
+                        	$max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
+                        	if(empty($max_card))
+                        		$card_number=get_club_id()."000001";
+                        	else
+                        		$card_number=$max_card['card_number']+1; 
+                        	$card_number = preg_replace("/4/", "5", $card_number);
 			                while(true)
 			                {
 			                        if($cardModel->isExist($card_number,get_brand_id()))
 			                        {
-			                                $card_number.=rand(0,100);
+			                                $card_number+=1;
 			                                $card_number = preg_replace("/4/", "5", $card_number);
 			                        }
 			                        else
@@ -152,6 +188,23 @@ public function indexAction()
 			                                break;
 			                        }
 			                }
+
+
+
+                   //      	 $card_number=get_club_id().'0'. $card_id;   
+                   //      	 $card_number = preg_replace("/4/", "5", $card_number);
+			                // while(true)
+			                // {
+			                //         if($cardModel->isExist($card_number,get_brand_id()))
+			                //         {
+			                //                 $card_number.=rand(0,100);
+			                //                 $card_number = preg_replace("/4/", "5", $card_number);
+			                //         }
+			                //         else
+			                //         {
+			                //                 break;
+			                //         }
+			                // }
                         }
 
                         
@@ -202,6 +255,8 @@ public function indexAction()
 		}
 		$model->payed=$payed;
 		$contract_number = date("YmdHis").rand(0,10000);
+        $r_contract_number=I("contract_number");
+		if(!empty($r_contract_number)) $contract_number=I("contract_number");
 		$model->contract_number=$contract_number;
 		$model->free_rest=I("free_rest");
 		$model->free_trans=I("free_trans")==1 ||I("free_trans")=="true"?1:0 ;

@@ -287,6 +287,13 @@
                 <input value="0" class="col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
             </div>
 
+            <div class="form-group">
+              <label for="contract_number" class="control-label col-xs-12 col-sm-3 no-padding-right">合同号</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-6" type="text" name="contract_number" id="contract_number"></div>
+            </div>
+
+
 										<div class="form-group">
 											<label for="description" class="control-label col-xs-12 col-sm-3 no-padding-right">备注</label>
 											<div class="col-xs-12 col-sm-9">
@@ -316,7 +323,7 @@
 							上一步
 						</button>
 
-						<button class="btn btn-success btn-next" data-last="Finish ">
+						<button class="btn btn-success btn-next" id="nextbtn" data-last="Finish ">
 							下一步
 							<i class="icon-arrow-right icon-on-right"></i>
 						</button>
@@ -327,6 +334,49 @@
 
 		</div>
 	</div>
+
+
+
+
+
+
+
+<div class="modal fade " id="grantModal" tabindex="-1" role="dialog" aria-labelledby="grantModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+ 			 <div class="modal-header">
+ 
+   				 <h4 class="modal-title" id="chpasswdModalLabel">输入有授权超低价卡价的账号</h4>
+  			</div>
+	 		 	<div class="modal-body"> 
+
+			      <div class="form-group">
+			        <label for="original_password" class="col-sm-3 control-label">帐号：</label>
+			        <div class="col-sm-9">
+			            <input type="text"  class="form-control" id="grant_user_name" >
+			        </div>
+			      </div>
+
+			      <div class="form-group">
+			        <label for="ptchoose_name" class="col-sm-3 control-label">密码：</label>
+			        <div class="col-sm-9">
+			          <input type="password" class="form-control" id="grant_user_password" ></div>
+			      </div> 
+			 </div>
+		    <div class="modal-footer">
+		       <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+		      <button type="button" class="btn btn-primary" onclick="grant()">确认</button>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
 </div>
 </block>
 
@@ -335,6 +385,32 @@
 <script>
  $("#menu_6").addClass("active open");
     $("#menu_37").addClass("active");
+
+function grant()
+{
+	$('#grantModal').modal("hide"); 
+	var grant_user_name = $("#grant_user_name").val();
+	var grant_user_password = $("#grant_user_password").val();
+	$.ajax({
+						    type:"post",
+						    async:false,
+						    url:"/Cashier/Member/join",
+						    data:{contract_number:$("#contract_number").val(),grant_user_name:grant_user_name,grant_user_password:grant_user_password,member_id:id,type:$("[name=type]:checked").val(),card_type_id:$("#card_type_id").val(),active_type:$("#active_type").val(),present_day:$("#present_day").val(),present_num:$("#present_num").val(),start_time:$("#start_time").val(),end_time:$("#end_time").val(),price:$("#should_pay").val(),cash:$("#cash").val(),card_number:$("#card_number").val(),pos:$("#pos").val(),free_trans:$("#free_trans").prop("checked"), check:$("#check").val(),check_num:$("#check_num").val(),description:$("#description").val(),free_rest:$("#free_rest").val(),network:$("#network").val(),netbank:$("#netbank").val(),join_mc_id:$("#join_mc_id").val()},
+						    success:function(data,textStatus){   
+						                if(data.status){          
+						                $("#info").text("您的卡号为："+data.card_id);  
+						                ret=success=true; 
+						                $("#nextbtn").click();
+	                            } else {
+	                                bootbox.alert(data.info);    
+	                               ret= false;            
+	                            }       
+						    }
+
+						  });
+}
+
+
 
 	var id;
 	var success=false;
@@ -350,6 +426,7 @@
     }).on('changeDate', function(ev){
       calEndTime();
 	});
+
 
 	function   DateAdd(interval,number,date)  
 {  
@@ -503,11 +580,15 @@
 					if(info.step == 1) {
 						 var ele=$("#member_info tbody :radio:checked");						
 						 if(ele.length==0) return false; 
-						  //  if($("#member_info tbody :radio:checked").parent().parent().find(".can_modify").length==0)
-						  // {
-						  // 	bootbox.alert("正式会员，请直接到会籍合同管理中进行续会升级！");
-						  // 	return false;
-						  // }
+						   if($("#member_info tbody :radio:checked").parent().parent().find(".can_modify").length==0)
+						  {
+						   
+						  	bootbox.alert("提示：该会员已是正式会员，应该到会籍合同管理中进行续会或者升级！继续入会会重新生成一张会员卡！~~");
+						   
+						  	// 
+						  	// $("#card_number").val($("#member_info tbody :radio:checked").parent().parent().find("td:last").html());
+						  	// $("#card_number").attr("readonly","readonly");
+						  }
 						 id = (ele.val());						 
 					}
 					else if(info.step == 2 && info.direction=='next') {
@@ -530,22 +611,25 @@
 					else if(info.step == 3 && info.direction=='next') {
 						if(success) return;
 						var ret = false;
-						$.ajax({
-						    type:"post",
-						    async:false,
-						    url:"/Cashier/Member/join",
-						    data:{member_id:id,type:$("[name=type]:checked").val(),card_type_id:$("#card_type_id").val(),active_type:$("#active_type").val(),present_day:$("#present_day").val(),present_num:$("#present_num").val(),start_time:$("#start_time").val(),end_time:$("#end_time").val(),price:$("#should_pay").val(),cash:$("#cash").val(),card_number:$("#card_number").val(),pos:$("#pos").val(),free_trans:$("#free_trans").prop("checked"), check:$("#check").val(),check_num:$("#check_num").val(),description:$("#description").val(),free_rest:$("#free_rest").val(),network:$("#network").val(),netbank:$("#netbank").val(),join_mc_id:$("#join_mc_id").val()},
-						    success:function(data,textStatus){   
-						                if(data.status){          
-						                $("#info").text("您的卡号为："+data.card_id);  
-						                ret=success=true; 
-	                            } else {
-	                                bootbox.alert(data.info);    
-	                               ret= false;            
-	                            }       
-						    }
+                        var min_price = $("#i_min_price").text();
+                        min_price= parseInt(min_price);
 
-						  });
+                        var price = $("#should_pay").val();
+                        price = parseInt(price);
+
+                         var grant_user_name="";
+                           var grant_user_password="";
+                        if(price < min_price)
+                        {
+                        	  $('#grantModal').modal("show"); 
+                        }
+                        else
+                        {
+                        	grant();
+                        }
+						
+                          
+
  						return ret;		 
  
 					}

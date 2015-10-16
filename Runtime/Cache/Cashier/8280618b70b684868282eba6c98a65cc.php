@@ -542,7 +542,7 @@
 
 
                             <div class="form-group red">
-                                <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="extra" >手续费:</label>
+                                <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="extra" >升级会费:</label>
 
                                 <div class="col-xs-12 col-sm-9">
                                     <input type="text" class=" col-xs-12 col-sm-6 red"  id="extra" readonly = "readonly" value="￥<?php echo ($extra); ?>（需单独付款）"></div>
@@ -588,6 +588,12 @@
                             <div class="col-xs-12 col-sm-9">
                                 <input value="0"  class="form-control col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
                         </div>
+                          <div class="form-group">
+                            <label for="contract_number" class="control-label col-xs-12 col-sm-3 no-padding-right">合同号</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="" class="form-control col-xs-12 col-sm-6" type="text" name="contract_number" id="contract_number"></div>
+                        </div>
+     
                             <div class="form-group">
                                 <label for="description" class="control-label col-xs-12 col-sm-3 no-padding-right">备注</label>
                                 <div class="col-xs-12 col-sm-9">
@@ -845,7 +851,7 @@ $(function(){
                         year += Math.floor(month/12);
                         month=month%12;  
                         $("#end_time").val(year+"-"+padLeft(month,2)+"-"+padLeft(day,2)); 
-                        $("#should_pay").val(saletypes[i].price - current_contract.price +parseInt(extra));
+                        $("#should_pay").val(saletypes[i].price - current_contract.price );
                         current_card_type=saletypes[i];
                         return;
                     }

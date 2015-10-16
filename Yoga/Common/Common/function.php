@@ -6,6 +6,30 @@ function dd()
     echo "x";die();
 }
 
+function getautocardnumber()
+{
+        $max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
+                            if(empty($max_card))
+                                $card_number=get_club_id()."000001";
+                            else
+                                $card_number=$max_card['card_number']+1; 
+                            $card_number = preg_replace("/4/", "5", $card_number);
+                            $cardModel = D("Card");
+                            while(true)
+                            {
+                                    if($cardModel->isExist($card_number,get_brand_id()))
+                                    {
+                                            $card_number+=1;
+                                            $card_number = preg_replace("/4/", "5", $card_number);
+                                    }
+                                    else
+                                    {
+                                            break;
+                                    }
+                            }
+                            return $card_number;
+
+}
 function protential_d_asc($a,$b)
 {
     return sortallgroup($a,$b,"protential_d")==0;

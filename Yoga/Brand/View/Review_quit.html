@@ -65,6 +65,7 @@ function addCellAttr(rowId, val, rawObject, cm, rdata) {
                            return getValue(a,value); 
                          }}, 
                           {name:'contract_number',index:'contract_number',formatter : function(value, options, rData){
+                            if(rData.contract!=null)
                             return rData.contract.contract_number;
                          }},   
                          {name:'create_time',index:'create_time'}, 

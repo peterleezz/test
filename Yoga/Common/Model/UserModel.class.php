@@ -77,6 +77,14 @@ class UserModel extends RelationModel {
     }
 
 
+public function getPtAndTuan($club_id=null)
+    {
+        $club_id=empty($club_id)?get_club_id():$club_id;
+        return $this->where("a.id=b.id and a.id=c.uid and b.club_id=$club_id and (c.group_id=8 or c.group_id=19)")->table(array("yoga_user_extension"=>"a","yoga_user"=>"b","yoga_auth_group_access"=>"c"))->field("a.id,a.name_cn")->select();
+    }
+
+
+
     public function getChannelUser($club_id=null)
     {
          $club_id=empty($club_id)?get_club_id():$club_id;

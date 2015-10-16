@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+
+ 	<script type="text/javascript">
+
+ 		function   DateAdd(interval,number,date)  
+{  
+/* 
+  *   功能:实现VBScript的DateAdd功能. 
+  *   参数:interval,字符串表达式，表示要添加的时间间隔. 
+  *   参数:number,数值表达式，表示要添加的时间间隔的个数. 
+  *   参数:date,时间对象. 
+  *   返回:新的时间对象. 
+  *   var   now   =   new   Date(); 
+  *   var   newDate   =   DateAdd( "d ",5,now); 
+  *---------------   DateAdd(interval,number,date)   ----------------- 
+  */  
+        switch(interval)  
+        {  
+                case   "y "   :   {  
+                        date.setFullYear(date.getFullYear()+number);  
+                        return   date;  
+                        break;  
+                }  
+                case   "q "   :   {  
+                        date.setMonth(date.getMonth()+number*3);  
+                        return   date;  
+                        break;  
+                }  
+                case   "m "   :   {  
+                        date.setMonth(date.getMonth()+number);  
+                        return   date;  
+                        break;  
+                }  
+                case   "w "   :   {  
+                        date.setDate(date.getDate()+number*7);  
+                        return   date;  
+                        break;  
+                }  
+                case   "d "   :   {  
+                        date.setDate(date.getDate()+number);  
+                        return   date;  
+                        break;  
+                }  
+                case   "h "   :   {  
+                        date.setHours(date.getHours()+number);  
+                        return   date;  
+                        break;  
+                }  
+                case   "m "   :   {  
+                        date.setMinutes(date.getMinutes()+number);  
+                        return   date;  
+                        break;  
+                }  
+                case   "s "   :   {  
+                        date.setSeconds(date.getSeconds()+number);  
+                        return   date;  
+                        break;  
+                }  
+                default   :   {  
+                        date.setDate(date.getDate()+number);  
+                        return   date;  
+                        break;  
+                }  
+        }  
+}  
+
+
+ 
+			var start_time="2015-08-31";
+			 s_start_time = start_time.replace(/-/g,"/");
+  			var start = new Date(s_start_time );
+  			var end = start; 
+ 			end = DateAdd("m ",3,end);	
+ 			end = DateAdd("d ",3,end);
+ 			alert(end);
+ 			
+ 			// end = DateAdd("d",parseInt($("#present_day").val()),end);	
+			// var params=start_time.split("-");
+			// var year=parseInt(params[0]);
+			// var month=parseInt(params[1]);
+			// var day = parseInt(params[2]);
+			// month += parseInt(current_card_type.valid_time);
+			// year += Math.floor(month/13);
+			// month=month%13; 
+			// var date = new Date() ; 
+			// date.setFullYear(year,month-1,day); 
+   //          date.setDate(date.getDate()+parseInt($("#present_day").val())); 
+			// $("#end_time").val(date.format("yyyy-MM-dd"));
+		 
+
+
+ 	</script>
+ </head>
+ <body>
+ 
+ </body>
+ </html> 

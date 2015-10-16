@@ -696,8 +696,10 @@
 
 
   <script> 
-  var goodstypesarr = eval("(" + '<?php echo ($goodstypesarr); ?>' + ")");
-
+var gta='<?php echo ($goodstypesarr); ?>';
+  gta = gta.replace(new RegExp("\n","gm"),""); 
+gta = gta.replace(new RegExp("\r","gm"),"");
+  var goodstypesarr = eval("(" + gta + ")");
 function tip()
 {
     var use_recharge=$("#use_recharge").prop("checked");
@@ -744,10 +746,11 @@ function tip()
         arr.push(obj);
       }
       var goods=$.toJSON( arr );
-      $.post('/Bar/Goods/buy',{use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
+      var extension_id = '<?php echo ($extension_id); ?>';
+      $.post('/Bar/Goods/buy',{extension_id:extension_id, use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
              if(data.status){ 
                     bootbox.alert(data.info,null); 
-                    window.location.href = data.url;
+                  
                 } else {
                     bootbox.alert(data.info);                   
                 }

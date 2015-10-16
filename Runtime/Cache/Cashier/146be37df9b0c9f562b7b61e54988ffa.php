@@ -700,7 +700,7 @@ function xuhui()
 }
 function zhuanrang()
 {
-   var id = jQuery(grid_selector).jqGrid('getGridParam','seContractlrow');
+   var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                         if (id) {
                            var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
                            id=rowData.contract_id;
@@ -741,7 +741,7 @@ function zhuanrang()
                            return getValue(a,value); 
                    },cellattr: addCellAttr},
                           {name:'contract_id',index:'contract_id',hidden:true},
-                        {name:'contract_number',index:'contract_number',width:150,hidden:true},      
+                        {name:'contract_number',index:'contract_number',width:150},      
                         {name:'card_number',index:'card_number',width:85,editable: true,},
                         {name:'invalid',index:'invalid',width:35,formatter : function(value, options, rData){
                                              var a=new Array("无效","有效");

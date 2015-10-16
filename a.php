@@ -1,35 +1,30 @@
 <?php
 
-$a=array (
-  'member_id' => '99939585',
-  'type' => '0',
-  'card_type_id' => '945',
-  'active_type' => '0',
-  'present_day' => '0',
-  'present_num' => '1',
-  'start_time' => '2015-08-31',
-  'end_time' => '2015-11-31',
-  'price' => '800',
-  'cash' => '800',
-  'card_number' => '',
-  'pos' => '0',
-  'free_trans' => 'false',
-  'check' => '0',
-  'check_num' => '',
-  'description' => '',
-  'free_rest' => '0',
-  'network' => '0',
-  'netbank' => '0',
-  'join_mc_id' => '1813',
-);
+$card_type="董事卡";
+ $valid_number=0;
+                    if(preg_match('/[1|一]年卡/u', $card_type))
+                    {
+                       $valid_time =12;
+                    }else  if(preg_match('/[2|二|两]年卡/u', $card_type))
+                    {
+                       $valid_time =24;
+                    }else  if(preg_match('/[3|三]年卡/u', $card_type))
+                    {
+                       $valid_time =36;
+                    }
+                    else  if(preg_match('/半年(.*)卡/u', $card_type))
+                    {
+                       $valid_time =6;
+                    }else  if(preg_match('/季(度)?卡/u', $card_type))
+                    {
+                       $valid_time =3;
+                    }else  if( preg_match('/(\d+)(个)?月卡/i', $card_type,$matches))
+                    {
+                       $valid_time =$matches[1];echo $valid_time;die();
+                    }
 
-function trans($a)
-{
-	$s="";
-	foreach ($a as $key => $value) {
-		if(empty($value))$value=' ';
-		$s.="{$key}/{$value}/";
-	}
-	return $s;
-}
-echo preg_replace("/\/$/", "", trans($a));
+                    else
+                    {
+                      $valid_time =12;
+                    }
+echo $valid_time;

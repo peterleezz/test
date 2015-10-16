@@ -546,6 +546,15 @@ $("#finance_query_report").submit(function(){
             bootbox.alert("请输入查询时间！");
             return false;
          } 
+
+         var date= new Date(Date.parse(start_time.replace(/-/g,   "/")));
+         var t=date.getTime(); 
+         var n = new Date().getTime();
+         if(n-t>7*24*3600*1000)
+         {
+             bootbox.alert("仅能查询一周数据！");
+              return false;
+         }
          jQuery("#finance_report_grid").jqGrid('setGridParam',{postData:self.serialize(),url:self.attr("action"),page:1,datatype:'json'}).trigger("reloadGrid"); 
          return false;
      });

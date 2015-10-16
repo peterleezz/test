@@ -80,10 +80,13 @@ public function continueAction($id)
 		$useClubs=D("CardUseclub")->getAllUseClub($contract['card_type']['id']);
 		$clubs="";
 		
-			$model =M("BrandConfig");
-		$config = $model->where(array("brand_id"=>get_brand_id()))->find();
-		$this->assign("extra",$config['member_fillcard_price']);
+		// 	$model =M("BrandConfig");
+		// $config = $model->where(array("brand_id"=>get_brand_id()))->find();
+		// $this->assign("extra",$config['member_fillcard_price']);
 		
+		$fee = D("Goods")->getXuhuiFee();
+		$this->assign("extra",$fee['price']);
+
 		foreach ($useClubs as $key => $value) {
 			if($key!=0)$clubs.="、";
 			$clubs.=$value['club_name'];
@@ -122,9 +125,9 @@ public function continueAction($id)
 			if($key!=0)$clubs.="、";
 			$clubs.=$value['club_name'];
 		}
-		$model =M("BrandConfig");
-		$config = $model->where(array("brand_id"=>get_brand_id()))->find();
-		$this->assign("extra",$config['member_upgrade_price']);
+			
+		$fee = D("Goods")->getShengjiFee();
+		$this->assign("extra",$fee['price']);
 
 		$this->assign("useClubs",$clubs);
 
@@ -446,7 +449,9 @@ public function doContinueAction()
 	 	}  
 	 	$mc_id=I("join_mc_id");
 	 	 
-	 	$contract['contract_number']= date("YmdHis").rand(0,10000); 
+	 	 $cn = I("contract_number");
+	 	 if(!empty($cn))$contract['contract_number']= $cn; 
+	 	 else $contract['contract_number']= date("YmdHis").rand(0,10000); 
 	 	$contract['card_type_id']=I('card_type_id');
 	 	$contract['card_id']=$current_contract['card_id'];
 	 	$contract['member_id']=$current_contract['member_id'];
@@ -486,7 +491,7 @@ public function doContinueAction()
 	 		$this->error($service->getError());
 	 	}
 
-	 	$config = M("BrandConfig")->where(array("brand_id"=>get_brand_id()))->find();  
+	 	// $config = M("BrandConfig")->where(array("brand_id"=>get_brand_id()))->find();  
 	 	// $extra_bill_id=$service->addBillProject(11,0,$contract_id,$current_contract['member_id'],$config['member_fillcard_price'],0,get_brand_id(),is_user_login(),get_club_id(),$mc_id,I("description"));
 	
 	 	// if(!$extra_bill_id)
@@ -524,8 +529,9 @@ public function doContinueAction()
 	   	  M("Review")->data($data)->add();
 	   }
 	 
-	   M("MemberBasic")->where(array("id"=>$$member['id']))->setField(array("type"=>1,"maybuy"=>0,"hopeprice"=>0,"mc_id"=>$mc_id)); 
-	   $this->success("续会成功，请缴纳续会手续费！",U("Bar/Goods/index"));
+	   M("MemberBasic")->where(array("id"=>$member['id']))->setField(array("type"=>1,"maybuy"=>0,"hopeprice"=>0,"mc_id"=>$mc_id)); 
+	  	$fee=D("Goods")->getXuhuiFee();
+	   $this->success("续会成功，请缴纳续会手续费！",U("Bar/Goods/index",array("member_id"=>$member['id'],"id"=>$fee['id'])));
 	}
 
 
@@ -548,6 +554,10 @@ public function doContinueAction()
 	 		$this->error("original contract is not exist!");
 	 	}
 	 	unset($contract['id']);
+
+	 	$cn = I("contract_number");
+	 	if(!empty($cn))$contract['contract_number']= $cn; 
+	 	else $contract['contract_number']= date("YmdHis").rand(0,10000);  
 	 	$contract['card_type_id']=I('card_type_id');
 	 	$contract['price']= $contract['price']+I("should_pay");
 	 	$payed+=$contract['payed'];
@@ -634,7 +644,9 @@ public function doContinueAction()
 	   	  M("Review")->data($data)->add();
 	   }
 	 	M("MemberBasic")->where(array("id"=>$$member['id']))->setField(array("type"=>1,"maybuy"=>0,"hopeprice"=>0,"mc_id"=>$mc_id)); 
-	   $this->success("升级成功，请缴纳续会手续费！",U("Bar/Goods/index"));
+	  	$fee=D("Goods")->getShengjiFee();
+	   $this->success("升级成功，请缴纳续会手续费！",U("Bar/Goods/index",array("member_id"=>$member['id'],"id"=>$fee['id'])));
+ 
 	}
 
 
@@ -666,13 +678,17 @@ public function doContinueAction()
 		}
 		$member=M("MemberBasic")->find($owner_id);  
 		$service=\Service\CService::factory("Financial");
-		$model =M("BrandConfig");
-		$config = $model->where(array("brand_id"=>get_brand_id()))->find(); 
-		$bill_project=$service->getBillProject("0,4,5",$contract_id); 
+
+		// $model =M("BrandConfig");
+		// $config = $model->where(array("brand_id"=>get_brand_id()))->find(); 
+		$fee = D("Goods")->getZhuanrangFee();
+
+
+		$bill_project=$service->getBillProject("0,3,4,5",$contract_id); 
 		$bill_project['member_id']=$new_id;  
 		$bill_project['type']=3; 
 		unset($bill_project['id']);
-		M("BillProject")->add($bill_project)->add();
+		M("BillProject")->data($bill_project)->add();
 
 		$contract['member_id']=$new_id; 
 		$contract_number = date("YmdHis").rand(0,10000);
@@ -747,9 +763,12 @@ public function doContinueAction()
 		$member = M('MemberBasic')->find($member_id);
 		$this->assign("member",$member);
 		$this->assign("contract",$contract); 
-		$model =M("BrandConfig");
-		$config = $model->where(array("brand_id"=>get_brand_id()))->find();
-		$this->assign("extra",$config['member_trans_price']);
+
+		$fee=D("Goods")->getZhuanrangFee();
+		$this->assign("extra",$fee['price']);
+		// $model =M("BrandConfig");
+		// $config = $model->where(array("brand_id"=>get_brand_id()))->find();
+		// $this->assign("extra",$config['member_trans_price']);
 		
 
 		// $useClubs=D("CardUseclub")->getAllUseClub($card['card_type']['id']);

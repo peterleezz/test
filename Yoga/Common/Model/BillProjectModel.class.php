@@ -3,7 +3,7 @@ namespace Common\Model;
 use Think\Model\RelationModel;
 class BillProjectModel extends RelationModel { 
     protected $_validate = array( 
-        array('type','number','Type Error',self::MUST_VALIDATE), //0-contract 1-pt 2-goods 3-transform  4-continue 5-upgrade 7-recharge 8--pt book 9--contract book 10--tuika 11--continue_extra 12--upgrade_extra 13--transform_extra 14--rest_extra
+        array('type','number','Type Error',self::MUST_VALIDATE), //0-contract 1-pt 2-goods 3-transform  4-continue 5-upgrade 7-recharge 8--pt book 9--contract book |(10--tuika 11--continue_extra 12--upgrade_extra 13--transform_extra 14--rest_extra)
         array('sub_type','number','Sub_type Error',self::MUST_VALIDATE), //no use anymore
         array('member_id','number','请输入正确的会员！!',self::MUST_VALIDATE),
         array('price','/^\d*(\.\d+)?$/','请输入正确的价格!',self::MUST_VALIDATE),

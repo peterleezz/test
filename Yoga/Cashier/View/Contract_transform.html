@@ -102,7 +102,12 @@
         </div>
 
     <if condition="0 eq $contract['free_trans']">
-        <div class="panel panel-default">
+
+       <h4 class="red"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+        转让后单独收取转让费￥{$extra}元
+        </h4>
+
+       <!--  <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">转让费(￥{$extra})</h3>
             </div>
@@ -149,7 +154,7 @@
         </form>
             </div>
 
-        </div>
+        </div> -->
 
     <else/>
         <h4 class="red"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>

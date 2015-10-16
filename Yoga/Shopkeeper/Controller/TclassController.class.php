@@ -44,7 +44,7 @@ class TclassController extends BaseController {
 
 	public function showAddAction()
 	{
-		$pt = D("User")->getPt(get_club_id());
+		$pt = D("User")->getPtAndTuan(get_club_id());
 		$this->pt=$pt;
 		$this->display();
 	}
@@ -53,7 +53,7 @@ class TclassController extends BaseController {
 	{
 		$class=M("PtClassPublic")->find($id);
 		$class['desc']=htmlspecialchars_decode($class['desc']);
-		$pt = D("User")->getPt(get_club_id());
+		$pt = D("User")->getPtAndTuan(get_club_id());
 		$this->pt=$pt;
 		$this->assign("class",$class);
 		$this->display("showAdd");

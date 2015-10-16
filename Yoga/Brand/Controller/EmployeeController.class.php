@@ -87,14 +87,17 @@ class EmployeeController extends BaseController {
 		$this->assign("clubs",$clubs);
 		//get roles
 		$authGroupAccess =M("AuthGroupAccess");
-		$group_ids=  $authGroupAccess->where("uid=".is_user_login())->field("group_id")->select();
+		  $group_ids=  $authGroupAccess->where("uid=".is_user_login())->field("group_id")->select();
+
+		 
+
 		$ids=array();
 		foreach ($group_ids as $key => $value) {
 			$ids[]=$value['group_id'];
 		}
-		$map['id'] = array("in",$ids);
+		//$map['id'] = array("in",$ids);
 		$map['module'] = array("neq","Brand");
-		$groups = M("AuthGroup")->where($map)->field("id,title")->select();
+		$groups = M("AuthGroup")->where($map)->field("id,title")->select(); 
 		$this->assign("groups",$groups);
 		$this->display();
 	}
@@ -281,7 +284,7 @@ class EmployeeController extends BaseController {
 		foreach ($group_ids as $key => $value) {
 			$ids[]=$value['group_id'];
 		}
-		$map['id'] = array("in",$ids);
+		//$map['id'] = array("in",$ids);
 		$map['module'] = array("neq","Brand");
 		$groups = M("AuthGroup")->where($map)->field("id,title")->select();
 		$this->assign("groups",$groups);
@@ -333,6 +336,7 @@ class EmployeeController extends BaseController {
 	      			$this->error($extensionModel->getError());
 			}else{
 				 $extensionModel->work_status=I("work_status");
+				 $extensionModel->can_grant=I("can_grant");
 				if(!empty($_FILES["avatar"]["name"]))
 				{
 					$config["savePath"]="em_avatar";

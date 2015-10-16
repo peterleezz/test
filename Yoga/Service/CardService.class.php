@@ -57,7 +57,7 @@ class CardService  extends CService
                $contractModel->where(array("id"=>$value['id']))->setField("end_time",$valid_time);
             }          
         } 
-         M("Card")->where(array("id"=>$id))->setField(array("status"=>0,"extension"=>'')); 
+      
         D("CardOpHistory")->updateStatus($id,0,3);
         return true;
 	}

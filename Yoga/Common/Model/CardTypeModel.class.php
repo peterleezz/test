@@ -13,6 +13,7 @@ class CardTypeModel extends RelationModel {
     );
 
      protected $_auto = array(
+	array('description', 'htmlspecialchars', self::MODEL_BOTH, 'function'),
        array('update_time','getDbTime',self::MODEL_BOTH,'function'),
        array('brand_id','get_brand_id',self::MODEL_BOTH,'function'),  
     ); 
