@@ -711,7 +711,12 @@
     {
           var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                 if (id) {
-                   destroy(getCardid());
+                  bootbox.confirm("退会将删除会员此卡号下的所有会籍合同，如需退单个会籍，请在合同管理中选择退款！",function(r) { 
+                    if(r)
+                    {
+                         destroy(getCardid());
+                    }
+                  }) 
                 } else { alert("请先选中！");}
     }
     function xiaoka()

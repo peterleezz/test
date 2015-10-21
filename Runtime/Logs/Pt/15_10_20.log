@@ -1,0 +1,550 @@
+[ 2015-10-20T17:12:29+08:00 ] 127.0.0.1 /index.php/Pt/Sale/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000146s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined variable: channels /var/www/yoga/Runtime/Cache/Pt/fdb4985b66d44d137d1167805802aca2.php 第 399 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029260s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000066s ]
+
+[ 2015-10-20T17:12:30+08:00 ] 127.0.0.1 /Pt/Sale/getMembers
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Service/MemberService.class.php 第 183 行.
+
+[ 2015-10-20T17:12:32+08:00 ] 127.0.0.1 /index.php/Pt/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000064s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039700s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000059s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000061s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000118s ]
+
+[ 2015-10-20T17:12:32+08:00 ] 127.0.0.1 /index.php/Pt/Member/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/MemberController.class.php 第 17 行.
+
+[ 2015-10-20T17:12:42+08:00 ] 127.0.0.1 /index.php/Pt/Class/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000065s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016049s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000105s ]
+
+[ 2015-10-20T17:12:42+08:00 ] 127.0.0.1 /Pt/Class/query
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 18 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 32 行.
+
+[ 2015-10-20T17:12:44+08:00 ] 127.0.0.1 /index.php/Pt/Schedule/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+ERR: 无法加载控制器:Schedule
+
+[ 2015-10-20T17:12:47+08:00 ] 127.0.0.1 /Pt/Class/query
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 18 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 32 行.
+
+[ 2015-10-20T17:12:49+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000190s ]
+ERR: 无法加载控制器:Report
+
+[ 2015-10-20T17:12:50+08:00 ] 127.0.0.1 /Pt/Class/query
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 18 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 32 行.
+
+[ 2015-10-20T17:12:51+08:00 ] 127.0.0.1 /index.php/Pt/Visit/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 353 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 369 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 378 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 391 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 397 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 407 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 413 行.
+NOTIC: [8] Use of undefined constant male - assumed 'male' /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 433 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 433 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 441 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 442 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 443 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 444 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 469 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 504 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 510 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 521 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 526 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 538 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 543 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 548 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 559 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 564 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 569 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 580 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 586 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 595 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 596 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 597 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 598 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 599 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 600 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 614 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 615 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 616 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 624 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 630 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 631 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 632 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 633 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 634 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 635 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 636 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 650 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 651 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 659 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 660 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 672 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 677 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 687 行.
+NOTIC: [8] Undefined variable: member /var/www/yoga/Runtime/Cache/Pt/e66fc0b89ad5e607a9e5acad72f5a84b.php 第 712 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036719s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2015-10-20T17:12:53+08:00 ] 127.0.0.1 /Pt/Class/query
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 18 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 32 行.
+
+[ 2015-10-20T17:13:02+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+ERR: 无法加载控制器:Report
+
+[ 2015-10-20T17:13:33+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000110s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+ERR: 无法加载控制器:Report
+
+[ 2015-10-20T17:13:41+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+ERR: 模板不存在:./Yoga/Pt/View/Report_index.html
+
+[ 2015-10-20T17:13:50+08:00 ] 127.0.0.1 /Pt/Class/query
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000102s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000068s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 18 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 32 行.
+
+[ 2015-10-20T17:13:53+08:00 ] 127.0.0.1 /index.php/Pt/Schedule/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+ERR: 无法加载控制器:Schedule
+
+[ 2015-10-20T17:13:54+08:00 ] 127.0.0.1 /Pt/Class/query
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 18 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Pt/Controller/ClassController.class.php 第 32 行.
+
+[ 2015-10-20T17:13:57+08:00 ] 127.0.0.1 /index.php/Pt/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000077s ]
+
+[ 2015-10-20T17:13:57+08:00 ] 127.0.0.1 /index.php/Pt/Member/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/MemberController.class.php 第 17 行.
+
+[ 2015-10-20T17:14:19+08:00 ] 127.0.0.1 /index.php/Pt/Schedule/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000064s ]
+ERR: 无法加载控制器:Schedule
+
+[ 2015-10-20T17:14:23+08:00 ] 127.0.0.1 /index.php/Pt/Member/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/MemberController.class.php 第 17 行.
+
+[ 2015-10-20T17:14:26+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000119s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011868s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2015-10-20T17:14:27+08:00 ] 127.0.0.1 /index.php/Pt/Member/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/MemberController.class.php 第 17 行.
+
+[ 2015-10-20T17:15:32+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000080s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011130s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000043s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000091s ]
+
+[ 2015-10-20T17:15:32+08:00 ] 127.0.0.1 /index.php/Pt/Member/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/MemberController.class.php 第 17 行.
+
+[ 2015-10-20T17:18:30+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000045s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000104s ]
+
+[ 2015-10-20T17:18:48+08:00 ] 127.0.0.1 /index.php/Pt/Report/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000105s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000071s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012106s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2015-10-20T17:18:48+08:00 ] 127.0.0.1 /index.php/Pt/Member/query.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/McService.class.php 第 372 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Service/ChannelService.class.php 第 136 行.
+NOTIC: [8] Trying to get property of non-object /var/www/yoga/Yoga/Pt/Controller/MemberController.class.php 第 17 行.
+

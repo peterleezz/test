@@ -413,10 +413,14 @@ public function checkUnRest1Action()
 		foreach ($brands as $key => $value) {
 			 M("GoodsCategory")->data(array("is_system"=>1, "name"=>"系统停补卡收费","property"=>3,"type"=>1,"brand_id"=>$value['id']))->add(); 
 		 
-		}
+		} 
+		$clubs = M("Club")->select(); 
+		$this->createclubsysinfo($clubs);
+	}
 
-		$clubs = M("Club")->select();
-		foreach ($clubs as $key => $value) {
+	public function createclubsysinfo($clubs)
+	{
+			foreach ($clubs as $key => $value) {
 			 $model = D("Goods");
 			 $category = M("GoodsCategory")->where(array("brand_id"=>$value['brand_id'],"is_system"=>1))->find();
 	   	 	 $data =array("sys_type"=>0,"name"=>$value['club_name']."--补卡费","category_id"=>$category['id'],"brand_id"=>$value['brand_id'],"price"=>100,"total_num"=>"999999","is_system"=>1);
@@ -470,6 +474,75 @@ public function checkUnRest1Action()
 	   	  
 	   	     $goodsClubModel->data(array("goods_id"=>$id,"club_id"=>$value['id']))->add();  
 		}
+	}
+
+
+	public function mailStatisticsAction()
+	{
+		$c = C("st");
+		foreach ($c as $key => $value) {
+			$this->st($key,$mailto);;
+		}
+
+	}
+
+	private function st($club_id,$mailto)
+	{ 
+		$club = M("Club")->find($club_id);
+		$club_name = $club['club_name'];
+		$month = date('Y-m');
+		$subject = "统计数据---".date('Y-m')."---".$club_name;
+		$txt="---------------当月进馆统计---------------\r\n";
+		$checkin = $this->st_checkin($club_id,$month);
+		$txt.="进馆人次：".$checkin."\r\n";
+
+		$checkinp = $this->st_checkinp($club_id,$month);
+		$txt.="进馆会员数：".$checkinp."\r\n";
+
+	    $txt.="---------------历史数据统计---------------\r\n";
+		$membercount = $this->st_membercount($club_id,$month);
+		$txt.="截止目前会员人数：".$membercount."\r\n";
+
+		$nmembercount = $this->st_nmembercount($club_id,$month);
+		$txt.="截止目前潜在会员人数：".$nmembercount."\r\n";
+
+
+		$usedcard = $this->st_usedcard($club_id,$month);
+		$txt.="截止目前有使用过卡人数：".$usedcard."\r\n";
+
+ 
+		$txt.="截止目前未使用过卡人数：".($membercount- $usedcard)."\r\n"; 
+		mail($mailto,$subject,$txt);
+	}
+
+	private function st_checkin($club_id,$month)
+	{
+		$count = M("CheckHistory")->where(array("club_id"=>$club_id,"status"=>1,"create_time"=>array("like","{$month}%")))->count();
+		return $count;
+	}
+	private function st_checkinp($club_id,$month)
+	{
+		$count = M("CheckHistory")->where(array("club_id"=>$club_id,"status"=>1,"create_time"=>array("like","{$month}%")))->count("distinct member_id");
+		return $count;
+	}
+
+	private function st_membercount($club_id,$month)
+	{
+		$count = M("Contract")->where(array("sale_club_id"=>$club_id))->count("distinct member_id");
+		return $count;
+	}
+
+	private function st_nmembercount($club_id,$month)
+	{
+		$countall = M("MemberBasic")->where("club_id=$club_id")->count();
+		$count = M("Contract")->where(array("sale_club_id"=>$club_id))->count("distinct member_id");
+		return $countall-$count;
+	}
+
+	private function st_usedcard($club_id,$month)
+	{
+		$count = M("CheckHistory")->where(array("club_id"=>$club_id,"status"=>1))->count("distinct member_id");
+		return $count;
 	}
 
 }

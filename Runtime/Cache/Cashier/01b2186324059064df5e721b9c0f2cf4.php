@@ -422,16 +422,19 @@
 
         </div>
 
-    <?php if(0 == $contract['free_trans']): ?><h4 class="red"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
-        转让后单独收取转让费￥<?php echo ($extra); ?>元
-        </h4>
-
-       <!--  <div class="panel panel-default">
+    <?php if(0 == $contract['free_trans']): ?><div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">转让费(￥<?php echo ($extra); ?>)</h3>
+                <h3 class="panel-title">转让费建议价格(￥<?php echo ($extra); ?>)</h3>
             </div>
             <div class="panel-body">
             <form class="form-horizontal" id="transform_pay_form">
+              <div class="form-group">
+              <label for="should_pay" class="control-label col-xs-12 col-sm-3 no-padding-right">应收</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-6" type="text" name="should_pay" id="should_pay" value="0"></div>
+            </div>
+
+
                  <div class="form-group">
               <label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
               <div class="col-xs-12 col-sm-9">
@@ -464,6 +467,11 @@
                             <div class="col-xs-12 col-sm-9">
                                 <input value="0"  class="col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
                         </div>
+                        <div class="form-group">
+                            <label for="contract_number" class="control-label col-xs-12 col-sm-3 no-padding-right">合同号</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="0"  class="col-xs-12 col-sm-6" type="text" name="contract_number" id="contract_number"></div>
+                        </div>
             <div class="form-group">
               <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="description" >备注:</label>
               <div class="col-xs-12 col-sm-9">
@@ -473,7 +481,7 @@
         </form>
             </div>
 
-        </div> -->
+        </div>
 
     <?php else: ?>
         <h4 class="red"> <i class="icon-hand-right icon-animated-hand-pointer blue"></i>

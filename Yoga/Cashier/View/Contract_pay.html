@@ -149,12 +149,12 @@
 
                         <div class="form-group">
                             <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
-                            <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-4">
                                 <input value="0" class="form-control col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
                         </div>
                         <div class="form-group">
                             <label for="netbank" class="control-label col-xs-12 col-sm-3 no-padding-right">网银分期</label>
-                            <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-4">
                                 <input value="0"  class="form-control col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
                         </div>
 
@@ -186,74 +186,4 @@
         </div>
     </div>
 </block>
-
-<block name="script">
-    <script>
-    function calEndTime()
-        {
-            if(current_card_type==null) return;
-            var start_time=$("#start_time").val();
-            var params=start_time.split("-");
-            var year=parseInt(params[0]);
-            var month=parseInt(params[1]);
-            var day = parseInt(params[2]); 
-            month += parseInt(current_card_type.valid_time);
-            year += Math.floor(month/12);
-            month=month%12; 
-            var date = new Date() ; 
-            date.setFullYear(year,month-1,day); 
-             if(!isNaN(parseInt(parseInt($("#present_day").val()))))
-            date.setDate(date.getDate()+parseInt($("#present_day").val())); 
-            $("#end_time").val(date.format("yyyy-MM-dd"));
-        };
-        $("#present_day").blur(function(){
-            calEndTime();
-        });
-      
-
-        var saletypes = eval("(" + '{$typesarr}' + ")");
-        var current_contract=eval("(" + '{$current_contract}' + ")");
-
-            $("#card_type_id").change(function(){
-              
-                $("#end_time").val("");
-                var card_type_id = $(this).val();
-                if(card_type_id==0)
-                {
-                    $("#detail").addClass("hide"); 
-                     $("#should_pay").val("");
-                }
-                current_card_type=null;
-                for(var i=0;i<saletypes.length;i++)
-                {
-                    if(saletypes[i].id==card_type_id)
-                    {
-                        var ct=saletypes[i].type==1?"时间卡":"次数卡"
-                        $("#cardtype").text(ct);
-                        var vt=saletypes[i].valid_time+" 月";                        
-                        $("#valid_time").text(vt);
-                        $("#card_price").text(saletypes[i].price);
-                        var vn=saletypes[i].type==1?"不限次数":saletypes[i].valid_number+" 次"                   
-                        $("#valid_number").text(vn);
-                        $("#detail").removeClass("hide");
-                        $("#day_tip").text("<"+saletypes[i].max_present_day);
-                        $("#num_tip").text("<"+saletypes[i].max_present_num);
-                        $("#present_value").val(saletypes[i].max_present_value);
-                        str = current_contract.start_time.replace(/-/g,"/");                        
-                        var date = new Date(str);
-                        // var now = new Date();
-                        var year = date.getFullYear();
-                        var month = date.getMonth()+1;
-                        var day = date.getDate();  
-                        month += parseInt(saletypes[i].valid_time);
-                        year += Math.floor(month/12);
-                        month=month%12;  
-                        $("#end_time").val(year+"-"+padLeft(month,2)+"-"+day);
-                        $("#should_pay").val(saletypes[i].price - current_contract.payed );
-                        current_card_type=saletypes[i];
-                        return;
-                    }
-                    $("#detail").addClass("hide");
-                }
-            }); 
-        </script></block>
+ 

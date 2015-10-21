@@ -749,7 +749,9 @@ function tip()
       var extension_id = '<?php echo ($extension_id); ?>';
       $.post('/Bar/Goods/buy',{extension_id:extension_id, use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
              if(data.status){ 
-                    bootbox.alert(data.info,null); 
+                    bootbox.alert(data.info,function(){
+                       window.open(data.url,'newwindow'); 
+                    }); 
                   
                 } else {
                     bootbox.alert(data.info);                   

@@ -893,7 +893,7 @@
                     // hidegrid:false,
                     rowNum:10,
                     rowTotal: 2000,
-                    rowList: [10, 20, 30],
+                    rowList: [10, 20, 30], 
                     viewrecords: true,
                     gridview: true,
                     jsonReader:{userdata:"userdata"},                   

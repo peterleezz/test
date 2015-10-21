@@ -396,7 +396,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php if(is_array($statistics)): $i = 0; $__LIST__ = $statistics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$st): $mod = ($i % 2 );++$i;?><tr  class="info" >
+		<!-- 	<?php if(is_array($statistics)): $i = 0; $__LIST__ = $statistics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$st): $mod = ($i % 2 );++$i;?><tr  class="info" >
 					<td colspan="6" align="center"><?php echo ($st["time"]); ?></td>
 				</tr>
 				<tr class="warning">
@@ -423,7 +423,7 @@
 					<td><?php echo ($st["cardsale_total"]); ?></td>
 					<td><?php echo ($st["br_total"]); ?></td>
 				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-
+ -->
 		</tbody>
 	</table>
 
@@ -445,7 +445,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php if(is_array($statistics)): $i = 0; $__LIST__ = $statistics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$st): $mod = ($i % 2 );++$i;?><tr  class="info" >
+			<!-- <?php if(is_array($statistics)): $i = 0; $__LIST__ = $statistics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$st): $mod = ($i % 2 );++$i;?><tr  class="info" >
 					<td colspan="6" align="center"><?php echo ($st["time"]); ?></td>
 				</tr>
 				<tr class="warning">
@@ -471,7 +471,7 @@
 					<td><?php echo ($st['transform_total']*100/$st['protential_total']); ?> %</td>
 					<td><?php echo ($st["cardsale_total"]); ?></td>
 					<td><?php echo ($st["br_total"]); ?></td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?> -->
 
 		</tbody>
 	</table>
@@ -491,7 +491,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php if(is_array($statistics)): $i = 0; $__LIST__ = $statistics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$st): $mod = ($i % 2 );++$i;?><tr  class="info" >
+			<!-- <?php if(is_array($statistics)): $i = 0; $__LIST__ = $statistics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$st): $mod = ($i % 2 );++$i;?><tr  class="info" >
 					<td colspan="6" align="center"><?php echo ($st["time"]); ?></td>
 				</tr>
 				<tr class="warning">
@@ -517,7 +517,7 @@
 					<td><?php echo ($st['transform_total']*100/$st['protential_total']); ?> %</td>
 					<td><?php echo ($st["cardsale_total"]); ?></td>
 					<td><?php echo ($st["br_total"]); ?></td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?> -->
 
 		</tbody>
 	</table>

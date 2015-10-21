@@ -142,81 +142,86 @@ public function indexAction()
 	 	
 		if(empty($card_number))
                 {
-                        $card_number=date("YmdHis").rand(0,10000);
-                         $card=array("free_rest"=>I("free_rest"),"sale_club"=>get_club_id(),"is_active"=>I("active_type")!=2, "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$member_id);
-                        $card['update_time']=getDbTime();
-                        $card_id=$cardModel->data($card)->add();
-                        if(get_club_id()==1023)
-                        {
-                        	$max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
-                        	if(empty($max_card))
-                        		$card_number="1000001";
-                        	else
-                        		$card_number=$max_card['card_number']+1; 
-                        	$card_number = preg_replace("/4/", "5", $card_number);
-			                while(true)
-			                {
-			                        if($cardModel->isExist($card_number,get_brand_id()))
-			                        {
-			                                $card_number+=1;
-			                                $card_number = preg_replace("/4/", "5", $card_number);
-			                        }
-			                        else
-			                        {
-			                                break;
-			                        }
-			                }
-                        }
-                        else
-                        {
+                		//查看是否已经有卡了
+                		$cd = M("Card")->where(array("member_id"=>$member_id))->find();
+                		if(!empty($cd))
+                		{
+                			$card_number = $cd['card_number'];
+                			$card_id=$cd['id'];
+                		}
+                		else
+                		{
+                			$card_number=date("YmdHis").rand(0,10000);
+	                         $card=array("free_rest"=>I("free_rest"),"sale_club"=>get_club_id(),"is_active"=>I("active_type")!=2, "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$member_id);
+	                        $card['update_time']=getDbTime();
+	                        $card_id=$cardModel->data($card)->add();
+	                        if(get_club_id()==1023)
+	                        {
+	                        	$max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
+	                        	if(empty($max_card))
+	                        		$card_number="1000001";
+	                        	else
+	                        		$card_number=$max_card['card_number']+1; 
+	                        	$card_number = preg_replace("/4/", "5", $card_number);
+				                while(true)
+				                {
+				                        if($cardModel->isExist($card_number,get_brand_id()))
+				                        {
+				                                $card_number+=1;
+				                                $card_number = preg_replace("/4/", "5", $card_number);
+				                        }
+				                        else
+				                        {
+				                                break;
+				                        }
+				                }
+	                        }
+	                        else
+	                        {
 
-                        	$max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
-                        	if(empty($max_card))
-                        		$card_number=get_club_id()."000001";
-                        	else
-                        		$card_number=$max_card['card_number']+1; 
-                        	$card_number = preg_replace("/4/", "5", $card_number);
-			                while(true)
-			                {
-			                        if($cardModel->isExist($card_number,get_brand_id()))
-			                        {
-			                                $card_number+=1;
-			                                $card_number = preg_replace("/4/", "5", $card_number);
-			                        }
-			                        else
-			                        {
-			                                break;
-			                        }
-			                }
+	                        	$max_card = M("Card")->where(array("sale_club"=>get_club_id(),"is_auto_create"=>1))->order("card_number desc")->find();
+	                        	if(empty($max_card))
+	                        		$card_number=get_club_id()."000001";
+	                        	else
+	                        		$card_number=$max_card['card_number']+1; 
+	                        	$card_number = preg_replace("/4/", "5", $card_number);
+				                while(true)
+				                {
+				                        if($cardModel->isExist($card_number,get_brand_id()))
+				                        {
+				                                $card_number+=1;
+				                                $card_number = preg_replace("/4/", "5", $card_number);
+				                        }
+				                        else
+				                        {
+				                                break;
+				                        }
+				                }
 
-
-
-                   //      	 $card_number=get_club_id().'0'. $card_id;   
-                   //      	 $card_number = preg_replace("/4/", "5", $card_number);
-			                // while(true)
-			                // {
-			                //         if($cardModel->isExist($card_number,get_brand_id()))
-			                //         {
-			                //                 $card_number.=rand(0,100);
-			                //                 $card_number = preg_replace("/4/", "5", $card_number);
-			                //         }
-			                //         else
-			                //         {
-			                //                 break;
-			                //         }
-			                // }
-                        }
-
-                        
-                $cardModel->where("id=$card_id")->setField(array("card_number"=>$card_number,"is_auto_create"=>"1"));
-
+		                   //      	 $card_number=get_club_id().'0'. $card_id;   
+		                   //      	 $card_number = pcard_idreg_replace("/4/", "5", $card_number);
+					                // while(true)
+					                // {
+					                //         if($cardModel->isExist($card_number,get_brand_id()))
+					                //         {
+					                //                 $card_number.=rand(0,100);
+					                //                 $card_number = preg_replace("/4/", "5", $card_number);
+					                //         }
+					                //         else
+					                //         {
+					                //                 break;
+					                //         }
+					                // }
+	                        } 
+	                		$cardModel->where("id=$card_id")->setField(array("card_number"=>$card_number,"is_auto_create"=>"1"));
+                		} 
 
                 }
                 else
                 {
                  $card=array("free_rest"=>I("free_rest"),"sale_club"=>get_club_id(),"is_active"=>I("active_type")!=2, "brand_id"=>get_brand_id(),"card_number"=>$card_number,"member_id"=>$member_id);
-                $card['update_time']=getDbTime();
-                $card_id=$cardModel->data($card)->add();
+                 $card['update_time']=getDbTime();
+                 $card_id=$cardModel->data($card)->add();
 
                 }
 

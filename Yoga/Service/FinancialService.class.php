@@ -42,11 +42,11 @@ class FinancialService extends CService
 			$this->setError("bill_project_valid");
 			return false;
 		}
-		if($project['status']==1)
-		{
-			$this->setError("bill_project_paid_all");
-			return false;
-		}
+		// if($project['status']==1)
+		// {
+		// 	$this->setError("bill_project_paid_all");
+		// 	return false;
+		// }
 		if($project['status']==3)
 		{
 			$this->setError("bill_project_paid_back");
@@ -146,7 +146,18 @@ class FinancialService extends CService
 		 	$paybackmodel->data($ret)->save();
 		 }
 
-		 M("Contract")->where(array("id"=>$contract_id))->setField("invalid",0);
+		 M("Contract")->where(array("id"=>$contract_id))->setField(array("invalid"=>0,"status"=>7));
+
+		 $contract =M("Contract")->find($contract_id);
+		 $card_id = $contract['card_id'];
+		 if(M("Contract")->where(array("card_id"=>$card_id,"invalid"=>1))->count()==0)
+		 {
+		 	$card = M("Card")->find($card_id);
+		 	$card['status']=4;
+		 	M("CardDel")->data($card)->add();
+		 	M("Card")->delete($card_id);
+
+		 }
 		 return true;
 	}
 	public function disagree($contract_id)

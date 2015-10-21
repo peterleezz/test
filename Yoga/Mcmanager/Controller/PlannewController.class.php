@@ -11,7 +11,7 @@ class PlannewController extends BaseController {
         $time =  date('Y-m');
         $club_id = get_club_id();
         $ret=McNewService::getInstance()->getOneMonthStatistics($club_id,$time);  
-
+ 
         $this->assign("statistics",$ret);      
         $this->display();
 	}

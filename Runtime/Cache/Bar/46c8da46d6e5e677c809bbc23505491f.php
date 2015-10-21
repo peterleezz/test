@@ -448,15 +448,15 @@
 									<input class="form-control col-xs-12 col-sm-6" type="text" name="check_num" id="check_num"></div>
 							</div>
 							  <div class="form-group">
-              <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
-              <div class="col-xs-12 col-sm-9">
-                <input value="0" class="col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
-            </div>
-            <div class="form-group">
-              <label for="netbank" class="control-label col-xs-12 col-sm-3 no-padding-right">网银分期</label>
-              <div class="col-xs-12 col-sm-9">
-                <input value="0" class="col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
-            </div>
+					              <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
+					              <div class="col-xs-12 col-sm-4">
+					                <input value="0" class="form-control col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
+				            </div>
+				            <div class="form-group">
+					              <label for="netbank" class="control-label col-xs-12 col-sm-3 no-padding-right">网银分期</label>
+					              <div class="col-xs-12 col-sm-4">
+					                <input value="0" class="form-control col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
+				            </div>
 
 
 

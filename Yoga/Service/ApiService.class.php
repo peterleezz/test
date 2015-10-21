@@ -591,8 +591,21 @@ private function checkCardStatus($club_id,$card_number)
         $card = D("Card")->getCard($card_number,$brand_id);
         if(empty($card))
         {
+          $card = M("CardDel")->where(array("card_number"=>$card_number,"brand_id"=>$brand_id))->find();
+          if(empty($card))
            $this->setError("卡号不存在，请检查!"); 
-           return false;
+         else
+         {
+            if($card['status']==4)
+            {
+               $this->setError("此卡已退会!"); 
+            }
+            else
+            {
+               $this->setError("此卡已销卡!"); 
+            }
+         }
+           return false; 
         }
         switch ($card['status']) {
           case '0':
@@ -604,9 +617,9 @@ private function checkCardStatus($club_id,$card_number)
             $this->setError("正在请假中!"); 
             return false;
             case '4':
-            $this->setError("此卡已退卡!"); 
-            return false;
             $this->setError("此卡已退会!"); 
+            return false;
+            $this->setError("此卡已销卡!"); 
             case '5':
             return false; 
           default:
@@ -1007,9 +1020,25 @@ public function myptin($contract_id,$club_id,$pt_id,$card_number)
     M("PtContract")->where("id=$id")->setField("status",1); 
     $id= M("PtConsumeHistory")->data(array("pt_id"=>$pt_id, "card_number"=>$card_number,"member_id"=>$contract['member_id'],"club_id"=>$contract['club_id'],"contract_id"=>$contract['id'],"brand_id"=>$contract['brand_id']))->add();
    M("Card")->where(array("card_number"=>$card_number))->setField(array("checktype"=>$contract_id));
+
+
 	 return true;
 }
 
+private function ptappoint($member_id,$contract_id,$pt_id)
+{
+    $date = date('Y-m-d');
+    $appoint = M("PtAppoint")->where(array("member_id"=>$member_id,"pt_id"=>$pt_id,"appoint_date"=>$date))->find();
+    if(empty($appoint))
+    {
+        $appoint_id = M("PtAppoint")->date(array("member_id"=>$member_id,"pt_id"=>$pt_id,"appoint_date"=>$date,"create_time"=>getDbTime(),"is_appoint"=>0))->add();
+    }
+    else
+    {
+       $appoint_id = $appoint['id'];
+    }
+    // M("PtAppoint")->where("id=$appoint_id")->setField("is_come"=>1);
+}
 
 
 }

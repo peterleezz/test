@@ -57,7 +57,10 @@ class CardmanageController extends BaseController {
             $this->error($service->getError());
         }
 
-        M("Card")->where(array("id"=>$id))->setField("status",5);
+        $card['status']=5; // 销卡
+        M("CardDel")->data($card)->add();
+        M("Card")->where(array("id"=>$id))->delete();
+       // M("Card")->where(array("id"=>$id))->setField(array("status"=>5,"card_number"=>"-".$card['card_number']));
         $this->success("退卡成功！",U("Reception/Cardmanage/printreceipts/id/$ret")); 
   }
  
@@ -354,12 +357,12 @@ public function queryNewAction()
             $brand_id = get_brand_id();
             $club_id=get_club_id();
 
-        $valuesql=" select c.id as cid, a.*,c.start_time,c.end_time , c.free_rest as cfree_rest,c.rest_count as crest_count,c.card_type_extension, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c  where a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
-        $countsql="select count(*) as count from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
+        $valuesql=" select c.id as cid, a.*,c.start_time,c.end_time , c.free_rest as cfree_rest,c.rest_count as crest_count,c.card_type_extension, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c  where c.invalid=1 and  a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
+        $countsql="select count(*) as count from yoga_card a,yoga_member_basic b,yoga_contract c where c.invalid=1 and  a.brand_id=$brand_id and a.sale_club=$club_id and a.member_id=b.id  and a.id=c.card_id";
         if(is_user_brand())
         {
-             $valuesql=" select c.id  as cid,  a.*,c.start_time,c.end_time , c.card_type_extension,c.free_rest as cfree_rest,c.rest_count as crest_count, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
-             $countsql="select count(*) as count from yoga_card a,yoga_member_basic b,yoga_contract c where a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
+             $valuesql=" select c.id  as cid,  a.*,c.start_time,c.end_time , c.card_type_extension,c.free_rest as cfree_rest,c.rest_count as crest_count, b.name as member_name,b.id as memberid ,b.phone from yoga_card a,yoga_member_basic b,yoga_contract c where c.invalid=1 and  a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
+             $countsql="select count(*) as count from yoga_card a,yoga_member_basic b,yoga_contract c where c.invalid=1 and  a.brand_id=$brand_id  and a.member_id=b.id  and a.id=c.card_id";
         }
        $filters = json_decode($filters);  
        $sql="";

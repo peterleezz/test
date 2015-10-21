@@ -16,9 +16,10 @@
         .name,.num,.total,.name_r,.num_r,.total_r{float:left; text-align:center;}
         .name,.num,.total{font-weight:bold}
         .content{width:100%;padding:0px;margin:0px;}
-        .name,.name_r{width:30%;}
-        .num,.num_r{width:30%;}
-        .total,.total_r{width:40%;}
+        .name,.name_r{width:60%;}
+        .num,.num_r{width:20%;}
+        .total,.total_r{width:20%;}
+         
         .title{width:100%;text-align:center;font-size:16px;}
         .detail{width:100%;padding:0px;}
         .lab{width:35%;font-weight:bold;padding:0px;margin:0px;float:left;text-align:right;}
@@ -41,7 +42,25 @@
         <br>
         <div class="content">
 
-            <div class="head1">
+        <div class="head2">
+            <div class="name">品名</div>
+            <div class="num">数量</div>
+             <div class="total">价格</div>
+            <volist name ="order" id="good">
+                 <div class="name_r">{$good.goods_name}</div>
+                <div class="num_r">x{$good.number}</div>
+                   <div class="total_r">￥{$good['price'] * $good['number']}</div>
+            </volist>
+            <br>
+            <hr style="border:1px dotted #000">
+            <div>
+             <div style="text-align:right ; ">应收￥{$bill['price']}.00</div>
+        </div>
+
+            <div style="text-align:right ; ">实收￥{$history['cash']+$history['pos']+$history['check']+$history['network']+$history['netbank']}.00</div>
+        </div></div>
+           <hr>
+            <!-- <div class="head1">
                 <div class="name">品名</div>
                 <div class="num">数量</div>
                 <div class="total">实收</div>
@@ -49,7 +68,7 @@
                 <div class="name_r">{$title}</div>
                 <div class="num_r">{$num}</div>
                 <div class="total_r" >￥{$history['cash']+$history['pos']+$history['check']+$history['network']+$history['netbank']}.00</div>
-            </div>
+            </div> -->
 
             <div class="detail">
                 <div class="title">明细</div>

@@ -35,5 +35,9 @@ return array(
     'solrServer'=>array(
         "host"=>"218.244.137.165",
         "port"=>8983
-        )
+        ),
+    'st'=>array(
+        '1023'=>'995854950@qq.com',
+        
+        ),
 );

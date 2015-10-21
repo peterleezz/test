@@ -69,6 +69,7 @@ class BrandController extends AdminController {
         //系统类的商品，停转卡收费
         M("GoodsCategory")->data(array("name"=>"系统停补卡收费","property"=>3,"type"=>1,"brand_id"=>$brand_id,"is_system"=>1))->add(); 
     }
+    
     public function delbrandAction($id)
     {
         $brandModel = M("Brand");

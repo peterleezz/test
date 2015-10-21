@@ -9,7 +9,12 @@ class BaseController extends Controller {
         if( !UID ){// 还没登录 跳转到登录页面
             $this->redirect('Home/Index/index');
         }    
-       // Cookie('__forward__',$_SERVER['REQUEST_URI']); 
+        if(!IS_AJAX )
+           {
+               Cookie('__lastpage__',Cookie('__thispage__')); 
+               Cookie('__thispage__',$_SERVER['REQUEST_URI']); 
+           }
+       
         $loginuser=getLoginUser(); 
     	$this->user = $loginuser['UserExtension']['name_cn'];        
         $this->assign("useravatar", "/Public/uploads/em_avatar/". $loginuser['UserExtension']['avatar']);
@@ -371,6 +376,9 @@ public  function indexAction()
                 $title="PT合同收款";
                 break;
             case '2':
+                $order_id = $project['object_id'];
+                $order = M("GoodsSaleList")->where(array("order_id"=>$order_id))->select();
+
                 $title="商品收款";
                 break;
             case '3':
@@ -400,6 +408,11 @@ public  function indexAction()
         }
         $this->assign("title",$title);
         $this->assign("head",$head);
+        if(empty($order))
+        {
+            $order=array(array("goods_name"=>$title,"number"=>1,"price"=>$project['price']));
+        }
+        $this->assign("order",$order);
        
         if($project['type']==0 || $project['type']==3 ||$project['type']==4 ||$project['type']==5)
         {
@@ -472,7 +485,7 @@ public  function indexAction()
             $this->display(('Common@Base:printreceiptsnew'));
         }
         else
-        {
+        { 
             $this->display(('Common@Base:printreceipts'));
         }
         

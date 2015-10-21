@@ -70,6 +70,10 @@ public function applyPaybackAction($id)
 public function continueAction($id)
 {  
 	    $project=M("BillProject")->find($id); 
+	 //    if($project['paid'] < $project['price'])
+		// {
+		// 	$this->error("还有欠款没有付清，不能进行升级！请先付清欠款！");
+		// }
   		$this->assign("bill",$project);
 		$contract = D('Contract')->relation('card_type')->find($project['object_id']); 
 		$member_id = $contract['member_id'];
@@ -110,6 +114,10 @@ public function continueAction($id)
 	public function upgradeAction($id)
 	{ 
 		$project=M("BillProject")->find($id); 
+		if($project['paid'] < $project['price'])
+		{
+			$this->error("还有欠款没有付清，不能进行升级！请先付清欠款！");
+		}
   		$this->assign("bill",$project);
 		$contract = D('Contract')->relation('card_type')->find($project['object_id']); 
 
@@ -187,7 +195,7 @@ public function continueAction($id)
 	 	{   
 	 		$this->error($service->getError());
 	 	}   
-	   $this->success("收款成功！",U("Cashier/Contract/index"));
+	   $this->success("收款成功！",U("Cashier/Contract/printreceipts",array("id"=>$ret)));
 	}
 
 
@@ -436,7 +444,7 @@ public function doContinueAction()
 
 		if(I("end_time")=="0000-00-00")
 			$this->error("结束时间为空，程序bug，联系下管理员！");
-		$model=D("Contract");
+		$model=D("Contract"); $model->startTrans();
 		$current_contract = $model->find(I("current_contract_id"));
 		
 		$member = M("MemberBasic")->find($current_contract['member_id']);
@@ -444,7 +452,7 @@ public function doContinueAction()
 	 	$cardTypeModel=M("CardType");
 	 	$cardType=$cardTypeModel->find(I('card_type_id'));
 	 	if(empty($cardType))
-	 	{
+	 	{$model->rollback();
 	 		$this->error("卡种不存在!");
 	 	}  
 	 	$mc_id=I("join_mc_id");
@@ -480,14 +488,13 @@ public function doContinueAction()
 	 	$bill_id=$service->addBillProject(4,0,$contract_id,$current_contract['member_id'],I("should_pay"),0,get_brand_id(),is_user_login(),get_club_id(),$mc_id,I("description"));
 	 	if(!$bill_id)
 	 	{ 
-	 		$model->delete($contract_id);
+	 		$model->rollback();
 	 		$this->error($service->getError());
 	 	}
 	 	$ret = $service->pay($bill_id,0,is_user_login(),get_brand_id(),I("description"),I("cash"),I("pos"),I("check"),I('check_num'),get_club_id(),0,I("network"),I("netbank"));
 	 	if(!$ret)
 	 	{ 
-	 		$model->delete($contract_id);
-	 		M("BillProject")->delete($bill_id);
+	 		$model->rollback();
 	 		$this->error($service->getError());
 	 	}
 
@@ -531,6 +538,7 @@ public function doContinueAction()
 	 
 	   M("MemberBasic")->where(array("id"=>$member['id']))->setField(array("type"=>1,"maybuy"=>0,"hopeprice"=>0,"mc_id"=>$mc_id)); 
 	  	$fee=D("Goods")->getXuhuiFee();
+	  		$model->commit();
 	   $this->success("续会成功，请缴纳续会手续费！",U("Bar/Goods/index",array("member_id"=>$member['id'],"id"=>$fee['id'])));
 	}
 
@@ -540,17 +548,19 @@ public function doContinueAction()
 		if(I("end_time")=="0000-00-00")
 			$this->error("结束时间为空，程序bug，联系下管理员！");
 		 $mc_id=I("join_mc_id");
-		$model=D("Contract");
+		$model=D("Contract");   $model->startTrans();
 		$payed=I("cash")+I("check")+I("pos")+I("network")+I("netbank");   
 	 	$cardTypeModel=M("CardType");
 	 	$cardType=$cardTypeModel->find(I('card_type_id'));
 	 	if(empty($cardType))
 	 	{
+	 		$model->rollback();
 	 		$this->error("卡种不存在!");
 	 	}  
 	 	$originalcontract=$contract = $model->find(I("current_contract_id"));
 	 	if(empty($contract))
 	 	{
+	 		$model->rollback();
 	 		$this->error("original contract is not exist!");
 	 	}
 	 	unset($contract['id']);
@@ -585,14 +595,13 @@ public function doContinueAction()
 	 	$bill_id=$service->addBillProject(5,0,$contract_id,$contract['member_id'],I("should_pay"),0,get_brand_id(),is_user_login(),get_club_id(),$mc_id,I("description"));
 	 	if(!$bill_id)
 	 	{ 
-	 		$model->delete($contract_id);
+	 		$model->rollback();
 	 		$this->error($service->getError());
 	 	}
 	 	$ret = $service->pay($bill_id,0,is_user_login(),get_brand_id(),I("description"),I("cash"),I("pos"),I("check"),I('check_num'),get_club_id(),0,I("network"),I("netbank"));
 	 	if(!$ret)
 	 	{ 
-	 		M("BillProject")->delete($bill_id);
-	 		$model->delete($contract_id);
+	 		$model->rollback();
 	 		$this->error($service->getError());
 	 	} 
 
@@ -645,13 +654,152 @@ public function doContinueAction()
 	   }
 	 	M("MemberBasic")->where(array("id"=>$$member['id']))->setField(array("type"=>1,"maybuy"=>0,"hopeprice"=>0,"mc_id"=>$mc_id)); 
 	  	$fee=D("Goods")->getShengjiFee();
+	  	$model->commit();
 	   $this->success("升级成功，请缴纳续会手续费！",U("Bar/Goods/index",array("member_id"=>$member['id'],"id"=>$fee['id'])));
  
 	}
 
 
+public function testAction()
+{
+	$model = M("MemberBasic");
+	$model->startTrans();
+	$model->where("id=1")->setField("name","x1xx");
+	M("Lock")->where("id=292")->setField("locknum","xxx1");
+	$model->commit();
 
-	public function doTransformAction($owner_id,$contract_id,$new_id,$new_card_number)
+}
+public function doTransformAction($owner_id,$contract_id,$new_id,$new_card_number)
+	{
+		$memberModel  =M("MemberBasic");   $memberModel->startTrans();
+		$cardModel=M("Card");
+		$contractModel = M("Contract");
+		$originalcontract=$contract=$contractModel->find($contract_id);
+
+        
+		$is_active=1; 
+		$new_member =$memberModel->find($new_id);
+		if(empty($new_member))
+		{ $memberModel->rollback();
+			$this->error("Can't find this member in your brand's database!");
+		}
+		if($contract['member_id']!=$owner_id)
+		{ $memberModel->rollback();
+			$this->error("This contract  not belongs to the owner!");
+		}
+		if($contract['invalid']!=1)
+		{ $memberModel->rollback();
+			$this->error("合同无效，不能转让！");
+		}
+		if(!empty($new_card_number))
+		{
+			$newCard=$cardModel->where(array("card_number"=>$new_card_number,"brand_id"=>get_brand_id()))->find();
+			if(!empty($newCard))
+			{
+				if($newCard['member_id']!=$new_id)
+				{ $memberModel->rollback();
+					$this->error("此卡号已存在，请重新输入");
+				}
+				else
+				{
+					$new_card_id=$newCard['id'];
+				}
+			}
+			else
+			{
+				//create a card with card_number
+				$card=array("sale_club"=>get_club_id(), "is_active"=>$is_active, "brand_id"=>get_brand_id(),"card_number"=>$new_card_number,"member_id"=>$new_id,"update_time"=>getDbTime());
+				$new_card_id=$cardModel->data($card)->add(); 
+			}
+		}
+		else
+		{
+			   $card_id = $originalcontract['card_id'];
+				if(M("Contract")->where(array("card_id"=>$card_id,"invalid"=>1))->count()==1)
+				{
+					$new_card_id=$card_id;
+					M("Card")->where("id=$card_id")->setField("member_id",$new_id);
+					M("Contract")->where(array("card_id"=>$card_id,"invalid"=>1))->setField("card_id",0);
+				}
+				 else
+				 {
+				 	$card=array("sale_club"=>get_club_id(), "is_auto_create"=>1, "is_active"=>$is_active, "brand_id"=>get_brand_id(),"card_number"=>getautocardnumber(),"member_id"=>$new_id,"update_time"=>getDbTime());
+					$new_card_id=$cardModel->data($card)->add();  
+				 }
+			
+		}
+
+		$contractModel->where("id=$contract_id")->setField(array("status"=>6,"invalid"=>0));
+		//create new contract 
+		
+		$member=M("MemberBasic")->find($owner_id);  
+		$service=\Service\CService::factory("Financial"); 
+		$fee = D("Goods")->getZhuanrangFee();  
+		$free_trans = $contract['free_trans'];
+
+
+		$price = I("should_pay"); 
+		$cn = I("contract_number");
+	    if(!empty($cn))$contract['contract_number']= $cn; 
+	 	else $contract['contract_number']= date("YmdHis").rand(0,10000);  
+	 	$contract['price']=$price; 
+		$contract['member_id']=$new_id; 
+		$contract_number = date("YmdHis").rand(0,10000);
+		$contract['contract_number']=$contract_number;
+		$contract['free_trans']=$contract['free_trans']>1?$contract['free_trans']-1:0;
+		unset($contract['id']);
+		$contract['status']=4;
+		$contract['card_id']=$new_card_id;
+		$contract['create_time']=getDbTime();
+		$contract['update_time']=getDbTime();
+		$contract['description']="从 ".$member['name']." 转入".I("description");
+		$contract_id = M("Contract")->data($contract)->add(); 
+		if($free_trans==0)
+		{ 
+			 $bill_id=$service->addBillProject(3,0,$contract_id,$contract['member_id'],I("should_pay"),0,get_brand_id(),is_user_login(),get_club_id(),$contract['mc_id'],I("description"));
+		 	if(!$bill_id)
+		 	{  $memberModel->rollback();
+		 		 
+		 		$this->error($service->getError());
+		 	}
+		 	$ret = $service->pay($bill_id,0,is_user_login(),get_brand_id(),I("description"),I("cash"),I("pos"),I("check"),I('check_num'),get_club_id(),0,I("network"),I("netbank"));
+		 	if(!$ret)
+		 	{ 
+		 	    $memberModel->rollback();
+		 		$this->error($service->getError());
+		 	}  
+		} 
+		else
+		{
+			$bill_id=$service->addBillProject(3,0,$contract_id,$contract['member_id'],0,0,get_brand_id(),is_user_login(),get_club_id(),$contract['mc_id'],I("description"));
+		 	if(!$bill_id)
+		 	{  $memberModel->rollback();
+		 		 
+		 		$this->error($service->getError());
+		 	}
+		  
+		} 
+ 		M("ContractHistory")->data(array("contract_id"=>$contract_id,"extension"=>json_encode(I("post."))))->add(); 
+ 		$reason ="合同转让";	   
+	   if(!empty($reason))
+	   { 
+	   	  $data=array("original_extension"=>json_encode($originalcontract), "extension"=>json_encode($contract),"reason"=>$reason,"record_id"=>is_user_login(),"club_id"=>get_club_id(),"brand_id"=>get_brand_id(),"type"=>0,"status"=>0);
+	   	  M("Review")->data($data)->add();
+	   }
+
+	   M("MemberBasic")->where("id=$new_id")->setField(array("is_member"=>1,"join_time"=>getDbTime()));
+
+	   $memberModel->commit();
+		$this->success("转卡成功！",U("Cashier/Contract/index"));
+	}
+
+
+
+
+
+
+
+	public function doTransformAction1($owner_id,$contract_id,$new_id,$new_card_number)
 	{
 		$memberModel  =M("MemberBasic");
 		$cardModel=M("Card");
@@ -681,9 +829,7 @@ public function doContinueAction()
 
 		// $model =M("BrandConfig");
 		// $config = $model->where(array("brand_id"=>get_brand_id()))->find(); 
-		$fee = D("Goods")->getZhuanrangFee();
-
-
+		$fee = D("Goods")->getZhuanrangFee(); 
 		$bill_project=$service->getBillProject("0,3,4,5",$contract_id); 
 		$bill_project['member_id']=$new_id;  
 		$bill_project['type']=3; 
@@ -758,7 +904,14 @@ public function doContinueAction()
 
 	public function transformAction($id)
 	{ 
+		$project=M("BillProject")->find($id); 
+		if($project['paid'] < $project['price'])
+		{
+			$this->error("还有欠款没有付清，不能进行转让！请先付清欠款！");
+		}
+		$id = $project['object_id'];
 		$contract = D('Contract')->relation('card_type')->find($id); 
+
 		$member_id = $contract['member_id'];
 		$member = M('MemberBasic')->find($member_id);
 		$this->assign("member",$member);

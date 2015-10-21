@@ -258,7 +258,8 @@ function getSearchClubs()
     success:function(data,textStatus){   
                       
                if(data.status){              
-                  var obj=data.data;               
+                  var obj=data.data;
+                  if(obj!=null)               
                  for(var i=0;i<obj.length;i++)
                   {
                       if(i!=0)
@@ -287,7 +288,8 @@ function getChannel()
     success:function(data,textStatus){   
                       
                if(data.status){              
-                  var obj=data.data;               
+                  var obj=data.data;   
+                   if(obj!=null)                   
                  for(var i=0;i<obj.length;i++)
                   {
                       if(i!=0)
@@ -747,6 +749,8 @@ function transform()
              var netbank=$("#netbank").val();  
              var description=$("#description").val();  
 
+             var should_pay=$("#should_pay").val();  
+             var contract_number=$("#contract_number").val();  
              if(owner_id==id)
              {
                 bootbox.alert("转出会员与转入会员是同一个！请重新选择!");
@@ -761,7 +765,7 @@ function transform()
                     } else {
                       new_card_number=result;                          
                     }
-                     $.post("/Cashier/Contract/doTransform", {network:network,netbank:netbank,cash:cash,pos:pos,check:check,check_num:check_num,description:description,owner_id:owner_id,contract_id:contract_id,new_id:id,new_card_number:new_card_number}, function(data,textStatus){                         
+                     $.post("/Cashier/Contract/doTransform", {should_pay:should_pay,contract_number:contract_number, network:network,netbank:netbank,cash:cash,pos:pos,check:check,check_num:check_num,description:description,owner_id:owner_id,contract_id:contract_id,new_id:id,new_card_number:new_card_number}, function(data,textStatus){                         
                             bootbox.alert(data.info);
                              if(data.status){
                                 window.location.href = data.url;
@@ -772,7 +776,7 @@ function transform()
              }
              else
              {
-                $.post("/Cashier/Contract/doTransform", {network:network,netbank:netbank,cash:cash,pos:pos,check:check,check_num:check_num,description:description,owner_id:owner_id,contract_id:contract_id,new_id:id,new_card_number:new_card_number}, function(data,textStatus){                         
+                $.post("/Cashier/Contract/doTransform", {should_pay:should_pay,contract_number:contract_number,network:network,netbank:netbank,cash:cash,pos:pos,check:check,check_num:check_num,description:description,owner_id:owner_id,contract_id:contract_id,new_id:id,new_card_number:new_card_number}, function(data,textStatus){                         
                             bootbox.alert(data.info);
                              if(data.status){
                                 window.location.href = data.url;
@@ -827,6 +831,7 @@ $(document).on("click", ".delpeaktime", function(event) {
 function getClubs()
 {
     var options="";
+     if(clubs!=null)       
     for(var i=0;i<clubs.length;i++)
     {
         if(i!=0)
@@ -869,6 +874,7 @@ return peaktime;
 
 function getClub(id)
 { 
+    if(clubs!=null)
     for(var i=0;i<clubs.length;i++)
     {
          if(clubs[i]['id']==id)return clubs[i]['club_name'];

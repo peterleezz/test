@@ -1,6 +1,6 @@
 <?php
 return array(
-       'new_printer_club'=>array(30,29,28,27,26,1022,1036),
+       'new_printer_club'=>array(30,29,28,27,26,1022,1036,1045),
 	'TMPL_FILE_DEPR'=>'_',
 	// 'TOKEN_ON'      =>    true,  // 是否开启令牌验证 默认关闭
 	// 'TOKEN_NAME'    =>    '__hash__',    // 令牌验证的表单隐藏字段名称，默认为__hash__
@@ -30,24 +30,29 @@ array (
     0 => array ( 
         'id' => '1', 'title' => '品牌管理', 'pid' => '0', 'sort' => '1', 'url' => 'Brand/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-sitemap', 
         'child' => array (
-         0 => array ( 'id' => '14', 'title' => '员工管理', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Employee/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ),
-         1 => array ( 'id' => '15', 'title' => '会员批量延期', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Shop/delay', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ), 
-         2 => array ( 'id' => '16', 'title' => '会籍合同查询', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Mcontract/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ),
-         3 => array ( 'id' => '83', 'title' => '发送通知', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Notice/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ),
          4 => array ( 'id' => '17', 'title' => '基础设置', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Shop/config', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => array ( 
              0 => array ( 'id' => '19', 'title' => '会所信息管理', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Shop/clubsinfo', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ),
              1 => array ( 'id' => '20', 'title' => '高峰时段设置', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Shop/peak', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
              2 => array ( 'id' => '21', 'title' => '商品管理', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Goods/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
              3 => array ( 'id' => '22', 'title' => 'PT课程设置', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Ptclass/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
              4 => array ( 'id' => '23', 'title' => '卡种设置', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Cardtype/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
-             5 => array ( 'id' => '24', 'title' => '系统设置', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Systemconfig/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), ), ), 
-        5 => array ( 'id' => '18', 'title' => '稽核', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Review/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => array (
+            
+             // 5 => array ( 'id' => '24', 'title' => '系统设置', 'pid' => '17', 'sort' => '0', 'url' => 'Brand/Systemconfig/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ),
+              ), ), 
+         
+           5 => array ( 'id' => '18', 'title' => '稽核', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Review/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => array (
             0 => array ( 'id' => '25', 'title' => '会籍合同审批', 'pid' => '18', 'sort' => '0', 'url' => 'Brand/Review/contract', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
             1 => array ( 'id' => '26', 'title' => 'PT合同审批', 'pid' => '18', 'sort' => '0', 'url' => 'Brand/Review/ptcontract', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
             2 => array ( 'id' => '27', 'title' => '退会申请', 'pid' => '18', 'sort' => '0', 'url' => 'Brand/Review/quit', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
             3 => array ( 'id' => '28', 'title' => '消费明细', 'pid' => '18', 'sort' => '0', 'url' => 'Brand/Review/consume', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-leaf', ), 
-            4 => array ( 'id' => '68', 'title' => '消费记录修改', 'pid' => '18', 'sort' => '0', 'url' => 'Brand/Review/paymodify', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '0', 'icon' => 'icon-leaf', ), ), ), ), 
-       ), 
+            4 => array ( 'id' => '68', 'title' => '消费记录修改', 'pid' => '18', 'sort' => '0', 'url' => 'Brand/Review/paymodify', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '0', 'icon' => 'icon-leaf', ), ), ), 
+
+
+         0 => array ( 'id' => '14', 'title' => '员工管理', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Employee/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ),
+         1 => array ( 'id' => '15', 'title' => '会员批量延期', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Shop/delay', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ), 
+         2 => array ( 'id' => '16', 'title' => '会籍合同查询', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Mcontract/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ),
+         3 => array ( 'id' => '83', 'title' => '发送通知', 'pid' => '1', 'sort' => '0', 'url' => 'Brand/Notice/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => '', 'child' => NULL, ),
+               ),),  
    1 => array ( 'id' => '2', 'title' => '店长', 'pid' => '0', 'sort' => '2', 'url' => 'Shopkeeper/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '1', 'icon' => 'icon-home', 'child' => array ( 
        0 => array ( 'id' => '29', 'title' => '员工管理', 'pid' => '2', 'sort' => '0', 'url' => 'Shopkeeper/Employee/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '0', 'icon' => '', 'child' => NULL, ), 
        1 => array ( 'id' => '76', 'title' => '课程安排', 'pid' => '2', 'sort' => '0', 'url' => 'Shopkeeper/Class/index', 'hide' => '0', 'tip' => '', 'group' => '', 'is_dev' => '0', 'status' => '0', 'icon' => '', 'child' => NULL, ), 

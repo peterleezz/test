@@ -198,14 +198,14 @@ class GoodsController extends BaseController {
 	{
 		$total =0;
 		$goods=json_decode($goods);
-		$goodsModel = M("Goods");
+		$goodsModel = M("Goods"); $goodsModel->startTrans();
 		$member=M("MemberBasic")->find($member_id);
 		foreach ($goods as $key => $value) {
 			$num=$value->num;
 			$id=$value->id;
 			$g=$goodsModel->find($id);
 			if(empty($g))
-			{
+			{  $goodsModel->rollback();
 				$this->error("ID={$id}的商品已下架!");
 			}
 			// $value->price=$g['price'];	
@@ -214,7 +214,7 @@ class GoodsController extends BaseController {
 			$total+=$num * $value->price; 
 		}		
 		if($total!=$price)
-		{
+		{ $goodsModel->rollback();
 			$this->error("商品已调价！请重新选择！");
 		}
 		$recharge=0;
@@ -236,7 +236,7 @@ class GoodsController extends BaseController {
 		$data=array("mc_id"=>$member['mc_id'], "member_id"=>$member_id,"price"=>$price,"sale_club_id"=>get_club_id(),"brand_id"=>get_brand_id(),"record_id"=>is_user_login());
 		$order_id= M("GoodsSaleOrder")->data($data)->add(); 
 		if(empty($order_id))
-		{
+		{ $goodsModel->rollback();
 			$this->error("Error!请检查参数的正确性");
 		}
 
@@ -244,14 +244,13 @@ class GoodsController extends BaseController {
 	 	$bill_id=$service->addBillProject(2,0,$order_id,$member_id,$price,0,get_brand_id(),is_user_login(),get_club_id(),$member['mc_id'],$description);
 	 	if(!$bill_id)
 	 	{ 
-	 		M("GoodsSaleOrder")->delete($order_id);
+	 		 $goodsModel->rollback();
 	 		$this->error($service->getError());
 	 	}
 	 	$ret = $service->pay($bill_id,0,is_user_login(),get_brand_id(),I("description"),I("cash"),I("pos"),I("check"),I('check_num'),get_club_id(),$recharge,$network,$netbank);
 	 	if(!$ret)
 	 	{ 
-	 		M("GoodsSaleOrder")->delete($order_id);
-	 		M("BillProject")->delete($bill_id);
+	 		 $goodsModel->rollback();
 	 		$this->error($service->getError());
 	 	}
  
@@ -298,18 +297,16 @@ class GoodsController extends BaseController {
 			$data=array("member_id"=>$member_id,"value"=>"-$recharge","record_id"=>is_user_login(),"description"=>"购物消费,余额".($member['recharge']-$recharge));			 
 			M("RechargeHistory")->data($data)->add(); 
 		} 
-
-
-
-		$this->success("购买成功","list");	
+  	    $goodsModel->commit();
+		$this->success("购买成功",U("printreceipts",array("id"=>$ret)));	
 
 	}
 	public function doPayAction()
-	{
+	{	$goodsModel = M("Goods"); $goodsModel->startTrans();
 		$service=\Service\CService::factory("Financial"); 
 		$bill_project=M("BillProject")->find(I("id")); 
 		if(empty($bill_project))
-		{
+		{ $goodsModel->rollback();
 			$this->error("Bill is not exist!");
 		}
 		$recharge=0;
@@ -325,7 +322,7 @@ class GoodsController extends BaseController {
 		$ret = $service->pay(I("id"),1,is_user_login(),get_brand_id(),I("description"),I("cash"),I("pos"),I("check"),I('check_num'),get_club_id(),$recharge,I("network"),I("netbank"));
 	 	if(!$ret)
 	 	{  
-	 		
+	 		 $goodsModel->rollback();
 	 		$this->error($service->getError());
 	 	}  
 
@@ -335,7 +332,8 @@ class GoodsController extends BaseController {
 			$data=array("member_id"=>$member_id,"value"=>"-$recharge","record_id"=>is_user_login(),"description"=>"支付购物欠款,余额".($member['recharge']-$recharge));			 
 			M("RechargeHistory")->data($data)->add(); 
 		}  
-		$this->success("支付成功","/Bar/Goods/list");	
+		 $goodsModel->commit();
+		$this->success("支付成功",U("printreceipts",array("id"=>$ret)));	
 	}
 
 	public function queryMemberAction($name)

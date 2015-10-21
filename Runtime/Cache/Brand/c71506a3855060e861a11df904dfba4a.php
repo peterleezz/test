@@ -393,7 +393,7 @@
 					<label class="col-sm-1 control-label no-padding-right" for="level">员工等级:</label>
 					<div class="col-sm-3">
 					<select name="level" id="level"  class="form-control col-xs-10 col-sm-5">
-					<?php $__FOR_START_1699685399__=1;$__FOR_END_1699685399__=10;for($i=$__FOR_START_1699685399__;$i < $__FOR_END_1699685399__;$i+=1){ ?><option value="<?php echo ($i); ?>"  <?php if($i == $employee['level']): ?>selected="selected"<?php endif; ?> ><?php echo ($i); ?>级</option><?php } ?>
+					<?php $__FOR_START_1123812687__=1;$__FOR_END_1123812687__=10;for($i=$__FOR_START_1123812687__;$i < $__FOR_END_1123812687__;$i+=1){ ?><option value="<?php echo ($i); ?>"  <?php if($i == $employee['level']): ?>selected="selected"<?php endif; ?> ><?php echo ($i); ?>级</option><?php } ?>
 					
 					</select>
 				</div>
@@ -545,6 +545,16 @@
 							 	 <input type="checkbox" name="financeroles[]" id="financeroles" value="<?php echo ($club["id"]); ?>" <?php if (in_array($club['id'],$financeroles)) { echo 'checked="true"';}?> > <?php echo ($club["club_name"]); ?>
 								</label><?php endforeach; endif; else: echo "" ;endif; ?>		
 
+						 
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="roles"></label>
+					<div class="col-sm-11">   
+							  	<label class="checkbox-inline">
+						  <input type="checkbox" name="can_grant" id="can_grant" value="1"  <?php if ($employee['can_grant']) { echo 'checked="true"';}?> >授权超低价卡权限
+							</label> 
 						 
 					</div>
 				</div>

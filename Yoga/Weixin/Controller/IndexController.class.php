@@ -294,6 +294,32 @@ class IndexController extends Controller {
     }
     public function doAppointAction($pos,$schedule_id,$member_id,$open_id)
     {
+
+      $cards=M("Card")->where(array("member_id"=>$member_id))->select();
+      $flag=0;
+      foreach ($cards as $key => $value) {
+         if($value['status']==0)
+         {
+           $flag=1;
+         }
+      }
+      if(!$flag)
+      {
+          $this->ajaxReturn(array("status"=>0,"info"=>"您的会员卡不在正常状态，详情请联系您的顾问！"));
+      }
+      $flag=0;
+      $contracts = M("Contract")->where(array("member_id"=>$member_id))->select();
+      foreach ($contracts as $key => $value) {
+          if($value['invalid']==1 && $value['status']<5)
+          {
+            $flag=1;
+          }
+      }
+      if(!$flag)
+      {
+          $this->ajaxReturn(array("status"=>0,"info"=>"无有效会籍，详情请联系您的顾问！"));
+      }
+
       //检查黑名单
       $now = date('Y-m-d H:i:s');
       $black_list =M("AppointBlackList")->where(array("member_id"=>$member_id,"status"=>1, "start_time"=>array("lt",$now),"end_time"=>array("gt",$now)))->find();

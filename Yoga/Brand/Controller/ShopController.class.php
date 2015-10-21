@@ -138,9 +138,19 @@ public function editPeakAction()
 			$this->error(($model->getError()));
 		}		
 		$model->brand_id=get_brand_id();
-		$model->add();
-		
-		$this->success("123",U("Brand/Shop/clubsinfo"));
+		$id = $model->add();
+		$this->createSysinfo($id);
+
+
+		$this->success("添加成功！",U("Brand/Shop/clubsinfo"));
+	}
+
+	private function createSysinfo($club_id)
+	{
+		$clubs = M("Club")->where("id=$club_id")->select();
+		$a = A("Home/Script");
+		$a->createclubsysinfo($clubs);
+
 	}
 
 	public function editAction($id)
@@ -152,7 +162,7 @@ public function editPeakAction()
 		}	
 		$club = $this->getClub($id);
 		$model->save(); 
-		$this->success("123",U("Brand/Shop/clubsinfo"));
+		$this->success("添加成功！",U("Brand/Shop/clubsinfo"));
 	}
 
 

@@ -702,8 +702,8 @@ function zhuanrang()
 {
    var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
                         if (id) {
-                           var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
-                           id=rowData.contract_id;
+                           // var rowData = jQuery(grid_selector).jqGrid("getRowData",id); 
+                           // id=rowData.contract_id;
                            window.location.href="/Cashier/Contract/transform/id/"+id;
                         } else { alert("请先选中！");}
 }
@@ -786,7 +786,7 @@ function zhuanrang()
                    //         return getValue(a,value); 
                    // }}, 
                      {name:'bstatus',index:'bstatus',width:70,formatter : function(value, options, rData){
-                           var a=new Array("","新增合同","续费","升级","转让","已升级,此合同作废","已转让,此合同作废");
+                           var a=new Array("","新增合同","续费","升级","转让","已升级,此合同作废","已转让,此合同作废","已退会");
                            return getValue(a,value); 
                    }}, 
                          {name:'active_type',index:'active_type',width:100,formatter : function(value, options, rData){

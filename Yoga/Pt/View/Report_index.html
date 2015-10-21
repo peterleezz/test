@@ -1,0 +1,250 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">Pt</a>
+    </li>
+    <li class="active">会员管理</li>
+  </ul>
+</block>
+
+<block name="content">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
+
+      <form class="form-inline" role="form" action="{:U('Pt/Member/query')}" method="post" id="pt_ptcontract_form" style="margin-bottom:10px">
+  
+      <div class="form-group">
+        <label  for="card_number">卡号:</label>
+        <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
+      <div class="form-group">
+        <label  for="name">会员姓名:</label>
+        <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+      <div class="form-group">
+        <label  for="phone">手机号码:</label>
+        <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+      <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+        查询
+      </button>
+    </form>
+
+    <table id="cashier_ptcontract_grid"></table>
+    <div id="cashier_ptcontract_pager"></div>
+    <div id="show_detail"  ></div>
+  </div>
+</div>
+
+</block>
+
+<block name="script">
+<script> 
+ 
+  
+    $(function(){ 
+    $("#menu_10").addClass("active open");
+    $("#menu_86").addClass("active");
+
+            var grid_selector = "#cashier_ptcontract_grid";
+            var pager_selector = "#cashier_ptcontract_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Pt/Member/query')}",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','姓名','性别', '手机号码','预约时间','上课时间', 'PT课程名称','剩余次数','合同状态','有效期限','录入人','签约日期'],
+                    colModel:[   
+                         {name:'id',index:'id',width:150,hidden:true},  
+                      
+                        {name:'name',index:'name',width:100,formatter : function(value, options, rData){                            
+                           return rData.member.name; 
+                       }},
+                        {name:'sex',index:'sex',width:50,formatter : function(value, options, rData){
+                                                  return rData.member.sex=='male'|| rData.member.sex=='男'?"男":"女";
+                         }},
+                        {name:'phone',index:'phone',hidden:true,width:150,formatter : function(value, options, rData){
+                                                  return rData.member.phone;
+                         }}, 
+
+                         {name:'appoint_time',index:'appoint_time',width:150}, 
+                          {name:'class_time',index:'class_time',width:150}, 
+                        
+                    
+                    {name:'ptclass',index:'ptclass',width:150,formatter : function(value, options, rData){
+                            return  value.name;    
+                        }},
+                        {name:'times',index:'times',width:100,formatter : function(value, options, rData){ 
+                            return rData.used_num+"/"+rData.total_num;
+                         }},  
+
+                        {name:'invalid',index:'invalid',width:70,formatter : function(value, options, rData){
+                                             var a=new Array("无效","有效","已转让");
+                                               return getValue(a,value); 
+                                }},
+
+                      {name:'valid_time',index:'valid_time',width:150,formatter : function(value, options, rData){                           
+                            return rData.start_time+"--"+rData.end_time; 
+                }},
+                      
+                      
+                        {name:'record_id',index:'record_id',width:80,formatter : function(value, options, rData){   
+                              return rData.recorder.name_cn;  
+                           
+                }},             
+                        {name:'create_time',index:'create_time',width:150},                        
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false,align:"left"},
+                    sortorder: "desc",
+                    sortname:'id',
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "上课记录" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    onSelectRow: function (rowid, status) {
+                        var ret = jQuery(grid_selector).jqGrid('getRowData',rowid);
+                         if(status==0)
+                         {
+                             show_detail(ret);
+                             return;
+                         }
+                       
+                     }, 
+
+                    gridview: true, 
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                      // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        // $("#show_detail").addClass("hide");
+                        userData=jQuery(grid_selector).jqGrid('getGridParam', 'userData');
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+ 
+   
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                           var res = $.parseJSON(response.responseText);
+                             // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                ); 
+
+
+  
+
+ // jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-info-sign red',caption:"综合信息",title:"综合信息",
+ //                        onClickButton:function(){ 
+ //                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+ //                        if (id) {
+ //                           var info = getCardInfo(id);
+ //                        } else { alert("请先选中！");}
+                             
+ //                        } 
+ //                    });
+
+ 
+          
+})
+    </script>
+</block>
