@@ -393,7 +393,7 @@
 					<label class="col-sm-1 control-label no-padding-right" for="level">员工等级:</label>
 					<div class="col-sm-3">
 					<select name="level" id="level"  class="form-control col-xs-10 col-sm-5">
-					<?php $__FOR_START_1123812687__=1;$__FOR_END_1123812687__=10;for($i=$__FOR_START_1123812687__;$i < $__FOR_END_1123812687__;$i+=1){ ?><option value="<?php echo ($i); ?>"  <?php if($i == $employee['level']): ?>selected="selected"<?php endif; ?> ><?php echo ($i); ?>级</option><?php } ?>
+					<?php $__FOR_START_1952704569__=1;$__FOR_END_1952704569__=10;for($i=$__FOR_START_1952704569__;$i < $__FOR_END_1952704569__;$i+=1){ ?><option value="<?php echo ($i); ?>"  <?php if($i == $employee['level']): ?>selected="selected"<?php endif; ?> ><?php echo ($i); ?>级</option><?php } ?>
 					
 					</select>
 				</div>

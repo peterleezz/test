@@ -36,7 +36,7 @@ class NoticeModel extends Model {
   	{
   		$timenow = date('Y-m-d H:i:s');
   		$condition = array("brand_id"=>$brand_id,"start_time"=>array("lt",$timenow),"end_time"=>array("gt",$timenow));
-  		$ret = $this->where($condition)->order("id desc")->find();  
+  		$ret = $this->where($condition)->order("id desc")->find(); 
   		// if(empty($ret))
   		// {
   		// 	$ret = $this->where("brand_id=$brand_id")->order("id desc")->find();

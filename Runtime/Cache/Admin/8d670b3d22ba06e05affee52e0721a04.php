@@ -16,10 +16,6 @@
   <script src="/Public/js//cms.js"></script>
   <link href="/Public/css//cms.css" rel="stylesheet">
   
-	<script>
-	$(function(){$(".navbar-nav>li:eq(1)").addClass("active").siblings().removeClass("active");});
-</script>
-
 
   <!-- inline styles related to this page -->
 
@@ -96,80 +92,21 @@
 </nav>
 <div class="container">
 	
-	<div class="head" >	
-	<form action="<?php echo U('Admin/Brand/query');?>">
-	<label for="brandname">品牌名称:</label>
-    <input type="text" name="brand_name">
-    <label for="username">登录帐号:</label>
-    <input type="text" name="login_name">
-    <label for="username">创建时间:</label>
-    <input type="date" name="start_time">
-    <label for="username">--</label>
-    <input type="date" name="end_time">
-		 <button type="submit" class="btn btn-default btn-sm">查询</button>
-	</form>	
-   </div>
-        
-	 <table class="table">
-		<caption>品牌列表</caption>
-		<thead>
-			<th>序号</th>
-			<th>品牌名称</th>
-			<th>登录帐号</th>
-			<th>联系人</th>
-			<th>邮件</th>
-			<th>电话</th>
-			<th>添加日期</th>
-			<th>权限</th>
-			<th>备注</th>
-			<th>操作</th>
-		</thead>
-		<tbody>
-			<?php if(is_array($brands)): $i = 0; $__LIST__ = $brands;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><tr>
-			  <td>
-			  	<?php echo ($brand["id"]); ?>
-			  </td>
-			   <td>
-			  	<?php echo ($brand["brand_name"]); ?>
-			  </td>
-			   <td>
-			  	<?php echo ($brand["username"]); ?>
-			  </td>
-			   <td>
-			  	<?php echo ($brand["contact_name"]); ?>
-			  </td>
-			   <td>
-			  	<?php echo ($brand["email"]); ?>
-			  </td>
-			   <td>
-			  	<?php echo ($brand["phone"]); ?>
-			  </td>
-			   <td >
-			  	<?php echo ($brand["create_time"]); ?>
-			  </td>
-			   <td >
-			  	<?php echo ($brand["roles"]); ?>
-			  </td>
-			   <td style="table-layout:fixed;word-break:break-all;">
-			  	<?php echo ($brand["desc"]); ?>
-			  </td>
-			   <td>
-			  	 <a href="javascript:void(0)" onclick="editbrand(<?php echo ($brand["id"]); ?>,this)">编辑</a>
-			  	 <a href="javascript:void(0)" onclick="if(confirm('确定要删除吗？'))delbrand(<?php echo ($brand["id"]); ?>,this)">删除</a>
-			  </td>
-			  </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		</tbody>
-     </table>
-   <ul class="pagination">
-   <?php if(0 == $current_page): ?><li class="disabled"><a href="#">&laquo;</a></li>
-   <?php else: ?>
-    <li><a href="<?php echo U('Admin/Brand/index?page='.($current_page-1));?>">&laquo;</a></li><?php endif; ?>
-   <?php $__FOR_START_694382113__=0;$__FOR_END_694382113__=$pages;for($i=$__FOR_START_694382113__;$i < $__FOR_END_694382113__;$i+=1){ if($i == $current_page): ?><li class="active"><a href="<?php echo U('Admin/Brand/index?page='.$i);?>"><?php echo ($i+1); ?><span class="sr-only">(current)</span></a></li>
-		<?php else: ?> <li><a href="<?php echo U('Admin/Brand/index?page='.$i);?>"><?php echo ($i+1); ?></a></li><?php endif; } ?> 
-    <?php if($pages == $current_page+1): ?><li class="disabled"><a href="#">&raquo;</a></li>
-   <?php else: ?>
-    <li><a href="<?php echo U('Admin/Brand/index?page='.($current_page+1));?>">&raquo;</a></li><?php endif; ?>	 	
-	</ul>
+	<form role="form" action="<?php echo U('Admin/User/changepw');?>" method="post">
+  <div class="form-group" >
+    <label for="original_password">原始密码</label>
+    <input type="text" class="form-control" id="original_password" name="original_password" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">新密码</label>
+    <input type="password" class="form-control" id="new_password" name="new_password" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">确认密码</label>
+    <input type="password" class="form-control" id="confirm_password" name="confirm_password" >
+  </div>
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
 
 </div>
 

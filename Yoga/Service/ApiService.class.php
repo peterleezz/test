@@ -955,12 +955,11 @@ private function checkCardStatus($club_id,$card_number)
       return 0;
   }
 
-  private function useAppoint($club_id,$member_id)
+  public function useAppoint($club_id,$member_id)
   {
      $today = date('Y-m-d');
        $appoints=M()->field("b.id,c.name as roomname,b.pos as pos ,d.name as schedulename,a.start as starttime")-> where("a.id=b.schedule_id and a.start like '{$today}%' and a.club_id={$club_id} and b.member_id={$member_id} and a.room_id=c.id and a.class_id=d.id and b.come=0")->table(array("yoga_pt_class_public"=>"d","yoga_club_classroom"=>"c","yoga_club_schedule"=>"a","yoga_appoint_history"=>"b"))->select();
-    
-       if(!empty($appoints))
+     if(!empty($appoints))
        {
         foreach ($appoints as $key => $appoint) {
            M("AppointHistory")->where("id=".$appoint['id'])->setField(array("come"=>1));

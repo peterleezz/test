@@ -55,7 +55,20 @@
   </style>
 
   
-	<link rel="stylesheet" href="/Public/css/chosen.css" />
+<style>
+    .ui-jqgrid tr.jqgrow td
+{           
+    word-wrap: break-word; /* IE 5.5+ and CSS3 */
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: normal !important;
+    height: auto;
+    vertical-align: text-top;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+    </style>
 
 </head>
 
@@ -320,14 +333,13 @@
       <div class="breadcrumbs" id="breadcrumbs">
         <script type="text/javascript">try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}</script>
         
-	<ul class="breadcrumb">
-		<li> <i class="icon-home home-icon"></i>
-			<a href="<?php echo U('Home/Main/main');?>">品牌管理</a>
-		</li>
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="<?php echo U('Home/Main/main');?>">品牌管理</a>
+        </li> 
+        <li class="active">通知管理</li>
 
-		<li class="active">添加高峰时段</li>
-
-	</ul>
+    </ul>
 
         <!-- .breadcrumb -->
 
@@ -346,85 +358,15 @@
       <!-- <div class="page-header" ></div>
     -->
     
-	<div class="row">
-		<div class="col-xs-12">
-			<!-- PAGE CONTENT BEGINS -->
+<div class="row">
+  <div class="col-xs-12" id="list"> 
+    <table id="grid"></table>
+    <div id="pager"></div>
+    </div>
 
-			<form class="form-horizontal" role="form" id="editPeakForm"  action="<?php echo U('Brand/Shop/editPeak');?>" method="post">
-			<input type="hidden" id="peakid" value="<?php echo ($peak["id"]); ?>">
-				<div class="form-group">
-					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">时段名称:</label>
-					<div class="col-sm-9">
-						<input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" name="peak_name" value="<?php echo ($peak["peak_name"]); ?>"/>
-					</div>
-				</div>
+</div>
+ 
 
-				<!-- <div class="form-group">
-					<label class="col-sm-3 control-label no-padding-right" for="form-field-2">选择会所:</label>
-					<div class="col-sm-9">
-					<select name="club" id="form-field-2"  class="col-xs-10 col-sm-5">
-					<?php if(is_array($clubs)): $i = 0; $__LIST__ = $clubs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$club): $mod = ($i % 2 );++$i;?><option value="<?php echo ($club["id"]); ?>" <?php if($club["id"] == $selectid): ?>selected="selected"<?php endif; ?>><?php echo ($club["club_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>						
-					</select>					
-					</div>
-				</div> --> 
-				<div class="form-group peaktime">
-					<label class="col-sm-3 control-label no-padding-right peaklabel" for="form-field-3">选择时间:</label>
-					<div class="col-sm-6" >
-						 <select class="week col-sm-3" id="form-field-3">
-						 	<option value="1">星期一</option>
-						 	<option value="2">星期二</option>
-						 	<option value="3">星期三</option>
-						 	<option value="4">星期四</option>
-						 	<option value="5">星期五</option>
-						 	<option value="6">星期六</option>
-						 	<option value="7">星期日</option>
-						 </select>
-						 <div  class="col-sm-2">
-						 	<label   for="start_time" class="sr-only">选择时间:</label>
-							 <select id="start_time" class="start_time" >
-							 <?php $__FOR_START_1997080699__=0;$__FOR_END_1997080699__=24;for($i=$__FOR_START_1997080699__;$i < $__FOR_END_1997080699__;$i+=1){ ?><option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":00";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:00</option> 
-								<option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":30";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:30</option><?php } ?> 
-						 </select>
-						 </div>
-						 <div  class="col-sm-1">
-						 	——
-						 </div> 
-						<div  class="col-sm-2">
-						 	<label   for="end_time" class="sr-only">选择时间:</label>
-							 <select id="end_time" class="end_time"  >
-							 <?php $__FOR_START_1265977231__=0;$__FOR_END_1265977231__=24;for($i=$__FOR_START_1265977231__;$i < $__FOR_END_1265977231__;$i+=1){ ?><option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":00";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:00</option> 
-								<option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":30";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:30</option><?php } ?> 
-						 </select>
-						 </div>
-						 <div  class="col-sm-4">
-						 <a href="javascript:void(0)" class="btn btn-info btn-sm addpeaktime"  ><i class='icon-plus-sign'></i></a>
-						 <a href="javascript:void(0)" class="btn btn-warning btn-sm delpeaktime" ><i class='icon-minus-sign'></i></a>			</div> 
-				</div>
-					 
-				</div>
-
-				 
-
-				<div class="clearfix form-actions">
-					<div class="col-md-offset-3 col-md-9">
-						<?php if(empty($peak)): ?><button class="btn btn-info" type="button"  onclick="editpeak()"> <i class="icon-ok bigger-110"></i>
-								提交
-							</button>
-							<?php else: ?>
-							<button class="btn btn-info" type="button" onclick="editpeak()">
-								<i class="icon-ok bigger-110"></i>
-								修改
-							</button><?php endif; ?>
-						&nbsp; &nbsp; &nbsp;
-						<button class="btn" type="reset">
-							<i class="icon-undo bigger-110"></i>
-							重置
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
 
 
   </div>
@@ -591,38 +533,162 @@
 <!-- inline scripts related to this page -->
 
 
-	<script src="/Public/js/chosen.jquery.min.js"></script>
-	<script>
-		$("#menu_1").addClass("active open");
-    $("#menu_17").addClass("active");
-    $("#menu_20").addClass("active");
-    var peak_times='<?php echo ($peak["peak_time"]); ?>';
-    if(peak_times!=null && peak_times!=''){
-    	var peak_times = eval("(" + '<?php echo ($peak["peak_time"]); ?>' + ")");
-    	for(var i=0;i<peak_times.length;i++)
-    	{
-    		var peak_time=peak_times[i];
-    		if(i==0)
-    		{
-    			$(".peaktime:eq(0) .week").val(peak_time.week);
-    			$(".peaktime:eq(0) .start_time").val(peak_time.start_time);
-    			$(".peaktime:eq(0) .end_time").val(peak_time.end_time);
-    		} 
-    		else
-    		{
-    		  var html = '<div class="form-group peaktime">'+$(".peaktime").html()+'</div>' ;      
-		      $(".peaktime:last").after(html);
-		      $(".peaklabel:gt(0)").text("");
-		      $(".delpeaktime:gt(0)").show();
-		      $(".peaktime:last .week").val(peak_time.week);
-    		  $(".peaktime:last .start_time").val(peak_time.start_time);
-    		  $(".peaktime:last .end_time").val(peak_time.end_time);
-    		}
-    	}
-	}
-	 
+<script>
+     
+    $(function(){
+    $("#menu_1").addClass("active open");
+    $("#menu_83").addClass("active");
+    
 
-	</script>
+            var grid_selector = "#grid";
+            var pager_selector = "#pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"/Brand/Notice/query",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#list').width()),
+                    mtype:"POST",
+                    colNames:[ 'ID','发送时间','开始时间','结束时间','通知内容'],
+                    colModel:[    
+                        {name:'id',index:'id',sortable:true,editable: false ,width:150,align:'left',sorttype:'integer'},
+                        {name:'create_time',index:'create_time',width:150, editable: false,editoptions:{size:"20",maxlength:"30"},editrules:{required:false},align:'left',search:true},
+                        {name:'start_time',index:'start_time',width:150,editrules:{required:true},align:'left',search:true,editoptions: {size:20,maxlengh:30,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd HH:ii',      minView:'0',          language:'zh-CN',      autoclose:true,})}}} ,
+                        {name:'end_time',index:'end_time',width:150,editoptions:{size:"20",maxlength:"30"},editrules:{required:true},align:'left',search:true,editoptions: {size:20,maxlengh:30,dataInit:function(element){$(element).datetimepicker({ format: 'yyyy-mm-dd HH:ii',      minView:'0',          language:'zh-CN',      autoclose:true,})}}} ,
+                        {name:'content',index:'content',width:450,editoptions:{rows:10,cols:45},editrules:{required:true},align:'left',search:true,edittype:'textarea'},
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc",
+                      editurl: "/Brand/Notice/set",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "通知内容" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {
+                        // jQuery("#employee_grid").jqGrid('setGridParam',{datatype:'local'});
+                    
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+                  
+            
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: true,
+                        editicon : 'icon-pencil blue',
+                        add: true,
+                        addicon : 'icon-plus-sign purple',
+                        del: true,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: true,
+                        refreshicon : 'icon-refresh green',
+                        view: true,
+                        viewicon : 'icon-zoom-in grey',
+                    },
+                    {
+                        //edit record form
+ 
+                         closeAfterEdit:true,
+                        recreateForm: true,
+                        width:500,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                         afterSubmit : function(response, postdata)
+                        {
+                         var res = $.parseJSON(response.responseText);
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //new record form
+                        closeAfterAdd: true,
+                        recreateForm: true,
+                        viewPagerButtons: false,
+                        width:500,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_edit_form(form);
+                        },
+                        afterSubmit : function(response, postdata)
+                        {
+                           var res = $.parseJSON(response.responseText);
+                             // jQuery(grid_selector).setGridParam({datatype:'json', page:1}).trigger("reloadGrid");
+                            return [res.success,res.message,res.new_id];
+                        }
+                    },
+                    {
+                        //delete record form
+                        recreateForm: true,
+                        beforeShowForm : function(e) {
+                            var form = $(e[0]);
+                            if(form.data('styled')) return false;
+                            
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                            style_delete_form(form);
+                            
+                            form.data('styled', true);
+                        }, 
+                        onClick : function(e) {
+                            alert(1);
+                        }
+                    },
+                    {
+                        //search form
+                        recreateForm: true,
+                        width:500,
+                        afterShowSearch: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                            style_search_form(form);
+                        },
+                        afterRedraw: function(){
+                            style_search_filters($(this));
+                        }
+                        ,
+                        multipleSearch: true,
+                        /**
+                        multipleGroup:true,
+                        showQuery: true
+                        */
+                    },
+                    {
+                        //view record form
+                        recreateForm: true,
+                        width:500,
+                        beforeShowForm: function(e){
+                            var form = $(e[0]);
+                            form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                        }
+                    }
+                ); 
+
+})
+
+ 
+    </script>
 
 </body>
 </html>

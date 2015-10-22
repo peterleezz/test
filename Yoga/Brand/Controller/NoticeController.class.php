@@ -10,7 +10,7 @@ class NoticeController extends BaseController {
 	public function queryAction()
 	{
 		$model = D("Notice");
-		$response = $model->getNotice();
+		$response = $model->getNotice(); 
 		$this->ajaxReturn($response); 
 	}
  public function getModel()

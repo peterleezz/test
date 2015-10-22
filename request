@@ -45774,3 +45774,1516 @@
   'sord' => 'desc',
   'filters' => '{"groupOp":"AND","rules":[]}',
 )
+2015-10-22 01:25:41 [request] - LV1 - /index.php/Home/Script/test
+2015-10-22 01:25:41 [request] - LV1 - /favicon.ico
+2015-10-22 01:25:41 [request] - LV1 - array (
+  's' => '/favicon.ico',
+)
+2015-10-22 01:53:07 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 01:55:05 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 01:55:24 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 01:55:34 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 01:56:23 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 01:56:29 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 01:56:56 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:03:42 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:04:45 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:05:05 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:05:20 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:10:01 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:10:19 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:10:41 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:10:51 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:36:13 [request] - LV1 - /index.php/Home/Script/weixinblacklist
+2015-10-22 02:36:31 [request] - LV1 - /
+2015-10-22 02:36:31 [request] - LV1 - /index.php/Home/Main/teacher.html
+2015-10-22 02:36:34 [request] - LV1 - /index.php/
+2015-10-22 02:36:34 [request] - LV1 - /index.php/Home/Main/teacher.html
+2015-10-22 02:38:00 [request] - LV1 - /index.php/Home/Main/teacher.html
+2015-10-22 02:38:05 [request] - LV1 - /index.php
+2015-10-22 02:38:05 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 02:38:06 [request] - LV1 - /Home/Mc/query
+2015-10-22 02:38:06 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445495886384',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 02:38:06 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 02:38:09 [request] - LV1 - /index.php/Home/Main/logout.html
+2015-10-22 02:38:09 [request] - LV1 - /index.php/Home/Index/index.html
+2015-10-22 02:38:09 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 02:38:12 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-22 02:38:12 [request] - LV1 - array (
+  'username' => 'petervita',
+  'password' => '111111',
+)
+2015-10-22 02:38:14 [request] - LV1 - /index.php/Home/Index/verify.html?0.5766049609519541
+2015-10-22 02:38:14 [request] - LV1 - array (
+  '0_5766049609519541' => '',
+)
+2015-10-22 02:38:21 [request] - LV1 - /index.php/admin
+2015-10-22 02:38:21 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 02:38:35 [request] - LV1 - /index.php/Admin/index/login.html
+2015-10-22 02:38:35 [request] - LV1 - array (
+  'username' => 'admin',
+  'password' => '111111',
+  'verifycode' => 'k7pia',
+)
+2015-10-22 02:38:35 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-22 02:38:45 [request] - LV1 - /index.php/Admin/User/editpw.html
+2015-10-22 02:38:54 [request] - LV1 - /index.php/Admin/User/changepw.html
+2015-10-22 02:38:54 [request] - LV1 - array (
+  'original_password' => '111111',
+  'new_password' => 'libo123',
+  'confirm_password' => 'libo123',
+)
+2015-10-22 02:38:55 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-22 02:38:57 [request] - LV1 - /index.php/Admin/User/logout.html
+2015-10-22 02:38:58 [request] - LV1 - /index.php/Admin/Index/index.html
+2015-10-22 02:38:58 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 02:39:02 [request] - LV1 - /index.php/Admin/index/login.html
+2015-10-22 02:39:02 [request] - LV1 - array (
+  'username' => 'admin',
+  'password' => 'libo123',
+  'verifycode' => '',
+)
+2015-10-22 02:39:03 [request] - LV1 - /index.php/Home/Index/verify.html?0.17052716109901667
+2015-10-22 02:39:03 [request] - LV1 - array (
+  '0_17052716109901667' => '',
+)
+2015-10-22 02:39:07 [request] - LV1 - /index.php/Admin/index/login.html
+2015-10-22 02:39:07 [request] - LV1 - array (
+  'username' => 'admin',
+  'password' => '111111',
+  'verifycode' => '',
+)
+2015-10-22 02:39:07 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-22 02:39:09 [request] - LV1 - /index.php/Admin/User/editpw.html
+2015-10-22 03:59:11 [request] - LV1 - /index.php/Admin/Brand/index/page/1.html
+2015-10-22 03:59:47 [request] - LV1 - /index.php/Admin/brand/edit.html
+2015-10-22 03:59:47 [request] - LV1 - array (
+  'id' => '0',
+  'brand_name' => 'testvita',
+  'username' => 'petervita',
+  'password' => '111111',
+  'contact_name' => 'd',
+  'email' => 'peter@1132213.com',
+  'phone' => '18321383231',
+  'chooserole' => 'default',
+  'desc' => '',
+)
+2015-10-22 03:59:50 [request] - LV1 - /index.php/Admin/User/logout.html
+2015-10-22 03:59:51 [request] - LV1 - /index.php/Admin/Index/index.html
+2015-10-22 03:59:52 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 03:59:54 [request] - LV1 - /index.php
+2015-10-22 03:59:54 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 03:59:55 [request] - LV1 - /Home/Mc/query
+2015-10-22 03:59:55 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500795361',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 03:59:55 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 03:59:57 [request] - LV1 - /index.php/Home/Main/logout.html
+2015-10-22 03:59:57 [request] - LV1 - /index.php/Home/Index/index.html
+2015-10-22 03:59:57 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 03:59:59 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-22 03:59:59 [request] - LV1 - array (
+  'username' => 'petervita',
+  'password' => '111111',
+)
+2015-10-22 03:59:59 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 03:59:59 [request] - LV1 - /Home/Mc/query
+2015-10-22 03:59:59 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500799979',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 03:59:59 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:00:04 [request] - LV1 - /index.php/Brand/Shop/clubsinfo.html
+2015-10-22 04:00:07 [request] - LV1 - /Home/Mc/query
+2015-10-22 04:00:07 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500807820',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 04:00:07 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:00:10 [request] - LV1 - /index.php/Brand/Review/contract.html
+2015-10-22 04:00:14 [request] - LV1 - /Home/Mc/query
+2015-10-22 04:00:14 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500814138',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 04:00:14 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:00:21 [request] - LV1 - /index.php/admin
+2015-10-22 04:00:21 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 04:00:26 [request] - LV1 - /index.php/Admin/index/login.html
+2015-10-22 04:00:26 [request] - LV1 - array (
+  'username' => 'admin',
+  'password' => '111111',
+  'verifycode' => '',
+)
+2015-10-22 04:00:26 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-22 04:00:32 [request] - LV1 - /index.php/Admin/Brand/index/page/1.html
+2015-10-22 04:00:46 [request] - LV1 - /index.php/Admin/brand/edit.html
+2015-10-22 04:00:46 [request] - LV1 - array (
+  'id' => '55',
+  'brand_name' => 'testvita',
+  'password' => '',
+  'contact_name' => 'd',
+  'email' => 'peter@1132213.com',
+  'phone' => '18321383231',
+  'chooserole' => 'set',
+  'roles' => 
+  array (
+    0 => 'shopkeeper',
+    1 => 'finance',
+    2 => 'reception',
+    3 => 'bar',
+    4 => 'cashier',
+    5 => 'mcmanager',
+    6 => 'mc',
+    7 => 'ptmanager',
+    8 => 'pt',
+    9 => 'channelmanager',
+    10 => 'channel',
+  ),
+  'desc' => '',
+)
+2015-10-22 04:00:53 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 04:00:53 [request] - LV1 - /Home/Mc/query
+2015-10-22 04:00:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500853960',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 04:00:53 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:00:55 [request] - LV1 - /index.php/Brand/Shop/clubsinfo.html
+2015-10-22 04:01:01 [request] - LV1 - /Brand/Shop/showAdd
+2015-10-22 04:01:01 [request] - LV1 - array (
+  's' => '/Brand/Shop/showAdd',
+)
+2015-10-22 04:01:26 [request] - LV1 - /index.php/Brand/Shop/add.html
+2015-10-22 04:01:26 [request] - LV1 - array (
+  'id' => '',
+  'lat' => '31.244813',
+  'lon' => '121.503469',
+  'club_name' => 'vita',
+  'province' => '上海市',
+  'city' => '地级市',
+  'town' => '市、县级市、县',
+  's4' => '',
+  'location' => '上海市,地级市,市、县级市、县,',
+  'phone' => '',
+  'fax' => '',
+  'email' => '',
+  'desc' => '',
+)
+2015-10-22 04:01:27 [request] - LV1 - /index.php/Brand/Shop/clubsinfo.html
+2015-10-22 04:01:29 [request] - LV1 - /index.php/Brand/Shop/showEdit/id/1041.html
+2015-10-22 04:02:15 [request] - LV1 - /index.php/Brand/Shop/peak.html
+2015-10-22 04:02:16 [request] - LV1 - /Brand/Shop/showEditPeak
+2015-10-22 04:02:16 [request] - LV1 - array (
+  's' => '/Brand/Shop/showEditPeak',
+)
+2015-10-22 04:02:32 [request] - LV1 - /index.php/Brand/Shop/editPeak.html
+2015-10-22 04:02:32 [request] - LV1 - array (
+  'id' => '',
+  'times' => 
+  array (
+    0 => 
+    array (
+      'week' => '4',
+      'start_time' => '00:00',
+      'end_time' => '23:30',
+    ),
+    1 => 
+    array (
+      'week' => '1',
+      'start_time' => '00:00',
+      'end_time' => '00:00',
+    ),
+  ),
+  'peak_name' => '高冯时段1',
+)
+2015-10-22 04:02:32 [request] - LV1 - /index.php/Brand/Shop/peak.html
+2015-10-22 04:02:35 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-10-22 04:02:35 [request] - LV1 - /Brand/Goods/getGoods
+2015-10-22 04:02:35 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500955785',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:02:35 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-10-22 04:02:35 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-10-22 04:02:35 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500955830',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-10-22 04:02:35 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-10-22 04:02:50 [request] - LV1 - /index.php/Brand/Ptclass/index.html
+2015-10-22 04:02:50 [request] - LV1 - /Brand/Ptclass/getPtclass
+2015-10-22 04:02:50 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500970223',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:02:50 [request] - LV1 - array (
+  's' => '/Brand/Ptclass/getPtclass',
+)
+2015-10-22 04:03:10 [request] - LV1 - /Brand/Ptclass/setPtclass
+2015-10-22 04:03:10 [request] - LV1 - array (
+  'name' => '测试课程1',
+  'time' => '120',
+  'price' => '999',
+  'clubs' => '1041',
+  'status' => '1',
+  'description' => '',
+  'oper' => 'add',
+  'id' => '_empty',
+)
+2015-10-22 04:03:10 [request] - LV1 - array (
+  's' => '/Brand/Ptclass/setPtclass',
+)
+2015-10-22 04:03:10 [request] - LV1 - /Brand/Ptclass/getPtclass
+2015-10-22 04:03:10 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500990257',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:03:10 [request] - LV1 - array (
+  's' => '/Brand/Ptclass/getPtclass',
+)
+2015-10-22 04:03:14 [request] - LV1 - /index.php/Brand/Cardtype/index.html
+2015-10-22 04:03:14 [request] - LV1 - /Api/index/getPeaktime
+2015-10-22 04:03:14 [request] - LV1 - array (
+  's' => '/Api/index/getPeaktime',
+)
+2015-10-22 04:03:14 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:03:14 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:03:14 [request] - LV1 - /Brand/Cardtype/getCardtype
+2015-10-22 04:03:14 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445500994737',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:03:14 [request] - LV1 - array (
+  's' => '/Brand/Cardtype/getCardtype',
+)
+2015-10-22 04:03:33 [request] - LV1 - /Brand/Cardtype/setCardType
+2015-10-22 04:03:33 [request] - LV1 - array (
+  'name' => '时间卡',
+  'category' => '1',
+  'type' => '1',
+  'price' => '4000',
+  'min_price' => '2000',
+  'peak_time' => '35',
+  'saleclub' => '1041',
+  'useclub' => '1041',
+  'valid_number' => '',
+  'valid_time' => '12',
+  'max_present_num' => '',
+  'max_present_day' => '',
+  'status' => '1',
+  'start_time' => '2015-01-01',
+  'end_time' => '2019-01-01',
+  'description' => '',
+  'oper' => 'add',
+  'id' => '_empty',
+)
+2015-10-22 04:03:33 [request] - LV1 - array (
+  's' => '/Brand/Cardtype/setCardType',
+)
+2015-10-22 04:03:34 [request] - LV1 - /Brand/Cardtype/getCardtype
+2015-10-22 04:03:34 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445501014011',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:03:34 [request] - LV1 - array (
+  's' => '/Brand/Cardtype/getCardtype',
+)
+2015-10-22 04:03:56 [request] - LV1 - /Brand/Cardtype/setCardType
+2015-10-22 04:03:56 [request] - LV1 - array (
+  'name' => '次数卡',
+  'category' => '1',
+  'type' => '2',
+  'price' => '4000',
+  'min_price' => '2000',
+  'peak_time' => '35',
+  'saleclub' => '1041',
+  'useclub' => '1041',
+  'valid_number' => '10',
+  'valid_time' => '12',
+  'max_present_num' => '',
+  'max_present_day' => '',
+  'status' => '1',
+  'start_time' => '2015-01-01',
+  'end_time' => '2019-01-01',
+  'description' => '',
+  'oper' => 'add',
+  'id' => '_empty',
+)
+2015-10-22 04:03:56 [request] - LV1 - array (
+  's' => '/Brand/Cardtype/setCardType',
+)
+2015-10-22 04:03:57 [request] - LV1 - /Brand/Cardtype/getCardtype
+2015-10-22 04:03:57 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445501037198',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:03:57 [request] - LV1 - array (
+  's' => '/Brand/Cardtype/getCardtype',
+)
+2015-10-22 04:04:00 [request] - LV1 - /index.php/Brand/Employee/index.html
+2015-10-22 04:04:00 [request] - LV1 - /Brand/Employee/getEmployees
+2015-10-22 04:04:00 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445501040525',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:04:00 [request] - LV1 - array (
+  's' => '/Brand/Employee/getEmployees',
+)
+2015-10-22 04:04:02 [request] - LV1 - /Brand/Employee/showAdd
+2015-10-22 04:04:02 [request] - LV1 - array (
+  's' => '/Brand/Employee/showAdd',
+)
+2015-10-22 04:04:38 [request] - LV1 - /index.php/Brand/Employee/add.html
+2015-10-22 04:04:38 [request] - LV1 - array (
+  'id' => '',
+  'club_id' => '1041',
+  'name_cn' => 'tp',
+  'name_en' => '111111',
+  'username' => 'tp',
+  'password' => '111111',
+  'confirm_password' => '111111',
+  'level' => '1',
+  'sex' => 'male',
+  'marriage' => '0',
+  'identity_card' => '',
+  'phone' => '',
+  'email' => '',
+  'birthday' => '',
+  'origin' => '',
+  'hukou' => '',
+  'address' => '',
+  'school' => '',
+  'major' => '',
+  'education' => '0',
+  'graduate_time' => '',
+  'bank_card' => '',
+  'work_status' => '0',
+  'work_in_time' => '',
+  'work_out_time' => '',
+  'desc' => '',
+  'roles' => 
+  array (
+    0 => '2',
+    1 => '4',
+    2 => '5',
+    3 => '6',
+    4 => '7',
+    5 => '8',
+    6 => '9',
+    7 => '10',
+    8 => '11',
+    9 => '17',
+    10 => '18',
+    11 => '19',
+    12 => '20',
+  ),
+  'financeroles' => 
+  array (
+    0 => '1041',
+  ),
+  'can_grant' => '1',
+)
+2015-10-22 04:04:52 [request] - LV1 - /index.php/Brand/Employee/add.html
+2015-10-22 04:04:52 [request] - LV1 - array (
+  'id' => '',
+  'club_id' => '1041',
+  'name_cn' => 'tp',
+  'name_en' => '111111',
+  'username' => 'tpeter',
+  'password' => '111111',
+  'confirm_password' => '111111',
+  'level' => '1',
+  'sex' => 'male',
+  'marriage' => '0',
+  'identity_card' => '',
+  'phone' => '',
+  'email' => '',
+  'birthday' => '',
+  'origin' => '',
+  'hukou' => '',
+  'address' => '',
+  'school' => '',
+  'major' => '',
+  'education' => '0',
+  'graduate_time' => '',
+  'bank_card' => '',
+  'work_status' => '0',
+  'work_in_time' => '',
+  'work_out_time' => '',
+  'desc' => '',
+  'roles' => 
+  array (
+    0 => '2',
+    1 => '4',
+    2 => '5',
+    3 => '6',
+    4 => '7',
+    5 => '8',
+    6 => '9',
+    7 => '10',
+    8 => '11',
+    9 => '17',
+    10 => '18',
+    11 => '19',
+    12 => '20',
+  ),
+  'financeroles' => 
+  array (
+    0 => '1041',
+  ),
+  'can_grant' => '1',
+)
+2015-10-22 04:04:55 [request] - LV1 - /index.php/Brand/Employee/index.html
+2015-10-22 04:04:55 [request] - LV1 - /Brand/Employee/getEmployees
+2015-10-22 04:04:55 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445501095310',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:04:55 [request] - LV1 - array (
+  's' => '/Brand/Employee/getEmployees',
+)
+2015-10-22 04:05:02 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:05:02 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:05:02 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445501102695',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:05:02 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:26:34 [request] - LV1 - /index.php/Brand/Mcontract/index.html
+2015-10-22 04:26:34 [request] - LV1 - /index.php/Brand/Mcontract/query.html
+2015-10-22 04:26:34 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502394792',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:26:37 [request] - LV1 - /index.php/Brand/Review/ptcontract.html
+2015-10-22 04:26:37 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:26:37 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:26:37 [request] - LV1 - /index.php/Brand/Review/ptQuery.html
+2015-10-22 04:26:37 [request] - LV1 - array (
+  'type' => '0',
+  '_search' => 'false',
+  'nd' => '1445502397852',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 04:26:41 [request] - LV1 - /index.php/Brand/Review/ptcontract.html
+2015-10-22 04:26:41 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:26:41 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:26:41 [request] - LV1 - /index.php/Brand/Review/ptQuery.html
+2015-10-22 04:26:41 [request] - LV1 - array (
+  'type' => '0',
+  '_search' => 'false',
+  'nd' => '1445502401307',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 04:26:41 [request] - LV1 - /index.php/Brand/Review/ptcontract.html
+2015-10-22 04:26:41 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:26:41 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:26:42 [request] - LV1 - /index.php/Brand/Review/ptQuery.html
+2015-10-22 04:26:42 [request] - LV1 - array (
+  'type' => '0',
+  '_search' => 'false',
+  'nd' => '1445502402016',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 04:26:42 [request] - LV1 - /index.php/Brand/Review/contract.html
+2015-10-22 04:26:42 [request] - LV1 - /Api/index/getCardType
+2015-10-22 04:26:42 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-10-22 04:26:48 [request] - LV1 - /index.php/Brand/Review/quit.html
+2015-10-22 04:26:48 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:26:48 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:26:48 [request] - LV1 - /index.php/Brand/Review/quitQuery.html
+2015-10-22 04:26:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502408537',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 04:26:49 [request] - LV1 - /index.php/Brand/Review/consume.html
+2015-10-22 04:26:50 [request] - LV1 - /index.php/Brand/Review/queryConsume.html
+2015-10-22 04:26:50 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502410088',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:26:51 [request] - LV1 - /index.php/Brand/Review/contract.html
+2015-10-22 04:26:51 [request] - LV1 - /Api/index/getCardType
+2015-10-22 04:26:51 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-10-22 04:26:59 [request] - LV1 - /index.php/Brand/Review/ptcontract.html
+2015-10-22 04:26:59 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:26:59 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:26:59 [request] - LV1 - /index.php/Brand/Review/ptQuery.html
+2015-10-22 04:26:59 [request] - LV1 - array (
+  'type' => '0',
+  '_search' => 'false',
+  'nd' => '1445502419864',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 04:27:09 [request] - LV1 - /index.php/Brand/Review/contract.html
+2015-10-22 04:27:09 [request] - LV1 - /Api/index/getCardType
+2015-10-22 04:27:09 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-10-22 04:27:10 [request] - LV1 - /index.php/Brand/Review/ptcontract.html
+2015-10-22 04:27:11 [request] - LV1 - /Api/index/getClubs
+2015-10-22 04:27:11 [request] - LV1 - array (
+  's' => '/Api/index/getClubs',
+)
+2015-10-22 04:27:11 [request] - LV1 - /index.php/Brand/Review/ptQuery.html
+2015-10-22 04:27:11 [request] - LV1 - array (
+  'type' => '0',
+  '_search' => 'false',
+  'nd' => '1445502431195',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 04:27:19 [request] - LV1 - /index.php/Brand/Goods/index.html
+2015-10-22 04:27:19 [request] - LV1 - /Brand/Goods/getGoods
+2015-10-22 04:27:19 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502439331',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:27:19 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoods',
+)
+2015-10-22 04:27:19 [request] - LV1 - /Brand/Goods/getGoodsCategory
+2015-10-22 04:27:19 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502439367',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'totalrows' => '2000',
+)
+2015-10-22 04:27:19 [request] - LV1 - array (
+  's' => '/Brand/Goods/getGoodsCategory',
+)
+2015-10-22 04:27:21 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:27:22 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:27:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502442194',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:27:22 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:27:58 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:27:58 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:27:58 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502478722',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:27:58 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:28:18 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:28:38 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:28:38 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:28:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502518985',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:28:38 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:28:45 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:28:45 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:28:45 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502525870',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:28:45 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:28:57 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:28:57 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:28:57 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502537734',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:28:57 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:32:36 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:32:36 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:32:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502756849',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:32:36 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:32:43 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:32:44 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:32:44 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502764220',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:32:44 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:32:48 [request] - LV1 - /index.php
+2015-10-22 04:32:48 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 04:32:49 [request] - LV1 - /Home/Mc/query
+2015-10-22 04:32:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502769052',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 04:32:49 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:32:53 [request] - LV1 - /index.php/Brand/Notice/index.html
+2015-10-22 04:32:53 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:32:53 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502773869',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:32:53 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:33:11 [request] - LV1 - /Brand/Notice/set
+2015-10-22 04:33:11 [request] - LV1 - array (
+  'start_time' => '2015-09-25 16:45',
+  'end_time' => '2015-10-31 23:55',
+  'content' => 'test',
+  'oper' => 'edit',
+  'id' => '8',
+)
+2015-10-22 04:33:11 [request] - LV1 - array (
+  's' => '/Brand/Notice/set',
+)
+2015-10-22 04:33:11 [request] - LV1 - /Brand/Notice/query
+2015-10-22 04:33:11 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502791271',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:33:11 [request] - LV1 - array (
+  's' => '/Brand/Notice/query',
+)
+2015-10-22 04:33:15 [request] - LV1 - /index.php
+2015-10-22 04:33:15 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 04:33:15 [request] - LV1 - /Home/Mc/query
+2015-10-22 04:33:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502795563',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 04:33:15 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:33:22 [request] - LV1 - /index.php/Brand/Mcontract/index.html
+2015-10-22 04:33:23 [request] - LV1 - /index.php/Brand/Mcontract/query.html
+2015-10-22 04:33:23 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502803083',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:35:16 [request] - LV1 - /index.php/Home/Main/logout.html
+2015-10-22 04:35:16 [request] - LV1 - /index.php/Home/Index/index.html
+2015-10-22 04:35:16 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-22 04:35:22 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-22 04:35:22 [request] - LV1 - array (
+  'username' => 'tpeter',
+  'password' => '111111',
+)
+2015-10-22 04:35:22 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 04:35:22 [request] - LV1 - /Home/Mc/query
+2015-10-22 04:35:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502922581',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 04:35:22 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 04:35:30 [request] - LV1 - /index.php/Shopkeeper/Employee/index.html
+2015-10-22 04:35:30 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-10-22 04:35:30 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445502930699',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+)
+2015-10-22 04:35:30 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-10-22 04:35:33 [request] - LV1 - /Shopkeeper/Employee/showAdd
+2015-10-22 04:35:33 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/showAdd',
+)
+2015-10-22 04:36:38 [request] - LV1 - /index.php/Shopkeeper/Employee/add.html
+2015-10-22 04:36:38 [request] - LV1 - array (
+  'id' => '',
+  'name_cn' => 't2peter',
+  'name_en' => '123123',
+  'username' => 't2peter',
+  'password' => '111111',
+  'confirm_password' => '111111',
+  'level' => '1',
+  'sex' => 'male',
+  'marriage' => '0',
+  'identity_card' => '',
+  'phone' => '',
+  'email' => '',
+  'birthday' => '',
+  'origin' => '',
+  'hukou' => '',
+  'address' => '',
+  'school' => '',
+  'major' => '',
+  'education' => '0',
+  'graduate_time' => '',
+  'bank_card' => '',
+  'work_status' => '0',
+  'work_in_time' => '',
+  'work_out_time' => '',
+  'desc' => '',
+  'roles' => 
+  array (
+    0 => '2',
+    1 => '4',
+    2 => '6',
+    3 => '7',
+    4 => '8',
+    5 => '9',
+    6 => '10',
+    7 => '17',
+    8 => '18',
+    9 => '19',
+    10 => '20',
+  ),
+  'can_grant' => '1',
+)
+2015-10-22 04:36:41 [request] - LV1 - /index.php/Shopkeeper/Employee/index.html
+2015-10-22 04:36:41 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-10-22 04:36:41 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503001522',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+)
+2015-10-22 04:36:41 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-10-22 04:36:42 [request] - LV1 - /index.php/Shopkeeper/Employee/index.html
+2015-10-22 04:36:43 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-10-22 04:36:43 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503003253',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+)
+2015-10-22 04:36:43 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-10-22 04:36:47 [request] - LV1 - /Shopkeeper/Employee/getEmployees
+2015-10-22 04:36:47 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503007272',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'asc',
+  'filters' => '',
+)
+2015-10-22 04:36:47 [request] - LV1 - array (
+  's' => '/Shopkeeper/Employee/getEmployees',
+)
+2015-10-22 04:36:54 [request] - LV1 - /index.php/Shopkeeper/Room/index.html
+2015-10-22 04:36:55 [request] - LV1 - /Shopkeeper/Room/query
+2015-10-22 04:36:55 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503015173',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:36:55 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-10-22 04:36:56 [request] - LV1 - /Shopkeeper/Room/showAdd
+2015-10-22 04:36:56 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/showAdd',
+)
+2015-10-22 04:37:06 [request] - LV1 - /index.php/Shopkeeper/Room/edit.html
+2015-10-22 04:37:06 [request] - LV1 - array (
+  'id' => '',
+  'rows' => '4',
+  'name' => 'studioa',
+  'num' => '10',
+  'extension' => '[1,2,3,4]',
+)
+2015-10-22 04:37:06 [request] - LV1 - /index.php/Shopkeeper/Room/index.html
+2015-10-22 04:37:06 [request] - LV1 - /Shopkeeper/Room/query
+2015-10-22 04:37:06 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503026894',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:37:06 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-10-22 04:37:09 [request] - LV1 - /Shopkeeper/Room/showEdit/id/20
+2015-10-22 04:37:09 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/showEdit/id/20',
+)
+2015-10-22 04:37:12 [request] - LV1 - /index.php/Shopkeeper/Room/edit.html
+2015-10-22 04:37:12 [request] - LV1 - array (
+  'id' => '20',
+  'rows' => '4',
+  'name' => 'studioa',
+  'num' => '11',
+  'extension' => '[1,2,3,5]',
+)
+2015-10-22 04:37:13 [request] - LV1 - /index.php/Shopkeeper/Room/index.html
+2015-10-22 04:37:13 [request] - LV1 - /Shopkeeper/Room/query
+2015-10-22 04:37:13 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503033932',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:37:13 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-10-22 04:37:16 [request] - LV1 - /Shopkeeper/Room/showEdit/id/20
+2015-10-22 04:37:16 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/showEdit/id/20',
+)
+2015-10-22 04:37:19 [request] - LV1 - /Shopkeeper/Room/query
+2015-10-22 04:37:19 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503039263',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:37:19 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-10-22 04:37:22 [request] - LV1 - /Shopkeeper/Room/query
+2015-10-22 04:37:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503042606',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '',
+)
+2015-10-22 04:37:22 [request] - LV1 - array (
+  's' => '/Shopkeeper/Room/query',
+)
+2015-10-22 04:37:23 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-22 04:37:23 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-22 04:37:23 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503043795',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:37:23 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-22 04:37:25 [request] - LV1 - /Shopkeeper/Tclass/showAdd
+2015-10-22 04:37:25 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/showAdd',
+)
+2015-10-22 04:37:46 [request] - LV1 - /index.php/Shopkeeper/Tclass/add.html
+2015-10-22 04:37:46 [request] - LV1 - array (
+  'id' => '',
+  'pt_id' => '2476',
+  'name' => '课程1',
+  'name_en' => 'course1',
+  'time' => '60',
+  'lang' => 'bili',
+  'level' => '4',
+  'desc' => '<p>阿斯顿发生地方</p>',
+  'content' => '<p>阿斯顿发生地方</p>',
+)
+2015-10-22 04:37:47 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-22 04:37:48 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-22 04:37:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503068336',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:37:48 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-22 04:37:51 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-10-22 04:37:52 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-22 04:37:52 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503072337',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:37:52 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-22 04:37:52 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445443200&end=1445529600&_=1445503072012
+2015-10-22 04:37:52 [request] - LV1 - array (
+  'start' => '1445443200',
+  'end' => '1445529600',
+  '_' => '1445503072012',
+)
+2015-10-22 04:37:53 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445529600&end=1445616000&_=1445503072013
+2015-10-22 04:37:53 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503072013',
+)
+2015-10-22 04:37:58 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-10-22 04:37:58 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '189',
+  'start' => '2015-10-23 10:30:00',
+  'end' => '2015-10-23 11:30:00',
+  'pt_id' => '2476',
+)
+2015-10-22 04:37:58 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-10-22 04:37:58 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '189',
+  'start' => '2015-10-30 10:30:00',
+  'end' => '2015-10-30 11:30:00',
+  'pt_id' => '2476',
+)
+2015-10-22 04:37:58 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445529600&end=1445616000&_=1445503072014
+2015-10-22 04:37:58 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503072014',
+)
+2015-10-22 04:37:58 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445529600&end=1445616000&_=1445503072015
+2015-10-22 04:37:58 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503072015',
+)
+2015-10-22 04:38:01 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-10-22 04:38:01 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '189',
+  'start' => '2015-10-23 12:30:00',
+  'end' => '2015-10-23 13:30:00',
+  'pt_id' => '2476',
+)
+2015-10-22 04:38:01 [request] - LV1 - /index.php/Shopkeeper/Class/editone.html
+2015-10-22 04:38:01 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '189',
+  'start' => '2015-10-30 12:30:00',
+  'end' => '2015-10-30 13:30:00',
+  'pt_id' => '2476',
+)
+2015-10-22 04:38:01 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445529600&end=1445616000&_=1445503072016
+2015-10-22 04:38:01 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503072016',
+)
+2015-10-22 04:38:01 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445529600&end=1445616000&_=1445503072017
+2015-10-22 04:38:01 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503072017',
+)
+2015-10-22 04:38:03 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1443369600&end=1446393600&_=1445503072018
+2015-10-22 04:38:03 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503072018',
+)
+2015-10-22 04:38:18 [request] - LV1 - /index.php/Tuanmanager/Tclass/index.html
+2015-10-22 04:38:18 [request] - LV1 - /Tuanmanager/Tclass/query
+2015-10-22 04:38:18 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503098806',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:38:18 [request] - LV1 - array (
+  's' => '/Tuanmanager/Tclass/query',
+)
+2015-10-22 04:38:19 [request] - LV1 - /Tuanmanager/Tclass/showAdd
+2015-10-22 04:38:19 [request] - LV1 - array (
+  's' => '/Tuanmanager/Tclass/showAdd',
+)
+2015-10-22 04:38:31 [request] - LV1 - /index.php/Tuanmanager/Tclass/add.html
+2015-10-22 04:38:31 [request] - LV1 - array (
+  'id' => '',
+  'pt_id' => '2477',
+  'name' => 'c2',
+  'name_en' => 'cv2',
+  'time' => '120',
+  'lang' => 'zh-chs',
+  'level' => '1',
+  'desc' => '<p>123</p>',
+  'content' => '<p>123</p>',
+)
+2015-10-22 04:38:32 [request] - LV1 - /index.php/Tuanmanager/Tclass/index.html
+2015-10-22 04:38:33 [request] - LV1 - /Tuanmanager/Tclass/query
+2015-10-22 04:38:33 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503113474',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:38:33 [request] - LV1 - array (
+  's' => '/Tuanmanager/Tclass/query',
+)
+2015-10-22 04:38:35 [request] - LV1 - /index.php/Tuanmanager/Class/index.html
+2015-10-22 04:38:36 [request] - LV1 - /Tuanmanager/Class/query
+2015-10-22 04:38:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503116356',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:38:36 [request] - LV1 - array (
+  's' => '/Tuanmanager/Class/query',
+)
+2015-10-22 04:38:36 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445443200&end=1445529600&_=1445503115989
+2015-10-22 04:38:36 [request] - LV1 - array (
+  'start' => '1445443200',
+  'end' => '1445529600',
+  '_' => '1445503115989',
+)
+2015-10-22 04:38:39 [request] - LV1 - /index.php/Tuanmanager/Room/index.html
+2015-10-22 04:38:39 [request] - LV1 - /Tuanmanager/Room/query
+2015-10-22 04:38:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503119977',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:38:39 [request] - LV1 - array (
+  's' => '/Tuanmanager/Room/query',
+)
+2015-10-22 04:38:41 [request] - LV1 - /Tuanmanager/Room/showAdd
+2015-10-22 04:38:41 [request] - LV1 - array (
+  's' => '/Tuanmanager/Room/showAdd',
+)
+2015-10-22 04:38:47 [request] - LV1 - /index.php/Tuanmanager/Room/edit.html
+2015-10-22 04:38:47 [request] - LV1 - array (
+  'id' => '',
+  'rows' => '3',
+  'name' => 'sb',
+  'num' => '7',
+  'extension' => '[2,2,3]',
+)
+2015-10-22 04:38:47 [request] - LV1 - /index.php/Tuanmanager/Room/index.html
+2015-10-22 04:38:48 [request] - LV1 - /Tuanmanager/Room/query
+2015-10-22 04:38:48 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503128181',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:38:48 [request] - LV1 - array (
+  's' => '/Tuanmanager/Room/query',
+)
+2015-10-22 04:38:49 [request] - LV1 - /index.php/Tuanmanager/Class/index.html
+2015-10-22 04:38:50 [request] - LV1 - /Tuanmanager/Class/query
+2015-10-22 04:38:50 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445503130514',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 04:38:50 [request] - LV1 - array (
+  's' => '/Tuanmanager/Class/query',
+)
+2015-10-22 04:38:50 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445443200&end=1445529600&_=1445503130117
+2015-10-22 04:38:50 [request] - LV1 - array (
+  'start' => '1445443200',
+  'end' => '1445529600',
+  '_' => '1445503130117',
+)
+2015-10-22 04:38:51 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445529600&end=1445616000&_=1445503130118
+2015-10-22 04:38:51 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503130118',
+)
+2015-10-22 04:38:56 [request] - LV1 - /index.php/Tuanmanager/Class/editone.html
+2015-10-22 04:38:56 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '190',
+  'start' => '2015-10-23 15:30:00',
+  'end' => '2015-10-23 17:30:00',
+  'pt_id' => '2477',
+)
+2015-10-22 04:38:56 [request] - LV1 - /index.php/Tuanmanager/Class/editone.html
+2015-10-22 04:38:56 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '190',
+  'start' => '2015-10-30 15:30:00',
+  'end' => '2015-10-30 17:30:00',
+  'pt_id' => '2477',
+)
+2015-10-22 04:38:56 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445529600&end=1445616000&_=1445503130119
+2015-10-22 04:38:56 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503130119',
+)
+2015-10-22 04:38:57 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445529600&end=1445616000&_=1445503130120
+2015-10-22 04:38:57 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503130120',
+)
+2015-10-22 04:39:14 [request] - LV1 - /index.php/Tuanmanager/Class/editone.html
+2015-10-22 04:39:14 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '190',
+  'start' => '2015-10-24 19:35:00',
+  'end' => '2015-10-24 21:35:00',
+  'pt_id' => '2477',
+)
+2015-10-22 04:39:14 [request] - LV1 - /index.php/Tuanmanager/Class/editone.html
+2015-10-22 04:39:14 [request] - LV1 - array (
+  'room_id' => '20',
+  'class_id' => '190',
+  'start' => '2015-10-31 19:35:00',
+  'end' => '2015-10-31 21:35:00',
+  'pt_id' => '2477',
+)
+2015-10-22 04:39:14 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445529600&end=1445616000&_=1445503130121
+2015-10-22 04:39:14 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503130121',
+)
+2015-10-22 04:39:14 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445529600&end=1445616000&_=1445503130122
+2015-10-22 04:39:14 [request] - LV1 - array (
+  'start' => '1445529600',
+  'end' => '1445616000',
+  '_' => '1445503130122',
+)
+2015-10-22 04:39:16 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1445616000&end=1445702400&_=1445503130123
+2015-10-22 04:39:16 [request] - LV1 - array (
+  'start' => '1445616000',
+  'end' => '1445702400',
+  '_' => '1445503130123',
+)
+2015-10-22 04:39:20 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1443369600&end=1446393600&_=1445503130124
+2015-10-22 04:39:20 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503130124',
+)
+2015-10-22 04:39:29 [request] - LV1 - /index.php/Tuanmanager/Class/del.html
+2015-10-22 04:39:29 [request] - LV1 - array (
+  'id' => '3029',
+)
+2015-10-22 04:39:29 [request] - LV1 - /index.php/Tuanmanager/Class/del.html
+2015-10-22 04:39:29 [request] - LV1 - array (
+  'id' => '3029',
+)
+2015-10-22 04:39:29 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1443369600&end=1446393600&_=1445503130125
+2015-10-22 04:39:29 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503130125',
+)
+2015-10-22 04:39:29 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1443369600&end=1446393600&_=1445503130126
+2015-10-22 04:39:29 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503130126',
+)
+2015-10-22 04:39:37 [request] - LV1 - /index.php/Tuanmanager/Class/del.html
+2015-10-22 04:39:37 [request] - LV1 - array (
+  'id' => '3028',
+)
+2015-10-22 04:39:37 [request] - LV1 - /index.php/Tuanmanager/Class/del.html
+2015-10-22 04:39:37 [request] - LV1 - array (
+  'id' => '3027',
+)
+2015-10-22 04:39:37 [request] - LV1 - /index.php/Tuanmanager/Class/del.html
+2015-10-22 04:39:37 [request] - LV1 - array (
+  'id' => '3028',
+)
+2015-10-22 04:39:37 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1443369600&end=1446393600&_=1445503130127
+2015-10-22 04:39:37 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503130127',
+)
+2015-10-22 04:39:37 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1443369600&end=1446393600&_=1445503130128
+2015-10-22 04:39:37 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503130128',
+)
+2015-10-22 04:39:37 [request] - LV1 - /index.php/Tuanmanager/Class/getjson.html?start=1443369600&end=1446393600&_=1445503130129
+2015-10-22 04:39:37 [request] - LV1 - array (
+  'start' => '1443369600',
+  'end' => '1446393600',
+  '_' => '1445503130129',
+)
+2015-10-22 04:40:01 [request] - LV1 - /index.php/Reception/Visit/index.html
+2015-10-22 04:40:09 [request] - LV1 - /index.php/Mc/Visit/index.html
+2015-10-22 05:59:25 [request] - LV1 - /
+2015-10-22 05:59:25 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-22 05:59:25 [request] - LV1 - /Home/Mc/query
+2015-10-22 05:59:25 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445507965715',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-22 05:59:25 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-22 06:05:23 [request] - LV1 - /index.php/Pt/Member/index.html
+2015-10-22 06:05:24 [request] - LV1 - /index.php/Pt/Member/query.html
+2015-10-22 06:05:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445508324249',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-22 06:05:26 [request] - LV1 - /index.php/Pt/Member/query.html
+2015-10-22 06:05:26 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445508326071',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-22 06:05:41 [request] - LV1 - /index.php/Pt/Class/index.html
+2015-10-22 06:05:42 [request] - LV1 - /Pt/Class/query
+2015-10-22 06:05:42 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445508342174',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-22 06:05:42 [request] - LV1 - array (
+  's' => '/Pt/Class/query',
+)

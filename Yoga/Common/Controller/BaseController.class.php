@@ -64,6 +64,7 @@ class BaseController extends Controller {
         $this->isReception=$isReception;
          $this->show_plan =$isMc||$isChannel; 
         $this->isMc =$isMc;
+        $this->uid = UID;
         $this->isChannel =$isChannel; 
         $this->checkRole();
 

@@ -55,8 +55,6 @@
   </style>
 
   
-	<link rel="stylesheet" href="/Public/css/chosen.css" />
-
 </head>
 
 <body >
@@ -320,14 +318,14 @@
       <div class="breadcrumbs" id="breadcrumbs">
         <script type="text/javascript">try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}</script>
         
-	<ul class="breadcrumb">
-		<li> <i class="icon-home home-icon"></i>
-			<a href="<?php echo U('Home/Main/main');?>">品牌管理</a>
-		</li>
+    <ul class="breadcrumb">
+        <li> <i class="icon-home home-icon"></i>
+            <a href="<?php echo U('Home/Main/main');?>">前台</a>
+        </li>
+         <li class="active">稽核</li>
+        <li class="active">消费明细</li>
 
-		<li class="active">添加高峰时段</li>
-
-	</ul>
+    </ul>
 
         <!-- .breadcrumb -->
 
@@ -346,85 +344,45 @@
       <!-- <div class="page-header" ></div>
     -->
     
-	<div class="row">
-		<div class="col-xs-12">
-			<!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12" id="fcontainer">
 
-			<form class="form-horizontal" role="form" id="editPeakForm"  action="<?php echo U('Brand/Shop/editPeak');?>" method="post">
-			<input type="hidden" id="peakid" value="<?php echo ($peak["id"]); ?>">
-				<div class="form-group">
-					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">时段名称:</label>
-					<div class="col-sm-9">
-						<input type="text" id="form-field-1"  class="col-xs-10 col-sm-5" name="peak_name" value="<?php echo ($peak["peak_name"]); ?>"/>
-					</div>
-				</div>
+            <form class="form-inline" role="form" action="<?php echo U('Brand/Review/queryConsume');?>" method="post" id="query_check_consume_form" style="margin-bottom:10px">
 
-				<!-- <div class="form-group">
-					<label class="col-sm-3 control-label no-padding-right" for="form-field-2">选择会所:</label>
-					<div class="col-sm-9">
-					<select name="club" id="form-field-2"  class="col-xs-10 col-sm-5">
-					<?php if(is_array($clubs)): $i = 0; $__LIST__ = $clubs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$club): $mod = ($i % 2 );++$i;?><option value="<?php echo ($club["id"]); ?>" <?php if($club["id"] == $selectid): ?>selected="selected"<?php endif; ?>><?php echo ($club["club_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>						
-					</select>					
-					</div>
-				</div> --> 
-				<div class="form-group peaktime">
-					<label class="col-sm-3 control-label no-padding-right peaklabel" for="form-field-3">选择时间:</label>
-					<div class="col-sm-6" >
-						 <select class="week col-sm-3" id="form-field-3">
-						 	<option value="1">星期一</option>
-						 	<option value="2">星期二</option>
-						 	<option value="3">星期三</option>
-						 	<option value="4">星期四</option>
-						 	<option value="5">星期五</option>
-						 	<option value="6">星期六</option>
-						 	<option value="7">星期日</option>
-						 </select>
-						 <div  class="col-sm-2">
-						 	<label   for="start_time" class="sr-only">选择时间:</label>
-							 <select id="start_time" class="start_time" >
-							 <?php $__FOR_START_1997080699__=0;$__FOR_END_1997080699__=24;for($i=$__FOR_START_1997080699__;$i < $__FOR_END_1997080699__;$i+=1){ ?><option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":00";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:00</option> 
-								<option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":30";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:30</option><?php } ?> 
-						 </select>
-						 </div>
-						 <div  class="col-sm-1">
-						 	——
-						 </div> 
-						<div  class="col-sm-2">
-						 	<label   for="end_time" class="sr-only">选择时间:</label>
-							 <select id="end_time" class="end_time"  >
-							 <?php $__FOR_START_1265977231__=0;$__FOR_END_1265977231__=24;for($i=$__FOR_START_1265977231__;$i < $__FOR_END_1265977231__;$i+=1){ ?><option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":00";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:00</option> 
-								<option value='<?php echo str_pad($i,2,"0",STR_PAD_LEFT).":30";?>'> <?php echo str_pad($i,2,"0",STR_PAD_LEFT);?>:30</option><?php } ?> 
-						 </select>
-						 </div>
-						 <div  class="col-sm-4">
-						 <a href="javascript:void(0)" class="btn btn-info btn-sm addpeaktime"  ><i class='icon-plus-sign'></i></a>
-						 <a href="javascript:void(0)" class="btn btn-warning btn-sm delpeaktime" ><i class='icon-minus-sign'></i></a>			</div> 
-				</div>
-					 
-				</div>
+                <div class="form-group">
+                    <label  class="sr-only" for="club_id">请选择会所：</label>
+                    <select name="club_id" id="club_id" class="form-control"  oper="eq">
+                        <option value="-1">所有会所</option>
+                        <?php if(is_array($clubarray)): $i = 0; $__LIST__ = $clubarray;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$club): $mod = ($i % 2 );++$i;?><option value="<?php echo ($club["id"]); ?>"><?php echo ($club["club_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                    </select>
+                </div>
 
-				 
+                <div class="form-group">
+                    <label  for="card_id">会员卡号:</label>
+                    <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
 
-				<div class="clearfix form-actions">
-					<div class="col-md-offset-3 col-md-9">
-						<?php if(empty($peak)): ?><button class="btn btn-info" type="button"  onclick="editpeak()"> <i class="icon-ok bigger-110"></i>
-								提交
-							</button>
-							<?php else: ?>
-							<button class="btn btn-info" type="button" onclick="editpeak()">
-								<i class="icon-ok bigger-110"></i>
-								修改
-							</button><?php endif; ?>
-						&nbsp; &nbsp; &nbsp;
-						<button class="btn" type="reset">
-							<i class="icon-undo bigger-110"></i>
-							重置
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
+                <div class="form-group">
+                    <label  for="card_id">合同号:</label>
+                    <input type="text" class="form-control" name="contract_number"  id="contract_number" oper="eq"></div>
+                <div class="form-group">
+                    <label  for="name">会员姓名:</label>
+                    <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+                <div class="form-group">
+                    <label  for="phone">手机号码:</label>
+                    <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+                <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+                    查询
+                </button>
+
+            </form>
+
+            <table id="consume_grid"></table>
+            <div id="consume_pager"></div>
+
+        </div>
+    </div>
+
 
 
   </div>
@@ -591,38 +549,99 @@
 <!-- inline scripts related to this page -->
 
 
-	<script src="/Public/js/chosen.jquery.min.js"></script>
-	<script>
-		$("#menu_1").addClass("active open");
-    $("#menu_17").addClass("active");
-    $("#menu_20").addClass("active");
-    var peak_times='<?php echo ($peak["peak_time"]); ?>';
-    if(peak_times!=null && peak_times!=''){
-    	var peak_times = eval("(" + '<?php echo ($peak["peak_time"]); ?>' + ")");
-    	for(var i=0;i<peak_times.length;i++)
-    	{
-    		var peak_time=peak_times[i];
-    		if(i==0)
-    		{
-    			$(".peaktime:eq(0) .week").val(peak_time.week);
-    			$(".peaktime:eq(0) .start_time").val(peak_time.start_time);
-    			$(".peaktime:eq(0) .end_time").val(peak_time.end_time);
-    		} 
-    		else
-    		{
-    		  var html = '<div class="form-group peaktime">'+$(".peaktime").html()+'</div>' ;      
-		      $(".peaktime:last").after(html);
-		      $(".peaklabel:gt(0)").text("");
-		      $(".delpeaktime:gt(0)").show();
-		      $(".peaktime:last .week").val(peak_time.week);
-    		  $(".peaktime:last .start_time").val(peak_time.start_time);
-    		  $(".peaktime:last .end_time").val(peak_time.end_time);
-    		}
-    	}
-	}
-	 
+    <script>
+       
 
-	</script>
+    $(function(){
+    $("#menu_1").addClass("active open");
+    $("#menu_18").addClass("active");
+    $("#menu_28").addClass("active");
+
+            var grid_selector = "#consume_grid";
+            var pager_selector = "#consume_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"<?php echo U('Brand/Review/queryConsume');?>",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-10),
+                    mtype:"POST",
+                    colNames:['ID','姓名','手机号码','性别','卡号','消费类型','会所','消费合同','时间'],
+                    colModel:[   
+                       {name:'id',index:'id',hidden:true}, 
+                       {name:'name',index:'name',formatter : function(value, options, rData){
+                        return rData.member.name;
+                     },},
+                     {name:'phone',index:'phone',formatter : function(value, options, rData){
+                        return rData.member.phone;
+                     },},
+                     {name:'sex',index:'sex',formatter : function(value, options, rData){
+                          return rData.member.sex=="female"?"女":"男";
+                         
+                     },},
+                     {name:'card',index:'card',formatter : function(value, options, rData){
+                        return value.card_number;
+                     },},
+                     {name:'status',index:'status',formatter : function(value, options, rData){
+                          var a=new Array("进馆","出馆");
+                                           return getValue(a,value); 
+                     },},
+                      {name:'club',index:'club',formatter : function(value, options, rData){
+                        return value.club_name;
+                     },},
+                        {name:'contract',index:'contract',formatter : function(value, options, rData){
+                        return value.contract_number;
+                     },},
+                     {name:'create_time',index:'create_time',width:150},      
+
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false},
+                    sortorder: "desc", 
+                    // autowidth: true,
+                    shrinkToFit:false,  
+                    autoScroll: true,
+                    caption: "消费信息" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    gridview: true,
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {
+                     
+                        var table = this;
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    }, 
+                });  
+
+    jQuery(grid_selector).jqGrid('inlineNav',pager_selector);
+                //navButtons
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }  
+                ); 
+})
+</script>
 
 </body>
 </html>

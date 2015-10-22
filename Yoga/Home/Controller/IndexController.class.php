@@ -9,7 +9,8 @@ class IndexController extends Controller {
           if(get_club_id()!=0 || get_brand_id()!=0)
             $this->redirect('Home/Main/main');
           else
-           $this->redirect('Home/Main/teacher');
+             $this->redirect('Home/Main/main');
+           // $this->redirect('Home/Main/teacher');
         } 
     	$this->display();
     }

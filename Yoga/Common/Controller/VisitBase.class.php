@@ -310,12 +310,13 @@ public function addAction()
         $this->assign("channels",$channles);
         if((D("User")->isMc(is_user_login())||D("User")->isPt(is_user_login()) )&& empty($id) && MODULE_NAME!='Reception')
         {
-            $mcs=array( D("UserExtension")->find(is_user_login()));
+            // $mcs=array( D("UserExtension")->find(is_user_login()));
+            $ot= D("User")->getMc(); 
         }
         else
         {
             $mcs= D("User")->getMc();
-        }
+        } 
         
         $this->assign("mcs",$mcs);
         // $brand_id=get_brand_id();

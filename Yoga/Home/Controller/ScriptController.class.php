@@ -67,8 +67,8 @@ public function checkUnRest1Action()
 
 	public function testAction()
 	{
-		$ll =new \Service\LogService("test","test");
-		$ll->debug("xx");
+     	$service=\Service\CService::factory("Api"); 
+         $service->useAppoint(1022,99920662);
 	}
 
 
@@ -363,13 +363,22 @@ public function checkUnRest1Action()
 		//检查当日没来的，进入黑名单
 		$model=M("AppointHistory");
 		$yesterday=date('Y-m-d H:i:s',strtotime("-2 hour"));
-		$values = $model->field("a.*")->table(array("yoga_appoint_history"=>"a","yoga_club_schedule"=>"b"))->where("a.is_check=0 and a.come=0 and a.schedule_id=b.id and b.start<='{$yesterday}'")->select();
-		$month = date('Y-m');
-		foreach ($values as $key => $value) {
+		$values = $model->field("a.*,b.start as starttime")->table(array("yoga_appoint_history"=>"a","yoga_club_schedule"=>"b"))->where("a.is_check=0 and a.come=0 and a.schedule_id=b.id and b.start<='{$yesterday}'")->select();
+		$month = date('Y-m'); 
+		foreach ($values as $key => $value) { 
+				$model->where("id=".$value['id'])->setField("is_check",1); 
+			$starttime = $value['starttime'];
+			$starttime = substr($starttime,0,10);
+			$ct=M("CheckHistory")->where(array("member_id"=>$value['member_id'],"create_time"=>array("like",$starttime."%")))->count();
+			if($ct>0)
+			{
+				M("AppointHistory")->where("id=".$value['id'])->setField("come",1);
+				continue;
+			}
 			//本月爽约历史记录次数次数
 			//$history=M("AppointBlackList")->where(array("member_id"=>$value['member_id'],"create_time"=>array("gt",$month)))->count();
-			$count = $model-> where(array("create_time"=>array("gt",$month),"come"=>0,"member_id"=>$value['member_id']))->count();
-		   if($count==0) continue; 
+			$count = $model-> where(array("create_time"=>array("gt",$month),"come"=>0,"member_id"=>$value['member_id']))->count(); 
+		   if($count==0){  continue; } 
 //爽约原因
                  $schedule_id = $value['schedule_id'];
                    $schedule = D("ClubSchedule")->find($schedule_id);
@@ -401,8 +410,7 @@ public function checkUnRest1Action()
 				M("AppointBlackList")->data(array("reason"=>$reason,"member_id"=>$value['member_id'],"history_id"=>$value['id'],"create_time"=>getDbTime(),"start_time"=>getDbTime(),"end_time"=>$end_time ))->add();
 	
 			}
-			 
-			$model->where("id=".$value['id'])->setField("is_check",1); 
+			  
 		}
 	}
 
