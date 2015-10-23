@@ -386,6 +386,7 @@
  $("#menu_6").addClass("active open");
     $("#menu_37").addClass("active");
 
+var can_grant = {$can_grant};
 function grant()
 {
 	$('#grantModal').modal("hide"); 
@@ -619,7 +620,7 @@ function grant()
 
                          var grant_user_name="";
                            var grant_user_password="";
-                        if(price < min_price)
+                        if(price < min_price && can_grant!=1)
                         {
                         	  $('#grantModal').modal("show"); 
                         }

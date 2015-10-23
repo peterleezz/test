@@ -4,6 +4,9 @@ use Common\Controller\BaseController;
 class GoodsController extends BaseController {
 	public function indexAction()
 	{ 
+		$u = M("UserExtension")->find(is_user_login());
+	    $can_grant=$u['can_grant'];
+	    $this->can_grant=$can_grant;
 		 $club_id=get_club_id();
 		$goodstypes=D("GoodsCategory")->where(array("brand_id"=>get_brand_id()))->select();
 		foreach ($goodstypes as $key => $value) {
@@ -196,6 +199,41 @@ class GoodsController extends BaseController {
 
 	public function buyAction($goods,$member_id,$price,$cash,$check,$pos,$check_num,$description,$use_recharge,$netbank,$network)
 	{
+		$u = M("UserExtension")->find(is_user_login());
+	    $can_grant=$u['can_grant'];
+	    if(!$can_grant)
+	    {
+	    	$grant_user_name = I("grant_user_name");
+			$grant_user_password=I("grant_user_password");
+	   		if(!empty($grant_user_name) && !empty($grant_user_password))
+	   		{
+					
+				$map=array('username'=>$grant_user_name);
+			        $user =M("User")->where($map)->find();
+			        if(is_array($user)){
+			            /* 验证用户密码 */
+			            if(ucenter_md5(I("grant_user_password"), C("MD5_SECRET_KEY")) === $user['password'] ){
+			              $extension = M("UserExtension")->find($user['id']);
+			              if($extension['work_status']==1)
+			              {
+			                    $this->error('授权用户无效!');
+			              }
+			              else
+			              {
+			              		 $can_grant=1;
+			              }
+			            }
+			            else
+			            {
+			            	  $this->error("授权无效"); 
+			            }
+			        }
+			        else
+			        {
+			        	  $this->error("授权无效"); 
+			        }
+			    }
+	    }
 		$total =0;
 		$goods=json_decode($goods);
 		$goodsModel = M("Goods"); $goodsModel->startTrans();
@@ -208,13 +246,19 @@ class GoodsController extends BaseController {
 			{  $goodsModel->rollback();
 				$this->error("ID={$id}的商品已下架!");
 			}
+			if($g['min_price'] > $value->unitprice && !$can_grant)
+			{
+				$goodsModel->rollback();
+				$this->error($g['name']."价格低于最低价格，请求授权！");
+			}
 			// $value->price=$g['price'];	
 			$value->price = $value->unitprice;
 			$goods[$key]->name=$g['name'];
 			$total+=$num * $value->price; 
 		}		
 		if($total!=$price)
-		{ $goodsModel->rollback();
+		{ 
+			$goodsModel->rollback();
 			$this->error("商品已调价！请重新选择！");
 		}
 		$recharge=0;

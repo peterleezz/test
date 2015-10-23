@@ -1,0 +1,367 @@
+<extend name="Home@Public:base" />
+<block name="breadcrumb">
+  <ul class="breadcrumb">
+    <li> <i class="icon-home home-icon"></i>
+      <a href="{:U('Home/Main/main')}">收银</a>
+    </li>
+    <li class="active">充值卡管理</li>
+  </ul>
+</block>
+
+<block name="content">
+  <div class="row">
+    <div class="col-xs-12" id="fcontainer">
+
+      <form class="form-inline " role="form" action="{:U('Cashier/Recharge/query')}" method="post" id="query_recharge_form" style="margin-bottom:10px">
+
+        <div class="form-group">
+          <label  for="card_number">卡号:</label>
+          <input type="text" class="form-control" name="card_number"  id="card_number" oper="eq"></div>
+        <div class="form-group">
+          <label  for="name">会员姓名:</label>
+          <input type="text" class="form-control" name="name"  id="name" oper="eq"></div>
+        <div class="form-group">
+          <label  for="phone">手机号码:</label>
+          <input type="text" class="form-control" name="phone"  id="phone" oper="eq"></div>
+
+        <button type="submit" class="btn  btn-info btn-sm"> <i class="icon-search"></i>
+          查询
+        </button>
+      </form>
+
+      <table id="recharge_grid"></table>
+      <div id="recharge_pager"></div>
+
+    </div>
+  </div>
+
+ <div id="show_detail"></div>
+
+ 
+  <div class="modal fade addRecharge" id="addRecharge" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">充值</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form" id="addrechargeform" action="{:U('Cashier/Recharge/rechargennew')}">
+            <input type="hidden" id="member_id" name="member_id">
+            
+             <div class="form-group">
+              <label for="discount" class="control-label col-xs-12 col-sm-3 no-padding-right">折扣</label>
+              <div class="col-xs-12 col-sm-9">
+                <select name="discount" id="discount">
+                  <for start="10" end="105" step="5">
+                    <option value="{$i}" selected="selected">{$i}%</option>
+                  </for>  
+                </select>
+               </div>
+            </div>
+
+
+
+               <div class="form-group">
+              <label for="payvalue" class="control-label col-xs-12 col-sm-3 no-padding-right">充值金额</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-12" type="text" name="payvalue" id="payvalue" value="0" ></div>
+            </div>
+
+            <div class="form-group">
+              <label for="rechargevalue" class="control-label col-xs-12 col-sm-3 no-padding-right">有效金额</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-12" type="text" name="rechargevalue" id="rechargevalue" value="0" readonly="true"></div>
+            </div>
+
+
+
+
+               <div class="form-group">
+              <label for="cash" class="control-label col-xs-12 col-sm-3 no-padding-right">现金</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-12" type="text" name="cash" id="cash" value="0" ></div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="pos" class="control-label col-xs-12 col-sm-3 no-padding-right">刷卡</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-12" type="text" name="pos" id="pos"></div>
+            </div>
+            <div class="form-group">
+              <label for="check" class="control-label col-xs-12 col-sm-3 no-padding-right">支票</label>
+              <div class="col-xs-12 col-sm-9">
+                <input value="0" class="col-xs-12 col-sm-12" type="text" name="check" id="check"></div>
+            </div>
+            <div class="form-group">
+              <label for="check_num" class="control-label col-xs-12 col-sm-3 no-padding-right">支票号</label>
+              <div class="col-xs-12 col-sm-9">
+                <input class="col-xs-12 col-sm-12" type="text" name="check_num" id="check_num"></div>
+            </div>
+ 
+                        <div class="form-group">
+                            <label for="network" class="control-label col-xs-12 col-sm-3 no-padding-right">网络支付</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="0" class="form-control col-xs-12 col-sm-6" type="text" name="network" id="network"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="netbank" class="control-label col-xs-12 col-sm-3 no-padding-right">网银分期</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input value="0"  class="form-control col-xs-12 col-sm-6" type="text" name="netbank" id="netbank"></div>
+                        </div>
+            <div class="form-group">
+              <label for="description" class="control-label col-xs-12 col-sm-3 no-padding-right">备注</label>
+              <div class="col-xs-12 col-sm-9">
+                <textarea class="col-xs-12 col-sm-12"  name="description" id="description" rows="3"></textarea>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" onclick="add_recharge()">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</block>
+
+<block name="script">
+  <script> 
+ 
+  function  add_recharge()
+  {
+    var discount=$("#discount").val();
+    var rechargevalue=$("#rechargevalue").val();
+     var payvalue=$("#payvalue").val(); 
+    var value = (2-parseInt(discount) / 100.0) * parseInt(payvalue);
+    if(parseInt($("#cash").val())+parseInt($("#check").val())+parseInt($("#pos").val())+parseInt($("#network").val())+parseInt($("#netbank").val()) !=parseInt(payvalue))
+    {
+      bootbox.alert("充值金额不等于需付金额!");
+      return false;
+    }
+       var self = $("#addrechargeform");
+       $.post(self.attr("action"), self.serialize(), function(data,textStatus){
+                 bootbox.alert(data.info,null); 
+                   $('#addRecharge').modal('hide') ;  
+                 if(data.status)
+                                      {
+                                         $( "#recharge_grid").jqGrid('setRowData',$("#member_id").val(),{recharge:data.recharge}); 
+                                      }      
+          }, "json");
+  }
+
+  function calc()
+  {
+    var discount=$("#discount").val();
+    var payvalue=$("#payvalue").val(); 
+    var value = (2-parseInt(discount) / 100.0) * parseInt(payvalue);
+    value =  Math.round(value);
+    $("#rechargevalue").val(value);
+  }
+  
+    $(function(){ 
+    $("#menu_6").addClass("active open");
+    $("#menu_45").addClass("active");
+
+
+$("#payvalue").on('input',function(e){  
+          calc();
+    });  
+
+$("#discount").change(function()
+{
+  calc();
+});
+
+
+            var grid_selector = "#recharge_grid";
+            var pager_selector = "#recharge_pager";                 
+                jQuery(grid_selector).jqGrid({
+                    url:"{:U('Cashier/Recharge/query')}",                 
+                    datatype: "json",
+                    height: "100%",    
+                    width:($('#fcontainer').width()-20),
+                    mtype:"POST",
+                    colNames:['ID','会员名','性别','手机号码','余额','更新时间'],
+                    colModel:[   
+                         {name:'id',index:'id',width:150,hidden:true},
+                        {name:'name',index:'name',width:150,},      
+                        {name:'sex',index:'sex',width:40,formatter : function(value, options, rData){
+                            return value=='male'?"男":"女";
+                         }}, 
+                          {name:'phone',index:'phone',hidden:true,width:150},
+                           {name:'recharge',index:'recharge',width:150},
+                           {name:'update_time',index:'update_time',width:100},   
+                    ],      
+                    pager : pager_selector,
+                    altRows: true,                   
+                    multiselect: true,
+                    multiboxonly: true,
+                    pgbuttons:true,
+                    pginput : false,
+                    cmTemplate: {sortable:false,editable: true,search:false,align:"left"},
+                    sortorder: "desc",
+                    editurl: "",          
+                    autowidth: true,
+                    shrinkToFit:true,  
+                    autoScroll: true,
+                    caption: "会员卡信息" ,
+                    // loadonce: true,
+                     rowNum: 10,
+                    rowList: [10, 20, 30],
+                    viewrecords: true,
+                    onSelectRow: function (rowid, status) {
+                       
+                     }, 
+
+                      viewrecords: true,
+                    subGrid : true,
+                   subGridRowExpanded: function(subgrid_id, row_id) {
+                        var subgrid_table_id, pager_id; subgrid_table_id = subgrid_id+"_t";
+                        pager_id = "p_"+subgrid_table_id;
+                        $("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div>");
+                        $("#"+subgrid_table_id).jqGrid({
+                            datatype: "json",
+                            url:"/Cashier/Recharge/querypayhistory?id="+row_id,
+                            colNames: ['ID', '付款时间','现金','刷卡','支票','网络支付','网银分期','总计',"备注", ""],
+                            colModel: [
+                            {name:"id",index:"id",width:100,align:"left",hidden:true}, 
+                                  {name:"create_time",index:"contract_number",width:150,align:"left"}, 
+                                        {name:"cash",index:"cash",width:50,align:"left",formatter : function(value, options, rData){
+                            if(rData.value>0 && rData.history!=null)
+                            {
+                              return rData.history.cash;
+                            }
+                            return "";
+                         }}, 
+                                        {name:"pos",index:"pos",width:50,align:"left",formatter : function(value, options, rData){
+                            if(rData.value>0 && rData.history!=null)
+                            {
+                              return rData.history.pos;
+                            }
+                            return "";
+                         }}, 
+                                        {name:"check",index:"check",width:50,align:"left",formatter : function(value, options, rData){
+                            if(rData.value>0 && rData.history!=null)
+                            {
+                              return rData.history.check;
+                            }
+                            return "";
+                         }}, 
+                                         {name:"network",index:"network",width:50,align:"left",formatter : function(value, options, rData){
+                            if(rData.value>0 && rData.history!=null)
+                            {
+                              return rData.history.network;
+                            }
+                            return "";
+                         }}, 
+                                          {name:"netbank",index:"netbank",width:50,align:"left",formatter : function(value, options, rData){
+                            if(rData.value>0 && rData.history!=null)
+                            {
+                              return rData.history.netbank;
+                            }
+                            return "";
+                         }}, 
+                                        {name:"total",index:"total",width:50,align:"left",formatter : function(value, options, rData){
+                                          return rData.value;
+                                          }}, 
+                                          {name:"description",index:"description",width:200,align:"left"}, 
+
+                                           {name:"print",index:"print",width:100,align:"left",formatter : function(value, options, rData){
+                                            if(rData.value>0 && rData.history!=null)
+                                            return "<a target='_blank' href='/Cashier/Contract/printreceipts/id/"+rData.history.id+"'>打印收据</a>";
+                                            else if(rData.value>0)
+                                            {
+                                              return "老数据无法打印!";
+                                            }
+                                            return "";
+                                          }}, 
+
+                                        ], 
+                            rowNum:100,
+                            // pager: pager_id,
+                            sortname: 'id',
+                            loadonce:false,
+                            autowidth: false,
+                            shrinkToFit:false,  
+                            autoScroll: true,
+                            sortorder: "desc", height: '100%' });
+                 },
+
+
+                    subGridOptions: {
+                        "plusicon": "icon-plus",
+                        "minusicon": "icon-minus",
+                        "openicon": "icon-list",
+                        "reloadOnExpand": false,
+                        "selectOnExpand": true
+                    },
+
+                    gridview: true, 
+
+                    jsonReader:{userdata:"userdata"},                   
+                    loadComplete : function() {  
+                      // jQuery("#contract_grid").jqGrid('setGridParam',{datatype:'local'});
+                        var table = this;
+                        // $("#show_detail").addClass("hide");
+                    
+                        setTimeout(function(){ 
+                            updatePagerIcons(table);
+                            enableTooltips(table);
+                        }, 0); 
+                    },
+ 
+   
+                }); 
+ 
+                jQuery(grid_selector).jqGrid('navGrid',pager_selector,
+                    {   //navbar options
+                        edit: false,
+                        editicon : 'icon-pencil blue',
+                        add: false,
+                        addicon : 'icon-plus-sign purple',
+                        del: false,
+                        delicon : 'icon-trash red',
+                        search: false,
+                        searchicon : 'icon-search orange',
+                        refresh: false,
+                        refreshicon : 'icon-refresh green',
+                        view: false,
+                        viewicon : 'icon-zoom-in grey',
+                    }
+                ); 
+
+
+ 
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-print black',caption:"打印充值记录",title:"打印充值消费记录",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {
+                           window.open("/Cashier/Recharge/print/id/"+id);
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+
+ jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{position: "first",buttonicon : 'icon-money orange',caption:"充值",title:"充值",
+                        onClickButton:function(){ 
+                            var id = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+                        if (id) {    
+                          $("#member_id").val(id);
+                            $('#addRecharge').modal('show') ;  
+                        } else { alert("请先选中！");}
+                             
+                        } 
+                    });
+ 
+          
+})
+    </script>
+</block>

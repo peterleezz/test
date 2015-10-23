@@ -311,7 +311,7 @@ public function addAction()
         if((D("User")->isMc(is_user_login())||D("User")->isPt(is_user_login()) )&& empty($id) && MODULE_NAME!='Reception')
         {
             // $mcs=array( D("UserExtension")->find(is_user_login()));
-            $ot= D("User")->getMc(); 
+             $mcs= D("User")->getMc();
         }
         else
         {

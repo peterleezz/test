@@ -65,6 +65,7 @@ class BaseController extends Controller {
          $this->show_plan =$isMc||$isChannel; 
         $this->isMc =$isMc;
         $this->uid = UID;
+           $this->club_id =get_club_id();
         $this->isChannel =$isChannel; 
         $this->checkRole();
 

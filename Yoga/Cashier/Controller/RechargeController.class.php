@@ -3,10 +3,15 @@ namespace Cashier\Controller;
 use Common\Controller\BaseController;
 class RechargeController extends BaseController {
 	public function indexAction()
-	{ 
-		
-		$this->display();
+	{  
+		if(get_club_id()==1041)
+		  $this->display("index2");
+    else if(get_club_id()==1023)
+      $this->display("index2");
+     else   $this->display();
 	}
+ 
+
 
     public function querypayhistoryAction($id)
     {
@@ -57,6 +62,62 @@ class RechargeController extends BaseController {
         $this->assign("club",$club);    
 		$this->display();
 	}
+
+  public function rechargennewAction($member_id,$cash,$pos,$check,$check_num,$network,$netbank,$discount,$rechargevalue,$payvalue)
+  {
+    $memberModel=M("MemberBasic");$memberModel->startTrans();
+    $member =$memberModel->find($member_id);
+    if(empty($member))
+    {$memberModel->rollback();
+      $this->error("User is not exist！");
+    }
+
+
+        $model = D("RechargeHistory");
+        if(!$model->create())
+        {$memberModel->rollback();
+            $this->error($model->getError());
+        }
+        $model->record_id=is_user_login();
+        $model->member_id=$member_id;
+        $value=I("cash")+I("check")+I("pos")+I("network")+I("netbank");
+
+        if($value!=$payvalue)
+        {$memberModel->rollback();
+            $this->error("充值金额不等于需付金额!");
+        }
+
+        $recharge = $member['recharge']+$rechargevalue;
+        $model->value=$rechargevalue;
+
+        $model->discount=$discount;
+        $model->value_real=$value;
+
+        $model->description="充值￥{$value},折扣{$discount},有效金额{$rechargevalue},余额￥{$recharge}(". I("description").")";
+        $id=$model->add(); 
+
+
+        $service=\Service\CService::factory("Financial"); 
+        $bill_id=$service->addBillProject(7,0,$id,$member_id,I("cash")+I("pos")+I("check")+I("network")+I("netbank"),0,get_brand_id(),is_user_login(),get_club_id(),$member['mc_id'],I("description"),$discount);
+        if(!$bill_id)
+        {  $memberModel->rollback();
+            $this->error($service->getError());
+        }
+        $ret = $service->pay($bill_id,0,is_user_login(),get_brand_id(),"充值￥{$value},折扣{$discount},有效金额{$rechargevalue}|". I("description"),I("cash"),I("pos"),I("check"),I('check_num'),get_club_id(),0,I("network"),I("netbank"));
+        if(!$ret)
+        {  
+           $memberModel->rollback();
+            $this->error($service->getError());
+        } 
+
+    $memberModel->where(array("id"=>$member_id))->setField("recharge",$recharge);
+ $memberModel->commit();
+  //       $cashModel = M("CashHistory");
+  //       $cashModel->data(array("type"=>3,"cash"=>I("cash"),"check"=>I("check"),"pos"=> I("pos"),"object_id"=>$member_id,"price"=>0,"record_id"=>is_user_login(),"brand_id"=>get_brand_id(),"description"=>I("description"),"check_num"=>I('check_num')))->add();
+    $this->ajaxReturn(array("status"=>1,"info"=>"充值成功！","recharge"=>$recharge)) ;
+  }
+
+
 
 	public function rechargeAction($member_id,$cash,$pos,$check,$check_num,$network,$netbank,$discount,$rechargevalue)
 	{

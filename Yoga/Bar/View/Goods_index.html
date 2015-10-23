@@ -201,6 +201,42 @@
     </div>
   </div>
 
+
+
+
+<div class="modal fade " id="grantModal" tabindex="-1" role="dialog" aria-labelledby="grantModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+       <div class="modal-header">
+ 
+           <h4 class="modal-title" id="chpasswdModalLabel">输入有授权超低价的账号</h4>
+        </div>
+        <div class="modal-body"> 
+
+            <div class="form-group">
+              <label for="original_password" class="col-sm-3 control-label">帐号：</label>
+              <div class="col-sm-9">
+                  <input type="text"  class="form-control" id="grant_user_name" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ptchoose_name" class="col-sm-3 control-label">密码：</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="grant_user_password" ></div>
+            </div> 
+       </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+          <button type="button" class="btn btn-primary" onclick="grant()">确认</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 </block>
 
 <block name="script">
@@ -209,6 +245,16 @@ var gta='{$goodstypesarr}';
   gta = gta.replace(new RegExp("\n","gm"),""); 
 gta = gta.replace(new RegExp("\r","gm"),"");
   var goodstypesarr = eval("(" + gta + ")");
+  var can_grant = {$can_grant};
+
+  function grant()
+{
+  can_grant=1;
+  $('#grantModal').modal("hide");  
+}
+
+
+
 function tip()
 {
     var use_recharge=$("#use_recharge").prop("checked");
@@ -256,7 +302,7 @@ function tip()
       }
       var goods=$.toJSON( arr );
       var extension_id = '{$extension_id}';
-      $.post('/Bar/Goods/buy',{extension_id:extension_id, use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
+      $.post('/Bar/Goods/buy',{grant_user_name:grant_user_name,grant_user_password:grant_user_password,extension_id:extension_id, use_recharge:use_recharge,cash:cash,netbank:netbank,network:network,pos:pos,check:check,check_num:check_num,description:description,goods:goods,member_id:member_id,price:price}, function(data,textStatus){
              if(data.status){ 
                     bootbox.alert(data.info,function(){
                        window.open(data.url,'newwindow'); 
@@ -330,20 +376,28 @@ function tip()
                     if(k==trs.length)
                     {
                        var price = goods.price;
-                   
-                      var html='<tr>';
-                      html+="<td>"+($(".list tbody tr").length+1)+"</td>";
-                      html+="<td>"+goods.id+"</td>";
-                      html+="<td>"+goods.name+"</td>";
-                      html+="<td>"+goods.description+"</td>";
-                      html+="<td>"+num+"</td>";
-                      html+="<td>"+price+"</td>";
-                        html+="<td>"+unitprice+"</td>";
+                       var min_price = goods.min_price;
+                       if(!can_grant && min_price > unitprice)
+                       {
+                            $('#grantModal').modal("show"); 
+                       }
+                       else
+                       {
+                           var html='<tr>';
+                          html+="<td>"+($(".list tbody tr").length+1)+"</td>";
+                          html+="<td>"+goods.id+"</td>";
+                          html+="<td>"+goods.name+"</td>";
+                          html+="<td>"+goods.description+"</td>";
+                          html+="<td>"+num+"</td>";
+                          html+="<td>"+price+"</td>";
+                            html+="<td>"+unitprice+"</td>";
 
-                      html+="<td>"+unitprice*num+"</td>";
-                      html+="<td><a href='javascript:void(0)' class='btn btn-danger btn-xs' onclick='del(this)'>删除</a></td></tr>";
-                      $(".list tbody").append(html); 
-                      calcTotal();
+                          html+="<td>"+unitprice*num+"</td>";
+                          html+="<td><a href='javascript:void(0)' class='btn btn-danger btn-xs' onclick='del(this)'>删除</a></td></tr>";
+                          $(".list tbody").append(html); 
+                          calcTotal();
+                       }
+                      
                     }
 
                     

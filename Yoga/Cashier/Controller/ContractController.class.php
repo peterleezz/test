@@ -388,15 +388,15 @@ public function continueAction($id)
 		{
 			$new_printer_club = C("new_printer_club");
 	        $club_id= get_club_id();
-	        if(in_array($club_id, $new_printer_club))
-	        {
-	            $this->display(('printnew'));
-	        }
-	        else
-	        {
-	           $this->display();
-	        }
-
+	        // if(in_array($club_id, $new_printer_club))
+	        // {
+	        //     $this->display(('printnew'));
+	        // }
+	        // else
+	        // {
+	        //    $this->display();
+	        // }
+ $this->display(('printnew'));
 		}
 		
 	}

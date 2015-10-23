@@ -6,7 +6,7 @@
 
 $(document).ajaxStart(function(){
     $("#wait_gif").show();
-     var hideobj=document.getElementById("hidebg");
+     var hidebg=document.getElementById("hidebg");
    hidebg.style.display="block";  //显示隐藏层
    hidebg.style.height=window.screen.height+"px";  //设置隐藏层的高度为当前页面高度
  

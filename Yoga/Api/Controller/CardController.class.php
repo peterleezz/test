@@ -322,9 +322,9 @@ public function ptcheckout()
         $last_use_time =$lock['last_use_time'];
         $last_use_time = strtotime($last_use_time);
         $now = time();
-        if($now - $last_use_time > 120)
+        if($now - $last_use_time > 10800)
         {
-		$model->where(array("club_id"=>$club_id,"last_use_card"=>$card_number))->setField(array("is_use"=>0));
+		  $model->where(array("club_id"=>$club_id,"last_use_card"=>$card_number))->setField(array("is_use"=>0));
                 $lock = null;
 	}
 	 if(empty($lock)){

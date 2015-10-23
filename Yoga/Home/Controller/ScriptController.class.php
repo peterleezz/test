@@ -23,6 +23,15 @@ class ScriptController extends Controller {
      
 	} 
 
+	public function minrunAction()
+	{
+		$sql = "update yoga_member_basic set mc_id = 0 where mc_id not  in(select uid from yoga_auth_group_access where group_id=6)";
+		M()->query($sql);
+		$sql = "update yoga_member_basic set mc_id = 0 where mc_id   in( select id from yoga_user_extension where work_status=1)";
+		M()->query($sql);
+		$sql = "delete from yoga_auth_group_access where uid in ( select id from yoga_user_extension where work_status=1)";
+		M()->query($sql); 
+	}
 	public function checkRestAction()
 	{
 		$today='{"start_time":"'.date("Y-m-d").'",';

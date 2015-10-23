@@ -13,6 +13,9 @@ public function indexAction()
 	$this->assign("typesarr",json_encode($types));	
 	 $mcs= D("User")->getMc();
 	 $this->assign("mcs",$mcs);	
+	 $u = M("UserExtension")->find(is_user_login());
+	 $can_grant=$u['can_grant'];
+	 $this->can_grant=$can_grant;
 	$this->display();
 
 }
@@ -100,7 +103,10 @@ public function indexAction()
 	 	{
 	 		$this->error("卡种不存在!");
 	 	}
-	  if($cardType['min_price']>I("price"))
+	 	 $u = M("UserExtension")->find(is_user_login());
+	 $can_grant=$u['can_grant'];
+	 
+	  if($cardType['min_price']>I("price") && !$can_grant)
 	   {
 	   		$grant_user_name = I("grant_user_name");
 			$grant_user_password=I("grant_user_password");

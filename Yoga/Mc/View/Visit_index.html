@@ -45,7 +45,7 @@
                                 <div class="col-sm-8">
                                  <select name="mc_id" id="mc_id" class=" form-control"> 
                                         <volist name="mcs" id="mc">
-                                            <option value="{$mc.id}"  <if condition="$mc['id'] eq $member['mc_id']">selected="selected"</if>>{$mc.name_cn}</option>
+                                        <option value="{$mc.id}"    <if condition="0 neq $member['mc_id']">   <if condition="$mc['id'] eq $member['mc_id']">selected="selected"</if>  <else/>  <if condition="$mc['id'] eq $uid">selected="selected"</if>   </if>   >{$mc.name_cn}</option>
                                         </volist>
                                     </select> 
                                 </div>
@@ -261,7 +261,7 @@
                                 <div class="col-sm-8">
                                     <select name="near_club" id="near_club" class=" form-control">
                                         <volist name="clubs" id="club">
-                                            <option value="{$club.id}" <if condition="$club['id'] eq $member['near_club']">selected="selected"</if>>{$club.club_name}</option>
+                                        <option value="{$club.id}"  <if condition="0 neq $member['near_club']">   <if condition="$club['id'] eq $member['near_club']">selected="selected"</if>    <else/>   <if condition="$club['id'] eq $club_id">selected="selected"</if>     </if>     >{$club.club_name}</option>
                                         </volist>
                                     </select>
 
