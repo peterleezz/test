@@ -1,7 +1,7 @@
 <?php
 namespace Common\Model;
-use Think\Model;
-class BrandModel extends Model {
+use Think\Model\RelationModel;
+class BrandModel extends RelationModel {
     protected $_validate = array(
         array('brand_name','require','请输入品牌名称！',self::MUST_VALIDATE),
         /* 验证用户名 */
@@ -14,15 +14,14 @@ class BrandModel extends Model {
         array('email','email','请输入正确的邮箱地址！',self::MUST_VALIDATE),
   );
 
-    // protected $_link=array(
-    //     'Group'=>array(
-    //         'mapping_type'=>MANY_TO_MANY,
-    //         'mapping_name'=>'Group',
-    //         'class_name'=>'AuthGroup',
-    //         'foreign_key'=>'uid',
-    //         'relation_foreign_key'=>'group_id',
-    //         'relation_table'=>'yoga_auth_group_access',
-    //         )
-    //     );
+    protected $_link=array(
+        'Club'=>array(
+            'mapping_type'=>self::HAS_MANY,
+            'mapping_name'=>'clubs',
+            'class_name'=>'Club',
+            'foreign_key'=>'brand_id', 
+            'mapping_fields'=>'id,club_name', 
+            )
+        );
 
 }

@@ -74,7 +74,8 @@ class ClassController extends BaseController {
 	            foreach ($rules as $key => $value) { 
 	                if($value->field=="name")
 	                {
-	                    $map = array_merge($map,array("name"=>array("like","%{$value->data}%")) );
+	                		$map = array_merge($map,array("_string"=>"name like '%{$v}%' or teacher_name like '%$v%'") );
+	                    // $map = array_merge($map,array("name"=>array("like","%{$value->data}%")) );
 	                }
 	                 
 	            }

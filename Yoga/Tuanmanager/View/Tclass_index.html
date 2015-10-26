@@ -15,6 +15,17 @@
         <div class="col-xs-12" id="ptclass">
            <form class="form-inline" role="form" action="{:U('Pt/Class/query')}" method="post" id="pt_class_public" style="margin-bottom:10px"> 
 
+  <div class="form-group">
+                                        <label  for="teacher_name">选择老师:</label>
+                                           <select name="pt_id" id="pt_id" class="form-control" oper="cn">
+                                            <option value="0">所有老师</option>
+                                          <volist name="pt" id="teacher">
+                                                <option value="{$teacher.id}">{$teacher.name_cn}</option>
+                                          </volist>
+                                        </select> 
+                                       </div> 
+
+
                                     <div class="form-group">
                                         <label  for="name">课程名称:</label>
                                         <input type="text" class="form-control" name="name"  id="name" oper="cn"></div> 

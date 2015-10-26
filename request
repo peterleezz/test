@@ -49681,3 +49681,2874 @@
 2015-10-23 06:34:21 [request] - LV1 - array (
   's' => '/Finance/Payhistory/queryReport',
 )
+2015-10-23 06:52:18 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-10-23 06:52:40 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-10-23 06:52:40 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-10-23 06:52:40 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1445597560807',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 06:52:40 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-10-23 06:52:42 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-10-23 06:52:42 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'true',
+  'nd' => '1445597562442',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"is_member","op":"eq","data":"0"},{"field":"mc_id","op":"eq","data":"-1"},{"field":"create_time","op":"eq","data":"0"},{"field":"follow_time","op":"eq","data":"0"},{"field":"type","op":"eq","data":"0"}]}',
+)
+2015-10-23 06:52:42 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-10-23 06:52:45 [request] - LV1 - /index.php/Mcmanager/Member/ismember.html
+2015-10-23 06:52:45 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-10-23 06:52:45 [request] - LV1 - array (
+  'is_member' => '1',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1445597565655',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 06:52:45 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-10-23 06:52:47 [request] - LV1 - /Mcmanager/Member/show
+2015-10-23 06:52:47 [request] - LV1 - array (
+  'id' => '99950891',
+)
+2015-10-23 06:52:47 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/show',
+)
+2015-10-23 06:52:49 [request] - LV1 - /Mc/Visit/index/id/99950891
+2015-10-23 06:52:49 [request] - LV1 - array (
+  's' => '/Mc/Visit/index/id/99950891',
+)
+2015-10-23 06:53:00 [request] - LV1 - /Mc/Visit/queryRecommend
+2015-10-23 06:53:00 [request] - LV1 - array (
+  'phone' => '1',
+)
+2015-10-23 06:53:00 [request] - LV1 - array (
+  's' => '/Mc/Visit/queryRecommend',
+)
+2015-10-23 06:53:03 [request] - LV1 - /Mc/Visit/edit
+2015-10-23 06:53:03 [request] - LV1 - array (
+  'id' => '99950891',
+  'channel_id' => '162',
+  'mc_id' => '2476',
+  'name' => '1',
+  'phone' => '1',
+  'recommend_phone' => '1',
+  'recommend_name' => '何处长',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1041',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '1',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-10-23 06:53:03 [request] - LV1 - array (
+  's' => '/Mc/Visit/edit',
+)
+2015-10-23 06:53:05 [request] - LV1 - /Cashier/Member/index
+2015-10-23 06:53:05 [request] - LV1 - array (
+  's' => '/Cashier/Member/index',
+)
+2015-10-23 06:53:14 [request] - LV1 - /index.php/Mcmanager/Member/notmember.html
+2015-10-23 06:53:15 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-10-23 06:53:15 [request] - LV1 - array (
+  'is_member' => '0',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1445597595279',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 06:53:15 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-10-23 06:53:17 [request] - LV1 - /index.php/Mcmanager/Member/ismember.html
+2015-10-23 06:53:17 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-10-23 06:53:17 [request] - LV1 - array (
+  'is_member' => '1',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1445597597634',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 06:53:17 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-10-23 06:53:19 [request] - LV1 - /Mc/Visit/index/id/99950892
+2015-10-23 06:53:19 [request] - LV1 - array (
+  's' => '/Mc/Visit/index/id/99950892',
+)
+2015-10-23 06:53:34 [request] - LV1 - /Mc/Visit/edit
+2015-10-23 06:53:34 [request] - LV1 - array (
+  'id' => '99950892',
+  'channel_id' => '162',
+  'mc_id' => '2476',
+  'name' => '2',
+  'phone' => '1',
+  'recommend_phone' => '',
+  'recommend_name' => '',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1041',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '1',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-10-23 06:53:34 [request] - LV1 - array (
+  's' => '/Mc/Visit/edit',
+)
+2015-10-23 06:53:41 [request] - LV1 - /Mc/Visit/edit
+2015-10-23 06:53:41 [request] - LV1 - array (
+  'id' => '99950892',
+  'channel_id' => '162',
+  'mc_id' => '2476',
+  'name' => '2',
+  'phone' => '1',
+  'recommend_phone' => '',
+  'recommend_name' => '',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1041',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '2',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-10-23 06:53:41 [request] - LV1 - array (
+  's' => '/Mc/Visit/edit',
+)
+2015-10-23 06:53:51 [request] - LV1 - /Mc/Visit/edit
+2015-10-23 06:53:51 [request] - LV1 - array (
+  'id' => '99950892',
+  'channel_id' => '162',
+  'mc_id' => '2476',
+  'name' => '2',
+  'phone' => '2',
+  'recommend_phone' => '',
+  'recommend_name' => '',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1041',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '1',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-10-23 06:53:51 [request] - LV1 - array (
+  's' => '/Mc/Visit/edit',
+)
+2015-10-23 06:53:57 [request] - LV1 - /Mc/Visit/edit
+2015-10-23 06:53:57 [request] - LV1 - array (
+  'id' => '99950892',
+  'channel_id' => '162',
+  'mc_id' => '2476',
+  'name' => '2',
+  'phone' => '2',
+  'recommend_phone' => '',
+  'recommend_name' => '',
+  'sex' => 'female',
+  'type' => '1',
+  'maybuy' => '0',
+  'hopeprice' => '0',
+  'pre_sale' => '0',
+  'email' => '',
+  'birthday' => '',
+  'home_phone' => '',
+  'home_addr' => '',
+  'country' => '',
+  'nation' => '',
+  'job' => '',
+  'office_name' => '',
+  'office_addr' => '',
+  'office_phone' => '',
+  'hobby' => '',
+  'near_club' => '1041',
+  'purpose' => '1',
+  'certificate_type' => '1',
+  'certificate_number' => '2',
+  'how_getinfo' => '1',
+  'marriage' => '0',
+  'has_child' => '0',
+  'emergency_name' => '',
+  'emergency_phone' => '',
+  'other_clubs' => '',
+  'desc' => '',
+)
+2015-10-23 06:53:57 [request] - LV1 - array (
+  's' => '/Mc/Visit/edit',
+)
+2015-10-23 06:53:58 [request] - LV1 - /Cashier/Member/index
+2015-10-23 06:53:58 [request] - LV1 - array (
+  's' => '/Cashier/Member/index',
+)
+2015-10-23 07:02:53 [request] - LV1 - /index.php/Reception/Cardmanage/index.html
+2015-10-23 07:02:57 [request] - LV1 - /index.php/Reception/Cardmanage/queryNew.html
+2015-10-23 07:02:57 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445598177154',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 07:03:00 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-10-23 07:03:00 [request] - LV1 - /Api/index/getCardType
+2015-10-23 07:03:00 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-10-23 07:03:00 [request] - LV1 - /Api/index/getMcs
+2015-10-23 07:03:00 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-10-23 07:03:00 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-23 07:03:00 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445598180970',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 07:03:02 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-23 07:03:02 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445598182287',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-23 07:03:08 [request] - LV1 - /Cashier/Contract/applyPayback
+2015-10-23 07:03:08 [request] - LV1 - array (
+  'id' => '43931',
+)
+2015-10-23 07:03:08 [request] - LV1 - array (
+  's' => '/Cashier/Contract/applyPayback',
+)
+2015-10-23 07:03:11 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-23 07:03:11 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445598191898',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-23 07:03:13 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-23 07:03:13 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445598193129',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-23 07:03:16 [request] - LV1 - /index.php/Finance/Contract/payback.html
+2015-10-23 07:03:19 [request] - LV1 - /index.php/Finance/Contract/queryPayback.html
+2015-10-23 07:03:19 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1041',
+    1 => '1042',
+  ),
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-23 07:03:21 [request] - LV1 - /Finance/Contract/paybackdetail/id/43931
+2015-10-23 07:03:21 [request] - LV1 - array (
+  's' => '/Finance/Contract/paybackdetail/id/43931',
+)
+2015-10-23 07:03:26 [request] - LV1 - /index.php/Finance/Contract/dopayback.html
+2015-10-23 07:03:27 [request] - LV1 - array (
+  'id' => '43931',
+  'price' => '1',
+  'desc' => '',
+)
+2015-10-23 07:03:33 [request] - LV1 - /index.php/Cashier/Contract/index.html
+2015-10-23 07:03:34 [request] - LV1 - /Api/index/getCardType
+2015-10-23 07:03:34 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-10-23 07:03:34 [request] - LV1 - /Api/index/getMcs
+2015-10-23 07:03:34 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-10-23 07:03:34 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-23 07:03:34 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445598214352',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-23 07:03:35 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-23 07:03:35 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445598215133',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-26 11:17:21 [request] - LV1 - /Api/index/getCardType
+2015-10-26 11:17:21 [request] - LV1 - array (
+  's' => '/Api/index/getCardType',
+)
+2015-10-26 11:17:22 [request] - LV1 - /Api/index/getMcs
+2015-10-26 11:17:22 [request] - LV1 - array (
+  's' => '/Api/index/getMcs',
+)
+2015-10-26 11:17:22 [request] - LV1 - /Mcmanager/Member/getMembers
+2015-10-26 11:17:22 [request] - LV1 - array (
+  'is_member' => '1',
+  'mc_id' => '-1',
+  '_search' => 'false',
+  'nd' => '1445829442597',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:17:22 [request] - LV1 - array (
+  's' => '/Mcmanager/Member/getMembers',
+)
+2015-10-26 11:17:22 [request] - LV1 - /index.php/Cashier/Contract/queryNew.html
+2015-10-26 11:17:22 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829442717',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:17:22 [request] - LV1 - /favicon.ico
+2015-10-26 11:17:22 [request] - LV1 - array (
+  's' => '/favicon.ico',
+)
+2015-10-26 11:17:23 [request] - LV1 - /favicon.ico
+2015-10-26 11:17:23 [request] - LV1 - array (
+  's' => '/favicon.ico',
+)
+2015-10-26 11:24:01 [request] - LV1 - /
+2015-10-26 11:24:02 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-26 11:24:03 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-26 11:24:03 [request] - LV1 - array (
+  'username' => 'tpeter',
+  'password' => '111111',
+)
+2015-10-26 11:24:04 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 11:24:04 [request] - LV1 - /Home/Mc/query
+2015-10-26 11:24:04 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829844483',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 11:24:04 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 11:24:05 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-10-26 11:24:06 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:24:06 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829846383',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:24:06 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:24:06 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445788800&end=1445875200&_=1445829846145
+2015-10-26 11:24:06 [request] - LV1 - array (
+  'start' => '1445788800',
+  'end' => '1445875200',
+  '_' => '1445829846145',
+)
+2015-10-26 11:24:09 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:24:09 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445829849438',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-26 11:24:09 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:24:19 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-10-26 11:24:20 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:24:20 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829860103',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:24:20 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:24:20 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445788800&end=1445875200&_=1445829859944
+2015-10-26 11:24:20 [request] - LV1 - array (
+  'start' => '1445788800',
+  'end' => '1445875200',
+  '_' => '1445829859944',
+)
+2015-10-26 11:24:24 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-26 11:24:24 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 11:24:24 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829864545',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:24:24 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 11:24:31 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-10-26 11:24:31 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:24:31 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829871753',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:24:31 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:24:31 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445788800&end=1445875200&_=1445829871604
+2015-10-26 11:24:31 [request] - LV1 - array (
+  'start' => '1445788800',
+  'end' => '1445875200',
+  '_' => '1445829871604',
+)
+2015-10-26 11:24:37 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-10-26 11:24:38 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:24:38 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445829878266',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:24:38 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:24:38 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445788800&end=1445875200&_=1445829877943
+2015-10-26 11:24:38 [request] - LV1 - array (
+  'start' => '1445788800',
+  'end' => '1445875200',
+  '_' => '1445829877943',
+)
+2015-10-26 11:32:40 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:32:40 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830360359',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"a"}]}',
+)
+2015-10-26 11:32:40 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:04 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:04 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830444291',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"a"}]}',
+)
+2015-10-26 11:34:04 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:17 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:17 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830457477',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"a"}]}',
+)
+2015-10-26 11:34:17 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:20 [request] - LV1 - /index.php/Shopkeeper/Class/index.html
+2015-10-26 11:34:21 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:21 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445830461227',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 11:34:21 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:21 [request] - LV1 - /index.php/Shopkeeper/Class/getjson.html?start=1445788800&end=1445875200&_=1445830460875
+2015-10-26 11:34:21 [request] - LV1 - array (
+  'start' => '1445788800',
+  'end' => '1445875200',
+  '_' => '1445830460875',
+)
+2015-10-26 11:34:27 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:27 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830467312',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"t"}]}',
+)
+2015-10-26 11:34:27 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:29 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:29 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830469941',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"t2"}]}',
+)
+2015-10-26 11:34:29 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:32 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:32 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830472847',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"c"}]}',
+)
+2015-10-26 11:34:32 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:35 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:35 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830475337',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[]}',
+)
+2015-10-26 11:34:35 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:38 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:38 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830478387',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"tp"}]}',
+)
+2015-10-26 11:34:38 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 11:34:39 [request] - LV1 - /Shopkeeper/Class/query
+2015-10-26 11:34:39 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445830479806',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"name","op":"cn","data":"1"}]}',
+)
+2015-10-26 11:34:39 [request] - LV1 - array (
+  's' => '/Shopkeeper/Class/query',
+)
+2015-10-26 01:21:06 [request] - LV1 - /index.php
+2015-10-26 01:21:06 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 01:21:07 [request] - LV1 - /Home/Mc/query
+2015-10-26 01:21:07 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445836867818',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 01:21:07 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 01:21:09 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-26 01:21:09 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:21:09 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445836869833',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 01:21:09 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:21:45 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-26 01:21:46 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:21:46 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445836906275',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 01:21:46 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:22:58 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-26 01:22:58 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:22:58 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445836978862',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 01:22:58 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:23:35 [request] - LV1 - /index.php/Shopkeeper/Tclass/index.html
+2015-10-26 01:23:36 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:23:36 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445837016189',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+)
+2015-10-26 01:23:36 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:23:40 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:23:40 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445837020266',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"pt_id","op":"cn","data":"2476"}]}',
+)
+2015-10-26 01:23:40 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:24:54 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:24:54 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445837094201',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"pt_id","op":"cn","data":"2476"}]}',
+)
+2015-10-26 01:24:54 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:24:56 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:24:56 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445837096864',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"pt_id","op":"cn","data":"2477"}]}',
+)
+2015-10-26 01:24:56 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:24:58 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:24:58 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445837098962',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"pt_id","op":"cn","data":"0"}]}',
+)
+2015-10-26 01:24:58 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:25:16 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:25:16 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445837116148',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"pt_id","op":"cn","data":"0"}]}',
+)
+2015-10-26 01:25:16 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 01:25:19 [request] - LV1 - /Shopkeeper/Tclass/query
+2015-10-26 01:25:19 [request] - LV1 - array (
+  '_search' => 'true',
+  'nd' => '1445837119596',
+  'rows' => '10',
+  'page' => '1',
+  'sidx' => '',
+  'sord' => 'desc',
+  'filters' => '{"groupOp":"AND","rules":[{"field":"pt_id","op":"cn","data":"2476"}]}',
+)
+2015-10-26 01:25:19 [request] - LV1 - array (
+  's' => '/Shopkeeper/Tclass/query',
+)
+2015-10-26 02:10:38 [request] - LV1 - /
+2015-10-26 02:10:38 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 02:10:39 [request] - LV1 - /Home/Mc/query
+2015-10-26 02:10:39 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445839839282',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 02:10:39 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 02:21:53 [request] - LV1 - /admin
+2015-10-26 02:21:53 [request] - LV1 - array (
+  's' => '/admin',
+)
+2015-10-26 02:21:53 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-26 02:21:59 [request] - LV1 - /index.php/Admin/index/login.html
+2015-10-26 02:21:59 [request] - LV1 - array (
+  'username' => 'admin',
+  'password' => '111111',
+  'verifycode' => '',
+)
+2015-10-26 02:21:59 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-26 02:23:00 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-26 02:23:13 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-26 02:23:44 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-26 02:23:53 [request] - LV1 - /index.php/Admin/User/index.html
+2015-10-26 02:23:58 [request] - LV1 - /index.php/Admin/User/index.html
+2015-10-26 02:24:08 [request] - LV1 - /index.php/Admin/Quiz/quiz.html
+2015-10-26 02:24:11 [request] - LV1 - /index.php/Admin/Quiz/quiz.html
+2015-10-26 02:24:14 [request] - LV1 - /index.php/Admin/system/index.html
+2015-10-26 02:24:19 [request] - LV1 - /index.php/Admin/Quiz/quiz.html
+2015-10-26 02:24:39 [request] - LV1 - /index.php/Admin/Quiz/index.html
+2015-10-26 02:26:31 [request] - LV1 - /index.php/Admin/Quiz/index.html
+2015-10-26 02:26:32 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:26:58 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:26:59 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:26:59 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:26:59 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:00 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:02 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:03 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:03 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:04 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:04 [request] - LV1 - /favicon.ico
+2015-10-26 02:27:04 [request] - LV1 - array (
+  's' => '/favicon.ico',
+)
+2015-10-26 02:27:23 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:35 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:39 [request] - LV1 - /index.php/Admin/Brand/Super/export.html
+2015-10-26 02:27:42 [request] - LV1 - /index.php/Admin/Quiz/index.html
+2015-10-26 02:27:43 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:28:15 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:28:23 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:28:37 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:29:42 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:29:55 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 02:29:55 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 02:29:59 [request] - LV1 - /index.php/Admin/system/index.html
+2015-10-26 02:30:00 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:31:20 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:09 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:14 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:18 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:22 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:40 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:41 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:32:49 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:33:11 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:33:24 [request] - LV1 - /index.php/Admin/Quiz/quiz.html
+2015-10-26 02:33:33 [request] - LV1 - /index.php/Admin/system/index.html
+2015-10-26 02:33:35 [request] - LV1 - /index.php/Admin/Quiz/quiz.html
+2015-10-26 02:33:40 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-26 02:34:02 [request] - LV1 - /index.php/Admin/Brand/index.html
+2015-10-26 02:34:04 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:34:08 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:34:17 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:35:51 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:37:13 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:37:37 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:37:58 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:38:16 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:38:30 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:41:46 [request] - LV1 - /index.php/Admin/User/index.html
+2015-10-26 02:42:33 [request] - LV1 - /index.php/Admin/User/index.html
+2015-10-26 02:42:36 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:42:37 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:44:08 [request] - LV1 - /index.php/Admin/Super/query.html?start_time=2015-10-21&end_time=2015-10-08
+2015-10-26 02:44:08 [request] - LV1 - array (
+  'start_time' => '2015-10-21',
+  'end_time' => '2015-10-08',
+)
+2015-10-26 02:44:33 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:44:35 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:44:36 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:44:41 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 02:44:43 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:44:43 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:48:41 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:48:41 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:48:56 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:48:56 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:52:23 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:52:23 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:52:46 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:52:46 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:53:23 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:53:23 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:53:36 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:53:36 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:53:41 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:53:41 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:53:46 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:53:46 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:53:48 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:53:48 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:25 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:25 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:25 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:25 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:26 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:26 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:26 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:26 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:26 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:26 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:26 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:26 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:27 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:27 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:27 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:27 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:28 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:28 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:28 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:28 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:54:28 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:54:28 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:55:26 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:55:26 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:55:48 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:55:48 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:56:53 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:56:53 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:57:23 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:57:23 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:57:46 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:57:46 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:58:38 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:58:38 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 02:58:44 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 02:58:44 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:00:01 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:00:01 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:00:30 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:00:30 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:01:23 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:01:23 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:01:32 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:01:32 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:01:37 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:01:37 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:01:46 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:01:46 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:02:35 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:02:35 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:03:22 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:03:22 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:04:06 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:04:06 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:05:22 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:05:22 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:05:34 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:05:34 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:05:41 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:05:41 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:06:08 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:06:08 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:12:00 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:12:00 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:12:18 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:12:18 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:12:48 [request] - LV1 - /index.php/Admin/Super/export.html?start_time=&end_time=
+2015-10-26 03:12:48 [request] - LV1 - array (
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:13:04 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=50&club_id=1025&start_time=&end_time=
+2015-10-26 03:13:04 [request] - LV1 - array (
+  'brand_id' => '50',
+  'club_id' => '1025',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:13:04 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:13:04 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:19:07 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=50&club_id=1025&start_time=&end_time=
+2015-10-26 03:19:07 [request] - LV1 - array (
+  'brand_id' => '50',
+  'club_id' => '1025',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:19:07 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:19:07 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:19:36 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=50&club_id=1025&start_time=&end_time=
+2015-10-26 03:19:36 [request] - LV1 - array (
+  'brand_id' => '50',
+  'club_id' => '1025',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:19:36 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:19:36 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:19:38 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=50&club_id=1025&start_time=&end_time=
+2015-10-26 03:19:38 [request] - LV1 - array (
+  'brand_id' => '50',
+  'club_id' => '1025',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:19:38 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:19:38 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:19:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:19:46 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:19:46 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:19:46 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:20:02 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:20:02 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:20:22 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:20:22 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:20:45 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:20:45 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:20:53 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=32&start_time=&end_time=
+2015-10-26 03:20:53 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '32',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:20:53 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:20:53 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:24:10 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=32&start_time=&end_time=
+2015-10-26 03:24:10 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '32',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:24:25 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=32&start_time=&end_time=
+2015-10-26 03:24:25 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '32',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:25:00 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=32&start_time=&end_time=
+2015-10-26 03:25:00 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '32',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:25:05 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=32&start_time=&end_time=
+2015-10-26 03:25:05 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '32',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:25:05 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:25:05 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:25:12 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:25:12 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:25:17 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:25:17 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:28:10 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:28:10 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:28:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:28:28 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:28:52 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:28:52 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:28:55 [request] - LV1 - /index.php/Admin/Super/export/page/1.html
+2015-10-26 03:28:55 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:28:55 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:28:58 [request] - LV1 - /index.php/Admin/Super/export/page/1.html
+2015-10-26 03:28:58 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:28:58 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:29:03 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:29:03 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:29:07 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:29:07 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:32:15 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:32:15 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:32:25 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:32:25 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:34:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:34:46 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:35:22 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=26&start_time=&end_time=
+2015-10-26 03:35:22 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '26',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:35:51 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:35:51 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:35:51 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:35:51 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:36:13 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:36:13 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:36:19 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:36:19 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:36:41 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:36:41 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:36:41 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:36:41 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:36:44 [request] - LV1 - /index.php/Admin/Super/export/page/1.html
+2015-10-26 03:36:44 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:36:44 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:36:45 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:36:45 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:38:55 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:38:55 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:39:11 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:39:11 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:39:12 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:39:12 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:39:18 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:39:18 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:39:18 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:39:18 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:39:35 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:39:35 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:39:36 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:39:36 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:39:47 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:39:47 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:39:48 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:39:48 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:39:49 [request] - LV1 - /index.php/Admin/Super/export/page/1.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:39:49 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:39:49 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:39:58 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:39:58 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:40:00 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:40:00 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:40:06 [request] - LV1 - /index.php/Admin/Super/export/page/1.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:40:06 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:40:06 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:40:23 [request] - LV1 - /index.php/Admin/Super/export/page/1.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:41:03 [request] - LV1 - /index.php/Admin/Super/export/page/1.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:41:32 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:41:32 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:42:32 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:42:32 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:43:07 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:43:07 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:43:44 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:43:44 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:43:44 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:43:44 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:44:25 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:44:25 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:44:26 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:44:26 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:44:29 [request] - LV1 - /index.php/Admin/Super/export/page/%24current_page%2B1.html
+2015-10-26 03:44:29 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:44:29 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:44:33 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:44:33 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:44:34 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:44:34 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:44:34 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:44:34 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:44:49 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:44:49 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:44:59 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:44:59 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:44:59 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:44:59 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:45:28 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:45:28 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:28 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:29 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:45:29 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:45:29 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:29 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:32 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:45:32 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:32 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:34 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:34 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:42 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:45:42 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:45:42 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:42 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:49 [request] - LV1 - /index.php/Admin/Super/export/page/18.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:45:50 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:50 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:54 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:54 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:45:56 [request] - LV1 - /index.php/Admin/Super/export/page/18.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:45:56 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:45:56 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:13 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:13 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:13 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:46:13 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:46:13 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:13 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:14 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=52&club_id=27&start_time=&end_time=
+2015-10-26 03:46:14 [request] - LV1 - array (
+  'brand_id' => '52',
+  'club_id' => '27',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:46:14 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:14 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:17 [request] - LV1 - /index.php/Admin/Super/export.html?page=1&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:46:17 [request] - LV1 - array (
+  'page' => '1',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '27',
+)
+2015-10-26 03:46:17 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:17 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:22 [request] - LV1 - /index.php/Admin/Super/export.html?page=2&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:46:22 [request] - LV1 - array (
+  'page' => '2',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '27',
+)
+2015-10-26 03:46:22 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:22 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:24 [request] - LV1 - /index.php/Admin/Super/export.html?page=3&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:46:24 [request] - LV1 - array (
+  'page' => '3',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '27',
+)
+2015-10-26 03:46:24 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:24 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:46:27 [request] - LV1 - /index.php/Admin/Super/export/page/2.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:46:27 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:46:27 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:47:56 [request] - LV1 - /index.php/Admin/Super/export/page/2.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:47:56 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:47:56 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:47:56 [request] - LV1 - /index.php/Admin/Super/export/page/2.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:47:57 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:47:57 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:47:58 [request] - LV1 - /index.php/Admin/Super/export/page/2.html&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:47:58 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:47:58 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:00 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:00 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:01 [request] - LV1 - /index.php/Admin/Super/export.html?page=3&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:48:01 [request] - LV1 - array (
+  'page' => '3',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '27',
+)
+2015-10-26 03:48:01 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:01 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:02 [request] - LV1 - /index.php/Admin/Super/export.html?page=0&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:48:02 [request] - LV1 - array (
+  'page' => '0',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '27',
+)
+2015-10-26 03:48:02 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:02 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:06 [request] - LV1 - /index.php/Admin/Super/export.html?page=0&start_time=1970-01-01&end_time=2970-01-01&club_id=27
+2015-10-26 03:48:06 [request] - LV1 - array (
+  'page' => '0',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '27',
+)
+2015-10-26 03:48:06 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:06 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:09 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&start_time=&end_time=
+2015-10-26 03:48:09 [request] - LV1 - array (
+  'brand_id' => '34',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:48:09 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:09 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:11 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=&end_time=
+2015-10-26 03:48:11 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:48:12 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:12 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:13 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=&end_time=
+2015-10-26 03:48:13 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:48:13 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:13 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:14 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=&end_time=
+2015-10-26 03:48:14 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:48:14 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:14 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:22 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:48:22 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:48:27 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:27 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:46 [request] - LV1 - /index.php/Admin/Super/export.html?page=1&start_time=1970-01-01&end_time=2970-01-01&club_id=1002
+2015-10-26 03:48:46 [request] - LV1 - array (
+  'page' => '1',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '1002',
+)
+2015-10-26 03:48:46 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:46 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:52 [request] - LV1 - /index.php/Admin/Super/export.html?page=0&start_time=1970-01-01&end_time=2970-01-01&club_id=1002
+2015-10-26 03:48:52 [request] - LV1 - array (
+  'page' => '0',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '1002',
+)
+2015-10-26 03:48:52 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:52 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:54 [request] - LV1 - /index.php/Admin/Super/export.html?page=1&start_time=1970-01-01&end_time=2970-01-01&club_id=1002
+2015-10-26 03:48:54 [request] - LV1 - array (
+  'page' => '1',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '1002',
+)
+2015-10-26 03:48:54 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:54 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:48:56 [request] - LV1 - /index.php/Admin/Super/export.html?page=2&start_time=1970-01-01&end_time=2970-01-01&club_id=1002
+2015-10-26 03:48:56 [request] - LV1 - array (
+  'page' => '2',
+  'start_time' => '1970-01-01',
+  'end_time' => '2970-01-01',
+  'club_id' => '1002',
+)
+2015-10-26 03:48:56 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:48:56 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:11 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&start_time=2015-06-02&end_time=
+2015-10-26 03:49:11 [request] - LV1 - array (
+  'brand_id' => '34',
+  'start_time' => '2015-06-02',
+  'end_time' => '',
+)
+2015-10-26 03:49:11 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:11 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:24 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:24 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:24 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:24 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:26 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:26 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:26 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:26 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:27 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:27 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:27 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:27 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:27 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:27 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:27 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:27 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:27 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:27 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:27 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:27 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:27 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:27 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:28 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:28 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:28 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:28 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:28 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:36 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-20&end_time=
+2015-10-26 03:49:36 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-20',
+  'end_time' => '',
+)
+2015-10-26 03:49:36 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:36 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:38 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:38 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:38 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:38 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:39 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:39 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:39 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:39 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:39 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:39 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:39 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:39 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:39 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:39 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:39 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:39 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:39 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:39 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:40 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:40 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:40 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:40 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:40 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:40 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:40 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:40 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:40 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:40 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:49:40 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:49:40 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:49:40 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:49:40 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:50:06 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:50:06 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:50:06 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:50:06 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:50:16 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=1970-01-28&end_time=2970-01-31
+2015-10-26 03:50:16 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '1970-01-28',
+  'end_time' => '2970-01-31',
+)
+2015-10-26 03:50:16 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:50:16 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:50:20 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=1970-01-28&end_time=2970-01-31
+2015-10-26 03:50:20 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '1970-01-28',
+  'end_time' => '2970-01-31',
+)
+2015-10-26 03:50:20 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:50:20 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:50:24 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:50:24 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:50:24 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:51:17 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:51:17 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:51:17 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:51:18 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:51:18 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:51:18 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:51:21 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:51:21 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:51:21 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:51:22 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:51:22 [request] - LV1 - /Public/js/jquery.js
+2015-10-26 03:51:22 [request] - LV1 - array (
+  's' => '/Public/js/jquery.js',
+)
+2015-10-26 03:52:01 [request] - LV1 - /index.php/Admin/Super/export.html
+2015-10-26 03:52:08 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:52:08 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:52:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=&end_time=
+2015-10-26 03:52:46 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '',
+  'end_time' => '',
+)
+2015-10-26 03:53:18 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-07&end_time=
+2015-10-26 03:53:18 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 03:53:50 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-07&end_time=
+2015-10-26 03:53:50 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 03:54:07 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-07&end_time=
+2015-10-26 03:54:07 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 03:54:09 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-07&end_time=
+2015-10-26 03:54:09 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 03:56:37 [request] - LV1 - /
+2015-10-26 03:56:37 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 03:56:42 [request] - LV1 - /Home/Mc/query
+2015-10-26 03:56:42 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445846202499',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 03:56:42 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 03:56:46 [request] - LV1 - /index.php/Home/Main/logout.html
+2015-10-26 03:56:46 [request] - LV1 - /index.php/Home/Index/index.html
+2015-10-26 03:56:46 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-26 03:56:48 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-26 03:56:48 [request] - LV1 - array (
+  'username' => 'CSmanager',
+  'password' => 'f9f793663056c922a7438d875f2f043f',
+)
+2015-10-26 03:56:49 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 03:56:49 [request] - LV1 - /Home/Mc/query
+2015-10-26 03:56:49 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445846209432',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 03:56:49 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 03:56:53 [request] - LV1 - /index.php/Finance/Report/index.html
+2015-10-26 03:57:01 [request] - LV1 - /index.php/Finance/Report/queryReport.html
+2015-10-26 03:57:01 [request] - LV1 - array (
+  'club_ids' => 
+  array (
+    0 => '1022',
+  ),
+  'type' => '3',
+  'start_time' => '2015',
+  'end_time' => '',
+)
+2015-10-26 03:57:04 [request] - LV1 - /Finance/Report/detail?clubs=1022&type=1&subtype=0&start_time=2015&end_time=0&reporttype=3
+2015-10-26 03:57:04 [request] - LV1 - array (
+  's' => '/Finance/Report/detail',
+  'clubs' => '1022',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015',
+  'end_time' => '0',
+  'reporttype' => '3',
+)
+2015-10-26 03:57:04 [request] - LV1 - /Finance/Report/getdetail
+2015-10-26 03:57:04 [request] - LV1 - array (
+  'clubs' => '1022',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015',
+  'end_time' => '0',
+  'reporttype' => '3',
+  '_search' => 'false',
+  'nd' => '1445846224444',
+  'rows' => '30',
+  'page' => '1',
+  'sidx' => 'id',
+  'sord' => 'desc',
+)
+2015-10-26 03:57:04 [request] - LV1 - array (
+  's' => '/Finance/Report/getdetail',
+)
+2015-10-26 03:57:07 [request] - LV1 - /Finance/Report/printdetail?clubs=1022&type=1&subtype=0&start_time=2015&end_time=0&reporttype=3
+2015-10-26 03:57:07 [request] - LV1 - array (
+  's' => '/Finance/Report/printdetail',
+  'clubs' => '1022',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015',
+  'end_time' => '0',
+  'reporttype' => '3',
+)
+2015-10-26 03:59:25 [request] - LV1 - /Finance/Report/printdetail?clubs=1022&type=1&subtype=0&start_time=2015&end_time=0&reporttype=3
+2015-10-26 03:59:25 [request] - LV1 - array (
+  's' => '/Finance/Report/printdetail',
+  'clubs' => '1022',
+  'type' => '1',
+  'subtype' => '0',
+  'start_time' => '2015',
+  'end_time' => '0',
+  'reporttype' => '3',
+)
+2015-10-26 04:01:44 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-07&end_time=
+2015-10-26 04:01:44 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:45 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=35&club_id=1002&start_time=2015-10-07&end_time=
+2015-10-26 04:01:46 [request] - LV1 - array (
+  'brand_id' => '35',
+  'club_id' => '1002',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:48 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:48 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:50 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:50 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:51 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:51 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:51 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:51 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:52 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:52 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:52 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:52 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:53 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:53 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:01:58 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:01:58 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:02:00 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:02:00 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:02:00 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:02:00 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:02:16 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:02:16 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:02:54 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:02:54 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:02:54 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:02:54 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:02:57 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:02:57 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:03:58 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:03:58 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:18 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:18 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:19 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:19 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:21 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:21 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:21 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:21 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:27 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:27 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:28 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:31 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:31 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:33 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:33 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:40 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:40 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:04:55 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:04:55 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:06:18 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:06:18 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:27 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:27 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:29 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:29 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:31 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:31 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:40 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:40 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:41 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:41 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:43 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:43 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:43 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:43 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:43 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:43 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:43 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:43 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:44 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:44 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:44 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:44 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:44 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:44 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:45 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:45 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:45 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:45 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:46 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:46 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:46 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:46 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:46 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:47 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:47 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:47 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:47 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:50 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:50 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:51 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:51 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:53 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:53 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:56 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:56 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:57 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:57 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:57 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:57 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:58 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:58 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:07:58 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:07:58 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:01 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:01 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:01 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:01 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:10 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:10 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:21 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:21 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:28 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:28 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:28 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:28 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:29 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:29 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:29 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:29 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:29 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:29 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:29 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:29 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:49 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:49 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:08:51 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:08:51 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:09:47 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:09:47 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:10:08 [request] - LV1 - /index.php/Admin/Super/export.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:10:08 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:10:09 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:10:09 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:10:17 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:10:17 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:17:51 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:17:51 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:20:07 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:20:07 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:20:24 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:20:24 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:23:20 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:23:20 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:23:53 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:23:53 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:24:06 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:24:06 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:25:25 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:25:25 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:38:11 [request] - LV1 - /index.php/Admin/Super/exportall.html?brand_id=34&club_id=79&start_time=2015-10-07&end_time=
+2015-10-26 04:38:11 [request] - LV1 - array (
+  'brand_id' => '34',
+  'club_id' => '79',
+  'start_time' => '2015-10-07',
+  'end_time' => '',
+)
+2015-10-26 04:38:14 [request] - LV1 - /
+2015-10-26 04:38:15 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 04:38:15 [request] - LV1 - /Home/Mc/query
+2015-10-26 04:38:15 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445848695880',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 04:38:15 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 04:38:18 [request] - LV1 - /index.php/Home/Main/logout.html
+2015-10-26 04:38:18 [request] - LV1 - /index.php/Home/Index/index.html
+2015-10-26 04:38:19 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-26 04:38:31 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-26 04:38:31 [request] - LV1 - array (
+  'username' => 'petervita',
+  'password' => '111111',
+)
+2015-10-26 04:38:31 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 04:38:33 [request] - LV1 - /Home/Mc/query
+2015-10-26 04:38:33 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445848713189',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 04:38:33 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)
+2015-10-26 04:39:05 [request] - LV1 - /index.php/Home/Main/changePassword.html
+2015-10-26 04:39:05 [request] - LV1 - array (
+  'original_password' => '111111',
+  'new_password' => 'vitayoga123',
+  'confirm_password' => 'vitayoga123',
+)
+2015-10-26 04:39:05 [request] - LV1 - /index.php/Home/Main/Home/Index/index
+2015-10-26 04:39:05 [request] - LV1 - /index.php/Home/Index/index.html
+2015-10-26 04:39:05 [request] - LV1 - /index.php/Home/Index/verify.html
+2015-10-26 04:39:14 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-26 04:39:14 [request] - LV1 - array (
+  'username' => 'petervita',
+  'password' => '111111',
+)
+2015-10-26 04:39:14 [request] - LV1 - /index.php/Home/Index/verify.html?0.2791512522380799
+2015-10-26 04:39:14 [request] - LV1 - array (
+  '0_2791512522380799' => '',
+)
+2015-10-26 04:39:20 [request] - LV1 - /index.php/Home/Index/login.html
+2015-10-26 04:39:20 [request] - LV1 - array (
+  'username' => 'petervita',
+  'password' => 'vitayoga123',
+)
+2015-10-26 04:39:20 [request] - LV1 - /index.php/Home/Main/main.html
+2015-10-26 04:39:20 [request] - LV1 - /Home/Mc/query
+2015-10-26 04:39:20 [request] - LV1 - array (
+  '_search' => 'false',
+  'nd' => '1445848760971',
+  'rows' => '99999',
+  'page' => '1',
+  'sidx' => 'classify desc, ',
+  'sord' => 'asc',
+)
+2015-10-26 04:39:20 [request] - LV1 - array (
+  's' => '/Home/Mc/query',
+)

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-cn">
 <head>
   <meta charset="utf-8">
@@ -7,23 +7,27 @@
   <title>Yoga 后台管理系统</title>
 
   <!-- Bootstrap -->
-  <link href="__CSS__/bootstrap.min.css" rel="stylesheet">
+  <link href="/Public/css//bootstrap.min.css" rel="stylesheet">
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="__JS__/jquery.min.js"></script>
+  <script src="/Public/js//jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="__JS__/bootstrap.min.js"></script>
-  <script src="__JS__/cms.js"></script>
-  <link href="__CSS__/cms.css" rel="stylesheet">
-  <block name="script"></block>
+  <script src="/Public/js//bootstrap.min.js"></script>
+  <script src="/Public/js//cms.js"></script>
+  <link href="/Public/css//cms.css" rel="stylesheet">
+  
+	<script>
+	$(function(){$(".navbar-nav>li:eq(1)").addClass("active").siblings().removeClass("active");});
+</script>
+
 
   <!-- inline styles related to this page -->
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
   <!--[if lt IE 9]>
-  <script src="__JS__/html5shiv.js"></script>
-  <script src="__JS__/respond.min.js"></script>
+  <script src="/Public/js//html5shiv.js"></script>
+  <script src="/Public/js//respond.min.js"></script>
   <![endif]-->
 
 </head>
@@ -45,25 +49,25 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
        <li class="dropdown">
-          <a href="{:U('system/index')}" class="dropdown-toggle" data-toggle="dropdown">系统设置 <span class="caret"></span></a>
+          <a href="<?php echo U('system/index');?>" class="dropdown-toggle" data-toggle="dropdown">系统设置 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">    
-            <li><a href="{:U('system/index')}">默认角色</a></li>           
+            <li><a href="<?php echo U('system/index');?>">默认角色</a></li>           
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="{:U('system/index')}" class="dropdown-toggle" data-toggle="dropdown">调查问卷 <span class="caret"></span></a>
+          <a href="<?php echo U('system/index');?>" class="dropdown-toggle" data-toggle="dropdown">调查问卷 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">    
-            <li><a href="{:U('Quiz/quiz')}">调查问卷</a></li>           
+            <li><a href="<?php echo U('Quiz/quiz');?>">调查问卷</a></li>           
           </ul>
         </li>
 
 
        <li class="dropdown">
-          <a href="{:U('Admin/Brand/index')}" class="dropdown-toggle" data-toggle="dropdown">品牌管理 <span class="caret"></span></a>
+          <a href="<?php echo U('Admin/Brand/index');?>" class="dropdown-toggle" data-toggle="dropdown">品牌管理 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#"  data-toggle="modal" data-target="#editbrand">添加品牌</a></li>
-            <li><a href="{:U('Admin/Brand/index')}">品牌查询</a></li>           
+            <li><a href="<?php echo U('Admin/Brand/index');?>">品牌查询</a></li>           
           </ul>
         </li>
 
@@ -73,7 +77,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户管理 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#"  data-toggle="modal" data-target="#edituser" >添加帐号</a></li>
-            <li><a href="{:U('Admin/User/index')}">用户查询</a></li>           
+            <li><a href="<?php echo U('Admin/User/index');?>">用户查询</a></li>           
           </ul>
         </li>
 
@@ -82,7 +86,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Super <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{:U('Admin/Super/export')}" >导出会员资料</a></li> 
+            <li><a href="<?php echo U('Admin/Super/export');?>" >导出会员资料</a></li> 
           </ul>
         </li>
 
@@ -90,10 +94,10 @@
      
       <ul class="nav navbar-nav navbar-right">      
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">你好,{$user} <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">你好,<?php echo ($user); ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{:U('Admin/User/editpw')}">修改密码</a></li>
-            <li><a href="{:U('Admin/User/logout')}">退出</a></li>            
+            <li><a href="<?php echo U('Admin/User/editpw');?>">修改密码</a></li>
+            <li><a href="<?php echo U('Admin/User/logout');?>">退出</a></li>            
           </ul>
         </li>
       </ul>
@@ -101,9 +105,84 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-	<block name="content">content</block>
+	
+	<div class="head" >	
+	<form action="<?php echo U('Admin/Brand/query');?>">
+	<label for="brandname">品牌名称:</label>
+    <input type="text" name="brand_name">
+    <label for="username">登录帐号:</label>
+    <input type="text" name="login_name">
+    <label for="username">创建时间:</label>
+    <input type="date" name="start_time">
+    <label for="username">--</label>
+    <input type="date" name="end_time">
+		 <button type="submit" class="btn btn-default btn-sm">查询</button>
+	</form>	
+   </div>
+        
+	 <table class="table">
+		<caption>品牌列表</caption>
+		<thead>
+			<th>序号</th>
+			<th>品牌名称</th>
+			<th>登录帐号</th>
+			<th>联系人</th>
+			<th>邮件</th>
+			<th>电话</th>
+			<th>添加日期</th>
+			<th>权限</th>
+			<th>备注</th>
+			<th>操作</th>
+		</thead>
+		<tbody>
+			<?php if(is_array($brands)): $i = 0; $__LIST__ = $brands;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><tr>
+			  <td>
+			  	<?php echo ($brand["id"]); ?>
+			  </td>
+			   <td>
+			  	<?php echo ($brand["brand_name"]); ?>
+			  </td>
+			   <td>
+			  	<?php echo ($brand["username"]); ?>
+			  </td>
+			   <td>
+			  	<?php echo ($brand["contact_name"]); ?>
+			  </td>
+			   <td>
+			  	<?php echo ($brand["email"]); ?>
+			  </td>
+			   <td>
+			  	<?php echo ($brand["phone"]); ?>
+			  </td>
+			   <td >
+			  	<?php echo ($brand["create_time"]); ?>
+			  </td>
+			   <td >
+			  	<?php echo ($brand["roles"]); ?>
+			  </td>
+			   <td style="table-layout:fixed;word-break:break-all;">
+			  	<?php echo ($brand["desc"]); ?>
+			  </td>
+			   <td>
+			  	 <a href="javascript:void(0)" onclick="editbrand(<?php echo ($brand["id"]); ?>,this)">编辑</a>
+			  	 <a href="javascript:void(0)" onclick="if(confirm('确定要删除吗？'))delbrand(<?php echo ($brand["id"]); ?>,this)">删除</a>
+			  </td>
+			  </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		</tbody>
+     </table>
+   <ul class="pagination">
+   <?php if(0 == $current_page): ?><li class="disabled"><a href="#">&laquo;</a></li>
+   <?php else: ?>
+    <li><a href="<?php echo U('Admin/Brand/index?page='.($current_page-1));?>">&laquo;</a></li><?php endif; ?>
+   <?php $__FOR_START_1062945679__=0;$__FOR_END_1062945679__=$pages;for($i=$__FOR_START_1062945679__;$i < $__FOR_END_1062945679__;$i+=1){ if($i == $current_page): ?><li class="active"><a href="<?php echo U('Admin/Brand/index?page='.$i);?>"><?php echo ($i+1); ?><span class="sr-only">(current)</span></a></li>
+		<?php else: ?> <li><a href="<?php echo U('Admin/Brand/index?page='.$i);?>"><?php echo ($i+1); ?></a></li><?php endif; } ?> 
+    <?php if($pages == $current_page+1): ?><li class="disabled"><a href="#">&raquo;</a></li>
+   <?php else: ?>
+    <li><a href="<?php echo U('Admin/Brand/index?page='.($current_page+1));?>">&raquo;</a></li><?php endif; ?>	 	
+	</ul>
+
 </div>
-<block name="modal">
+
   <div class="modal fade" id="editbrand" >
   <div class="modal-dialog">
     <div class="modal-content">
@@ -112,7 +191,7 @@
         <h4 class="modal-title">添加品牌</h4>
       </div>
       <div class="modal-body">
-      <form class="form-horizontal" role="form" action="{:U('brand/edit')}">
+      <form class="form-horizontal" role="form" action="<?php echo U('brand/edit');?>">
         <input type="hidden" name="id" value="0" id="brand_id"/>
         <div class="form-group">
               <label for="brand_name" class="col-sm-2 control-label">品牌名称:</label>
@@ -157,37 +236,37 @@
             </label>
             <div class="col-sm-9" id="roles" style="display:none">
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="shopkeeper" name="roles[]" <notempty name="shopkeeper">checked</notempty>> 店长
+                  <input type="checkbox" id="default_role" value="shopkeeper" name="roles[]" <?php if(!empty($shopkeeper)): ?>checked<?php endif; ?>> 店长
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="finance" name="roles[]" <notempty name="finance">checked</notempty>> 财务
+                  <input type="checkbox" id="default_role" value="finance" name="roles[]" <?php if(!empty($finance)): ?>checked<?php endif; ?>> 财务
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="reception" name="roles[]" <notempty name="reception">checked</notempty>> 前台
+                  <input type="checkbox" id="default_role" value="reception" name="roles[]" <?php if(!empty($reception)): ?>checked<?php endif; ?>> 前台
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="bar" name="roles[]" <notempty name="bar">checked</notempty>> 水吧
+                  <input type="checkbox" id="default_role" value="bar" name="roles[]" <?php if(!empty($bar)): ?>checked<?php endif; ?>> 水吧
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="cashier" name="roles[]" <notempty name="cashier">checked</notempty>> 收银员
+                  <input type="checkbox" id="default_role" value="cashier" name="roles[]" <?php if(!empty($cashier)): ?>checked<?php endif; ?>> 收银员
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="mcmanager" name="roles[]" <notempty name="mcmanager">checked</notempty>> MC经理
+                  <input type="checkbox" id="default_role" value="mcmanager" name="roles[]" <?php if(!empty($mcmanager)): ?>checked<?php endif; ?>> MC经理
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="mc" name="roles[]" <notempty name="mc">checked</notempty>> MC
+                  <input type="checkbox" id="default_role" value="mc" name="roles[]" <?php if(!empty($mc)): ?>checked<?php endif; ?>> MC
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="ptmanager" name="roles[]" <notempty name="ptmanager">checked</notempty>> PT经理
+                  <input type="checkbox" id="default_role" value="ptmanager" name="roles[]" <?php if(!empty($ptmanager)): ?>checked<?php endif; ?>> PT经理
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="pt" name="roles[]" <notempty name="pt">checked</notempty>> PT
+                  <input type="checkbox" id="default_role" value="pt" name="roles[]" <?php if(!empty($pt)): ?>checked<?php endif; ?>> PT
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="channelmanager" name="roles[]" <notempty name="channelmanager">checked</notempty>> 渠道经理
+                  <input type="checkbox" id="default_role" value="channelmanager" name="roles[]" <?php if(!empty($channelmanager)): ?>checked<?php endif; ?>> 渠道经理
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="default_role" value="channel" name="roles[]" <notempty name="channel">checked</notempty>> 渠道销售
+                  <input type="checkbox" id="default_role" value="channel" name="roles[]" <?php if(!empty($channel)): ?>checked<?php endif; ?>> 渠道销售
                 </label>
             </div>
             <span class="help-block" style="margin-left:20px"></span>
@@ -218,7 +297,7 @@
         <h4 class="modal-title">添加用户</h4>
       </div>
       <div class="modal-body">
-      <form class="form-horizontal" role="form" action="{:U('user/edit')}">         
+      <form class="form-horizontal" role="form" action="<?php echo U('user/edit');?>">         
         <div class="form-group">
               <label for="brand_name" class="col-sm-2 control-label">用户名:</label>
               <div class="col-sm-10">
@@ -238,6 +317,6 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-</block>
+
 </body>
 </html>

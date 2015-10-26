@@ -240,6 +240,28 @@ public function addAction()
        if (!$model->create()){      
                 $this->error($model->getError());
         }else{   
+
+             $brand_id = get_brand_id();
+            $club_id  = get_club_id();
+            $condition = array();
+            $condition['club_id']=$club_id;
+            $condition['id']=array("neq",$id);
+            $where['phone']  = I("phone");
+            $certificate_number = I("certificate_number");
+            if(!empty($certificate_number))
+                 $where['certificate_number']  = I("certificate_number");
+            else
+                $where['1']='0';
+            $where['_logic'] = 'or';
+            $condition['_complex']=$where;
+            $member = $model->where($condition)->find();
+       
+            if(!empty($member))
+            {   
+                $this->error("此访客信息已存在，不能再添加！");
+            }
+
+
                 if($member['type']!=I('type') || $member['pre_sale']!=I('pre_sale') )
                  $model->level_update_time=getDbTime();
                 $model->save(); 

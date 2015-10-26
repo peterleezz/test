@@ -1,0 +1,42 @@
+[ 2015-10-23T19:03:00+08:00 ] 127.0.0.1 /Api/index/getCardType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+
+[ 2015-10-23T19:03:00+08:00 ] 127.0.0.1 /Api/index/getMcs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+
+[ 2015-10-23T19:03:34+08:00 ] 127.0.0.1 /Api/index/getCardType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000058s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+
+[ 2015-10-23T19:03:34+08:00 ] 127.0.0.1 /Api/index/getMcs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000106s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given /var/www/yoga/Framework/Library/Think/Model.class.php 第 1426 行.
+ERR: 1103:Incorrect table name ''
+ [ SQL语句 ] : SHOW COLUMNS FROM ``
+

@@ -1,0 +1,13 @@
+[ 2015-10-26T14:06:00+08:00 ] 127.0.0.1 /weixin.php/getCardType
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/yoga/Framework/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and a.card_type_id = b.id and b.start_time <='2015-10-26' and b.end_time >= '201' at line 1
+ [ SQL语句 ] : SELECT b.* FROM yoga_card_saleclub a,yoga_card_type b where a.club_id= and a.card_type_id = b.id and b.start_time <='2015-10-26' and b.end_time >= '2015-10-26' and b.status!=0
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Common/Model/CardTypeModel.class.php 第 45 行.
+NOTIC: [2] Invalid argument supplied for foreach() /var/www/yoga/Yoga/Weixin/Controller/IndexController.class.php 第 427 行.
+

@@ -4,6 +4,8 @@ use Common\Controller\BaseController;
 class TclassController extends BaseController {
 	public function indexAction()
 	{
+		$pt = D("User")->getPtAndTuan(get_club_id());
+		$this->pt=$pt;
 		$this->display();
 	}
 
@@ -22,6 +24,9 @@ class TclassController extends BaseController {
 	                if($value->field=="name")
 	                {
 	                    $condition = array_merge($condition,array("name"=>array("like","%{$value->data}%")) );
+	                }else  if($value->field=="pt_id" && $value->data!=0)
+	                {
+	                    $condition = array_merge($condition,array("pt_id"=>$value->data) );
 	                }
 	                 
 	            }
